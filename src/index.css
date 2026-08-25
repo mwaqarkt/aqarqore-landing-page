@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy-deep: #003068;
+    --brand-navy-blue: #0858A8;
+    --brand-primary: #1078C0;
+    --brand-bg: #F7F9FB;
+  }
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #F7F9FB;
+}
+
+/* Custom RTL Font support when active */
+[dir="rtl"] body {
+  font-family: 'Tajawal', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(0, 48, 104, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 120, 192, 0.25);
+}
+
+.glow-blue {
+  box-shadow: 0 0 35px -5px rgba(16, 120, 192, 0.35);
+}
+
+.glow-subtle {
+  box-shadow: 0 20px 40px -15px rgba(0, 48, 104, 0.12);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #003068;
+}
+::-webkit-scrollbar-thumb {
+  background: #1078C0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0858A8;
+}
