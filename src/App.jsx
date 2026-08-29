@@ -951,130 +951,404 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 3. AGENCY OWNER VALUE PROPOSITION: EXECUTIVE PERFORMANCE SYSTEM            */}
+      {/* 3. AGARQORE ENGINE: THE CONNECTED INTELLIGENT OPERATING SYSTEM              */}
       {/* -------------------------------------------------------------------------- */}
-      <section className="py-24 sm:py-28 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
-        {/* Subtle Decorative Technical Micro-Grid & Line Accent */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+      <section id="engine" className="py-24 sm:py-32 bg-[#00132C] text-white relative border-b border-blue-950/90 overflow-hidden">
+        {/* Subtle Technical Grid & Deep Radial Ambient Overlays */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(57,191,245,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(57,191,245,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-b from-[#0878D1]/15 via-[#39BFF5]/10 to-transparent blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Section Header */}
           <motion.div 
-            className="max-w-3xl mx-auto text-center space-y-4 mb-16"
+            className="max-w-3xl mx-auto text-center space-y-4 mb-16 sm:mb-20"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#032653]/90 border border-sky-400/40 text-xs font-mono font-bold uppercase tracking-widest text-[#39BFF5] shadow-[0_0_18px_rgba(57,191,245,0.25)]">
+              <Zap className="w-3.5 h-3.5 text-[#39BFF5] animate-pulse" />
+              <span>AGARQORE ENGINE</span>
+            </div>
+
+            {/* Headline */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-white">
+              Built for{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39BFF5] via-[#168FE5] to-[#00D6A3]">
+                Speed.
+              </span>{' '}
+              Built for{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D6A3] via-[#39BFF5] to-[#0878D1]">
+                Scale.
+              </span>
+            </h2>
+
+            {/* Subtitle */}
+            <p className="text-blue-100/70 text-sm sm:text-base sm:leading-relaxed max-w-2xl mx-auto font-normal">
+              Everything your agency needs to run smarter, faster and with complete confidence.
+            </p>
+          </motion.div>
+
+          {/* CONNECTED SYSTEM ARCHITECTURE: 4 INTELLIGENT ENGINE MODULES */}
+          <div className="relative">
+            
+            {/* Connected Glowing Horizontal Data Bus Highway (Desktop) */}
+            <div className="hidden lg:block absolute top-[52%] left-10 right-10 h-[2px] -translate-y-1/2 z-0 pointer-events-none">
+              {/* Base track */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0878D1]/20 via-[#00D6A3]/30 via-[#F5B91E]/30 to-[#8B5CF6]/20" />
+              <div className="absolute inset-0 bg-[#39BFF5]/25 blur-[2px]" />
+              
+              {/* Animated Flowing Energy Streamer */}
+              <motion.div 
+                className="absolute top-0 bottom-0 w-36 bg-gradient-to-r from-transparent via-[#39BFF5] to-transparent shadow-[0_0_15px_#39BFF5]"
+                animate={{ x: ['-20%', '800%'] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: 'linear' }}
+              />
+
+              {/* 4 Connected Node Connection Dots */}
+              <div className="absolute left-[12.5%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#001738] border-2 border-[#39BFF5] shadow-[0_0_10px_#39BFF5]" />
+              <div className="absolute left-[37.5%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#001738] border-2 border-[#00D6A3] shadow-[0_0_10px_#00D6A3]" />
+              <div className="absolute left-[62.5%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#001738] border-2 border-[#F5B91E] shadow-[0_0_10px_#F5B91E]" />
+              <div className="absolute left-[87.5%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#001738] border-2 border-[#A78BFA] shadow-[0_0_10px_#A78BFA]" />
+            </div>
+
+            {/* Mobile / Tablet Vertical Connecting Data Line */}
+            <div className="lg:hidden absolute top-8 bottom-8 left-1/2 w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#39BFF5]/40 via-[#00D6A3]/40 to-[#A78BFA]/40 z-0 pointer-events-none" />
+
+            {/* 4 Engine Modules Grid with Editorial Vertical Offsets */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-7 relative z-10 items-stretch">
+              
+              {/* ============================================================ */}
+              {/* MODULE 01 — SPEED (Electric Blue / Cyan)                     */}
+              {/* ============================================================ */}
+              <motion.div 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.05 }}
+                className="rounded-[28px] bg-gradient-to-b from-[#001F47] to-[#00142E] p-6 sm:p-7 border border-sky-500/30 hover:border-[#39BFF5] shadow-[0_20px_45px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_50px_rgba(57,191,245,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+              >
+                {/* Top Corner Technical Accent */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#39BFF5]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+
+                <div className="space-y-6">
+                  {/* Module Header Strip */}
+                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-mono font-bold text-[#39BFF5] tracking-wider">METRIC 01</span>
+                      <span className="text-[9px] font-mono text-slate-400">// SPEED</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#39BFF5] animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#39BFF5]" />
+                    </div>
+                  </div>
+
+                  {/* Large Visual: Futuristic Stopwatch Gauge with Pulse Ring */}
+                  <div className="relative py-2 flex items-center justify-center">
+                    <div className="relative w-28 h-28 flex items-center justify-center">
+                      {/* Rotating Outer Radar Ring */}
+                      <motion.div 
+                        className="absolute inset-0 rounded-full border border-dashed border-[#39BFF5]/40"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 16, repeat: Infinity, ease: 'linear' }}
+                      />
+                      {/* Pulsing Aura */}
+                      <div className="absolute inset-2 rounded-full bg-[#0878D1]/20 blur-md group-hover:bg-[#39BFF5]/30 transition-colors" />
+                      {/* Central Speedometer Core */}
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-sky-400/50 flex flex-col items-center justify-center text-center shadow-inner">
+                        <Clock className="w-6 h-6 text-[#39BFF5] group-hover:scale-110 transition-transform" />
+                        <span className="text-[10px] font-mono font-extrabold text-sky-200 mt-1">&lt; 10s</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Primary Metric & Description */}
+                  <div className="space-y-2">
+                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#39BFF5] transition-colors">
+                      10 Seconds
+                    </div>
+                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                      Max lead assignment window
+                    </div>
+                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                      “Lightning-fast automation that keeps you ahead.”
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Status Chip */}
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold text-[#39BFF5] flex items-center gap-1.5">
+                    <Zap className="w-3 h-3 text-[#39BFF5]" />
+                    SUB-10S ROUTING
+                  </span>
+                  <span className="text-[9.5px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                    ACTIVE
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* ============================================================ */}
+              {/* MODULE 02 — AUDIT (Emerald / Teal)                           */}
+              {/* ============================================================ */}
+              <motion.div 
+                initial={{ opacity: 0, y: 70 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="rounded-[28px] bg-gradient-to-b from-[#00223D] to-[#00142E] p-6 sm:p-7 border border-emerald-500/30 hover:border-[#00D6A3] shadow-[0_20px_45px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_50px_rgba(0,214,163,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
+              >
+                {/* Top Corner Technical Accent */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#00D6A3]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+
+                <div className="space-y-6">
+                  {/* Module Header Strip */}
+                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-mono font-bold text-[#00D6A3] tracking-wider">METRIC 02</span>
+                      <span className="text-[9px] font-mono text-slate-400">// INTEGRITY</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]" />
+                    </div>
+                  </div>
+
+                  {/* Large Visual: Holographic Verification Shield with Scan Beam */}
+                  <div className="relative py-2 flex items-center justify-center">
+                    <div className="relative w-28 h-28 flex items-center justify-center">
+                      {/* Scanning Ring */}
+                      <div className="absolute inset-0 rounded-full border border-emerald-500/30" />
+                      <div className="absolute inset-2 rounded-full bg-emerald-500/15 blur-md group-hover:bg-emerald-500/25 transition-colors" />
+                      
+                      {/* Shield Core */}
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-emerald-500/50 flex flex-col items-center justify-center text-center shadow-inner overflow-hidden">
+                        <ShieldCheck className="w-7 h-7 text-[#00D6A3] group-hover:scale-110 transition-transform" />
+                        <span className="text-[9px] font-mono font-extrabold text-emerald-300 mt-1">VERIFIED</span>
+                        
+                        {/* Laser Scan Sweep */}
+                        <motion.div 
+                          className="absolute left-0 right-0 h-[2px] bg-[#00D6A3] shadow-[0_0_8px_#00D6A3]"
+                          animate={{ top: ['0%', '100%', '0%'] }}
+                          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Primary Metric & Description */}
+                  <div className="space-y-2">
+                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#00D6A3] transition-colors">
+                      100% Audit
+                    </div>
+                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                      Reconciled commission signoffs
+                    </div>
+                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                      “Complete transparency. Every deal accounted for.”
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Status Chip */}
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold text-[#00D6A3] flex items-center gap-1.5">
+                    <Lock className="w-3 h-3 text-[#00D6A3]" />
+                    AUDIT VERIFIED
+                  </span>
+                  <span className="text-[9.5px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                    2-STEP LOCK
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* ============================================================ */}
+              {/* MODULE 03 — META VERIFIED (Gold / Warm Cyan)                 */}
+              {/* ============================================================ */}
+              <motion.div 
+                initial={{ opacity: 0, y: 90 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="rounded-[28px] bg-gradient-to-b from-[#001D40] to-[#00142E] p-6 sm:p-7 border border-amber-500/30 hover:border-[#F5B91E] shadow-[0_20px_45px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_50px_rgba(245,185,30,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+              >
+                {/* Top Corner Technical Accent */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#F5B91E]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+
+                <div className="space-y-6">
+                  {/* Module Header Strip */}
+                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-mono font-bold text-[#F5B91E] tracking-wider">METRIC 03</span>
+                      <span className="text-[9px] font-mono text-slate-400">// COMMS</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#F5B91E] animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5B91E]" />
+                    </div>
+                  </div>
+
+                  {/* Large Visual: Meta Verified Communication Hub */}
+                  <div className="relative py-2 flex items-center justify-center">
+                    <div className="relative w-28 h-28 flex items-center justify-center">
+                      {/* Concentric Communication Signal Waves */}
+                      <div className="absolute inset-0 rounded-full border border-amber-500/30 animate-ping opacity-30" />
+                      <div className="absolute inset-1 rounded-full border border-amber-500/40" />
+                      <div className="absolute inset-3 rounded-full bg-amber-500/15 blur-md group-hover:bg-amber-500/25 transition-colors" />
+
+                      {/* Hub Core */}
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-amber-500/50 flex flex-col items-center justify-center text-center shadow-inner">
+                        <MessageSquare className="w-7 h-7 text-[#F5B91E] group-hover:scale-110 transition-transform" />
+                        <span className="text-[9px] font-mono font-extrabold text-amber-300 mt-1">META CLOUD</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Primary Metric & Description */}
+                  <div className="space-y-2">
+                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#F5B91E] transition-colors">
+                      Meta Verified
+                    </div>
+                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                      Official WhatsApp Cloud API
+                    </div>
+                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                      “Trusted. Secure. Official. Direct from Meta.”
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Status Chip */}
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold text-[#F5B91E] flex items-center gap-1.5">
+                    <CheckCircle className="w-3 h-3 text-[#F5B91E]" />
+                    OFFICIAL API
+                  </span>
+                  <span className="text-[9.5px] font-mono text-amber-300 font-bold px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30">
+                    META CLOUD
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* ============================================================ */}
+              {/* MODULE 04 — MOBILITY / OFFLINE APP (Electric Blue / Violet)  */}
+              {/* ============================================================ */}
+              <motion.div 
+                initial={{ opacity: 0, y: 110 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="rounded-[28px] bg-gradient-to-b from-[#0B1A42] to-[#00142E] p-6 sm:p-7 border border-violet-500/30 hover:border-[#A78BFA] shadow-[0_20px_45px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_50px_rgba(167,139,250,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
+              >
+                {/* Top Corner Technical Accent */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#A78BFA]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+
+                <div className="space-y-6">
+                  {/* Module Header Strip */}
+                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-mono font-bold text-[#A78BFA] tracking-wider">METRIC 04</span>
+                      <span className="text-[9px] font-mono text-slate-400">// EDGE SYNC</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#A78BFA]" />
+                    </div>
+                  </div>
+
+                  {/* Large Visual: Modern Smartphone Mockup with Simulated Mini Lead Card */}
+                  <div className="relative py-2 flex items-center justify-center">
+                    <div className="relative w-28 h-28 flex items-center justify-center">
+                      <div className="absolute inset-0 rounded-full border border-violet-500/30" />
+                      <div className="absolute inset-2 rounded-full bg-violet-500/15 blur-md group-hover:bg-violet-500/25 transition-colors" />
+
+                      {/* Phone Outline */}
+                      <div className="relative z-10 w-16 h-24 rounded-2xl bg-[#001026] border-2 border-violet-400/60 p-1.5 flex flex-col justify-between shadow-xl group-hover:scale-105 transition-transform">
+                        {/* Mini Phone Speaker notch */}
+                        <div className="w-4 h-1 rounded-full bg-violet-400/40 mx-auto" />
+                        
+                        {/* Mini Lead Card simulation */}
+                        <div className="p-1 rounded-md bg-[#032653] border border-sky-400/40 space-y-1">
+                          <div className="w-full h-1 bg-[#39BFF5] rounded-full" />
+                          <div className="w-3/4 h-0.5 bg-sky-200/50 rounded-full" />
+                          <div className="flex items-center justify-between text-[6px] font-mono text-[#00D6A3] pt-0.5">
+                            <span>SYNCED</span>
+                            <span>✓</span>
+                          </div>
+                        </div>
+
+                        {/* Mini Home Indicator */}
+                        <div className="w-6 h-0.5 rounded-full bg-violet-400/40 mx-auto" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Primary Metric & Description */}
+                  <div className="space-y-2">
+                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#A78BFA] transition-colors">
+                      Offline App
+                    </div>
+                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                      Basement viewing sync
+                    </div>
+                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                      “Work anywhere. Sync when you're back.”
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Status Chip */}
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold text-[#A78BFA] flex items-center gap-1.5">
+                    <Smartphone className="w-3 h-3 text-[#A78BFA]" />
+                    OFFLINE MODE
+                  </span>
+                  <span className="text-[9.5px] font-mono text-purple-300 font-bold px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/30">
+                    5G SYNC
+                  </span>
+                </div>
+              </motion.div>
+
+            </div>
+          </div>
+
+          {/* AGARQORE ENGINE LIVE TELEMETRY STATUS STRIP */}
+          <motion.div 
+            className="mt-14 sm:mt-16 p-5 sm:p-6 rounded-2xl bg-[#001738]/90 border border-blue-900/70 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 relative z-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/60 text-xs font-bold uppercase tracking-wider shadow-sm">
-              Real Estate Operations Transformation
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-              Designed for Agency Owners Who Refuse to Lose Market Share
-            </h2>
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              From luxury residential handovers to multi-tower commercial developments, AqarQore gives your sales directors complete visibility while protecting client data.
-            </p>
-          </motion.div>
+            <div className="flex items-center gap-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00D6A3] animate-ping" />
+              <span className="text-xs font-mono font-bold tracking-wider text-white">AGARQORE ENGINE STATUS</span>
+              <span className="text-[11px] font-mono font-bold text-[#00D6A3] px-2.5 py-0.5 rounded-full bg-[#00D6A3]/10 border border-[#00D6A3]/30">
+                ALL SYSTEMS OPERATIONAL
+              </span>
+            </div>
 
-          {/* Executive 4-Metric Performance System */}
-          <motion.div 
-            className="relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-          >
-            {/* Subtle Progress Performance Connecting Line */}
-            <div className="hidden lg:block absolute top-1/2 left-8 right-8 h-[1px] bg-gradient-to-r from-blue-200 via-sky-300 to-blue-200 -translate-y-1/2 z-0 pointer-events-none" />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-              
-              {/* Metric 01 */}
-              <motion.div 
-                variants={fadeInUp}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_16px_35px_-8px_rgba(0,48,104,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-default"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-mono font-bold text-slate-400 group-hover:text-[#1078C0] transition-colors">METRIC 01</span>
-                    <div className="w-2 h-2 rounded-full bg-sky-500" />
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight group-hover:text-[#003068] transition-colors">
-                    10 Seconds
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <div className="text-xs sm:text-sm font-medium text-slate-600 leading-snug">
-                    Max lead assignment window
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Metric 02 */}
-              <motion.div 
-                variants={fadeInUp}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_16px_35px_-8px_rgba(0,48,104,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-default"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-mono font-bold text-slate-400 group-hover:text-emerald-600 transition-colors">METRIC 02</span>
-                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight group-hover:text-emerald-700 transition-colors">
-                    100% Audit
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <div className="text-xs sm:text-sm font-medium text-slate-600 leading-snug">
-                    Reconciled commission signoffs
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Metric 03 */}
-              <motion.div 
-                variants={fadeInUp}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_16px_35px_-8px_rgba(0,48,104,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-default"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-mono font-bold text-slate-400 group-hover:text-amber-600 transition-colors">METRIC 03</span>
-                    <div className="w-2 h-2 rounded-full bg-amber-500" />
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight group-hover:text-[#003068] transition-colors">
-                    Meta Verified
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <div className="text-xs sm:text-sm font-medium text-slate-600 leading-snug">
-                    Official WhatsApp Cloud API
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Metric 04 */}
-              <motion.div 
-                variants={fadeInUp}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_16px_35px_-8px_rgba(0,48,104,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-default"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-mono font-bold text-slate-400 group-hover:text-purple-600 transition-colors">METRIC 04</span>
-                    <div className="w-2 h-2 rounded-full bg-purple-500" />
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight group-hover:text-[#003068] transition-colors">
-                    Offline App
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <div className="text-xs sm:text-sm font-medium text-slate-600 leading-snug">
-                    Basement viewing sync
-                  </div>
-                </div>
-              </motion.div>
-
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-xs font-mono">
+              <div className="flex items-center gap-1.5 text-slate-300">
+                <span className="text-[#39BFF5]">Lead Automation:</span>
+                <span className="text-[#00D6A3] font-bold">✓ ACTIVE</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-300">
+                <span className="text-[#00D6A3]">Commission Audit:</span>
+                <span className="text-[#00D6A3] font-bold">✓ ACTIVE</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-300">
+                <span className="text-[#F5B91E]">WhatsApp API:</span>
+                <span className="text-[#00D6A3] font-bold">✓ VERIFIED</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-300">
+                <span className="text-[#A78BFA]">Offline Sync:</span>
+                <span className="text-[#00D6A3] font-bold">✓ READY</span>
+              </div>
             </div>
           </motion.div>
 
