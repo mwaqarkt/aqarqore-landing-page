@@ -189,8 +189,8 @@ export default function App() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
           scrolled 
-            ? 'bg-[#00224D]/95 backdrop-blur-xl border-b border-blue-400/25 shadow-lg' 
-            : 'bg-[#003068]/85 backdrop-blur-md border-b border-white/10'
+            ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-sm' 
+            : 'bg-white/90 backdrop-blur-md border-b border-slate-100'
         }`}
       >
         <nav className="w-full">
@@ -203,10 +203,10 @@ export default function App() {
                   <img src="/aqarqore-logo.png" alt="AqarQore Logo" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xl font-extrabold tracking-tight text-white leading-tight">
+                  <span className="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">
                     AqarQore
                   </span>
-                  <span className="text-[10px] uppercase tracking-widest text-blue-300 font-semibold">
+                  <span className="text-[10px] uppercase tracking-widest text-[#0858A8] font-bold font-mono">
                     GCC Agency OS
                   </span>
                 </div>
@@ -214,28 +214,28 @@ export default function App() {
             </div>
 
             {/* Center: Existing Navigation Links */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-blue-100/90">
-              <a href="#problem" className="hover:text-white transition-colors py-1">Why AqarQore</a>
-              <a href="#showcase" className="hover:text-white transition-colors py-1">Live Property Hub</a>
-              <a href="#features" className="hover:text-white transition-colors py-1">Features</a>
-              <a href="#security" className="hover:text-white transition-colors py-1">Security</a>
-              <a href="#roi" className="hover:text-white transition-colors py-1">ROI Calculator</a>
-              <a href="#pricing" className="hover:text-white transition-colors py-1">Pricing</a>
+            <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-slate-700">
+              <a href="#problem" className="hover:text-[#0858A8] transition-colors py-1">Why AqarQore</a>
+              <a href="#showcase" className="hover:text-[#0858A8] transition-colors py-1">Live Property Hub</a>
+              <a href="#features" className="hover:text-[#0858A8] transition-colors py-1">Features</a>
+              <a href="#security" className="hover:text-[#0858A8] transition-colors py-1">Security</a>
+              <a href="#roi" className="hover:text-[#0858A8] transition-colors py-1">ROI Calculator</a>
+              <a href="#pricing" className="hover:text-[#0858A8] transition-colors py-1">Pricing</a>
             </div>
 
             {/* Right: Existing Action Items & Primary CTA */}
             <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-400/30 hover:border-blue-300 text-xs font-semibold text-blue-100 hover:text-white hover:bg-blue-800/40 transition-all cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 text-xs font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
               >
-                <Globe className="w-3.5 h-3.5 text-blue-300" />
+                <Globe className="w-3.5 h-3.5 text-[#0858A8]" />
                 <span>{isRtl ? 'English' : 'العربية (RTL)'}</span>
               </button>
 
               <a
                 href={DEMO_CTA_URL}
-                className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-blue-600 hover:to-[#1078C0] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-lg shadow-blue-600/30 hover:shadow-blue-500/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-blue-400/30 flex items-center gap-2"
+                className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-blue-600/20 hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-blue-400/30 flex items-center gap-2"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>{isRtl ? 'احجز عرضاً توضيحياً' : 'Book Live Demo'}</span>
@@ -246,7 +246,7 @@ export default function App() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 rounded-xl text-blue-200 hover:text-white hover:bg-blue-800/50 border border-blue-400/20 transition-colors cursor-pointer"
+                className="md:hidden p-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 transition-colors cursor-pointer"
                 aria-label="Toggle navigation menu"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -263,48 +263,48 @@ export default function App() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.2 }}
-                className="md:hidden w-full bg-[#00244D] border-t border-blue-800/80 px-4 py-3 shadow-2xl overflow-hidden"
+                className="md:hidden w-full bg-white border-t border-slate-200 px-4 py-3 shadow-xl overflow-hidden"
               >
-                <div className="flex flex-col space-y-1 text-sm font-medium text-blue-100">
+                <div className="flex flex-col space-y-1 text-sm font-semibold text-slate-700">
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#problem"
-                    className="px-3 py-2 rounded-lg hover:bg-blue-800/40 hover:text-white transition-colors"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
                     Why AqarQore
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#showcase"
-                    className="px-3 py-2 rounded-lg hover:bg-blue-800/40 hover:text-white transition-colors"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
                     Live Property Hub
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#features"
-                    className="px-3 py-2 rounded-lg hover:bg-blue-800/40 hover:text-white transition-colors"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
                     Features
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#security"
-                    className="px-3 py-2 rounded-lg hover:bg-blue-800/40 hover:text-white transition-colors"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
                     Security
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#roi"
-                    className="px-3 py-2 rounded-lg hover:bg-blue-800/40 hover:text-white transition-colors"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
                     ROI Calculator
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#pricing"
-                    className="px-3 py-2 rounded-lg hover:bg-blue-800/40 hover:text-white transition-colors"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
                     Pricing
                   </a>
