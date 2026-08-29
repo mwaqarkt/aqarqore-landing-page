@@ -2957,9 +2957,13 @@ export default function App() {
       {/* -------------------------------------------------------------------------- */}
       {/* 9. FINAL EXECUTIVE CTA BANNER (SLEEK PANORAMIC BAND)                       */}
       {/* -------------------------------------------------------------------------- */}
-      <section className="py-12 sm:py-16 bg-gradient-to-r from-[#00224D] via-[#003068] to-[#0858A8] text-white relative border-y border-blue-400/35 overflow-hidden shadow-2xl">
-        {/* Subtle Decorative Technical Micro-Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+      <section className="py-16 sm:py-20 bg-[#001128] text-white relative border-y border-blue-400/35 overflow-hidden shadow-2xl">
+        {/* User-Provided Analytics & Radar Mesh Background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+          style={{ backgroundImage: `url('/cta-banner-bg.png')` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001128]/80 via-[#001128]/50 to-[#001128]/80 pointer-events-none" />
         <div className="absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 bg-sky-400/15 blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
