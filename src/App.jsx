@@ -1451,10 +1451,9 @@ export default function App() {
       {/* -------------------------------------------------------------------------- */}
       {/* 6B. ENTIRE AGENCY CONNECTED ⭐ NEW (INTERACTIVE NETWORK VISUALIZATION)     */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="connected" className="py-24 sm:py-32 bg-[#001738] text-white relative border-b border-blue-950/80 overflow-hidden">
-        {/* Subtle Decorative Technical Micro-Grid & Ambient Center Illumination */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(16,120,192,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(16,120,192,0.04)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-sky-500/10 blur-[140px] pointer-events-none" />
+      <section id="connected" className="py-24 sm:py-32 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+        {/* Subtle Decorative Technical Micro-Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center">
@@ -1469,24 +1468,24 @@ export default function App() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-sm">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider shadow-sm">
                 ⭐ NEW • ENTIRE AGENCY CONNECTED
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
                 {isRtl ? (
                   'وكالتك بالكامل متصلة في نظام تشغيل موحد'
                 ) : (
                   <>
                     Your Entire Brokerage.
-                    <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-white">
+                    <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#1078C0]">
                       Connected Into One System.
                     </span>
                   </>
                 )}
               </h2>
 
-              <p className="text-blue-100/80 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
                 {isRtl ? (
                   'ربط فوري بين عملاء البوابات، وروبوت واتساب الذكي، وتطبيق المعاينات الميدانية، واعتمادات العمولات المحاسبية في لوحة تحكم واحدة متزامنة.'
                 ) : (
@@ -1496,20 +1495,20 @@ export default function App() {
 
               {/* Core Ecosystem Checklist */}
               <div className="pt-2 space-y-3">
-                <div className="flex items-center gap-3 text-sm text-blue-100/90 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/40">
+                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-300">
                     <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </div>
                   <span>Real-time bidirectional sync across all agency nodes</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-blue-100/90 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/40">
+                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-300">
                     <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </div>
                   <span>Zero data silos — from first portal click to final payout</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-blue-100/90 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/40">
+                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-300">
                     <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </div>
                   <span>Server-enforced security & compliance across GCC</span>
@@ -1520,7 +1519,7 @@ export default function App() {
               <div className="pt-3">
                 <a
                   href={DEMO_CTA_URL}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-sm shadow-lg shadow-blue-600/35 hover:shadow-blue-500/45 transition-all transform hover:-translate-y-0.5 border border-blue-400/35 cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-sm shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all transform hover:-translate-y-0.5 border border-blue-400/35 cursor-pointer"
                 >
                   <span>{isRtl ? 'شاهد ربط النظام المباشر' : 'See Live Agency Integration'}</span>
                   <ArrowRight className={`w-4 h-4 text-blue-100 ${isRtl ? 'rotate-180' : ''}`} />
@@ -1539,17 +1538,17 @@ export default function App() {
               transition={{ duration: 0.8 }}
             >
               {/* Network Board Container */}
-              <div className="relative rounded-3xl bg-gradient-to-b from-[#00224D]/90 via-[#001D42]/95 to-[#001433] p-6 sm:p-8 border border-blue-800/70 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_40px_rgba(16,120,192,0.2)] backdrop-blur-2xl">
+              <div className="relative rounded-3xl bg-white p-6 sm:p-8 border border-slate-200/90 shadow-[0_20px_50px_-15px_rgba(0,48,104,0.08)]">
                 
                 {/* Network Header */}
-                <div className="flex items-center justify-between pb-4 mb-6 border-b border-blue-800/60">
+                <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-xs font-mono font-bold text-blue-200 uppercase tracking-wider">
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                    <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
                       AGENCY TOPOLOGY • ALL SYSTEMS OPERATIONAL
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-sky-300 bg-sky-950/80 px-2.5 py-1 rounded-full border border-sky-800/60">
+                  <span className="text-[10px] font-mono text-[#0858A8] font-semibold bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/70">
                     LATENCY &lt; 10ms
                   </span>
                 </div>
@@ -1560,41 +1559,41 @@ export default function App() {
                   {/* Top Row: Portal Ingestion + WhatsApp Bot */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Node 1 */}
-                    <div className="p-4 rounded-2xl bg-[#002B5E]/60 border border-blue-700/50 hover:border-sky-400/60 hover:bg-[#002B5E]/90 transition-all duration-300 group">
+                    <div className="p-4 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-sky-400 hover:shadow-md transition-all duration-300 group">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-9 h-9 rounded-xl bg-sky-500/20 border border-sky-400/40 text-sky-300 flex items-center justify-center shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-sky-100 border border-sky-200 text-[#0858A8] flex items-center justify-center shrink-0">
                           <Zap className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-white group-hover:text-sky-200 transition-colors">Portal Ingestion</div>
-                          <div className="text-[10px] text-emerald-400 font-mono">Property Finder &amp; Bayut</div>
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-[#0858A8] transition-colors">Portal Ingestion</div>
+                          <div className="text-[10px] text-emerald-600 font-mono font-semibold">Property Finder &amp; Bayut</div>
                         </div>
                       </div>
-                      <p className="text-[11px] text-blue-100/70 leading-normal">
+                      <p className="text-[11px] text-slate-600 leading-normal">
                         Auto-capture and sub-10s round-robin assignment to active agents.
                       </p>
                     </div>
 
                     {/* Node 2 */}
-                    <div className="p-4 rounded-2xl bg-[#002B5E]/60 border border-blue-700/50 hover:border-emerald-400/60 hover:bg-[#002B5E]/90 transition-all duration-300 group">
+                    <div className="p-4 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-emerald-500 hover:shadow-md transition-all duration-300 group">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 flex items-center justify-center shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-emerald-100 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
                           <Bot className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-white group-hover:text-emerald-200 transition-colors">Meta WhatsApp Bot</div>
-                          <div className="text-[10px] text-emerald-400 font-mono">24/7 AI Buyer Qualification</div>
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Meta WhatsApp Bot</div>
+                          <div className="text-[10px] text-emerald-600 font-mono font-semibold">24/7 AI Buyer Qualification</div>
                         </div>
                       </div>
-                      <p className="text-[11px] text-blue-100/70 leading-normal">
+                      <p className="text-[11px] text-slate-600 leading-normal">
                         Pre-qualifies budget and area conversationally before human handoff.
                       </p>
                     </div>
                   </div>
 
                   {/* CENTERPIECE: Central Core Hub */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-r from-[#003068] via-[#0858A8]/60 to-[#003068] border-2 border-sky-400/50 shadow-[0_0_30px_rgba(16,120,192,0.3)] text-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none" />
+                  <div className="p-5 rounded-2xl bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#003068] text-white border border-blue-400/40 shadow-lg text-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none" />
                     <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                       <div className="flex items-center gap-3 text-left">
                         <div className="w-11 h-11 rounded-2xl bg-white text-[#003068] font-black text-base flex items-center justify-center shadow-md shrink-0">
@@ -1605,7 +1604,7 @@ export default function App() {
                           <div className="text-[11px] text-sky-200 font-medium">GCC Central Agency Operating System</div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-300 bg-[#001D42]/90 px-3 py-1.5 rounded-xl border border-emerald-500/40 shrink-0">
+                      <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-300 bg-[#001D42]/80 px-3 py-1.5 rounded-xl border border-emerald-400/30 shrink-0">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                         Live Synchronized Backbone
                       </div>
@@ -1615,33 +1614,33 @@ export default function App() {
                   {/* Bottom Row: Mobile Field Sync + Financial Approval Lock */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Node 3 */}
-                    <div className="p-4 rounded-2xl bg-[#002B5E]/60 border border-blue-700/50 hover:border-purple-400/60 hover:bg-[#002B5E]/90 transition-all duration-300 group">
+                    <div className="p-4 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-purple-400 hover:shadow-md transition-all duration-300 group">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-9 h-9 rounded-xl bg-purple-500/20 border border-purple-400/40 text-purple-300 flex items-center justify-center shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-purple-100 border border-purple-200 text-purple-700 flex items-center justify-center shrink-0">
                           <CheckCircle className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-white group-hover:text-purple-200 transition-colors">Offline Mobile App</div>
-                          <div className="text-[10px] text-purple-300 font-mono">Basement &amp; Field Viewings</div>
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-purple-700 transition-colors">Offline Mobile App</div>
+                          <div className="text-[10px] text-purple-600 font-mono font-semibold">Basement &amp; Field Viewings</div>
                         </div>
                       </div>
-                      <p className="text-[11px] text-blue-100/70 leading-normal">
+                      <p className="text-[11px] text-slate-600 leading-normal">
                         Offline viewing sync with instant queue replay once reconnected.
                       </p>
                     </div>
 
                     {/* Node 4 */}
-                    <div className="p-4 rounded-2xl bg-[#002B5E]/60 border border-blue-700/50 hover:border-amber-400/60 hover:bg-[#002B5E]/90 transition-all duration-300 group">
+                    <div className="p-4 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-amber-400 hover:shadow-md transition-all duration-300 group">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-200 text-amber-700 flex items-center justify-center shrink-0">
                           <DollarSign className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-white group-hover:text-amber-200 transition-colors">Financial Control</div>
-                          <div className="text-[10px] text-amber-300 font-mono">2-Step Server Signoff</div>
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">Financial Control</div>
+                          <div className="text-[10px] text-amber-600 font-mono font-semibold">2-Step Server Signoff</div>
                         </div>
                       </div>
-                      <p className="text-[11px] text-blue-100/70 leading-normal">
+                      <p className="text-[11px] text-slate-600 leading-normal">
                         Sales Director to Accounting approval lock with immutable audit.
                       </p>
                     </div>
@@ -1650,12 +1649,12 @@ export default function App() {
                 </div>
 
                 {/* Footer Security Badge */}
-                <div className="mt-5 pt-3.5 border-t border-blue-800/60 flex items-center justify-between text-[11px] text-blue-300 font-mono">
+                <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
                   <span className="flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                     Encrypted GCC Network
                   </span>
-                  <span className="text-sky-300">100% Data Sovereignty</span>
+                  <span className="text-[#0858A8] font-semibold">100% Data Sovereignty</span>
                 </div>
 
               </div>
