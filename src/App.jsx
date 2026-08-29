@@ -1329,51 +1329,122 @@ export default function App() {
       {/* -------------------------------------------------------------------------- */}
       {/* 6. SECURITY & TRUST SECTION                                               */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="security" className="py-24 bg-[#001D42] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/80 border border-blue-500/30 text-blue-200 text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" /> Enterprise-Grade Trust & Compliance
+      <section id="security" className="py-24 sm:py-32 bg-[#001433] text-white relative border-b border-blue-950/80 overflow-hidden">
+        {/* Subtle Decorative Security Grid & Ambient Radial Cyan Glow */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[140px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Section Header */}
+          <motion.div 
+            className="text-center max-w-3xl mx-auto space-y-4 mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider shadow-sm">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" /> Enterprise-Grade Trust & Compliance
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
               Institutional Security Built for GCC Data Sovereignty
             </h2>
-            <p className="text-blue-200/80 text-base">
+            <p className="text-blue-100/80 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               Restrained, server-enforced boundaries designed to eliminate ex-employee leaks, unauthorized access, and compliance violations.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-[#003068]/70 p-6 rounded-2xl border border-blue-800/60 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-900/80 text-sky-400 flex items-center justify-center border border-blue-600/30">
-                <Key className="w-5 h-5" />
+          {/* 3 Institutional Security Pillars */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={staggerContainer}
+          >
+            {/* Security Pillar 01 */}
+            <motion.div 
+              variants={fadeInUp}
+              className="bg-[#001E45]/80 hover:bg-[#002654] p-7 sm:p-8 rounded-2xl border border-blue-800/60 hover:border-sky-400/40 backdrop-blur-md transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-blue-900/60 border border-blue-500/30 text-sky-400 group-hover:text-emerald-300 group-hover:border-emerald-500/40 flex items-center justify-center transition-all">
+                    <Key className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-blue-300/70 bg-blue-950 px-2.5 py-1 rounded border border-blue-800/60">
+                    01 // TOTP AUTH
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors mb-3">
+                  Multi-Factor Authentication
+                </h3>
+                <p className="text-sm text-blue-100/75 leading-relaxed font-normal">
+                  TOTP-based MFA on every staff login, with throttling after repeated failed attempts and no user-existence disclosure on invalid credentials. Agency data can't be breached by a leaked password alone.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-white">Multi-Factor Authentication</h3>
-              <p className="text-xs text-blue-200/80 leading-relaxed">
-                TOTP-based MFA on every staff login, with throttling after repeated failed attempts and no user-existence disclosure on invalid credentials. Agency data can't be breached by a leaked password alone.
-              </p>
-            </div>
+              <div className="mt-6 pt-4 border-t border-blue-800/50 flex items-center gap-2 text-[11px] font-mono text-emerald-400">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>TOTP • Throttled Anti-Brute-Force</span>
+              </div>
+            </motion.div>
 
-            <div className="bg-[#003068]/70 p-6 rounded-2xl border border-blue-800/60 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-900/80 text-sky-400 flex items-center justify-center border border-blue-600/30">
-                <Lock className="w-5 h-5" />
+            {/* Security Pillar 02 */}
+            <motion.div 
+              variants={fadeInUp}
+              className="bg-[#001E45]/80 hover:bg-[#002654] p-7 sm:p-8 rounded-2xl border border-blue-800/60 hover:border-sky-400/40 backdrop-blur-md transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-blue-900/60 border border-blue-500/30 text-sky-400 group-hover:text-emerald-300 group-hover:border-emerald-500/40 flex items-center justify-center transition-all">
+                    <Lock className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-blue-300/70 bg-blue-950 px-2.5 py-1 rounded border border-blue-800/60">
+                    02 // 403 RBAC
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors mb-3">
+                  Role-Based Access Boundaries
+                </h3>
+                <p className="text-sm text-blue-100/75 leading-relaxed font-normal">
+                  Managers see only their own team's leads; agents can never open another agent's record even by direct URL — enforced server-side with 403s.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-white">Role-Based Access Boundaries</h3>
-              <p className="text-xs text-blue-200/80 leading-relaxed">
-                Managers see only their own team's leads; agents can never open another agent's record even by direct URL — enforced server-side with 403s.
-              </p>
-            </div>
+              <div className="mt-6 pt-4 border-t border-blue-800/50 flex items-center gap-2 text-[11px] font-mono text-emerald-400">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Server-Side RBAC • Zero URL Leak</span>
+              </div>
+            </motion.div>
 
-            <div className="bg-[#003068]/70 p-6 rounded-2xl border border-blue-800/60 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-900/80 text-sky-400 flex items-center justify-center border border-blue-600/30">
-                <UserX className="w-5 h-5" />
+            {/* Security Pillar 03 */}
+            <motion.div 
+              variants={fadeInUp}
+              className="bg-[#001E45]/80 hover:bg-[#002654] p-7 sm:p-8 rounded-2xl border border-blue-800/60 hover:border-sky-400/40 backdrop-blur-md transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-blue-900/60 border border-blue-500/30 text-sky-400 group-hover:text-emerald-300 group-hover:border-emerald-500/40 flex items-center justify-center transition-all">
+                    <UserX className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-blue-300/70 bg-blue-950 px-2.5 py-1 rounded border border-blue-800/60">
+                    03 // INSTANT REVOKE
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors mb-3">
+                  Instant Offboarding
+                </h3>
+                <p className="text-sm text-blue-100/75 leading-relaxed font-normal">
+                  Terminated staff lose all session and token access in under a minute, with their leads automatically reassigned or parked per policy.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-white">Instant Offboarding</h3>
-              <p className="text-xs text-blue-200/80 leading-relaxed">
-                Terminated staff lose all session and token access in under a minute, with their leads automatically reassigned or parked per policy.
-              </p>
-            </div>
-          </div>
+              <div className="mt-6 pt-4 border-t border-blue-800/50 flex items-center gap-2 text-[11px] font-mono text-emerald-400">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Sub-60s Session Kill • Auto-Reassign</span>
+              </div>
+            </motion.div>
+          </motion.div>
+
         </div>
       </section>
 
