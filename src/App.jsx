@@ -1670,88 +1670,166 @@ export default function App() {
       {/* -------------------------------------------------------------------------- */}
       {/* 7. AUTOMATION / ROI PROOF & CALCULATOR                                     */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="roi" className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div className="lg:col-span-6 space-y-6">
-              <span className="px-3.5 py-1 rounded-full bg-blue-500/20 text-sky-300 text-xs font-bold uppercase tracking-wider border border-blue-400/20">
-                Calculated Revenue Recovery
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-                Calculate Your Agency's Recovered Revenue
-              </h2>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Drag the sliders to estimate how much revenue your brokerage loses to unassigned leads and spreadsheet delays each year.
-              </p>
+      <section id="roi" className="py-24 sm:py-32 bg-[#001433] text-white relative border-b border-blue-950/80 overflow-hidden">
+        {/* Subtle Decorative Technical Micro-Grid & Ambient Radial Lighting */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[150px] pointer-events-none" />
 
-              <div className="bg-slate-800/90 p-6 rounded-2xl border border-slate-700 space-y-5">
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-200 mb-2">
-                    <span>Number of Active Agents</span>
-                    <span className="text-sky-400 text-sm">{agentCount} Agents</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center">
+            
+            {/* ------------------------------------------------------------------ */}
+            {/* LEFT COLUMN: INTERACTIVE FINANCIAL SIMULATION CONSOLE               */}
+            {/* ------------------------------------------------------------------ */}
+            <motion.div 
+              className="lg:col-span-7 space-y-6"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="space-y-3">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider shadow-sm">
+                  <TrendingUp className="w-3.5 h-3.5 text-emerald-400 shrink-0" /> Calculated Revenue Recovery
+                </span>
+
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+                  Calculate Your Agency's Recovered Revenue
+                </h2>
+
+                <p className="text-blue-100/80 text-base sm:text-lg leading-relaxed font-normal max-w-xl">
+                  Drag the sliders to estimate how much revenue your brokerage loses to unassigned leads and spreadsheet delays each year.
+                </p>
+              </div>
+
+              {/* Calculator Panel */}
+              <div className="bg-[#001E45]/90 rounded-3xl p-6 sm:p-8 border border-blue-800/70 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_35px_rgba(16,120,192,0.15)] backdrop-blur-xl space-y-6">
+                
+                {/* Slider 1: Active Agents */}
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center text-xs font-bold">
+                    <span className="text-blue-200 tracking-wide">Number of Active Agents</span>
+                    <span className="text-sky-300 font-mono text-sm bg-sky-950/80 px-3 py-1 rounded-lg border border-sky-800/60 shadow-inner">
+                      {agentCount} Agents
+                    </span>
                   </div>
-                  <input
-                    type="range"
-                    min="3"
-                    max="100"
-                    value={agentCount}
-                    onChange={(e) => setAgentCount(Number(e.target.value))}
-                    className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#1078C0]"
-                  />
+                  <div className="relative flex items-center">
+                    <input
+                      type="range"
+                      min="3"
+                      max="100"
+                      value={agentCount}
+                      onChange={(e) => setAgentCount(Number(e.target.value))}
+                      className="w-full h-2.5 bg-blue-950 rounded-lg appearance-none cursor-pointer accent-[#1078C0] border border-blue-800/60"
+                    />
+                  </div>
+                  <div className="flex justify-between text-[10px] text-blue-300/60 font-mono">
+                    <span>3 Boutique</span>
+                    <span>50 Mid-Size</span>
+                    <span>100+ Enterprise</span>
+                  </div>
                 </div>
 
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-200 mb-2">
-                    <span>Average Property Transaction Value</span>
-                    <span className="text-emerald-400 text-sm">
+                {/* Slider 2: Average Deal Value */}
+                <div className="space-y-3 pt-2">
+                  <div className="flex justify-between items-center text-xs font-bold">
+                    <span className="text-blue-200 tracking-wide">Average Property Transaction Value</span>
+                    <span className="text-emerald-400 font-mono text-sm bg-emerald-950/80 px-3 py-1 rounded-lg border border-emerald-500/40 shadow-inner">
                       {isRtl ? `${avgDealValue.toLocaleString()} ر.ق / د.إ` : `AED / QAR ${avgDealValue.toLocaleString()}`}
                     </span>
                   </div>
-                  <input
-                    type="range"
-                    min="500000"
-                    max="10000000"
-                    step="250000"
-                    value={avgDealValue}
-                    onChange={(e) => setAvgDealValue(Number(e.target.value))}
-                    className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#1078C0]"
-                  />
+                  <div className="relative flex items-center">
+                    <input
+                      type="range"
+                      min="500000"
+                      max="10000000"
+                      step="250000"
+                      value={avgDealValue}
+                      onChange={(e) => setAvgDealValue(Number(e.target.value))}
+                      className="w-full h-2.5 bg-blue-950 rounded-lg appearance-none cursor-pointer accent-emerald-500 border border-blue-800/60"
+                    />
+                  </div>
+                  <div className="flex justify-between text-[10px] text-blue-300/60 font-mono">
+                    <span>500K Mid-Market</span>
+                    <span>5M Luxury</span>
+                    <span>10M+ Prime</span>
+                  </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-700/80 grid grid-cols-2 gap-4">
-                  <div className="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
-                    <div className="text-xs text-slate-400 font-medium">Est. Recovered Revenue</div>
-                    <div className="text-2xl font-extrabold text-emerald-400 mt-1">
+                {/* Real-time Output Metric Cards */}
+                <div className="pt-4 border-t border-blue-800/50 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Recovered Revenue Box */}
+                  <div className="bg-[#002859] p-5 rounded-2xl border border-emerald-500/40 shadow-lg relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none" />
+                    <div className="text-xs text-emerald-300 font-medium flex items-center gap-1.5 mb-1">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      Est. Recovered Revenue
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1 font-mono">
                       {isRtl ? `${annualSavedRevenue.toLocaleString()} ر.ق/د.إ` : `AED ${annualSavedRevenue.toLocaleString()}`}
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-0.5">per year saved</div>
+                    <div className="text-[11px] text-blue-200/70 mt-1 font-medium">per year saved</div>
                   </div>
 
-                  <div className="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
-                    <div className="text-xs text-slate-400 font-medium">Hours Saved / Month</div>
-                    <div className="text-2xl font-extrabold text-sky-400 mt-1">
+                  {/* Hours Saved Box */}
+                  <div className="bg-[#002859] p-5 rounded-2xl border border-sky-500/40 shadow-lg relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-sky-500/10 rounded-full blur-xl pointer-events-none" />
+                    <div className="text-xs text-sky-300 font-medium flex items-center gap-1.5 mb-1">
+                      <Clock className="w-3.5 h-3.5 text-sky-400" />
+                      Hours Saved / Month
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1 font-mono">
                       {monthlyHoursSaved} Hrs
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-0.5">no manual spreadsheets</div>
+                    <div className="text-[11px] text-blue-200/70 mt-1 font-medium">no manual spreadsheets</div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="lg:col-span-6 grid grid-cols-2 gap-6">
-              <div className="bg-[#003068] p-6 rounded-2xl border border-blue-700/60 text-center space-y-2">
-                <div className="text-4xl sm:text-5xl font-extrabold text-emerald-400">99.8%</div>
-                <div className="text-sm font-bold text-white">Sub-10s Response</div>
-                <p className="text-xs text-blue-200/80">Leads assigned to active agents before competitor calls.</p>
+              </div>
+            </motion.div>
+
+            {/* ------------------------------------------------------------------ */}
+            {/* RIGHT COLUMN: INSTITUTIONAL PERFORMANCE TELEMETRY TILES            */}
+            {/* ------------------------------------------------------------------ */}
+            <motion.div 
+              className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5"
+              initial={{ opacity: 0, x: 25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7 }}
+            >
+              {/* Telemetry Tile 1 */}
+              <div className="bg-gradient-to-b from-[#00224D] to-[#001A3D] p-7 rounded-3xl border border-blue-700/60 shadow-xl space-y-3 hover:border-emerald-400/50 transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div className="text-4xl sm:text-5xl font-black text-emerald-400 font-mono tracking-tight">
+                    99.8%
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
+                    <Zap className="w-5 h-5" />
+                  </div>
+                </div>
+                <div className="text-base font-bold text-white">Sub-10s Response</div>
+                <p className="text-xs text-blue-100/75 leading-relaxed">
+                  Leads assigned to active agents before competitor calls.
+                </p>
               </div>
 
-              <div className="bg-[#003068] p-6 rounded-2xl border border-blue-700/60 text-center space-y-2">
-                <div className="text-4xl sm:text-5xl font-extrabold text-sky-300">4.2x</div>
-                <div className="text-sm font-bold text-white">Faster Approvals</div>
-                <p className="text-xs text-blue-200/80">Enforced 2-step director to accounting deal signoffs.</p>
+              {/* Telemetry Tile 2 */}
+              <div className="bg-gradient-to-b from-[#00224D] to-[#001A3D] p-7 rounded-3xl border border-blue-700/60 shadow-xl space-y-3 hover:border-sky-400/50 transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div className="text-4xl sm:text-5xl font-black text-sky-300 font-mono tracking-tight">
+                    4.2x
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-500/30 text-sky-300 flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5" />
+                  </div>
+                </div>
+                <div className="text-base font-bold text-white">Faster Approvals</div>
+                <p className="text-xs text-blue-100/75 leading-relaxed">
+                  Enforced 2-step director to accounting deal signoffs.
+                </p>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
