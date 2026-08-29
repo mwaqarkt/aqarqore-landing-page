@@ -610,14 +610,14 @@ export default function App() {
       >
         {/* Layer 1: Official GCC Skyline (Dubai • Doha • Riyadh) Connected Network Image */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-85"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-70 filter brightness-75 saturate-110"
           style={{ backgroundImage: 'url(/gcc-hero-bg.jpg)' }}
         />
 
-        {/* Layer 2: Deep Midnight & Cyan Ambient Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001B3D]/85 via-[#001B3D]/50 to-[#001B3D]/65 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/70 via-transparent to-[#001B3D]/85 z-0 pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[120px] pointer-events-none z-0" />
+        {/* Layer 2: Deep Midnight Contrast Overlays for Maximum Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00142E]/98 via-[#001B3D]/85 to-[#001B3D]/70 z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/85 via-transparent to-[#001B3D]/95 z-0 pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-[#0878D1]/15 via-[#39BFF5]/10 to-transparent blur-[130px] pointer-events-none z-0" />
 
         {/* MAIN HERO CONTENT CONTAINER (LEFT COPY + RIGHT VISUAL) */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
