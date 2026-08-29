@@ -199,7 +199,7 @@ export default function App() {
             {/* Left: Existing Logo */}
             <div className="flex-shrink-0">
               <a href="#" className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#1078C0] rounded-xl p-1">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-1 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform border border-blue-400/30 overflow-hidden">
+                <div className="w-10 h-10 flex items-center justify-center group-hover:scale-105 transition-transform">
                   <img src="/aqarqore-logo.png" alt="AqarQore Logo" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col">
@@ -1599,8 +1599,8 @@ export default function App() {
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none" />
                     <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                       <div className="flex items-center gap-3 text-left">
-                        <div className="w-12 h-12 rounded-2xl bg-white p-1 flex items-center justify-center shadow-md shrink-0 border border-blue-200 overflow-hidden">
-                          <img src="/aqarqore-logo.png" alt="AqarQore" className="w-full h-full object-contain" />
+                        <div className="w-12 h-12 flex items-center justify-center shrink-0">
+                          <img src="/aqarqore-logo.png" alt="AqarQore" className="w-full h-full object-contain filter drop-shadow-md" />
                         </div>
                         <div>
                           <div className="text-sm font-extrabold text-white">AqarQore Core Engine</div>
@@ -2301,7 +2301,7 @@ export default function App() {
             {/* Brand Signature Column (Col Span 5) */}
             <div className="lg:col-span-5 space-y-5">
               <a href="#" className="flex items-center gap-3 group w-fit">
-                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center p-1 shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform border border-blue-400/30 overflow-hidden">
+                <div className="w-12 h-12 flex items-center justify-center group-hover:scale-105 transition-transform">
                   <img src="/aqarqore-logo.png" alt="AqarQore Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
