@@ -478,394 +478,114 @@ export default function App() {
       </header>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 1. HERO SECTION: GCC PROPERTY INTELLIGENCE COMMAND CENTER & LIVING NETWORK */}
+      {/* 1. HERO SECTION: CENTERED HIGH-IMPACT ENTERPRISE GCC PROPERTY PLATFORM    */}
       {/* -------------------------------------------------------------------------- */}
       <section 
         onMouseMove={handleHeroMouseMove}
-        className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001B3D] text-white overflow-hidden"
+        className="relative min-h-[85vh] flex items-center justify-center pt-28 pb-20 lg:pt-36 lg:pb-28 bg-[#001B3D] text-white overflow-hidden"
       >
-        {/* BACKGROUND LAYER 1: Subtle GCC Technical Atmosphere */}
-        <div className="absolute inset-0 bg-radial from-[#062D5C]/50 via-[#032653]/80 to-[#001B3D] pointer-events-none z-0" />
-        
-        {/* Soft Radial Cyan/Blue Glow behind Command Center */}
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[140px] pointer-events-none z-0" />
+        {/* Subtle Radial Midnight Glow Background */}
+        <div className="absolute inset-0 bg-radial from-[#062D5C]/60 via-[#032653]/80 to-[#001B3D] pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[150px] pointer-events-none z-0" />
 
-        {/* MAIN HERO CONTENT CONTAINER */}
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-14 items-center">
-            
-            {/* ---------------------------------------------------------------------- */}
-            {/* LEFT COLUMN: HIGH-IMPACT TYPOGRAPHIC & ENTERPRISE VALUE ENGINE (~48%)  */}
-            {/* ---------------------------------------------------------------------- */}
-            <motion.div 
-              className="lg:col-span-6 xl:col-span-5 space-y-6 text-left"
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
+        {/* MAIN HERO CONTENT CONTAINER (CENTERED) */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
+          <motion.div 
+            className="space-y-8 max-w-4xl mx-auto flex flex-col items-center"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            {/* Premium Eyebrow + Live Indicator */}
+            <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-2.5">
+              <span className="px-3.5 py-1 rounded-full bg-[#032653]/90 border border-[#39BFF5]/40 text-[#39BFF5] text-xs font-bold uppercase tracking-widest font-mono shadow-sm">
+                GCC PROPERTY OPERATING SYSTEM
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#00D6A3]/10 border border-[#00D6A3]/30 text-[#00D6A3] text-xs font-mono font-semibold">
+                <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
+                LIVE NETWORK — DUBAI • DOHA • RIYADH
+              </span>
+            </motion.div>
+
+            {/* Main Dominant Display Headline */}
+            <motion.h1 
+              variants={fadeInUp}
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-extrabold tracking-tight text-white leading-[1.08]"
             >
-              {/* Premium Eyebrow + Live Indicator */}
-              <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-2.5">
-                <span className="px-3 py-1 rounded-full bg-[#032653]/90 border border-[#39BFF5]/40 text-[#39BFF5] text-[11px] font-bold uppercase tracking-widest font-mono shadow-sm">
-                  GCC PROPERTY OPERATING SYSTEM
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00D6A3]/10 border border-[#00D6A3]/30 text-[#00D6A3] text-[11px] font-mono font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
-                  LIVE NETWORK — DUBAI • DOHA • RIYADH
-                </span>
-              </motion.div>
-
-              {/* Main Dominant Display Headline */}
-              <motion.h1 
-                variants={fadeInUp}
-                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold tracking-tight text-white leading-[1.06] max-w-[650px]"
-              >
-                {isRtl ? (
-                  <>
-                    <span>أوقف إهدار عملاء العقارات ذوي القيمة العالية</span>
-                    <span className="block mt-2 text-white">
-                      أدر وكالتك بالكامل{' '}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-[#39BFF5] to-[#0878D1]">
-                        تلقائياً
-                      </span>
+              {isRtl ? (
+                <>
+                  <span>أوقف إهدار عملاء العقارات ذوي القيمة العالية</span>
+                  <span className="block mt-3 text-white">
+                    أدر وكالتك بالكامل{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-[#39BFF5] to-[#0878D1]">
+                      تلقائياً
                     </span>
-                  </>
-                ) : (
-                  <>
-                    <span>Stop Losing High Value Property Leads</span>
-                    <span className="block mt-2">
-                      <span className="text-white">Run Your Entire Agency</span>{' '}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-[#39BFF5] to-[#168FE5]">
-                        Automatically
-                      </span>
-                    </span>
-                  </>
-                )}
-              </motion.h1>
-
-              {/* High-Readability Supporting Paragraph */}
-              <motion.p 
-                variants={fadeInUp} 
-                className="text-base sm:text-lg lg:text-[18px] text-[#A9C9E8] font-normal leading-[1.65] max-w-[650px]"
-              >
-                {isRtl ? (
-                  'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ. تأهيل العملاء بالذكاء الاصطناعي، وتطبيق ميداني، وموافقة عمولات بخطوتين في نظام خليجي موحد'
-                ) : (
-                  'Auto assign leads from Property Finder, Bayut, and Meta WhatsApp in under 10 seconds. AI buyer qualification, offline mobile app, and 2 step commission signoffs in one unified GCC system'
-                )}
-              </motion.p>
-
-              {/* Premium Asymmetric CTA Action Row */}
-              <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                {/* Primary CTA Button with Radiant Glow */}
-                <a
-                  href={DEMO_CTA_URL}
-                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#0878D1] via-[#168FE5] to-[#0878D1] hover:from-[#168FE5] hover:to-[#0878D1] text-white font-bold text-sm sm:text-base shadow-[0_0_28px_rgba(22,143,229,0.45)] hover:shadow-[0_0_36px_rgba(57,191,245,0.6)] transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-[#39BFF5]/40 group cursor-pointer text-center"
-                >
-                  <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
-                  <ArrowRight className={`w-4 h-4 text-blue-100 group-hover:translate-x-1.5 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1.5' : ''}`} />
-                </a>
-
-                {/* Secondary Translucent Glass Button with Scale Icon */}
-                <button
-                  onClick={() => setIsVideoModalOpen(true)}
-                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
-                >
-                  <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
                   </span>
-                  <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
-                </button>
-              </motion.div>
+                </>
+              ) : (
+                <>
+                  <span>Stop Losing High Value Property Leads</span>
+                  <span className="block mt-3">
+                    <span className="text-white">Run Your Entire Agency</span>{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-[#39BFF5] to-[#168FE5]">
+                      Automatically
+                    </span>
+                  </span>
+                </>
+              )}
+            </motion.h1>
 
-              {/* Verified Trust Badges */}
-              <motion.div variants={fadeInUp} className="pt-2 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-[#A9C9E8] font-medium">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
-                  <span>Meta Official Cloud API Partner</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
-                  <span>Property Finder & Bayut Live Sync</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
-                  <span>Go Live in Under 48 Hours</span>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* ---------------------------------------------------------------------- */}
-            {/* RIGHT COLUMN: FLOATING AQARQORE COMMAND CENTER & LIVING NETWORK (~50%)  */}
-            {/* ---------------------------------------------------------------------- */}
-            <motion.div 
-              className="lg:col-span-6 xl:col-span-6 relative"
-              initial={{ opacity: 0, y: 35 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            {/* High-Readability Supporting Paragraph */}
+            <motion.p 
+              variants={fadeInUp} 
+              className="text-lg sm:text-xl lg:text-[21px] text-[#A9C9E8] font-normal leading-[1.65] max-w-3xl mx-auto"
             >
-              {/* Parallax Container */}
-              <motion.div
-                style={{
-                  x: mouseOffset.x * 0.4,
-                  y: mouseOffset.y * 0.4,
-                  transition: 'transform 0.15s ease-out'
-                }}
-                className="relative"
+              {isRtl ? (
+                'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ. تأهيل العملاء بالذكاء الاصطناعي، وتطبيق ميداني، وموافقة عمولات بخطوتين في نظام خليجي موحد'
+              ) : (
+                'Auto assign leads from Property Finder, Bayut, and Meta WhatsApp in under 10 seconds. AI buyer qualification, offline mobile app, and 2 step commission signoffs in one unified GCC system'
+              )}
+            </motion.p>
+
+            {/* Premium Centered CTA Action Row */}
+            <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+              {/* Primary CTA Button with Radiant Glow */}
+              <a
+                href={DEMO_CTA_URL}
+                className="w-full sm:w-auto inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-[#0878D1] via-[#168FE5] to-[#0878D1] hover:from-[#168FE5] hover:to-[#0878D1] text-white font-bold text-base shadow-[0_0_28px_rgba(22,143,229,0.45)] hover:shadow-[0_0_36px_rgba(57,191,245,0.6)] transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-[#39BFF5]/40 group cursor-pointer text-center"
               >
-                {/* ------------------------------------------------------------------ */}
-                {/* 1. MAIN COMMAND CENTER GLASS CHASSIS                               */}
-                {/* ------------------------------------------------------------------ */}
-                <div className="relative rounded-3xl bg-[#032653]/90 border border-[#39BFF5]/35 shadow-[0_25px_65px_-15px_rgba(0,0,0,0.85),0_0_35px_rgba(8,120,209,0.25)] backdrop-blur-2xl overflow-hidden">
-                  
-                  {/* Top Bar Header */}
-                  <div className="px-4 sm:px-5 py-3.5 bg-[#001B3D]/95 border-b border-blue-800/70 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#00D6A3]" />
-                      </div>
-                      <div className="flex items-center gap-2 pl-2 border-l border-blue-800/80">
-                        <span className="text-xs font-bold text-white tracking-wide">AqarQore Intelligence</span>
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#00D6A3]/15 text-[#00D6A3] text-[10px] font-mono font-bold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3] animate-ping" />
-                          LIVE
-                        </span>
-                      </div>
-                    </div>
+                <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
+                <ArrowRight className={`w-4 h-4 text-blue-100 group-hover:translate-x-1.5 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1.5' : ''}`} />
+              </a>
 
-                    <div className="text-[11px] font-mono text-sky-300 font-semibold hidden sm:flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
-                      <span>Dubai • Doha • Riyadh</span>
-                    </div>
-                  </div>
-
-                  {/* Sub-Header Status */}
-                  <div className="px-4 sm:px-5 py-2 bg-[#062D5C]/60 border-b border-blue-900/60 flex items-center justify-between text-[11px]">
-                    <span className="text-[#A9C9E8] font-mono">Agency Network • Live Operations</span>
-                    <span className="text-[#00D6A3] font-mono font-medium">99.98% Gateway Active</span>
-                  </div>
-
-                  {/* ------------------------------------------------------------------ */}
-                  {/* 2. CENTRAL LIVE PROPERTY NETWORK VISUAL PIPELINE                   */}
-                  {/* ------------------------------------------------------------------ */}
-                  <div className="relative p-4 sm:p-5 flex items-center justify-between gap-2 sm:gap-4 overflow-hidden bg-gradient-to-b from-[#032653]/60 via-[#001B3D]/80 to-[#032653]/90 min-h-[300px]">
-                    
-                    {/* Left Pipeline Ingestion: Lead Sources */}
-                    <div className="flex flex-col gap-3 z-10 flex-1 max-w-[170px]">
-                      
-                      {/* Node 1: Property Finder */}
-                      <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-sky-400/40 shadow-md flex items-center gap-2.5 text-left hover:border-sky-300 hover:scale-[1.02] transition-all">
-                        <div className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 border border-sky-400/30">
-                          <Building2 className="w-4 h-4" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-[11px] font-bold text-white truncate leading-tight">Property Finder</div>
-                          <div className="text-[9px] text-[#00D6A3] font-mono">Auto-Sync • 10s</div>
-                        </div>
-                      </div>
-
-                      {/* Node 2: Bayut Live */}
-                      <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-emerald-400/40 shadow-md flex items-center gap-2.5 text-left hover:border-emerald-300 hover:scale-[1.02] transition-all">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-400/30">
-                          <Globe className="w-4 h-4" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-[11px] font-bold text-white truncate leading-tight">Bayut Live</div>
-                          <div className="text-[9px] text-emerald-300 font-mono">Lead Ingested</div>
-                        </div>
-                      </div>
-
-                      {/* Node 3: Meta WhatsApp */}
-                      <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-green-500/40 shadow-md flex items-center gap-2.5 text-left hover:border-green-400 hover:scale-[1.02] transition-all">
-                        <div className="w-8 h-8 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center shrink-0 border border-green-400/30">
-                          <MessageSquare className="w-4 h-4" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-[11px] font-bold text-white truncate leading-tight">Meta WhatsApp</div>
-                          <div className="text-[9px] text-sky-300 font-mono">AI Bot Active</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Left Ingestion Animated Flow Conduit */}
-                    <div className="hidden sm:flex flex-col justify-around h-full py-8 items-center w-4 shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400/60 animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400/60 animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400/60 animate-ping" />
-                    </div>
-
-                    {/* Centerpiece: Glowing AqarQore Intelligence Core Engine */}
-                    <div className="relative z-10 flex flex-col items-center justify-center text-center p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-[#0878D1] via-[#032653] to-[#001B3D] border-2 border-[#39BFF5] shadow-[0_0_35px_rgba(57,191,245,0.45)] shrink-0 w-32 sm:w-36">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white p-1 flex items-center justify-center shadow-lg mb-1.5">
-                        <img src="/aqarqore-emblem.png" alt="AqarQore" className="w-full h-full object-contain" />
-                      </div>
-                      <span className="text-[11px] sm:text-xs font-black text-white tracking-wider uppercase">AGARQORE</span>
-                      <span className="text-[8px] sm:text-[9px] uppercase font-mono tracking-widest text-[#39BFF5] font-bold mt-0.5">INTELLIGENCE</span>
-                      <div className="mt-1 flex items-center gap-1 text-[8px] font-mono text-[#00D6A3]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3] animate-ping" />
-                        Live Core
-                      </div>
-                    </div>
-
-                    {/* Right Execution Animated Flow Conduit */}
-                    <div className="hidden sm:flex flex-col justify-around h-full py-8 items-center w-4 shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]/60 animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]/60 animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]/60 animate-ping" />
-                    </div>
-
-                    {/* Right Pipeline Execution: Qualification, Dispatch, Payout */}
-                    <div className="flex flex-col gap-3 z-10 flex-1 max-w-[170px]">
-                      
-                      {/* Node 4: AI Qualification */}
-                      <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-sky-400/40 shadow-md flex items-center gap-2.5 text-left hover:border-sky-300 hover:scale-[1.02] transition-all">
-                        <div className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 border border-sky-400/30">
-                          <Sparkles className="w-4 h-4" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-[11px] font-bold text-white truncate leading-tight">AI Qualification</div>
-                          <div className="text-[9px] text-[#00D6A3] font-mono">Score: 94% Intent</div>
-                        </div>
-                      </div>
-
-                      {/* Node 5: Agent Dispatch */}
-                      <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-blue-400/40 shadow-md flex items-center gap-2.5 text-left hover:border-blue-300 hover:scale-[1.02] transition-all">
-                        <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 border border-blue-400/30">
-                          <UserCheck className="w-4 h-4" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-[11px] font-bold text-white truncate leading-tight">Agent Karim (DXB)</div>
-                          <div className="text-[9px] text-sky-300 font-mono">Assigned in 4s</div>
-                        </div>
-                      </div>
-
-                      {/* Node 6: Deal Approval */}
-                      <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-amber-400/40 shadow-md flex items-center gap-2.5 text-left hover:border-amber-300 hover:scale-[1.02] transition-all">
-                        <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-400/30">
-                          <ShieldCheck className="w-4 h-4" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-[11px] font-bold text-white truncate leading-tight">Deal Signoff</div>
-                          <div className="text-[9px] text-[#F5B91E] font-mono">2-Step Locked</div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  {/* ------------------------------------------------------------------ */}
-                  {/* 3. SLIM LIVE METRICS STRIP                                         */}
-                  {/* ------------------------------------------------------------------ */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 sm:p-4 bg-[#001B3D]/95 border-t border-blue-900/70">
-                    <div className="p-2.5 rounded-xl bg-[#032653]/60 border border-blue-800/40">
-                      <div className="text-[10px] uppercase font-mono text-[#A9C9E8] font-semibold truncate">LEADS TODAY</div>
-                      <div className="text-base sm:text-lg font-extrabold text-white mt-0.5">128</div>
-                      <div className="text-[10px] text-[#00D6A3] font-medium font-mono">↑ 24% today</div>
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-[#032653]/60 border border-blue-800/40">
-                      <div className="text-[10px] uppercase font-mono text-[#A9C9E8] font-semibold truncate">AI QUALIFIED</div>
-                      <div className="text-base sm:text-lg font-extrabold text-[#39BFF5] mt-0.5">94%</div>
-                      <div className="text-[10px] text-sky-200 font-medium font-mono">High-Intent</div>
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-[#032653]/60 border border-blue-800/40">
-                      <div className="text-[10px] uppercase font-mono text-[#A9C9E8] font-semibold truncate">AVG RESPONSE</div>
-                      <div className="text-base sm:text-lg font-extrabold text-[#00D6A3] mt-0.5">4.2s</div>
-                      <div className="text-[10px] text-emerald-300 font-medium font-mono">Auto-Assigned</div>
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-[#032653]/60 border border-blue-800/40">
-                      <div className="text-[10px] uppercase font-mono text-[#A9C9E8] font-semibold truncate">CLOSED VOLUME</div>
-                      <div className="text-base sm:text-lg font-extrabold text-[#F5B91E] mt-0.5">AED 42.8M</div>
-                      <div className="text-[10px] text-amber-200 font-medium font-mono">Reconciled</div>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* ------------------------------------------------------------------ */}
-                {/* 4. THREE FLOATING ASYMMETRICAL FOREGROUND INTELLIGENCE CARDS       */}
-                {/* ------------------------------------------------------------------ */}
-                
-                {/* FLOATING CARD 1: LIVE PROPERTY LEAD (Top-Right Offset Float) */}
-                <motion.div
-                  style={{
-                    x: mouseOffset.x * 0.8,
-                    y: mouseOffset.y * 0.8
-                  }}
-                  initial={{ opacity: 0, scale: 0.9, y: -15 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.35 }}
-                  className="hidden xl:flex absolute -top-4 right-0 z-20 items-center gap-3 p-3 rounded-2xl bg-[#001B3D]/95 border border-[#39BFF5]/50 shadow-[0_15px_35px_rgba(0,0,0,0.6),0_0_20px_rgba(57,191,245,0.2)] backdrop-blur-xl max-w-xs hover:scale-105 transition-transform"
-                >
-                  <img 
-                    src={PROPERTY_IMAGES.heroPenthouse} 
-                    alt="Palm Jumeirah Penthouse" 
-                    className="w-11 h-11 rounded-xl object-cover border border-[#39BFF5]/40 shrink-0" 
-                  />
-                  <div className="flex-1 min-w-0 text-left">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[9px] font-mono uppercase font-bold text-[#39BFF5]">LIVE PROPERTY LEAD</span>
-                      <span className="text-[9px] text-[#00D6A3] font-mono bg-[#00D6A3]/15 px-1.5 py-0.5 rounded">4s ago</span>
-                    </div>
-                    <div className="text-xs font-bold text-white truncate">Palm Jumeirah Penthouse</div>
-                    <div className="text-[10px] text-[#A9C9E8] truncate">Source: Property Finder • Karim (Dubai)</div>
-                  </div>
-                </motion.div>
-
-                {/* FLOATING CARD 2: AI BUYER QUALIFICATION (Bottom-Left Offset Float) */}
-                <motion.div
-                  style={{
-                    x: mouseOffset.x * -0.7,
-                    y: mouseOffset.y * -0.7
-                  }}
-                  initial={{ opacity: 0, scale: 0.9, y: 15 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.45 }}
-                  className="hidden xl:flex absolute -bottom-5 left-0 z-20 items-center gap-3 p-3 rounded-2xl bg-[#001B3D]/95 border border-[#00D6A3]/50 shadow-[0_15px_35px_rgba(0,0,0,0.6),0_0_20px_rgba(0,214,163,0.2)] backdrop-blur-xl hover:scale-105 transition-transform"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#00D6A3]/15 border border-[#00D6A3]/40 flex flex-col items-center justify-center text-center shrink-0">
-                    <span className="text-xs font-black text-[#00D6A3]">94%</span>
-                    <span className="text-[7px] font-mono text-emerald-300 font-bold">SCORE</span>
-                  </div>
-                  <div className="text-left">
-                    <div className="text-[9px] font-mono uppercase font-bold text-[#00D6A3]">AI BUYER QUALIFICATION</div>
-                    <div className="text-xs font-bold text-white">HIGH INTENT • VIP FLOW</div>
-                    <div className="flex items-center gap-2 mt-0.5 text-[9px] font-mono text-sky-200">
-                      <span>Budget ✓</span>
-                      <span>Location ✓</span>
-                      <span>Timeline ✓</span>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* FLOATING CARD 3: DEAL APPROVAL (Bottom-Right Offset Float) */}
-                <motion.div
-                  style={{
-                    x: mouseOffset.x * 0.9,
-                    y: mouseOffset.y * 0.9
-                  }}
-                  initial={{ opacity: 0, scale: 0.9, y: 15 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.55 }}
-                  className="hidden lg:flex absolute -bottom-5 right-0 z-20 items-center gap-3 p-3 rounded-2xl bg-[#001B3D]/95 border border-[#F5B91E]/50 shadow-[0_15px_35px_rgba(0,0,0,0.6),0_0_20px_rgba(245,185,30,0.2)] backdrop-blur-xl hover:scale-105 transition-transform text-left"
-                >
-                  <div className="w-9 h-9 rounded-xl bg-[#F5B91E]/15 border border-[#F5B91E]/40 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-4 h-4 text-[#F5B91E]" />
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="text-[9px] font-mono uppercase font-bold text-sky-300">DEAL APPROVAL #908</span>
-                      <span className="text-[9px] text-[#00D6A3] font-mono font-bold bg-[#00D6A3]/15 px-1.5 py-0.2 rounded">APPROVED</span>
-                    </div>
-                    <div className="text-xs font-bold text-white">Lusail Marina Residence</div>
-                    <div className="text-[10px] font-mono text-[#F5B91E] font-bold">QAR 120,000 Comm. • 2-Step Signed</div>
-                  </div>
-                </motion.div>
-
-              </motion.div>
+              {/* Secondary Translucent Glass Button with Scale Icon */}
+              <button
+                onClick={() => setIsVideoModalOpen(true)}
+                className="w-full sm:w-auto inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-7 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
+              >
+                <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
+                </span>
+                <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
+              </button>
             </motion.div>
 
-          </div>
+            {/* Verified Trust Badges */}
+            <motion.div variants={fadeInUp} className="pt-4 flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-xs sm:text-sm text-[#A9C9E8] font-medium">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                <span>Meta Official Cloud API Partner</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                <span>Property Finder & Bayut Live Sync</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                <span>Go Live in Under 48 Hours</span>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
