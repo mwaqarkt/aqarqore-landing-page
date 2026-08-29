@@ -478,11 +478,11 @@ export default function App() {
       </header>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 1. HERO SECTION: CENTERED GCC PROPERTY OPERATING SYSTEM WITH SKYLINE BG   */}
+      {/* 1. HERO SECTION: GCC PROPERTY OPERATING SYSTEM WITH SKYLINE BG & UI MOCKUP */}
       {/* -------------------------------------------------------------------------- */}
       <section 
         onMouseMove={handleHeroMouseMove}
-        className="relative min-h-[90vh] lg:min-h-[850px] flex items-center justify-center pt-28 pb-20 lg:pt-36 lg:pb-28 bg-[#001B3D] text-white overflow-hidden"
+        className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001B3D] text-white overflow-hidden"
       >
         {/* Layer 1: Official GCC Skyline (Dubai • Doha • Riyadh) Connected Network Image */}
         <div 
@@ -490,111 +490,150 @@ export default function App() {
           style={{ backgroundImage: 'url(/gcc-hero-bg.jpg)' }}
         />
 
-        {/* Layer 2: Seamless Dark Navy Gradient Overlay for Crystal-Clear Text Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/85 via-[#001B3D]/60 to-[#001B3D]/95 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-radial from-transparent via-[#001B3D]/40 to-[#001B3D]/90 z-0 pointer-events-none" />
+        {/* Layer 2: Seamless Dark Navy Gradient Overlay for High-Contrast Readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001B3D]/95 via-[#001B3D]/80 to-[#001B3D]/75 z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/80 via-transparent to-[#001B3D]/90 z-0 pointer-events-none" />
 
         {/* Soft Radial Cyan/Blue Lighting Accent */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-[#0878D1]/15 via-[#39BFF5]/10 to-transparent blur-[160px] pointer-events-none z-0" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[140px] pointer-events-none z-0" />
 
-        {/* MAIN HERO CONTENT CONTAINER (CENTERED) */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
-          <motion.div 
-            className="space-y-8 max-w-4xl mx-auto flex flex-col items-center"
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-          >
-            {/* Premium Eyebrow + Live Indicator */}
-            <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-2.5">
-              <span className="px-3.5 py-1 rounded-full bg-[#032653]/90 border border-[#39BFF5]/40 text-[#39BFF5] text-xs font-bold uppercase tracking-widest font-mono shadow-sm">
-                GCC PROPERTY OPERATING SYSTEM
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#00D6A3]/10 border border-[#00D6A3]/30 text-[#00D6A3] text-xs font-mono font-semibold">
-                <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
-                LIVE NETWORK — DUBAI • DOHA • RIYADH
-              </span>
-            </motion.div>
-
-            {/* Main Dominant Display Headline */}
-            <motion.h1 
-              variants={fadeInUp}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-extrabold tracking-tight text-white leading-[1.08]"
+        {/* MAIN HERO CONTENT CONTAINER (LEFT COPY + RIGHT VISUAL) */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-center">
+            
+            {/* ---------------------------------------------------------------------- */}
+            {/* LEFT COLUMN: VALUE PROPOSITION & TYPOGRAPHIC ENGINE (~50%)             */}
+            {/* ---------------------------------------------------------------------- */}
+            <motion.div 
+              className="lg:col-span-6 xl:col-span-6 space-y-6 text-left"
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
             >
-              {isRtl ? (
-                <>
-                  <span>أوقف إهدار عملاء العقارات ذوي القيمة العالية</span>
-                  <span className="block mt-3 text-white">
-                    أدر وكالتك بالكامل{' '}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-[#39BFF5] to-[#0878D1]">
-                      تلقائياً
-                    </span>
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span>Stop Losing High Value Property Leads</span>
-                  <span className="block mt-3">
-                    <span className="text-white">Run Your Entire Agency</span>{' '}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-[#39BFF5] to-[#168FE5]">
-                      Automatically
-                    </span>
-                  </span>
-                </>
-              )}
-            </motion.h1>
-
-            {/* High-Readability Supporting Paragraph */}
-            <motion.p 
-              variants={fadeInUp} 
-              className="text-lg sm:text-xl lg:text-[21px] text-[#A9C9E8] font-normal leading-[1.65] max-w-3xl mx-auto"
-            >
-              {isRtl ? (
-                'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ. تأهيل العملاء بالذكاء الاصطناعي، وتطبيق ميداني، وموافقة عمولات بخطوتين في نظام خليجي موحد'
-              ) : (
-                'Auto assign leads from Property Finder, Bayut, and Meta WhatsApp in under 10 seconds. AI buyer qualification, offline mobile app, and 2 step commission signoffs in one unified GCC system'
-              )}
-            </motion.p>
-
-            {/* Premium Centered CTA Action Row */}
-            <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              {/* Primary CTA Button with Radiant Glow */}
-              <a
-                href={DEMO_CTA_URL}
-                className="w-full sm:w-auto inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-[#0878D1] via-[#168FE5] to-[#0878D1] hover:from-[#168FE5] hover:to-[#0878D1] text-white font-bold text-base shadow-[0_0_28px_rgba(22,143,229,0.45)] hover:shadow-[0_0_36px_rgba(57,191,245,0.6)] transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-[#39BFF5]/40 group cursor-pointer text-center"
-              >
-                <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
-                <ArrowRight className={`w-4 h-4 text-blue-100 group-hover:translate-x-1.5 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1.5' : ''}`} />
-              </a>
-
-              {/* Secondary Translucent Glass Button with Scale Icon */}
-              <button
-                onClick={() => setIsVideoModalOpen(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-7 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
-              >
-                <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
+              {/* Premium Eyebrow + Live Indicator */}
+              <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-2.5">
+                <span className="px-3.5 py-1 rounded-full bg-[#032653]/90 border border-[#39BFF5]/40 text-[#39BFF5] text-xs font-bold uppercase tracking-widest font-mono shadow-sm">
+                  GCC PROPERTY OPERATING SYSTEM
                 </span>
-                <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
-              </button>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00D6A3]/10 border border-[#00D6A3]/30 text-[#00D6A3] text-xs font-mono font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
+                  LIVE NETWORK — DUBAI • DOHA • RIYADH
+                </span>
+              </motion.div>
+
+              {/* Main Dominant Display Headline */}
+              <motion.h1 
+                variants={fadeInUp}
+                className="text-4xl sm:text-5xl xl:text-[58px] font-extrabold tracking-tight text-white leading-[1.08] max-w-[620px]"
+              >
+                {isRtl ? (
+                  <>
+                    <span>أوقف إهدار عملاء العقارات ذوي القيمة العالية</span>
+                    <span className="block mt-2 text-white">
+                      أدر وكالتك بالكامل{' '}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-[#39BFF5] to-[#0878D1]">
+                        تلقائياً
+                      </span>
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span>Stop Losing High Value Property Leads</span>
+                    <span className="block mt-2">
+                      <span className="text-white">Run Your Entire Agency</span>{' '}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-[#39BFF5] to-[#168FE5]">
+                        Automatically
+                      </span>
+                    </span>
+                  </>
+                )}
+              </motion.h1>
+
+              {/* High-Readability Supporting Paragraph */}
+              <motion.p 
+                variants={fadeInUp} 
+                className="text-base sm:text-lg lg:text-[18px] text-[#A9C9E8] font-normal leading-[1.65] max-w-[600px]"
+              >
+                {isRtl ? (
+                  'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ. تأهيل العملاء بالذكاء الاصطناعي، وتطبيق ميداني، وموافقة عمولات بخطوتين في نظام خليجي موحد'
+                ) : (
+                  'Auto assign leads from Property Finder, Bayut, and Meta WhatsApp in under 10 seconds. AI buyer qualification, offline mobile app, and 2 step commission signoffs in one unified GCC system'
+                )}
+              </motion.p>
+
+              {/* Premium Asymmetric CTA Action Row */}
+              <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                {/* Primary CTA Button with Radiant Glow */}
+                <a
+                  href={DEMO_CTA_URL}
+                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#0878D1] via-[#168FE5] to-[#0878D1] hover:from-[#168FE5] hover:to-[#0878D1] text-white font-bold text-sm sm:text-base shadow-[0_0_28px_rgba(22,143,229,0.45)] hover:shadow-[0_0_36px_rgba(57,191,245,0.6)] transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-[#39BFF5]/40 group cursor-pointer text-center"
+                >
+                  <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
+                  <ArrowRight className={`w-4 h-4 text-blue-100 group-hover:translate-x-1.5 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1.5' : ''}`} />
+                </a>
+
+                {/* Secondary Translucent Glass Button with Scale Icon */}
+                <button
+                  onClick={() => setIsVideoModalOpen(true)}
+                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
+                >
+                  <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
+                  </span>
+                  <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
+                </button>
+              </motion.div>
+
+              {/* Verified Trust Badges */}
+              <motion.div variants={fadeInUp} className="pt-3 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-[#A9C9E8] font-medium">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                  <span>Meta Official Cloud API Partner</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                  <span>Property Finder & Bayut Live Sync</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                  <span>Go Live in Under 48 Hours</span>
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* Verified Trust Badges */}
-            <motion.div variants={fadeInUp} className="pt-4 flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-xs sm:text-sm text-[#A9C9E8] font-medium">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
-                <span>Meta Official Cloud API Partner</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
-                <span>Property Finder & Bayut Live Sync</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
-                <span>Go Live in Under 48 Hours</span>
-              </div>
+            {/* ---------------------------------------------------------------------- */}
+            {/* RIGHT COLUMN: FLOATING AQARQORE COMMAND CENTER UI GRAPHIC (~50%)       */}
+            {/* ---------------------------------------------------------------------- */}
+            <motion.div 
+              className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end"
+              initial={{ opacity: 0, scale: 0.94, y: 25 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Parallax Container with Subtle Floating Animation */}
+              <motion.div
+                style={{
+                  x: mouseOffset.x * 0.5,
+                  y: mouseOffset.y * 0.5,
+                  transition: 'transform 0.15s ease-out'
+                }}
+                className="relative w-full max-w-[620px] lg:max-w-none flex items-center justify-center"
+              >
+                <div className="relative group">
+                  {/* Subtle Outer Cyan Glow Aura */}
+                  <div className="absolute -inset-1.5 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-xl opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  
+                  {/* High-Resolution Transparent Command Center Image */}
+                  <img 
+                    src="/aqarqore-command-center.png" 
+                    alt="AqarQore Intelligence Command Center"
+                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.85)] filter saturate-105 rounded-2xl"
+                  />
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+          </div>
         </div>
       </section>
 
