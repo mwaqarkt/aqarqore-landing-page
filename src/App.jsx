@@ -58,7 +58,9 @@ import {
   Flame,
   CircleDot,
   Bookmark,
-  HelpCircle
+  HelpCircle,
+  Cloud,
+  Rocket
 } from 'lucide-react';
 
 /*
@@ -315,7 +317,8 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
-  const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState(1);
+  const [faqCategory, setFaqCategory] = useState('All Questions');
   const [mobileCardIndex, setMobileCardIndex] = useState(0);
 
   const handleHeroMouseMove = (e) => {
@@ -2742,213 +2745,306 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 8B. FAQ: EDITORIAL INTERACTIVE KNOWLEDGE SYSTEM                            */}
+      {/* 8B. FAQ: PREMIUM ENTERPRISE KNOWLEDGE SECTION                              */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="faq" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
-        {/* Subtle Decorative Technical Micro-Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+      <section id="faq" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/80 overflow-hidden">
+        {/* Subtle Technical Layers */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-sky-500/10 blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-600/10 blur-[130px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-start">
             
             {/* ------------------------------------------------------------------ */}
-            {/* LEFT COLUMN: EDITORIAL FAQ HEADER & REGIONAL SUPPORT CARD          */}
+            {/* LEFT COLUMN: INTRO & TECHNICAL RADAR VISUAL (~40% width)           */}
             {/* ------------------------------------------------------------------ */}
             <motion.div 
-              className="lg:col-span-5 lg:sticky lg:top-28 space-y-6"
+              className="lg:col-span-5 lg:sticky lg:top-28 space-y-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
-                <HelpCircle className="w-3.5 h-3.5 text-[#0858A8]" />
-                <span>FREQUENTLY ASKED QUESTIONS</span>
+              <div className="space-y-4">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-sky-400/30 text-sky-400 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
+                  <HelpCircle className="w-3.5 h-3.5 text-sky-400" />
+                  <span>FREQUENTLY ASKED</span>
+                </span>
+
+                {/* Main Heading */}
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-white">
+                  {isRtl ? (
+                    <>
+                      كل ما تحتاج لمعرفته{' '}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-300 to-[#00D6A3]">
+                        عن المنظومة.
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      Everything You Need to{' '}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-300 to-[#00D6A3]">
+                        Know.
+                      </span>
+                    </>
+                  )}
+                </h2>
+
+                {/* Supporting Text */}
+                <p className="text-blue-100/75 text-sm sm:text-base leading-relaxed font-normal max-w-md">
+                  {isRtl ? (
+                    'إجابات واضحة ودقيقة لأكثر الأسئلة شيوعاً حول منظومة دول مجلس التعاون وكيف تمكّن وكالتك العقارية من النمو.'
+                  ) : (
+                    'Clear answers to the most common questions about GCC and how it empowers your brokerage.'
+                  )}
+                </p>
               </div>
 
-              {/* Title */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
-                {isRtl ? (
-                  'كل ما تحتاج معرفته عن نظام AqarQore'
-                ) : (
-                  <>
-                    Everything You Need to Know.{' '}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                      Clear, Upfront Answers.
-                    </span>
-                  </>
-                )}
-              </h2>
+              {/* Technical System Radar Visual */}
+              <div className="p-6 sm:p-8 rounded-3xl bg-[#001738]/80 border border-blue-900/60 shadow-2xl relative overflow-hidden group">
+                <div className="relative w-full max-w-[280px] h-[260px] mx-auto flex items-center justify-center">
+                  
+                  {/* Concentric Orbital Rings */}
+                  <div className="absolute w-56 h-56 rounded-full border border-sky-500/20 border-dashed animate-spin" style={{ animationDuration: '40s' }} />
+                  <div className="absolute w-44 h-44 rounded-full border border-blue-500/30" />
+                  <div className="absolute w-32 h-32 rounded-full border border-sky-400/40 bg-sky-500/5 blur-[1px]" />
+                  
+                  {/* Rotating Laser Scan Sweep */}
+                  <motion.div 
+                    className="absolute w-52 h-52 rounded-full pointer-events-none"
+                    style={{
+                      background: 'conic-gradient(from 0deg at 50% 50%, rgba(56, 189, 248, 0.25) 0deg, transparent 60deg, transparent 360deg)'
+                    }}
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                  />
 
-              {/* Subtitle */}
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                {isRtl ? (
-                  'كل ما يتعلق بسرعة ربط البوابات، وتوافق واتساب السحابي، ودقة احتساب العمولات، وجدول بدء التشغيل في وكالتك.'
-                ) : (
-                  'Everything you need to know about migrating your agency, portal sync speed, WhatsApp Cloud API compliance, and 48-hour onboarding.'
-                )}
-              </p>
-
-              {/* Regional Support Assistance Card */}
-              <div className="pt-2">
-                <div className="p-6 rounded-3xl bg-[#F8FAFC] border border-slate-200 shadow-sm space-y-4 hover:border-slate-300 transition-all">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-blue-50 border border-blue-200 text-[#0858A8] flex items-center justify-center shrink-0 shadow-2xs font-bold">
-                        <ShieldCheck className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900">Custom Architecture Inquiries?</div>
-                        <div className="text-xs text-slate-500">Dedicated specialists in Dubai &amp; Doha</div>
-                      </div>
-                    </div>
+                  {/* Central Node */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#001026] border-2 border-sky-400/80 flex flex-col items-center justify-center shadow-[0_0_25px_rgba(56,189,248,0.35)]">
+                    <span className="text-sky-300 font-extrabold text-lg font-mono">?</span>
+                    <span className="text-[8px] font-mono text-sky-400 tracking-tighter uppercase font-bold">GCC CORE</span>
                   </div>
 
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Have specific regulatory questions, sovereign data hosting requirements, or bespoke ERP integration workflows? Connect with our GCC engineering team.
-                  </p>
-
-                  <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-emerald-600 font-bold flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      Avg. Response: &lt; 15 mins
-                    </span>
-                    <a 
-                      href={DEMO_CTA_URL}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0858A8] hover:text-[#003068] transition-colors"
-                    >
-                      <span>Talk to an Architect</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </a>
+                  {/* 4 Satellite System Nodes */}
+                  {/* Top Node: SECURE */}
+                  <div className="absolute top-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-emerald-500/40 text-emerald-300 text-[10px] font-mono font-bold shadow-md">
+                    <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                    <span>SECURE</span>
                   </div>
+
+                  {/* Left Node: ANALYTICS */}
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-sky-500/40 text-sky-300 text-[10px] font-mono font-bold shadow-md">
+                    <BarChart3 className="w-3 h-3 text-sky-400" />
+                    <span>ANALYTICS</span>
+                  </div>
+
+                  {/* Right Node: AUTOMATE */}
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-amber-500/40 text-amber-300 text-[10px] font-mono font-bold shadow-md">
+                    <Zap className="w-3 h-3 text-amber-400" />
+                    <span>AUTOMATE</span>
+                  </div>
+
+                  {/* Bottom Node: CLOUD */}
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-violet-500/40 text-violet-300 text-[10px] font-mono font-bold shadow-md">
+                    <Cloud className="w-3 h-3 text-violet-400" />
+                    <span>CLOUD</span>
+                  </div>
+
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono text-blue-200/70">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Autonomous Node Topology
+                  </span>
+                  <span className="text-sky-300 font-semibold">24/7 Monitored</span>
                 </div>
               </div>
             </motion.div>
 
             {/* ------------------------------------------------------------------ */}
-            {/* RIGHT COLUMN: INTERACTIVE ACCORDION KNOWLEDGE INTERFACE            */}
+            {/* RIGHT COLUMN: CATEGORY PILLS + FAQ ACCORDION (~60% width)          */}
             {/* ------------------------------------------------------------------ */}
-            <motion.div 
-              className="lg:col-span-7 space-y-3.5"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={staggerContainer}
-            >
-              {[
-                {
-                  id: '01',
-                  tag: 'LEAD ROUTING',
-                  question: isRtl 
-                    ? 'ما مدى سرعة توزيع العملاء المحتملين من البوابات العقارية؟' 
-                    : 'How quickly does AqarQore auto-assign portal leads?',
-                  answer: isRtl 
-                    ? 'يتم استلام وتوزيع استفسارات Property Finder و Bayut و Meta WhatsApp في أقل من 10 ثوانٍ عبر محرك القواعد الذكي، متجاوزاً الوكلاء المشغولين أو خارج الدوام لضمان التواصل الفوري.'
-                    : 'Inquiries from Property Finder, Bayut, Dubizzle, and Meta WhatsApp are ingested and auto-assigned by your rule engine in under 10 seconds. The system automatically skips agents who are off-duty or at maximum lead capacity, ensuring hot buyers receive immediate outreach.'
-                },
-                {
-                  id: '02',
-                  tag: 'META CLOUD API',
-                  question: isRtl 
-                    ? 'هل يتوافق روبوت واتساب مع معايير واجهة Meta الرسمية؟' 
-                    : "Is the WhatsApp integration compliant with Meta's official Cloud API?",
-                  answer: isRtl 
-                    ? 'نعم، يتصل AqarQore مباشرة عبر شريك Meta Cloud API الرسمي، مما يحافظ على علامة التوثيق الخضراء ويحمي بيانات عملائك داخل بيئة الوكالة الرسمية بدلاً من هواتف الوكلاء الشخصية.'
-                    : "Yes. AqarQore connects directly via Meta's Official Cloud API partner tier, preserving your official business verification badge, operating within the 24-hour customer service window, and preventing client data loss when staff leave."
-                },
-                {
-                  id: '03',
-                  tag: 'OFFLINE FIELD APP',
-                  question: isRtl 
-                    ? 'كيف يعمل تطبيق المعاينات في الأماكن المغلقة ومواقف السيارات؟' 
-                    : 'How does the offline mobile app work during basement or underground viewings?',
-                  answer: isRtl 
-                    ? 'يستطيع الوكيل استعراض بيانات الوحدات وتسجيل ملاحظات وتوقيع العميل دون الحاجة لإنترنت، وفور توفر شبكة 4G/5G يتم مزامنة كافة البيانات فورياً دون فقدان أي تفاصيل.'
-                    : 'Agents can pull listing specs, log client feedback, and capture viewing signatures completely offline in underground parking or thick concrete towers. As soon as the device reconnects to 4G/5G or Wi-Fi, all changes sync automatically to the CRM.'
-                },
-                {
-                  id: '04',
-                  tag: 'COMMISSION AUDIT',
-                  question: isRtl 
-                    ? 'كيف يمنع نظام اعتماد العمولات على خطوتين النزاعات المالية؟' 
-                    : 'How does the 2-step deal and commission approval prevent disputes?',
-                  answer: isRtl 
-                    ? 'تتطلب كل صفقة موافقة إلكترونية متسلسلة تبدأ من مدير المبيعات ثم تنتقل إلى المحاسبة، ولا يمكن تخطي أي خطوة، مما يضمن دقة الصرف وسجل تدقيق مالي ثابت.'
-                    : 'Every closed transaction requires sequential signoffs: first from the Sales Director, followed by Accounting verification. Neither party can bypass the other, and payouts are locked to prevent double-crediting and disputed commissions.'
-                },
-                {
-                  id: '05',
-                  tag: '48H ONBOARDING',
-                  question: isRtl 
-                    ? 'كم يستغرق نقل بيانات الوكالة وبدء التشغيل الفعلي؟' 
-                    : 'How long does agency onboarding and portal migration take?',
-                  answer: isRtl 
-                    ? 'تبدأ معظم الوكالات العمل بالكامل خلال أقل من 48 ساعة بمساعدة فريق الدعم الإقليمي في دبي والدوحة لنقل القوائم وتفعيل محركات التوزيع دون انقطاع.'
-                    : 'Most GCC brokerages go live in under 48 hours. Our dedicated regional onboarding team in Dubai and Doha helps import your active listings, configure your agent routing rules, and connect your portal webhook pipelines without agency downtime.'
-                }
-              ].map((faq, index) => {
-                const isOpen = openFaqIndex === index;
-                return (
-                  <motion.div
-                    key={faq.id}
-                    variants={fadeInUp}
-                    className={`rounded-2xl transition-all duration-200 border ${
-                      isOpen 
-                        ? 'bg-white border-blue-400/80 shadow-[0_10px_30px_-5px_rgba(0,48,104,0.08)]' 
-                        : 'bg-[#F8FAFC] hover:bg-white border-slate-200 hover:border-slate-300'
+            <div className="lg:col-span-7 space-y-6">
+              
+              {/* Category Filter Pills */}
+              <div className="flex items-center flex-wrap gap-2 pb-2">
+                {[
+                  { id: 'All Questions', label: 'All Questions' },
+                  { id: 'For Brokers', label: 'For Brokers' },
+                  { id: 'Listings', label: 'Listings' },
+                  { id: 'Payments', label: 'Payments' },
+                  { id: 'Security', label: 'Security' }
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setFaqCategory(tab.id)}
+                    className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                      faqCategory === tab.id
+                        ? 'bg-sky-500/20 text-sky-300 border border-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.25)]'
+                        : 'bg-[#001738]/60 text-blue-200/70 hover:text-white border border-blue-900/60 hover:border-blue-700'
                     }`}
                   >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaqIndex(isOpen ? -1 : index)}
-                      aria-expanded={isOpen}
-                      className="w-full p-5 sm:p-6 flex items-start justify-between gap-4 text-left cursor-pointer group"
-                    >
-                      <div className="flex items-start gap-3.5">
-                        <span className={`text-xs font-mono font-bold mt-0.5 shrink-0 ${isOpen ? 'text-[#0858A8]' : 'text-slate-400'}`}>
-                          {faq.id}
-                        </span>
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#0858A8] bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
-                              {faq.tag}
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Accordion Cards */}
+              <div className="space-y-3.5">
+                {[
+                  {
+                    id: '01',
+                    category: 'For Brokers',
+                    question: 'How does GCC help my brokerage?',
+                    answer: 'Inquiries from Property Finder, Bayut, and WhatsApp are captured and auto-assigned in under 10 seconds. We automate lead qualification, offline field logging, and 2-step financial commission workflows into one synchronized operating system.'
+                  },
+                  {
+                    id: '02',
+                    category: 'For Brokers',
+                    question: 'How quickly can I get started?',
+                    answer: 'You can get started in as little as 24–48 hours. Our onboarding team will help you set up your account, import your data and train your team so you can go live fast.',
+                    hasFeatureBox: true
+                  },
+                  {
+                    id: '03',
+                    category: 'Listings',
+                    question: 'Can I integrate GCC with my existing CRM?',
+                    answer: 'Yes. GCC provides two-way API webhooks and native connectors for major CRM systems, Property Finder, Bayut, and custom ERP databases without interrupting active sales pipelines.'
+                  },
+                  {
+                    id: '04',
+                    category: 'Security',
+                    question: 'Is my brokerage data secure?',
+                    answer: 'Absolutely. All agency data is isolated with server-enforced role-based access boundaries (RBAC), mandatory TOTP multi-factor authentication, sub-60s session revocation, and sovereign GCC hosting compliance in the UAE, Qatar, and KSA.'
+                  },
+                  {
+                    id: '05',
+                    category: 'For Brokers',
+                    question: 'What kind of support do you provide?',
+                    answer: 'Every agency receives a dedicated regional account manager in Dubai and Doha, 24/7 priority SLA support, live WhatsApp escalation channels, and custom architectural integration consulting.'
+                  },
+                  {
+                    id: '06',
+                    category: 'Payments',
+                    question: 'How is GCC priced?',
+                    answer: 'We offer transparent per-seat monthly subscription tiers tailored to boutique brokerages, scaling agencies, and multi-branch enterprise groups with zero hidden portal sync fees or exit penalties.'
+                  }
+                ]
+                  .filter((faq) => faqCategory === 'All Questions' || faq.category === faqCategory)
+                  .map((faq, index) => {
+                    const isOpen = openFaqIndex === index;
+                    return (
+                      <motion.div
+                        key={faq.id}
+                        layout
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className={`rounded-2xl transition-all duration-300 border ${
+                          isOpen 
+                            ? 'bg-[#001F47]/95 border-sky-400 shadow-[0_10px_35px_rgba(8,120,209,0.25)] -translate-y-0.5' 
+                            : 'bg-[#001738]/90 hover:bg-[#001C42] border-blue-900/60 hover:border-sky-500/50 hover:-translate-y-0.5 shadow-sm'
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          onClick={() => setOpenFaqIndex(isOpen ? -1 : index)}
+                          aria-expanded={isOpen}
+                          className="w-full p-5 sm:p-6 flex items-start justify-between gap-4 text-left cursor-pointer group"
+                        >
+                          <div className="flex items-start gap-4">
+                            <span className="text-xs font-mono font-semibold text-sky-400 mt-1 shrink-0">
+                              {faq.id}
+                            </span>
+                            <span className="text-base sm:text-lg font-bold text-white group-hover:text-sky-200 transition-colors leading-snug">
+                              {faq.question}
                             </span>
                           </div>
-                          <h3 className={`text-base sm:text-lg font-bold leading-snug transition-colors ${
-                            isOpen ? 'text-[#001D42]' : 'text-slate-900 group-hover:text-[#0858A8]'
+
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                            isOpen 
+                              ? 'bg-sky-500 text-white shadow-md rotate-180' 
+                              : 'bg-blue-950 border border-blue-800 text-blue-300 group-hover:border-sky-400 group-hover:text-white group-hover:scale-105'
                           }`}>
-                            {faq.question}
-                          </h3>
-                        </div>
-                      </div>
-
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${
-                        isOpen ? 'bg-[#0858A8] text-white shadow-xs' : 'bg-slate-200/80 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#0858A8]'
-                      }`}>
-                        {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                      </div>
-                    </button>
-
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-                            {faq.answer}
+                            {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                           </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
+                        </button>
+
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                              className="overflow-hidden"
+                            >
+                              <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm sm:text-[14.5px] text-blue-100/80 leading-relaxed border-t border-blue-900/60 space-y-4">
+                                <p>{faq.answer}</p>
+
+                                {/* 3 Feature Indicators on Expanded Card */}
+                                {faq.hasFeatureBox && (
+                                  <div className="p-4 rounded-2xl bg-[#001228]/90 border border-sky-500/30 grid grid-cols-1 sm:grid-cols-3 gap-3 text-center sm:text-left">
+                                    <div className="flex items-center sm:items-start gap-2.5">
+                                      <div className="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-300 flex items-center justify-center shrink-0 border border-sky-400/30">
+                                        <Rocket className="w-3.5 h-3.5" />
+                                      </div>
+                                      <div>
+                                        <div className="text-[11px] font-bold text-white">Quick Setup</div>
+                                        <div className="text-[10px] font-mono text-sky-300">24–48 Hours</div>
+                                      </div>
+                                    </div>
+
+                                    <div className="flex items-center sm:items-start gap-2.5">
+                                      <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0 border border-emerald-400/30">
+                                        <Users className="w-3.5 h-3.5" />
+                                      </div>
+                                      <div>
+                                        <div className="text-[11px] font-bold text-white">Expert Onboarding</div>
+                                        <div className="text-[10px] font-mono text-emerald-300">Personal Support</div>
+                                      </div>
+                                    </div>
+
+                                    <div className="flex items-center sm:items-start gap-2.5">
+                                      <div className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-400/30">
+                                        <Play className="w-3.5 h-3.5" />
+                                      </div>
+                                      <div>
+                                        <div className="text-[11px] font-bold text-white">Go Live Fast</div>
+                                        <div className="text-[10px] font-mono text-amber-300">Start Winning</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+                    );
+                  })}
+              </div>
+
+              {/* Bottom Support CTA Prompt */}
+              <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-[#001738]/80 border border-blue-900/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="text-center sm:text-left">
+                  <div className="text-sm font-bold text-white">Still have questions?</div>
+                  <div className="text-xs text-blue-200/70 mt-0.5">Our team is here to help you.</div>
+                </div>
+
+                <a
+                  href={DEMO_CTA_URL}
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5 border border-blue-400/30 flex items-center gap-2 cursor-pointer shrink-0"
+                >
+                  <span>Contact Support</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+
+            </div>
 
           </div>
         </div>
