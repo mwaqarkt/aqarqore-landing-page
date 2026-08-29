@@ -1038,7 +1038,7 @@ export default function App() {
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
                       <span className="text-[11px] font-mono font-bold text-[#39BFF5] tracking-wider">METRIC 01</span>
-                      <span className="text-[9px] font-mono text-slate-400">// SPEED</span>
+                      <span className="text-[9px] font-mono text-slate-400">• SPEED</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#39BFF5] animate-ping" />
@@ -1109,7 +1109,7 @@ export default function App() {
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
                       <span className="text-[11px] font-mono font-bold text-[#00D6A3] tracking-wider">METRIC 02</span>
-                      <span className="text-[9px] font-mono text-slate-400">// INTEGRITY</span>
+                      <span className="text-[9px] font-mono text-slate-400">• INTEGRITY</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
@@ -1183,7 +1183,7 @@ export default function App() {
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
                       <span className="text-[11px] font-mono font-bold text-[#F5B91E] tracking-wider">METRIC 03</span>
-                      <span className="text-[9px] font-mono text-slate-400">// COMMS</span>
+                      <span className="text-[9px] font-mono text-slate-400">• COMMS</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#F5B91E] animate-ping" />
@@ -1251,7 +1251,7 @@ export default function App() {
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
                       <span className="text-[11px] font-mono font-bold text-[#A78BFA] tracking-wider">METRIC 04</span>
-                      <span className="text-[9px] font-mono text-slate-400">// EDGE SYNC</span>
+                      <span className="text-[9px] font-mono text-slate-400">• EDGE SYNC</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-ping" />
@@ -1888,7 +1888,7 @@ export default function App() {
                       <Key className="w-6 h-6" />
                     </div>
                     <span className="text-[11px] font-mono font-bold text-[#39BFF5] bg-[#001228] px-3 py-1 rounded-full border border-sky-500/30">
-                      01 // TOTP AUTH
+                      01 • TOTP AUTH
                     </span>
                   </div>
 
@@ -1951,7 +1951,7 @@ export default function App() {
                       <Lock className="w-6 h-6" />
                     </div>
                     <span className="text-[11px] font-mono font-bold text-[#00D6A3] bg-[#001228] px-3 py-1 rounded-full border border-emerald-500/30">
-                      02 // 403 RBAC
+                      02 • 403 RBAC
                     </span>
                   </div>
 
@@ -1981,7 +1981,7 @@ export default function App() {
                       </div>
                       <div className="flex items-center justify-between p-1 px-2 rounded-md bg-rose-950/50 border border-rose-500/30 text-rose-300">
                         <span>Direct URL Bypass:</span>
-                        <span className="font-bold flex items-center gap-1">403 FORBIDDEN 🔒</span>
+                        <span className="font-bold">403 FORBIDDEN</span>
                       </div>
                     </div>
                   </div>
@@ -2016,7 +2016,7 @@ export default function App() {
                       <UserX className="w-6 h-6" />
                     </div>
                     <span className="text-[11px] font-mono font-bold text-[#F5B91E] bg-[#001228] px-3 py-1 rounded-full border border-amber-500/30">
-                      03 // INSTANT REVOKE
+                      03 • INSTANT REVOKE
                     </span>
                   </div>
 
@@ -2120,8 +2120,8 @@ export default function App() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider shadow-sm">
-                ⭐ NEW • ENTIRE AGENCY CONNECTED
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0858A8] text-xs font-bold uppercase tracking-wider shadow-sm">
+                ENTIRE AGENCY CONNECTED
               </span>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
@@ -2514,7 +2514,7 @@ export default function App() {
               <div className="space-y-6">
                 <div>
                   <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest">
-                    TIER 01 // STARTER
+                    TIER 01 • STARTER
                   </span>
                   <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Starter Brokerage</h3>
                   <p className="text-xs text-slate-500 mt-1 font-medium">For growing teams up to 5 agents</p>
@@ -2563,13 +2563,13 @@ export default function App() {
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-[11px] font-mono font-bold text-sky-300 uppercase tracking-widest">
-                      TIER 02 // RECOMMENDED
+                      TIER 02 • RECOMMENDED
                     </span>
                     <h3 className="text-2xl font-extrabold text-white mt-1">Growth Agency</h3>
                     <p className="text-xs text-blue-200/80 mt-1 font-medium">For established teams 6–25 agents</p>
                   </div>
                   <span className="text-[10px] font-mono font-bold text-emerald-300 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/40">
-                    ⭐ POPULAR
+                    POPULAR
                   </span>
                 </div>
 
@@ -2619,7 +2619,7 @@ export default function App() {
               <div className="space-y-6">
                 <div>
                   <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest">
-                    TIER 03 // ENTERPRISE
+                    TIER 03 • ENTERPRISE
                   </span>
                   <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Enterprise Group</h3>
                   <p className="text-xs text-slate-500 mt-1 font-medium">For large brokerages (25+ agents)</p>
@@ -2696,8 +2696,8 @@ export default function App() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider shadow-sm">
-                ⭐ NEW • FREQUENTLY ASKED QUESTIONS
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0858A8] text-xs font-bold uppercase tracking-wider shadow-sm">
+                FREQUENTLY ASKED QUESTIONS
               </span>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
