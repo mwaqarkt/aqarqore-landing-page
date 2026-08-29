@@ -2998,7 +2998,7 @@ export default function App() {
             {/* Brand Signature Column (Col Span 5) */}
             <div className="lg:col-span-5 space-y-5">
               <a href="#" className="flex items-center gap-3.5 group w-fit">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white p-2 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-slate-200">
                   <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain" />
                 </div>
                 <div>
