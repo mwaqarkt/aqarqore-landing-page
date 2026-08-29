@@ -484,57 +484,11 @@ export default function App() {
         onMouseMove={handleHeroMouseMove}
         className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001B3D] text-white overflow-hidden"
       >
-        {/* BACKGROUND LAYER 1: Subtle GCC Technical Grid & Architectural Atmosphere */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(57,191,245,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(57,191,245,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
-        <div className="absolute inset-0 bg-radial from-[#062D5C]/60 via-[#032653]/80 to-[#001B3D] pointer-events-none z-0" />
+        {/* BACKGROUND LAYER 1: Subtle GCC Technical Atmosphere */}
+        <div className="absolute inset-0 bg-radial from-[#062D5C]/50 via-[#032653]/80 to-[#001B3D] pointer-events-none z-0" />
         
         {/* Soft Radial Cyan/Blue Glow behind Command Center */}
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/12 to-transparent blur-[130px] pointer-events-none z-0" />
-
-        {/* BACKGROUND LAYER 2: GCC Regional Network Geo-Nodes (Dubai • Doha • Riyadh) */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-40 lg:opacity-70">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="netGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#39BFF5" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#0878D1" stopOpacity="0.2" />
-              </linearGradient>
-              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-
-            {/* Connection Lines between GCC Hubs */}
-            <path d="M 680 180 Q 820 120 980 220" stroke="url(#netGrad1)" strokeWidth="1.5" fill="none" strokeDasharray="4 6" className="animate-pulse" />
-            <path d="M 980 220 Q 1120 300 1280 240" stroke="url(#netGrad1)" strokeWidth="1.5" fill="none" strokeDasharray="4 6" />
-            <path d="M 680 180 Q 980 340 1280 240" stroke="url(#netGrad1)" strokeWidth="1" fill="none" strokeDasharray="3 5" opacity="0.5" />
-
-            {/* Hub Node 1: Doha */}
-            <g transform="translate(680, 180)">
-              <circle r="14" fill="#39BFF5" fillOpacity="0.12" />
-              <circle r="6" fill="#39BFF5" filter="url(#glow)" />
-              <circle r="3" fill="#FFFFFF" />
-              <text x="14" y="4" fill="#A9C9E8" fontSize="10" fontFamily="monospace" fontWeight="bold" letterSpacing="1">DOHA</text>
-            </g>
-
-            {/* Hub Node 2: Riyadh */}
-            <g transform="translate(980, 220)">
-              <circle r="16" fill="#0878D1" fillOpacity="0.15" />
-              <circle r="7" fill="#0878D1" filter="url(#glow)" />
-              <circle r="3.5" fill="#FFFFFF" />
-              <text x="14" y="4" fill="#A9C9E8" fontSize="10" fontFamily="monospace" fontWeight="bold" letterSpacing="1">RIYADH</text>
-            </g>
-
-            {/* Hub Node 3: Dubai */}
-            <g transform="translate(1280, 240)">
-              <circle r="16" fill="#00D6A3" fillOpacity="0.15" />
-              <circle r="7" fill="#00D6A3" filter="url(#glow)" />
-              <circle r="3.5" fill="#FFFFFF" />
-              <text x="14" y="4" fill="#A9C9E8" fontSize="10" fontFamily="monospace" fontWeight="bold" letterSpacing="1">DUBAI</text>
-            </g>
-          </svg>
-        </div>
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[140px] pointer-events-none z-0" />
 
         {/* MAIN HERO CONTENT CONTAINER */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
@@ -735,10 +689,10 @@ export default function App() {
                     </div>
 
                     {/* Left Ingestion Animated Flow Conduit */}
-                    <div className="hidden sm:flex flex-col justify-around h-full py-6 items-center w-6 shrink-0 text-sky-400/80">
-                      <span className="text-xs font-mono animate-pulse">→</span>
-                      <span className="text-xs font-mono animate-pulse">→</span>
-                      <span className="text-xs font-mono animate-pulse">→</span>
+                    <div className="hidden sm:flex flex-col justify-around h-full py-8 items-center w-4 shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400/60 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400/60 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400/60 animate-ping" />
                     </div>
 
                     {/* Centerpiece: Glowing AqarQore Intelligence Core Engine */}
@@ -755,10 +709,10 @@ export default function App() {
                     </div>
 
                     {/* Right Execution Animated Flow Conduit */}
-                    <div className="hidden sm:flex flex-col justify-around h-full py-6 items-center w-6 shrink-0 text-[#00D6A3]/80">
-                      <span className="text-xs font-mono animate-pulse">→</span>
-                      <span className="text-xs font-mono animate-pulse">→</span>
-                      <span className="text-xs font-mono animate-pulse">→</span>
+                    <div className="hidden sm:flex flex-col justify-around h-full py-8 items-center w-4 shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]/60 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]/60 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]/60 animate-ping" />
                     </div>
 
                     {/* Right Pipeline Execution: Qualification, Dispatch, Payout */}
