@@ -194,19 +194,19 @@ export default function App() {
         }`}
       >
         <nav className="w-full">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[80px] flex items-center justify-between gap-4">
             
             {/* Left: Existing Logo */}
             <div className="flex-shrink-0">
-              <a href="#" className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#1078C0] rounded-xl p-1">
-                <div className="w-10 h-10 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <a href="#" className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-[#1078C0] rounded-xl p-1">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center group-hover:scale-105 transition-transform">
                   <img src="/aqarqore-logo.png" alt="AqarQore Logo" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                  <span className="text-2xl font-extrabold tracking-tight text-slate-900 leading-none">
                     AqarQore
                   </span>
-                  <span className="text-[10px] uppercase tracking-widest text-[#0858A8] font-bold font-mono">
+                  <span className="text-[10px] uppercase tracking-widest text-[#0858A8] font-bold font-mono mt-1">
                     GCC Agency OS
                   </span>
                 </div>
@@ -1598,13 +1598,13 @@ export default function App() {
                   <div className="p-5 rounded-2xl bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#003068] text-white border border-blue-400/40 shadow-lg text-center relative overflow-hidden">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none" />
                     <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                      <div className="flex items-center gap-3 text-left">
-                        <div className="w-12 h-12 flex items-center justify-center shrink-0">
-                          <img src="/aqarqore-logo.png" alt="AqarQore" className="w-full h-full object-contain filter drop-shadow-md" />
+                      <div className="flex items-center gap-3.5 text-left">
+                        <div className="w-16 h-16 flex items-center justify-center shrink-0">
+                          <img src="/aqarqore-logo.png" alt="AqarQore" className="w-full h-full object-contain filter drop-shadow-lg" />
                         </div>
                         <div>
-                          <div className="text-sm font-extrabold text-white">AqarQore Core Engine</div>
-                          <div className="text-[11px] text-sky-200 font-medium">GCC Central Agency Operating System</div>
+                          <div className="text-base font-extrabold text-white">AqarQore Core Engine</div>
+                          <div className="text-xs text-sky-200 font-medium">GCC Central Agency Operating System</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-300 bg-[#001D42]/80 px-3 py-1.5 rounded-xl border border-emerald-400/30 shrink-0">
@@ -2300,13 +2300,13 @@ export default function App() {
             
             {/* Brand Signature Column (Col Span 5) */}
             <div className="lg:col-span-5 space-y-5">
-              <a href="#" className="flex items-center gap-3 group w-fit">
-                <div className="w-12 h-12 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <a href="#" className="flex items-center gap-3.5 group w-fit">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center group-hover:scale-105 transition-transform">
                   <img src="/aqarqore-logo.png" alt="AqarQore Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <span className="text-xl font-extrabold tracking-tight text-white block">AqarQore</span>
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-sky-400 font-semibold">GCC Agency OS</span>
+                  <span className="text-2xl font-extrabold tracking-tight text-white block leading-none">AqarQore</span>
+                  <span className="text-[10px] uppercase font-mono tracking-widest text-sky-400 font-semibold block mt-1">GCC Agency OS</span>
                 </div>
               </a>
 
