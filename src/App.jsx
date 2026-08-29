@@ -50,7 +50,13 @@ import {
   CreditCard,
   Target,
   Plus,
-  Minus
+  Minus,
+  ChevronLeft,
+  ChevronRight,
+  Radio,
+  Cpu,
+  Flame,
+  CircleDot
 } from 'lucide-react';
 
 /*
@@ -79,165 +85,282 @@ const PROPERTY_IMAGES = {
   modernApartment: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
 };
 
-// Dynamic Real Estate Showcase Data per Selected GCC Market
+// Live GCC Property Intelligence Data per Market (Villa, Penthouse, Commercial Personalities)
 const MARKET_PROPERTIES = {
   doha: [
     {
       id: 'doha-1',
       title: 'Beachfront Standalone Villa',
-      location: 'West Bay Lagoon • Doha, Qatar',
+      category: 'LUXURY VILLA',
+      personality: 'ai-match',
+      accentColor: 'emerald',
       price: 'QAR 8,500,000',
+      location: 'West Bay Lagoon • Doha, Qatar',
       image: PROPERTY_IMAGES.waterfrontVilla,
-      badge: 'Auto-Assigned in 3s',
-      badgeColor: 'bg-emerald-500',
       specs: [
+        { label: '750 sqm', icon: Maximize2 },
         { label: '5 Beds', icon: BedDouble },
-        { label: '6 Baths', icon: Bath },
-        { label: '750 sqm', icon: Maximize2 }
+        { label: '6 Baths', icon: Bath }
       ],
-      footerLabel: 'WhatsApp Lead Qualification',
-      footerValue: 'Buyer Verified',
-      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+      aiValueScore: 94,
+      demandStatus: 'HIGH DEMAND',
+      matchScore: 94,
+      matchLabel: 'AI BUYER MATCH',
+      liveStatusHeader: 'LIVE LEAD',
+      liveStatusSub: 'Buyer verified • Auto-assigned in 3s',
+      portalSource: 'Property Finder Qatar',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“High-intent verified buyer searching for waterfront property in Doha with immediate move-in.”',
+      timeline: [
+        { time: '10:42:01', event: 'Lead captured (Property Finder)' },
+        { time: '10:42:03', event: 'AI qualified (94% Intent)' },
+        { time: '10:42:04', event: 'Agent assigned (Rashid Al-Dosari)' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     },
     {
       id: 'doha-2',
       title: 'The Pearl Marina Sky Penthouse',
-      location: 'Porto Arabia • The Pearl, Qatar',
+      category: 'SKY PENTHOUSE',
+      personality: 'portal-sync',
+      accentColor: 'cyan',
       price: 'QAR 6,200,000',
+      location: 'Porto Arabia • The Pearl, Qatar',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
-      badge: 'AI Bot Active 24/7',
-      badgeColor: 'bg-sky-600',
       specs: [
+        { label: '520 sqm', icon: Maximize2 },
         { label: '4 Beds', icon: BedDouble },
-        { label: '5 Baths', icon: Bath },
-        { label: '520 sqm', icon: Maximize2 }
+        { label: '5 Baths', icon: Bath }
       ],
-      footerLabel: 'Portal Auto-Sync',
-      footerValue: 'Property Finder Qatar Live',
-      footerValueColor: 'text-sky-700 bg-sky-100/70'
+      aiValueScore: 91,
+      demandStatus: 'VIP PIPELINE',
+      matchScore: 91,
+      matchLabel: 'PORTAL SYNC',
+      liveStatusHeader: 'PORTAL AUTO-SYNC',
+      liveStatusSub: 'Property Finder Live • 24/7 AI Bot',
+      portalSource: 'Property Finder Qatar',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“AI Bot engaged lead in Arabic within 4s. Pre-qualified budget QAR 6.5M and private berth request.”',
+      timeline: [
+        { time: '09:15:10', event: 'WhatsApp Inquiry Ingested' },
+        { time: '09:15:12', event: 'Bot qualified budget & area' },
+        { time: '09:15:15', event: 'Dispatched to Mariam Al-Kuwari' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     },
     {
       id: 'doha-3',
       title: 'Lusail Waterfront Commercial Tower',
-      location: 'Marina Promenade • Lusail, Qatar',
+      category: 'COMMERCIAL ASSET',
+      personality: 'deal-intel',
+      accentColor: 'gold',
       price: 'QAR 18,500,000',
+      location: 'Marina Promenade • Lusail, Qatar',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
-      badge: 'Duplicate Protection',
-      badgeColor: 'bg-emerald-500',
       specs: [
-        { label: 'Grade A', icon: Building },
-        { label: '12 Floors', icon: Bath },
-        { label: '2,800 sqm', icon: Maximize2 }
+        { label: '2,800 sqm', icon: Maximize2 },
+        { label: '12 Floors', icon: Building },
+        { label: 'Grade A', icon: ShieldCheck }
       ],
-      footerLabel: 'Commission Signoff',
-      footerValue: '2-Step Director Lock',
-      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+      aiValueScore: 98,
+      demandStatus: 'INSTITUTIONAL',
+      matchScore: 98,
+      matchLabel: 'DEAL LOCK',
+      liveStatusHeader: 'DEAL INTELLIGENCE',
+      liveStatusSub: 'Commission: QAR 120,000 • 2-Step Lock',
+      portalSource: 'Direct Webhook Sync',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“Commercial investor pipeline locked. 2-Step Sales Director to Accounting signoff enforced.”',
+      timeline: [
+        { time: '11:02:18', event: 'Term Sheet Submitted' },
+        { time: '11:02:40', event: 'Director Nasser Signed' },
+        { time: '11:03:00', event: 'Accounting Batch #908 Queued' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     }
   ],
   dubai: [
     {
       id: 'dubai-1',
-      title: 'Sky Penthouse with Private Pool',
-      location: 'Palm Jumeirah • Dubai, UAE',
+      title: 'Palm Jumeirah Signature Sky Villa',
+      category: 'LUXURY VILLA',
+      personality: 'ai-match',
+      accentColor: 'emerald',
       price: 'AED 14,900,000',
+      location: 'Palm Jumeirah • Dubai, UAE',
       image: PROPERTY_IMAGES.heroPenthouse,
-      badge: 'Auto-Assigned in 2s',
-      badgeColor: 'bg-emerald-500',
       specs: [
+        { label: '580 sqm', icon: Maximize2 },
         { label: '4 Beds', icon: BedDouble },
-        { label: '5 Baths', icon: Bath },
-        { label: '580 sqm', icon: Maximize2 }
+        { label: '5 Baths', icon: Bath }
       ],
-      footerLabel: 'WhatsApp Lead Qualification',
-      footerValue: 'High Net Worth Verified',
-      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+      aiValueScore: 95,
+      demandStatus: 'ULTRA HIGH',
+      matchScore: 96,
+      matchLabel: 'AI BUYER MATCH',
+      liveStatusHeader: 'LIVE LEAD',
+      liveStatusSub: 'HNW Verified • Assigned in 2s',
+      portalSource: 'Property Finder UAE',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“HNW private client looking for private beachfront pool and immediate transfer.”',
+      timeline: [
+        { time: '14:20:05', event: 'Portal Inquiry Ingested' },
+        { time: '14:20:07', event: 'AI intent scored: 96%' },
+        { time: '14:20:08', event: 'Routed to Senior Agent Karim' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     },
     {
       id: 'dubai-2',
       title: 'Downtown Burj View Luxury Suite',
-      location: 'Opera District • Downtown Dubai, UAE',
+      category: 'SKY RESIDENCE',
+      personality: 'portal-sync',
+      accentColor: 'cyan',
       price: 'AED 8,750,000',
+      location: 'Opera District • Downtown Dubai, UAE',
       image: PROPERTY_IMAGES.luxuryInterior,
-      badge: 'Bayut & PF Direct Sync',
-      badgeColor: 'bg-sky-600',
       specs: [
+        { label: '340 sqm', icon: Maximize2 },
         { label: '3 Beds', icon: BedDouble },
-        { label: '4 Baths', icon: Bath },
-        { label: '340 sqm', icon: Maximize2 }
+        { label: '4 Baths', icon: Bath }
       ],
-      footerLabel: 'Commission Signoff',
-      footerValue: '2-Step Director Lock',
-      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+      aiValueScore: 93,
+      demandStatus: 'HIGH VELOCITY',
+      matchScore: 92,
+      matchLabel: 'PORTAL SYNC',
+      liveStatusHeader: 'PORTAL AUTO-SYNC',
+      liveStatusSub: 'Bayut & PF Direct • 24/7 AI Bot',
+      portalSource: 'Bayut Live UAE',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“Bayut lead synced and routed within 6s. WhatsApp brochure delivered automatically.”',
+      timeline: [
+        { time: '12:08:14', event: 'Bayut Direct Sync Active' },
+        { time: '12:08:16', event: 'WhatsApp AI Brochure Sent' },
+        { time: '12:08:19', event: 'Viewing Confirmed for 4 PM' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     },
     {
       id: 'dubai-3',
       title: 'Saadiyat Beachfront Signature Villa',
-      location: 'Saadiyat Island • Abu Dhabi, UAE',
+      category: 'WATERFRONT ESTATE',
+      personality: 'deal-intel',
+      accentColor: 'gold',
       price: 'AED 21,000,000',
+      location: 'Saadiyat Island • Abu Dhabi, UAE',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-      badge: 'Duplicate Protection',
-      badgeColor: 'bg-purple-600',
       specs: [
+        { label: '920 sqm', icon: Maximize2 },
         { label: '6 Beds', icon: BedDouble },
-        { label: '7 Baths', icon: Bath },
-        { label: '920 sqm', icon: Maximize2 }
+        { label: '7 Baths', icon: Bath }
       ],
-      footerLabel: 'Offline Mobile Sync',
-      footerValue: 'Live Field Update',
-      footerValueColor: 'text-purple-700 bg-purple-100/70'
+      aiValueScore: 97,
+      demandStatus: 'PRIME ASSET',
+      matchScore: 95,
+      matchLabel: 'DEAL LOCK',
+      liveStatusHeader: 'DEAL INTELLIGENCE',
+      liveStatusSub: 'Commission: AED 420,000 • 2-Step Signed',
+      portalSource: 'Offline Mobile Sync',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“Field agent viewing signed offline in basement. Replay synced instantly to accounting.”',
+      timeline: [
+        { time: '16:45:00', event: 'Field Signature Captured' },
+        { time: '16:45:22', event: 'Offline Queue Synced 5G' },
+        { time: '16:45:30', event: 'Director Signoff Unlocked' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     }
   ],
   riyadh: [
     {
       id: 'riyadh-1',
-      title: 'Commercial Corporate Headquarters',
-      location: 'KAFD Financial District • Riyadh, KSA',
+      title: 'KAFD Corporate Headquarters Tower',
+      category: 'COMMERCIAL ASSET',
+      personality: 'deal-intel',
+      accentColor: 'gold',
       price: 'SAR 24,000,000',
+      location: 'KAFD Financial District • Riyadh, KSA',
       image: PROPERTY_IMAGES.riyadhTower,
-      badge: 'Duplicate Protection',
-      badgeColor: 'bg-emerald-500',
       specs: [
-        { label: 'Grade A', icon: Building },
-        { label: '8 Floors', icon: Bath },
-        { label: '1,400 sqm', icon: Maximize2 }
+        { label: '1,400 sqm', icon: Maximize2 },
+        { label: '8 Floors', icon: Building },
+        { label: 'Grade A', icon: ShieldCheck }
       ],
-      footerLabel: 'Saudi Cloud Hosting',
-      footerValue: 'PDPL & CITC Compliant',
-      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+      aiValueScore: 99,
+      demandStatus: 'INSTITUTIONAL',
+      matchScore: 97,
+      matchLabel: 'DEAL LOCK',
+      liveStatusHeader: 'DEAL INTELLIGENCE',
+      liveStatusSub: 'Saudi Cloud Hosting • PDPL Compliant',
+      portalSource: 'Aqar.fm & Enterprise API',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“Saudi sovereign fund corporate lead. 2-Step director signoff locked with audit timestamp.”',
+      timeline: [
+        { time: '08:30:10', event: 'Enterprise RFP Ingested' },
+        { time: '08:30:25', event: 'KAFD Compliance Verified' },
+        { time: '08:30:40', event: 'Deal Room #401 Created' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     },
     {
       id: 'riyadh-2',
       title: 'Al-Hizam Luxury Private Estate',
-      location: 'Al-Hizam Al-Dhahabi • Riyadh, KSA',
+      category: 'LUXURY ESTATE',
+      personality: 'ai-match',
+      accentColor: 'emerald',
       price: 'SAR 16,800,000',
+      location: 'Al-Hizam Al-Dhahabi • Riyadh, KSA',
       image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80',
-      badge: 'AI Bot Active 24/7',
-      badgeColor: 'bg-sky-600',
       specs: [
+        { label: '1,100 sqm', icon: Maximize2 },
         { label: '6 Beds', icon: BedDouble },
-        { label: '8 Baths', icon: Bath },
-        { label: '1,100 sqm', icon: Maximize2 }
+        { label: '8 Baths', icon: Bath }
       ],
-      footerLabel: 'WhatsApp Lead Qualification',
-      footerValue: 'VIP Arabic Flow',
-      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+      aiValueScore: 95,
+      demandStatus: 'HIGH DEMAND',
+      matchScore: 94,
+      matchLabel: 'AI BUYER MATCH',
+      liveStatusHeader: 'LIVE LEAD',
+      liveStatusSub: 'VIP Arabic Flow • Assigned in 3s',
+      portalSource: 'Meta WhatsApp AI Bot',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“AI WhatsApp bot qualified VIP buyer in native Arabic. Budget SAR 17M approved.”',
+      timeline: [
+        { time: '15:10:02', event: 'WhatsApp VIP Inquiry' },
+        { time: '15:10:04', event: 'AI Bot Qualified in Arabic' },
+        { time: '15:10:06', event: 'Assigned to Faisal Al-Saud' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     },
     {
       id: 'riyadh-3',
       title: 'Jeddah Corniche Waterfront Residence',
-      location: 'North Corniche • Jeddah, KSA',
+      category: 'WATERFRONT RESIDENCE',
+      personality: 'portal-sync',
+      accentColor: 'cyan',
       price: 'SAR 11,500,000',
+      location: 'North Corniche • Jeddah, KSA',
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
-      badge: 'Aqar.fm Portal Sync',
-      badgeColor: 'bg-blue-600',
       specs: [
+        { label: '620 sqm', icon: Maximize2 },
         { label: '4 Beds', icon: BedDouble },
-        { label: '5 Baths', icon: Bath },
-        { label: '620 sqm', icon: Maximize2 }
+        { label: '5 Baths', icon: Bath }
       ],
-      footerLabel: 'Deal Audit Trail',
-      footerValue: 'Immutable Timestamp',
-      footerValueColor: 'text-sky-700 bg-sky-100/70'
+      aiValueScore: 92,
+      demandStatus: 'COASTAL DEMAND',
+      matchScore: 93,
+      matchLabel: 'PORTAL SYNC',
+      liveStatusHeader: 'PORTAL AUTO-SYNC',
+      liveStatusSub: 'Aqar.fm Live Sync • Sub-10s',
+      portalSource: 'Aqar.fm Direct Live',
+      portalStatus: 'LIVE SYNC',
+      aiInsight: '“Aqar.fm portal inquiry ingested in 3s. Duplicate listing check passed 100%.”',
+      timeline: [
+        { time: '13:04:12', event: 'Aqar.fm Webhook Received' },
+        { time: '13:04:14', event: 'Duplicate Listing Verified' },
+        { time: '13:04:16', event: 'Dispatched to Agent Tariq' }
+      ],
+      actionText: 'VIEW INTELLIGENCE'
     }
   ]
 };
@@ -281,6 +404,7 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [mobileCardIndex, setMobileCardIndex] = useState(0);
 
   const handleHeroMouseMove = (e) => {
     if (typeof window !== 'undefined' && window.innerWidth < 1024) return;
@@ -636,9 +760,9 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 2. REAL ESTATE INDUSTRY SHOWCASE HUB WITH SCROLL MOTION                    */}
+      {/* 2. REAL ESTATE INDUSTRY SHOWCASE HUB: LIVE PROPERTY INTELLIGENCE TERMINALS */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="showcase" className="py-24 sm:py-28 bg-[#FBFDFE] text-slate-900 relative border-b border-slate-200/80">
+      <section id="showcase" className="py-24 sm:py-32 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
         {/* Subtle Architectural Grid Background Accent */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
@@ -646,25 +770,26 @@ export default function App() {
           
           {/* Section Header */}
           <motion.div 
-            className="text-center max-w-3xl mx-auto space-y-4 mb-14"
+            className="text-center max-w-3xl mx-auto space-y-4 mb-14 sm:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/60 text-xs font-bold uppercase tracking-wider shadow-sm">
-              {isRtl ? 'مركز إدارة العقارات المباشر' : 'Live Property & Lead Hub'}
-            </span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/60 text-xs font-bold uppercase tracking-wider shadow-sm">
+              <Activity className="w-3.5 h-3.5 text-[#1078C0]" />
+              <span>{isRtl ? 'نظام بيانات العقارات المباشر' : 'Live Property Intelligence Network'}</span>
+            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
               Built for Every Asset Class in the GCC Real Estate Market
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-              Manage luxury residential penthouses, waterfront Qatar villas, and Riyadh commercial developments seamlessly.
+              Every listing paired with live portal telemetry, instant AI buyer match scoring, and two-step director commission locks.
             </p>
 
             {/* Editorial City Tabs Navigation */}
             <div className="flex justify-center pt-3">
-              <div className="inline-flex p-1.5 bg-slate-100/90 rounded-2xl border border-slate-200/80 shadow-inner">
+              <div className="inline-flex p-1.5 bg-slate-200/80 rounded-2xl border border-slate-300/70 shadow-inner">
                 {[
                   { id: 'doha', label: 'Doha & Pearl Qatar' },
                   { id: 'dubai', label: 'Dubai & Abu Dhabi' },
@@ -672,11 +797,14 @@ export default function App() {
                 ].map((tab) => (
                   <button
                     key={tab.id}
-                    onClick={() => setActivePropertyTab(tab.id)}
+                    onClick={() => {
+                      setActivePropertyTab(tab.id);
+                      setMobileCardIndex(0);
+                    }}
                     className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       activePropertyTab === tab.id
-                        ? 'bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white shadow-md shadow-blue-500/20'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                        ? 'bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white shadow-md shadow-blue-500/25'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-300/50'
                     }`}
                   >
                     {tab.label}
@@ -686,76 +814,324 @@ export default function App() {
             </div>
           </motion.div>
 
-          {/* DYNAMIC EDITORIAL PROPERTY CARDS GRID */}
-          <motion.div 
-            key={activePropertyTab}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 xl:gap-8"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            {(MARKET_PROPERTIES[activePropertyTab] || MARKET_PROPERTIES.doha).map((property, idx) => (
-              <motion.div 
-                key={property.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_20px_35px_-10px_rgba(0,48,104,0.14)] hover:border-[#1078C0]/50 transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative h-64 overflow-hidden bg-slate-100">
+          {/* DESKTOP VIEW: EDITORIAL STAGGERED 3-CARD COMPOSITION */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-8 xl:gap-9 items-start pt-6">
+            {(MARKET_PROPERTIES[activePropertyTab] || MARKET_PROPERTIES.doha).map((property, idx) => {
+              // Asymmetric vertical stagger: Card 1 (0px), Card 2 (-24px), Card 3 (+12px)
+              const staggerOffset = idx === 1 ? 'lg:-translate-y-6' : idx === 2 ? 'lg:translate-y-3' : 'lg:translate-y-0';
+              
+              // Dynamic Accent Palette per Personality
+              const isEmerald = property.accentColor === 'emerald';
+              const isCyan = property.accentColor === 'cyan';
+              const isGold = property.accentColor === 'gold';
+
+              const accentBorder = isEmerald ? 'hover:border-[#00D6A3]/60' : isCyan ? 'hover:border-[#39BFF5]/60' : 'hover:border-[#F5B91E]/60';
+              const accentBadgeBg = isEmerald ? 'bg-[#00D6A3]/15 text-[#00D6A3] border-[#00D6A3]/35' : isCyan ? 'bg-[#39BFF5]/15 text-[#39BFF5] border-[#39BFF5]/35' : 'bg-[#F5B91E]/15 text-[#F5B91E] border-[#F5B91E]/35';
+              const accentPing = isEmerald ? 'bg-[#00D6A3]' : isCyan ? 'bg-[#39BFF5]' : 'bg-[#F5B91E]';
+              const accentText = isEmerald ? 'text-[#00D6A3]' : isCyan ? 'text-[#39BFF5]' : 'text-[#F5B91E]';
+
+              return (
+                <motion.div 
+                  key={property.id}
+                  initial={{ opacity: 0, y: 50 + idx * 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                  className={`w-full max-w-[420px] mx-auto rounded-[32px] bg-[#001B3D] border border-blue-800/45 ${accentBorder} shadow-[0_25px_60px_-15px_rgba(0,27,61,0.85),0_0_30px_rgba(8,120,209,0.12)] hover:shadow-[0_30px_70px_-10px_rgba(0,27,61,0.95),0_0_40px_rgba(57,191,245,0.22)] flex flex-col justify-between overflow-hidden group transition-all duration-500 ${staggerOffset}`}
+                >
+                  {/* -------------------------------------------------------------- */}
+                  {/* TOP 38%: ASYMMETRIC IMMERSIVE VISUAL WITH FLOATING DATA PILLS   */}
+                  {/* -------------------------------------------------------------- */}
+                  <div className="relative h-[240px] overflow-hidden bg-slate-900">
                     <img 
                       src={property.image} 
                       alt={property.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
+                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out filter brightness-95" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none" />
                     
-                    {/* Floating Price Tag */}
-                    <div className="absolute top-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-[#003068]/95 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-lg">
-                      {property.price}
+                    {/* Dark gradient overlay for UI contrast */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#001B3D] via-black/20 to-black/50 pointer-events-none" />
+                    
+                    {/* Top Floating Price Module */}
+                    <div className="absolute top-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-[#001B3D]/95 backdrop-blur-xl text-white font-extrabold text-xs sm:text-sm border border-white/20 shadow-xl flex items-center gap-2">
+                      <span className={`w-2 h-2 rounded-full ${accentPing} animate-pulse`} />
+                      <span className="font-mono tracking-tight">{property.price}</span>
                     </div>
-                    
-                    {/* Status Badge */}
-                    <div className={`absolute bottom-3.5 right-3.5 px-3 py-1 rounded-lg ${property.badgeColor} text-white text-[11px] font-semibold flex items-center gap-1.5 shadow-md backdrop-blur-sm`}>
-                      <CheckCircle className="w-3.5 h-3.5" /> {property.badge}
+
+                    {/* Top Floating Portal Live Sync Source */}
+                    <div className="absolute top-3.5 right-3.5 px-3 py-1.5 rounded-full bg-[#032653]/95 backdrop-blur-xl border border-sky-400/40 text-sky-200 text-[10px] font-mono font-bold flex items-center gap-1.5 shadow-lg">
+                      <Globe className="w-3 h-3 text-[#39BFF5]" />
+                      <span className="truncate max-w-[120px]">{property.portalSource}</span>
+                    </div>
+
+                    {/* Bottom Edge Floating Location & Category Pill */}
+                    <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#001B3D]/90 backdrop-blur-md border border-blue-700/50 text-[11px] text-[#A9C9E8] font-medium truncate max-w-[70%]">
+                        <MapPin className="w-3.5 h-3.5 text-[#39BFF5] shrink-0" />
+                        <span className="truncate">{property.location}</span>
+                      </div>
+                      <span className={`px-2.5 py-1 rounded-lg ${accentBadgeBg} border text-[9px] font-mono uppercase font-bold tracking-wider shrink-0`}>
+                        {property.category}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Card Content */}
-                  <div className="p-5 sm:p-6 space-y-3.5">
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-                      <MapPin className="w-3.5 h-3.5 text-[#1078C0] shrink-0" /> {property.location}
-                    </div>
+                  {/* -------------------------------------------------------------- */}
+                  {/* CENTER: LIVE AI PROPERTY PROFILE & OPERATIONAL TELEMETRY       */}
+                  {/* -------------------------------------------------------------- */}
+                  <div className="p-5 sm:p-6 space-y-4 text-left flex-1 flex flex-col justify-between">
                     
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#1078C0] transition-colors leading-snug">
-                      {property.title}
-                    </h3>
-                    
-                    {/* Specifications Bar */}
-                    <div className="flex items-center gap-4 text-xs text-slate-600 pt-3 border-t border-slate-100">
-                      {property.specs.map((spec, sIdx) => {
-                        const IconComponent = spec.icon;
-                        return (
-                          <span key={sIdx} className="flex items-center gap-1.5">
-                            <IconComponent className="w-4 h-4 text-slate-400" /> {spec.label}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
+                    <div className="space-y-3.5">
+                      {/* Property Title */}
+                      <h3 className="text-lg font-extrabold text-white group-hover:text-[#39BFF5] transition-colors leading-snug line-clamp-1">
+                        {property.title}
+                      </h3>
 
-                {/* Card Footer Strip */}
-                <div className="px-5 sm:px-6 pb-5">
-                  <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 text-[11px] text-[#0858A8] font-semibold flex justify-between items-center">
-                    <span>{property.footerLabel}</span>
-                    <span className={`font-bold px-2 py-0.5 rounded ${property.footerValueColor}`}>{property.footerValue}</span>
+                      {/* Visual Specs Data Grid */}
+                      <div className="grid grid-cols-3 gap-2 p-2.5 rounded-2xl bg-[#032653]/80 border border-blue-800/50 text-xs">
+                        {property.specs.map((spec, sIdx) => {
+                          const IconComponent = spec.icon;
+                          return (
+                            <div key={sIdx} className="flex flex-col items-center justify-center text-center p-1">
+                              <IconComponent className="w-4 h-4 text-[#39BFF5] mb-1 opacity-90" />
+                              <span className="text-white font-bold text-[11px] font-mono">{spec.label}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* AI Intelligence Metrics Strip (Score, Demand, Match) */}
+                      <div className="grid grid-cols-3 gap-2">
+                        {/* Metric 1: AI Value Score */}
+                        <div className="p-2.5 rounded-2xl bg-[#032653]/60 border border-blue-800/40 flex flex-col items-center text-center">
+                          <span className="text-[9px] font-mono uppercase text-[#A9C9E8] font-semibold">AI VALUE</span>
+                          <span className="text-sm font-black text-white mt-0.5 font-mono">{property.aiValueScore}/100</span>
+                          <span className="text-[8px] font-mono text-[#00D6A3] font-bold mt-0.5">Top 2%</span>
+                        </div>
+
+                        {/* Metric 2: Demand Indicator */}
+                        <div className="p-2.5 rounded-2xl bg-[#032653]/60 border border-blue-800/40 flex flex-col items-center text-center">
+                          <span className="text-[9px] font-mono uppercase text-[#A9C9E8] font-semibold">DEMAND</span>
+                          <span className="text-[11px] font-black text-[#39BFF5] mt-1 truncate">{property.demandStatus}</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#39BFF5] animate-ping mt-1" />
+                        </div>
+
+                        {/* Metric 3: Buyer Match */}
+                        <div className="p-2.5 rounded-2xl bg-[#032653]/60 border border-blue-800/40 flex flex-col items-center text-center">
+                          <span className="text-[9px] font-mono uppercase text-[#A9C9E8] font-semibold">LEAD MATCH</span>
+                          <span className={`text-sm font-black ${accentText} mt-0.5 font-mono`}>{property.matchScore}%</span>
+                          <span className="text-[8px] font-mono text-emerald-300 font-bold mt-0.5">High Intent</span>
+                        </div>
+                      </div>
+
+                      {/* Operational Live Status & Micro Activity Timeline */}
+                      <div className="p-3.5 rounded-2xl bg-[#00142E] border border-blue-900/80 space-y-2.5 shadow-inner">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-1.5">
+                            <span className={`w-2 h-2 rounded-full ${accentPing} animate-ping`} />
+                            <span className={`text-[10px] font-mono uppercase font-bold ${accentText}`}>{property.liveStatusHeader}</span>
+                          </div>
+                          <span className="text-[9.5px] text-sky-300 font-mono font-medium">{property.liveStatusSub}</span>
+                        </div>
+
+                        {/* Real-time Activity Log */}
+                        <div className="space-y-1 pt-2 border-t border-blue-900/60 text-[9.5px] font-mono">
+                          {property.timeline.map((item, tIdx) => (
+                            <div key={tIdx} className="flex items-center justify-between gap-2">
+                              <span className="text-slate-400 shrink-0">{item.time}</span>
+                              <span className="text-white font-medium truncate text-right">{item.event}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* AI Insight Quotation Callout */}
+                      <div className="p-3 rounded-2xl bg-[#0878D1]/15 border border-[#39BFF5]/30 flex items-start gap-2">
+                        <Sparkles className="w-3.5 h-3.5 text-[#39BFF5] shrink-0 mt-0.5" />
+                        <p className="text-[11px] text-blue-100 italic leading-relaxed">
+                          {property.aiInsight}
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* -------------------------------------------------------------- */}
+                  {/* BOTTOM ACTION BAR                                              */}
+                  {/* -------------------------------------------------------------- */}
+                  <div className="px-5 sm:px-6 py-4 bg-[#00142E]/90 border-t border-blue-900/80 flex items-center justify-between group-hover:bg-[#032653] transition-colors">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#39BFF5] group-hover:text-white uppercase transition-colors">
+                      {property.actionText}
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-[#0878D1]/30 border border-[#39BFF5]/40 flex items-center justify-center text-[#39BFF5] group-hover:bg-[#168FE5] group-hover:text-white group-hover:translate-x-1.5 transition-all">
+                      <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180 group-hover:-translate-x-1.5' : ''}`} />
+                    </div>
+                  </div>
+
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* MOBILE VIEW: INTERACTIVE TOUCH CAROUSEL WITH 1 / 3 PAGINATION */}
+          <div className="lg:hidden mt-6 space-y-5">
+            {(() => {
+              const currentList = MARKET_PROPERTIES[activePropertyTab] || MARKET_PROPERTIES.doha;
+              const property = currentList[mobileCardIndex] || currentList[0];
+              
+              const isEmerald = property.accentColor === 'emerald';
+              const isCyan = property.accentColor === 'cyan';
+              const isGold = property.accentColor === 'gold';
+
+              const accentBorder = isEmerald ? 'border-[#00D6A3]/60' : isCyan ? 'border-[#39BFF5]/60' : 'border-[#F5B91E]/60';
+              const accentBadgeBg = isEmerald ? 'bg-[#00D6A3]/15 text-[#00D6A3] border-[#00D6A3]/35' : isCyan ? 'bg-[#39BFF5]/15 text-[#39BFF5] border-[#39BFF5]/35' : 'bg-[#F5B91E]/15 text-[#F5B91E] border-[#F5B91E]/35';
+              const accentPing = isEmerald ? 'bg-[#00D6A3]' : isCyan ? 'bg-[#39BFF5]' : 'bg-[#F5B91E]';
+              const accentText = isEmerald ? 'text-[#00D6A3]' : isCyan ? 'text-[#39BFF5]' : 'text-[#F5B91E]';
+
+              return (
+                <div className="space-y-4">
+                  <motion.div 
+                    key={`${activePropertyTab}-${mobileCardIndex}`}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className={`w-full rounded-[28px] bg-[#001B3D] border ${accentBorder} shadow-2xl flex flex-col justify-between overflow-hidden`}
+                  >
+                    {/* Top Asymmetric Image */}
+                    <div className="relative h-[220px] overflow-hidden bg-slate-900">
+                      <img src={property.image} alt={property.title} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#001B3D] via-black/20 to-black/50" />
+                      
+                      <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-[#001B3D]/95 text-white font-extrabold text-xs border border-white/20 flex items-center gap-1.5">
+                        <span className={`w-2 h-2 rounded-full ${accentPing} animate-pulse`} />
+                        <span className="font-mono">{property.price}</span>
+                      </div>
+
+                      <div className="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full bg-[#032653]/95 border border-sky-400/40 text-sky-200 text-[10px] font-mono font-bold flex items-center gap-1">
+                        <Globe className="w-3 h-3 text-[#39BFF5]" />
+                        <span>{property.portalSource}</span>
+                      </div>
+
+                      <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-[#001B3D]/90 border border-blue-700/50 text-[11px] text-[#A9C9E8] font-medium truncate">
+                          <MapPin className="w-3 h-3 text-[#39BFF5] shrink-0" />
+                          <span className="truncate">{property.location}</span>
+                        </div>
+                        <span className={`px-2 py-0.5 rounded-md ${accentBadgeBg} border text-[9px] font-mono uppercase font-bold`}>
+                          {property.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Center Profile */}
+                    <div className="p-5 space-y-3.5 text-left">
+                      <h3 className="text-base font-extrabold text-white leading-snug line-clamp-1">
+                        {property.title}
+                      </h3>
+
+                      {/* Specs */}
+                      <div className="grid grid-cols-3 gap-2 p-2 rounded-xl bg-[#032653]/80 border border-blue-800/50 text-xs">
+                        {property.specs.map((spec, sIdx) => {
+                          const IconComponent = spec.icon;
+                          return (
+                            <div key={sIdx} className="flex flex-col items-center justify-center text-center p-1">
+                              <IconComponent className="w-3.5 h-3.5 text-[#39BFF5] mb-1" />
+                              <span className="text-white font-bold text-[10px] font-mono">{spec.label}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* AI Metrics */}
+                      <div className="grid grid-cols-3 gap-2">
+                        <div className="p-2 rounded-xl bg-[#032653]/60 border border-blue-800/40 flex flex-col items-center text-center">
+                          <span className="text-[8px] font-mono uppercase text-[#A9C9E8]">AI VALUE</span>
+                          <span className="text-xs font-black text-white mt-0.5 font-mono">{property.aiValueScore}/100</span>
+                        </div>
+                        <div className="p-2 rounded-xl bg-[#032653]/60 border border-blue-800/40 flex flex-col items-center text-center">
+                          <span className="text-[8px] font-mono uppercase text-[#A9C9E8]">DEMAND</span>
+                          <span className="text-[10px] font-black text-[#39BFF5] mt-0.5 truncate">{property.demandStatus}</span>
+                        </div>
+                        <div className="p-2 rounded-xl bg-[#032653]/60 border border-blue-800/40 flex flex-col items-center text-center">
+                          <span className="text-[8px] font-mono uppercase text-[#A9C9E8]">MATCH</span>
+                          <span className={`text-xs font-black ${accentText} mt-0.5 font-mono`}>{property.matchScore}%</span>
+                        </div>
+                      </div>
+
+                      {/* Operational Live Status & Micro Activity */}
+                      <div className="p-3 rounded-xl bg-[#00142E] border border-blue-900/80 space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className={`text-[9px] font-mono uppercase font-bold ${accentText}`}>{property.liveStatusHeader}</span>
+                          <span className="text-[8.5px] text-sky-300 font-mono">{property.liveStatusSub}</span>
+                        </div>
+                        <div className="space-y-0.5 pt-1.5 border-t border-blue-900/60 text-[9px] font-mono">
+                          {property.timeline.map((item, tIdx) => (
+                            <div key={tIdx} className="flex items-center justify-between gap-1">
+                              <span className="text-slate-400">{item.time}</span>
+                              <span className="text-white truncate text-right">{item.event}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* AI Insight */}
+                      <div className="p-2.5 rounded-xl bg-[#0878D1]/15 border border-[#39BFF5]/30 flex items-start gap-2">
+                        <Sparkles className="w-3.5 h-3.5 text-[#39BFF5] shrink-0 mt-0.5" />
+                        <p className="text-[10.5px] text-blue-100 italic leading-relaxed">
+                          {property.aiInsight}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Bottom Action */}
+                    <div className="px-5 py-3.5 bg-[#00142E]/90 border-t border-blue-900/80 flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold tracking-widest text-[#39BFF5] uppercase">
+                        {property.actionText}
+                      </span>
+                      <div className="w-7 h-7 rounded-full bg-[#0878D1]/30 border border-[#39BFF5]/40 flex items-center justify-center text-[#39BFF5]">
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Carousel Controls (1 / 3 Pagination + Prev/Next) */}
+                  <div className="flex items-center justify-between px-2 pt-2">
+                    <button
+                      onClick={() => setMobileCardIndex((prev) => (prev > 0 ? prev - 1 : currentList.length - 1))}
+                      className="p-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 transition-colors"
+                      aria-label="Previous card"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+
+                    <div className="flex items-center gap-2">
+                      {currentList.map((_, dotIdx) => (
+                        <button
+                          key={dotIdx}
+                          onClick={() => setMobileCardIndex(dotIdx)}
+                          className={`h-2 rounded-full transition-all ${
+                            mobileCardIndex === dotIdx ? 'w-6 bg-[#0858A8]' : 'w-2 bg-slate-300'
+                          }`}
+                          aria-label={`Go to slide ${dotIdx + 1}`}
+                        />
+                      ))}
+                      <span className="text-xs font-mono font-bold text-slate-500 ml-2">
+                        {mobileCardIndex + 1} / {currentList.length}
+                      </span>
+                    </div>
+
+                    <button
+                      onClick={() => setMobileCardIndex((prev) => (prev < currentList.length - 1 ? prev + 1 : 0))}
+                      className="p-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 transition-colors"
+                      aria-label="Next card"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              );
+            })()}
+          </div>
 
         </div>
       </section>
