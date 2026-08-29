@@ -48,7 +48,9 @@ import {
   Activity,
   UserX,
   CreditCard,
-  Target
+  Target,
+  Plus,
+  Minus
 } from 'lucide-react';
 
 /*
@@ -115,6 +117,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const handleHeroMouseMove = (e) => {
     if (typeof window !== 'undefined' && window.innerWidth < 1024) return;
@@ -1827,6 +1830,192 @@ export default function App() {
                 Request Enterprise Quote
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------------------------------- */}
+      {/* 8B. FAQ ⭐ NEW (EDITORIAL INTERACTIVE KNOWLEDGE SYSTEM)                    */}
+      {/* -------------------------------------------------------------------------- */}
+      <section id="faq" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+        {/* Subtle Decorative Technical Micro-Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-start">
+            
+            {/* ------------------------------------------------------------------ */}
+            {/* LEFT COLUMN: EDITORIAL FAQ HEADER & REGIONAL SUPPORT CARD          */}
+            {/* ------------------------------------------------------------------ */}
+            <motion.div 
+              className="lg:col-span-5 lg:sticky lg:top-28 space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider shadow-sm">
+                ⭐ NEW • FREQUENTLY ASKED QUESTIONS
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                {isRtl ? (
+                  'كل ما تحتاج معرفته عن نظام AqarQore'
+                ) : (
+                  <>
+                    Everything You Need to Know.
+                    <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#1078C0]">
+                      Clear, Upfront Answers.
+                    </span>
+                  </>
+                )}
+              </h2>
+
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+                {isRtl ? (
+                  'كل ما يتعلق بسرعة ربط البوابات، وتوافق واتساب السحابي، ودقة احتساب العمولات، وجدول بدء التشغيل في وكالتك.'
+                ) : (
+                  'Everything you need to know about migrating your agency, portal sync speed, WhatsApp Cloud API compliance, and onboarding timelines.'
+                )}
+              </p>
+
+              {/* Regional Support Assistance Card */}
+              <div className="pt-4">
+                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 shadow-sm space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-[#0858A8] flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-slate-900">Custom GCC Architecture Questions?</div>
+                      <div className="text-xs text-slate-500">Dedicated specialists in Dubai &amp; Doha</div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Have specific regulatory, sovereign data hosting, or custom ERP integration requirements? Speak directly with our solution architects.
+                  </p>
+                  <a 
+                    href={DEMO_CTA_URL}
+                    className="inline-flex items-center gap-2 text-xs font-bold text-[#0858A8] hover:text-[#003068] transition-colors"
+                  >
+                    <span>Schedule Technical Architecture Consultation</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ------------------------------------------------------------------ */}
+            {/* RIGHT COLUMN: INTERACTIVE ACCORDION KNOWLEDGE INTERFACE            */}
+            {/* ------------------------------------------------------------------ */}
+            <motion.div 
+              className="lg:col-span-7 space-y-3"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
+            >
+              {[
+                {
+                  id: '01',
+                  question: isRtl 
+                    ? 'ما مدى سرعة توزيع العملاء المحتملين من البوابات العقارية؟' 
+                    : 'How quickly does AqarQore auto-assign portal leads?',
+                  answer: isRtl 
+                    ? 'يتم استلام وتوزيع استفسارات Property Finder و Bayut و Meta WhatsApp في أقل من 10 ثوانٍ عبر محرك القواعد الذكي، متجاوزاً الوكلاء المشغولين أو خارج الدوام لضمان التواصل الفوري.'
+                    : 'Inquiries from Property Finder, Bayut, and Meta WhatsApp are ingested and auto-assigned by your rule engine in under 10 seconds. The system automatically skips agents who are off-duty or at maximum lead capacity, ensuring hot buyers are contacted immediately.'
+                },
+                {
+                  id: '02',
+                  question: isRtl 
+                    ? 'هل يتوافق روبوت واتساب مع معايير واجهة Meta الرسمية؟' 
+                    : "Is the WhatsApp integration compliant with Meta's official Cloud API?",
+                  answer: isRtl 
+                    ? 'نعم، يتصل AqarQore مباشرة عبر شريك Meta Cloud API الرسمي، مما يحافظ على علامة التوثيق الخضراء ويحمي بيانات عملائك داخل بيئة الوكالة الرسمية بدلاً من هواتف الوكلاء الشخصية.'
+                    : "Yes. AqarQore connects directly via Meta's Official Cloud API partner tier, preserving your business verification badge, operating within the 24-hour customer service window, and preventing personal phone data leaks when agents leave."
+                },
+                {
+                  id: '03',
+                  question: isRtl 
+                    ? 'كيف يعمل تطبيق المعاينات في الأماكن المغلقة ومواقف السيارات؟' 
+                    : 'How does the offline mobile app work during basement or underground viewings?',
+                  answer: isRtl 
+                    ? 'يستطيع الوكيل استعراض بيانات الوحدات وتسجيل ملاحظات وتوقيع العميل دون الحاجة لإنترنت، وفور توفر شبكة 4G/5G يتم مزامنة كافة البيانات فورياً دون فقدان أي تفاصيل.'
+                    : 'Agents can pull listing specs, log client feedback, and capture viewing signatures completely offline in underground parking or thick concrete towers. As soon as the device reconnects to 4G/5G or Wi-Fi, all changes sync automatically without data loss.'
+                },
+                {
+                  id: '04',
+                  question: isRtl 
+                    ? 'كيف يمنع نظام اعتماد العمولات على خطوتين النزاعات المالية؟' 
+                    : 'How does the 2-step deal and commission approval prevent disputes?',
+                  answer: isRtl 
+                    ? 'تتطلب كل صفقة موافقة إلكترونية متسلسلة تبدأ من مدير المبيعات ثم تنتقل إلى المحاسبة، ولا يمكن تخطي أي خطوة، مما يضمن دقة الصرف وسجل تدقيق مالي ثابت.'
+                    : 'Every closed transaction requires sequential signoffs: first from the Sales Director, followed by Accounting verification. Neither party can bypass the other, and payouts are locked to prevent double-crediting and disputed commissions.'
+                },
+                {
+                  id: '05',
+                  question: isRtl 
+                    ? 'كم يستغرق نقل بيانات الوكالة وبدء التشغيل الفعلي؟' 
+                    : 'How long does agency onboarding and portal migration take?',
+                  answer: isRtl 
+                    ? 'تبدأ معظم الوكالات العمل بالكامل خلال أقل من 48 ساعة بمساعدة فريق الدعم الإقليمي في دبي والدوحة لنقل القوائم وتفعيل محركات التوزيع دون انقطاع.'
+                    : 'Most GCC brokerages go live in under 48 hours. Our dedicated regional onboarding team in Dubai and Doha helps import your active listings, configure your agent routing rules, and connect your portal webhook pipelines without agency downtime.'
+                }
+              ].map((faq, index) => {
+                const isOpen = openFaqIndex === index;
+                return (
+                  <motion.div
+                    key={faq.id}
+                    variants={fadeInUp}
+                    className={`rounded-2xl transition-all duration-300 border ${
+                      isOpen 
+                        ? 'bg-white border-blue-300 shadow-[0_8px_30px_-6px_rgba(0,48,104,0.08)]' 
+                        : 'bg-[#F8FAFC]/90 hover:bg-white border-slate-200/80 hover:border-slate-300'
+                    }`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaqIndex(isOpen ? -1 : index)}
+                      aria-expanded={isOpen}
+                      className="w-full p-5 sm:p-6 flex items-start justify-between gap-4 text-left cursor-pointer group"
+                    >
+                      <div className="flex items-start gap-4">
+                        <span className={`text-xs font-mono font-bold mt-1 shrink-0 ${isOpen ? 'text-[#0858A8]' : 'text-slate-400'}`}>
+                          {faq.id}
+                        </span>
+                        <span className={`text-base sm:text-lg font-bold leading-snug transition-colors ${
+                          isOpen ? 'text-[#003068]' : 'text-slate-900 group-hover:text-[#0858A8]'
+                        }`}>
+                          {faq.question}
+                        </span>
+                      </div>
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${
+                        isOpen ? 'bg-[#0858A8] text-white shadow-md' : 'bg-slate-200/80 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#0858A8]'
+                      }`}>
+                        {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                      </div>
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
+                            {faq.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+
           </div>
         </div>
       </section>
