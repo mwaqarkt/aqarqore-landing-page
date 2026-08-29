@@ -745,12 +745,15 @@ export default function App() {
                   {/* Subtle Outer Cyan Glow Aura */}
                   <div className="absolute -inset-1.5 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-xl opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   
-                  {/* High-Resolution Transparent Command Center Image */}
+                  {/* High-Resolution Transparent Command Center Image with Embedded Central Emblem */}
                   <img 
                     src="/aqarqore-command-center.png" 
                     alt="AqarQore Intelligence Command Center"
                     className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.85)] filter saturate-105 rounded-2xl"
                   />
+
+                  {/* Pulsating Center Core Ambient Glow */}
+                  <div className="absolute left-[49.4%] top-[51.7%] -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#39BFF5]/20 blur-md pointer-events-none z-20 animate-pulse" />
                 </div>
               </motion.div>
             </motion.div>
