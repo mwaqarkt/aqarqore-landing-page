@@ -478,15 +478,24 @@ export default function App() {
       </header>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 1. HERO SECTION: CENTERED HIGH-IMPACT ENTERPRISE GCC PROPERTY PLATFORM    */}
+      {/* 1. HERO SECTION: CENTERED GCC PROPERTY OPERATING SYSTEM WITH SKYLINE BG   */}
       {/* -------------------------------------------------------------------------- */}
       <section 
         onMouseMove={handleHeroMouseMove}
-        className="relative min-h-[85vh] flex items-center justify-center pt-28 pb-20 lg:pt-36 lg:pb-28 bg-[#001B3D] text-white overflow-hidden"
+        className="relative min-h-[90vh] lg:min-h-[850px] flex items-center justify-center pt-28 pb-20 lg:pt-36 lg:pb-28 bg-[#001B3D] text-white overflow-hidden"
       >
-        {/* Subtle Radial Midnight Glow Background */}
-        <div className="absolute inset-0 bg-radial from-[#062D5C]/60 via-[#032653]/80 to-[#001B3D] pointer-events-none z-0" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[150px] pointer-events-none z-0" />
+        {/* Layer 1: Official GCC Skyline (Dubai • Doha • Riyadh) Connected Network Image */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat filter brightness-90 saturate-110 pointer-events-none"
+          style={{ backgroundImage: 'url(/gcc-hero-bg.jpg)' }}
+        />
+
+        {/* Layer 2: Seamless Dark Navy Gradient Overlay for Crystal-Clear Text Contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/85 via-[#001B3D]/60 to-[#001B3D]/95 z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-radial from-transparent via-[#001B3D]/40 to-[#001B3D]/90 z-0 pointer-events-none" />
+
+        {/* Soft Radial Cyan/Blue Lighting Accent */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-[#0878D1]/15 via-[#39BFF5]/10 to-transparent blur-[160px] pointer-events-none z-0" />
 
         {/* MAIN HERO CONTENT CONTAINER (CENTERED) */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
