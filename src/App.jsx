@@ -2283,8 +2283,8 @@ export default function App() {
 
                     <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                       <div className="flex items-center gap-4 text-left">
-                        <div className="w-12 h-12 rounded-2xl bg-[#001228] border border-sky-400/40 p-1.5 flex items-center justify-center shadow-lg shrink-0">
-                          <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain filter drop-shadow-sm" />
+                        <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-lg shrink-0">
+                          <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain" />
                         </div>
                         <div>
                           <div className="text-base font-extrabold text-white tracking-tight flex items-center gap-2">
