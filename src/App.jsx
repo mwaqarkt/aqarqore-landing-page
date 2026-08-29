@@ -2737,7 +2737,7 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 8B. FAQ ⭐ NEW (EDITORIAL INTERACTIVE KNOWLEDGE SYSTEM)                    */}
+      {/* 8B. FAQ: EDITORIAL INTERACTIVE KNOWLEDGE SYSTEM                            */}
       {/* -------------------------------------------------------------------------- */}
       <section id="faq" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
         {/* Subtle Decorative Technical Micro-Grid */}
@@ -2756,50 +2756,67 @@ export default function App() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0858A8] text-xs font-bold uppercase tracking-wider shadow-sm">
-                FREQUENTLY ASKED QUESTIONS
-              </span>
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
+                <HelpCircle className="w-3.5 h-3.5 text-[#0858A8]" />
+                <span>FREQUENTLY ASKED QUESTIONS</span>
+              </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+              {/* Title */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
                 {isRtl ? (
                   'كل ما تحتاج معرفته عن نظام AqarQore'
                 ) : (
                   <>
-                    Everything You Need to Know. Clear, Upfront Answers.
+                    Everything You Need to Know.{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      Clear, Upfront Answers.
+                    </span>
                   </>
                 )}
               </h2>
 
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+              {/* Subtitle */}
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
                 {isRtl ? (
                   'كل ما يتعلق بسرعة ربط البوابات، وتوافق واتساب السحابي، ودقة احتساب العمولات، وجدول بدء التشغيل في وكالتك.'
                 ) : (
-                  'Everything you need to know about migrating your agency, portal sync speed, WhatsApp Cloud API compliance, and onboarding timelines.'
+                  'Everything you need to know about migrating your agency, portal sync speed, WhatsApp Cloud API compliance, and 48-hour onboarding.'
                 )}
               </p>
 
               {/* Regional Support Assistance Card */}
-              <div className="pt-4">
-                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 shadow-sm space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-[#0858A8] flex items-center justify-center shrink-0">
-                      <ShieldCheck className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-slate-900">Custom GCC Architecture Questions?</div>
-                      <div className="text-xs text-slate-500">Dedicated specialists in Dubai &amp; Doha</div>
+              <div className="pt-2">
+                <div className="p-6 rounded-3xl bg-[#F8FAFC] border border-slate-200 shadow-sm space-y-4 hover:border-slate-300 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-blue-50 border border-blue-200 text-[#0858A8] flex items-center justify-center shrink-0 shadow-2xs font-bold">
+                        <ShieldCheck className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-slate-900">Custom Architecture Inquiries?</div>
+                        <div className="text-xs text-slate-500">Dedicated specialists in Dubai &amp; Doha</div>
+                      </div>
                     </div>
                   </div>
+
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Have specific regulatory, sovereign data hosting, or custom ERP integration requirements? Speak directly with our solution architects.
+                    Have specific regulatory questions, sovereign data hosting requirements, or bespoke ERP integration workflows? Connect with our GCC engineering team.
                   </p>
-                  <a 
-                    href={DEMO_CTA_URL}
-                    className="inline-flex items-center gap-2 text-xs font-bold text-[#0858A8] hover:text-[#003068] transition-colors"
-                  >
-                    <span>Schedule Technical Architecture Consultation</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+
+                  <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between">
+                    <span className="text-[11px] font-mono text-emerald-600 font-bold flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      Avg. Response: &lt; 15 mins
+                    </span>
+                    <a 
+                      href={DEMO_CTA_URL}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0858A8] hover:text-[#003068] transition-colors"
+                    >
+                      <span>Talk to an Architect</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -2808,7 +2825,7 @@ export default function App() {
             {/* RIGHT COLUMN: INTERACTIVE ACCORDION KNOWLEDGE INTERFACE            */}
             {/* ------------------------------------------------------------------ */}
             <motion.div 
-              className="lg:col-span-7 space-y-3"
+              className="lg:col-span-7 space-y-3.5"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -2817,33 +2834,37 @@ export default function App() {
               {[
                 {
                   id: '01',
+                  tag: 'LEAD ROUTING',
                   question: isRtl 
                     ? 'ما مدى سرعة توزيع العملاء المحتملين من البوابات العقارية؟' 
                     : 'How quickly does AqarQore auto-assign portal leads?',
                   answer: isRtl 
                     ? 'يتم استلام وتوزيع استفسارات Property Finder و Bayut و Meta WhatsApp في أقل من 10 ثوانٍ عبر محرك القواعد الذكي، متجاوزاً الوكلاء المشغولين أو خارج الدوام لضمان التواصل الفوري.'
-                    : 'Inquiries from Property Finder, Bayut, and Meta WhatsApp are ingested and auto-assigned by your rule engine in under 10 seconds. The system automatically skips agents who are off-duty or at maximum lead capacity, ensuring hot buyers are contacted immediately.'
+                    : 'Inquiries from Property Finder, Bayut, Dubizzle, and Meta WhatsApp are ingested and auto-assigned by your rule engine in under 10 seconds. The system automatically skips agents who are off-duty or at maximum lead capacity, ensuring hot buyers receive immediate outreach.'
                 },
                 {
                   id: '02',
+                  tag: 'META CLOUD API',
                   question: isRtl 
                     ? 'هل يتوافق روبوت واتساب مع معايير واجهة Meta الرسمية؟' 
                     : "Is the WhatsApp integration compliant with Meta's official Cloud API?",
                   answer: isRtl 
                     ? 'نعم، يتصل AqarQore مباشرة عبر شريك Meta Cloud API الرسمي، مما يحافظ على علامة التوثيق الخضراء ويحمي بيانات عملائك داخل بيئة الوكالة الرسمية بدلاً من هواتف الوكلاء الشخصية.'
-                    : "Yes. AqarQore connects directly via Meta's Official Cloud API partner tier, preserving your business verification badge, operating within the 24-hour customer service window, and preventing personal phone data leaks when agents leave."
+                    : "Yes. AqarQore connects directly via Meta's Official Cloud API partner tier, preserving your official business verification badge, operating within the 24-hour customer service window, and preventing client data loss when staff leave."
                 },
                 {
                   id: '03',
+                  tag: 'OFFLINE FIELD APP',
                   question: isRtl 
                     ? 'كيف يعمل تطبيق المعاينات في الأماكن المغلقة ومواقف السيارات؟' 
                     : 'How does the offline mobile app work during basement or underground viewings?',
                   answer: isRtl 
                     ? 'يستطيع الوكيل استعراض بيانات الوحدات وتسجيل ملاحظات وتوقيع العميل دون الحاجة لإنترنت، وفور توفر شبكة 4G/5G يتم مزامنة كافة البيانات فورياً دون فقدان أي تفاصيل.'
-                    : 'Agents can pull listing specs, log client feedback, and capture viewing signatures completely offline in underground parking or thick concrete towers. As soon as the device reconnects to 4G/5G or Wi-Fi, all changes sync automatically without data loss.'
+                    : 'Agents can pull listing specs, log client feedback, and capture viewing signatures completely offline in underground parking or thick concrete towers. As soon as the device reconnects to 4G/5G or Wi-Fi, all changes sync automatically to the CRM.'
                 },
                 {
                   id: '04',
+                  tag: 'COMMISSION AUDIT',
                   question: isRtl 
                     ? 'كيف يمنع نظام اعتماد العمولات على خطوتين النزاعات المالية؟' 
                     : 'How does the 2-step deal and commission approval prevent disputes?',
@@ -2853,6 +2874,7 @@ export default function App() {
                 },
                 {
                   id: '05',
+                  tag: '48H ONBOARDING',
                   question: isRtl 
                     ? 'كم يستغرق نقل بيانات الوكالة وبدء التشغيل الفعلي؟' 
                     : 'How long does agency onboarding and portal migration take?',
@@ -2866,10 +2888,10 @@ export default function App() {
                   <motion.div
                     key={faq.id}
                     variants={fadeInUp}
-                    className={`rounded-2xl transition-all duration-300 border ${
+                    className={`rounded-2xl transition-all duration-200 border ${
                       isOpen 
-                        ? 'bg-white border-blue-300 shadow-[0_8px_30px_-6px_rgba(0,48,104,0.08)]' 
-                        : 'bg-[#F8FAFC]/90 hover:bg-white border-slate-200/80 hover:border-slate-300'
+                        ? 'bg-white border-blue-400/80 shadow-[0_10px_30px_-5px_rgba(0,48,104,0.08)]' 
+                        : 'bg-[#F8FAFC] hover:bg-white border-slate-200 hover:border-slate-300'
                     }`}
                   >
                     <button
@@ -2878,18 +2900,26 @@ export default function App() {
                       aria-expanded={isOpen}
                       className="w-full p-5 sm:p-6 flex items-start justify-between gap-4 text-left cursor-pointer group"
                     >
-                      <div className="flex items-start gap-4">
-                        <span className={`text-xs font-mono font-bold mt-1 shrink-0 ${isOpen ? 'text-[#0858A8]' : 'text-slate-400'}`}>
+                      <div className="flex items-start gap-3.5">
+                        <span className={`text-xs font-mono font-bold mt-0.5 shrink-0 ${isOpen ? 'text-[#0858A8]' : 'text-slate-400'}`}>
                           {faq.id}
                         </span>
-                        <span className={`text-base sm:text-lg font-bold leading-snug transition-colors ${
-                          isOpen ? 'text-[#003068]' : 'text-slate-900 group-hover:text-[#0858A8]'
-                        }`}>
-                          {faq.question}
-                        </span>
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#0858A8] bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
+                              {faq.tag}
+                            </span>
+                          </div>
+                          <h3 className={`text-base sm:text-lg font-bold leading-snug transition-colors ${
+                            isOpen ? 'text-[#001D42]' : 'text-slate-900 group-hover:text-[#0858A8]'
+                          }`}>
+                            {faq.question}
+                          </h3>
+                        </div>
                       </div>
+
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${
-                        isOpen ? 'bg-[#0858A8] text-white shadow-md' : 'bg-slate-200/80 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#0858A8]'
+                        isOpen ? 'bg-[#0858A8] text-white shadow-xs' : 'bg-slate-200/80 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#0858A8]'
                       }`}>
                         {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                       </div>
@@ -2901,10 +2931,10 @@ export default function App() {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                          transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
                           className="overflow-hidden"
                         >
-                          <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
+                          <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
                             {faq.answer}
                           </div>
                         </motion.div>
