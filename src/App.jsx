@@ -484,18 +484,14 @@ export default function App() {
         onMouseMove={handleHeroMouseMove}
         className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001B3D] text-white overflow-hidden"
       >
-        {/* Layer 1: Official GCC Skyline (Dubai • Doha • Riyadh) Connected Network Image */}
+        {/* Layer 1: Official GCC Skyline (Dubai • Doha • Riyadh) Connected Network Image (Clear & Crisp) */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat filter brightness-90 saturate-110 pointer-events-none"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-95"
           style={{ backgroundImage: 'url(/gcc-hero-bg.jpg)' }}
         />
 
-        {/* Layer 2: Seamless Dark Navy Gradient Overlay for High-Contrast Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001B3D]/95 via-[#001B3D]/80 to-[#001B3D]/75 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/80 via-transparent to-[#001B3D]/90 z-0 pointer-events-none" />
-
-        {/* Soft Radial Cyan/Blue Lighting Accent */}
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[140px] pointer-events-none z-0" />
+        {/* Minimal Edge Softening Only */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/40 via-transparent to-[#001B3D]/50 z-0 pointer-events-none" />
 
         {/* MAIN HERO CONTENT CONTAINER (LEFT COPY + RIGHT VISUAL) */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
