@@ -937,23 +937,18 @@ export default function App() {
                           <span className="text-[9.5px] text-sky-300 font-mono font-medium">{property.liveStatusSub}</span>
                         </div>
 
-                        {/* Real-time Activity Log */}
-                        <div className="space-y-1 pt-2 border-t border-blue-900/60 text-[9.5px] font-mono">
+                        {/* Real-time Activity Log with Connected Node Dots */}
+                        <div className="space-y-1.5 pt-2 border-t border-blue-900/60 text-[9.5px] font-mono">
                           {property.timeline.map((item, tIdx) => (
                             <div key={tIdx} className="flex items-center justify-between gap-2">
-                              <span className="text-slate-400 shrink-0">{item.time}</span>
+                              <div className="flex items-center gap-1.5">
+                                <span className={`w-1.5 h-1.5 rounded-full ${accentPing} opacity-80`} />
+                                <span className="text-slate-400 shrink-0">{item.time}</span>
+                              </div>
                               <span className="text-white font-medium truncate text-right">{item.event}</span>
                             </div>
                           ))}
                         </div>
-                      </div>
-
-                      {/* AI Insight Quotation Callout */}
-                      <div className="p-3 rounded-2xl bg-[#0878D1]/15 border border-[#39BFF5]/30 flex items-start gap-2">
-                        <Sparkles className="w-3.5 h-3.5 text-[#39BFF5] shrink-0 mt-0.5" />
-                        <p className="text-[11px] text-blue-100 italic leading-relaxed">
-                          {property.aiInsight}
-                        </p>
                       </div>
                     </div>
 
@@ -1067,7 +1062,7 @@ export default function App() {
                           <span className={`text-[9px] font-mono uppercase font-bold ${accentText}`}>{property.liveStatusHeader}</span>
                           <span className="text-[8.5px] text-sky-300 font-mono">{property.liveStatusSub}</span>
                         </div>
-                        <div className="space-y-0.5 pt-1.5 border-t border-blue-900/60 text-[9px] font-mono">
+                        <div className="space-y-1 pt-1.5 border-t border-blue-900/60 text-[9px] font-mono">
                           {property.timeline.map((item, tIdx) => (
                             <div key={tIdx} className="flex items-center justify-between gap-1">
                               <span className="text-slate-400">{item.time}</span>
@@ -1075,14 +1070,6 @@ export default function App() {
                             </div>
                           ))}
                         </div>
-                      </div>
-
-                      {/* AI Insight */}
-                      <div className="p-2.5 rounded-xl bg-[#0878D1]/15 border border-[#39BFF5]/30 flex items-start gap-2">
-                        <Sparkles className="w-3.5 h-3.5 text-[#39BFF5] shrink-0 mt-0.5" />
-                        <p className="text-[10.5px] text-blue-100 italic leading-relaxed">
-                          {property.aiInsight}
-                        </p>
                       </div>
                     </div>
 
