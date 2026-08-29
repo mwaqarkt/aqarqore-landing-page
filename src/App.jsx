@@ -1261,16 +1261,11 @@ export default function App() {
       {/* 4. PROBLEM / AGITATION SECTION: 74% REVENUE LEAK CONNECTED SYSTEM          */}
       {/* -------------------------------------------------------------------------- */}
       <section id="problem" className="py-24 sm:py-32 bg-[#001738] text-white relative border-b border-blue-950/80 overflow-hidden">
-        {/* Layer 1: GCC Telemetry & Holographic Regional Map Artwork */}
+        {/* Layer 1: GCC Telemetry & Holographic Regional Map Artwork (Full Clarity, Zero Gradient Overlays) */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-80"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-100"
           style={{ backgroundImage: 'url(/gcc-telemetry-bg.png)' }}
         />
-
-        {/* Layer 2: Deep Midnight & Rose/Amber Ambient Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001738]/85 via-[#001738]/50 to-[#001738]/65 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001738]/70 via-transparent to-[#001738]/85 z-0 pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/10 blur-[120px] pointer-events-none z-0" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
