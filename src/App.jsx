@@ -1760,123 +1760,342 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 6. SECURITY & TRUST SECTION                                               */}
+      {/* 6. AGARQORE SECURITY CONTROL SYSTEM: ENTERPRISE TRUST & ACCESS GOVERNANCE   */}
       {/* -------------------------------------------------------------------------- */}
       <section id="security" className="py-24 sm:py-32 bg-[#001433] text-white relative border-b border-blue-950/80 overflow-hidden">
-        {/* Subtle Decorative Security Grid & Ambient Radial Cyan Glow */}
+        {/* Subtle Decorative Technical Grid & Deep Radial Ambient Cyan Glow */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-sky-500/10 blur-[150px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Section Header */}
           <motion.div 
-            className="text-center max-w-3xl mx-auto space-y-4 mb-16"
+            className="text-center max-w-3xl mx-auto space-y-3.5 mb-16 sm:mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider shadow-sm">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" /> Enterprise-Grade Trust & Compliance
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest shadow-xs">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 animate-pulse" />
+              <span>AGARQORE SECURITY</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
-              Institutional Security Built for GCC Data Sovereignty
+
+            {/* Headline */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+              Security Built Into{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39BFF5] via-[#168FE5] to-[#00D6A3]">
+                Every Layer.
+              </span>
             </h2>
-            <p className="text-blue-100/80 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Restrained, server-enforced boundaries designed to eliminate ex-employee leaks, unauthorized access, and compliance violations.
+
+            {/* Subtitle */}
+            <p className="text-blue-100/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+              Protect every login, every lead, and every agency action with enterprise-grade access controls.
             </p>
           </motion.div>
 
-          {/* 3 Institutional Security Pillars */}
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-          >
-            {/* Security Pillar 01 */}
+          {/* MAIN SECURITY ARCHITECTURE: CENTRAL CORE & 3 FLOATING SECURITY MODULES */}
+          <div className="space-y-12 lg:space-y-14">
+            
+            {/* 1. HERO VISUAL: CENTRAL AGARQORE SECURITY CORE */}
             <motion.div 
-              variants={fadeInUp}
-              className="bg-[#001E45]/80 hover:bg-[#002654] p-7 sm:p-8 rounded-2xl border border-blue-800/60 hover:border-sky-400/40 backdrop-blur-md transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between group"
+              className="relative max-w-xl mx-auto flex flex-col items-center justify-center text-center p-8 rounded-[36px] bg-gradient-to-b from-[#00224D]/90 via-[#001838]/95 to-[#001026] border border-sky-400/40 shadow-[0_0_50px_rgba(8,120,209,0.25)] group"
+              initial={{ opacity: 0, scale: 0.92 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7 }}
             >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-blue-900/60 border border-blue-500/30 text-sky-400 group-hover:text-emerald-300 group-hover:border-emerald-500/40 flex items-center justify-center transition-all">
-                    <Key className="w-6 h-6" />
+              {/* Animated Triple Concentric Security Orbital Rings */}
+              <div className="relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center mb-6">
+                {/* Outer Ring: SESSION */}
+                <motion.div 
+                  className="absolute inset-0 rounded-full border border-dashed border-[#39BFF5]/30"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+                />
+                <span className="absolute top-1 text-[8px] font-mono text-sky-400/70 tracking-widest uppercase bg-[#001433] px-2 py-0.5 rounded-full border border-sky-500/20">
+                  SESSION LAYER
+                </span>
+
+                {/* Middle Ring: ACCESS */}
+                <motion.div 
+                  className="absolute inset-4 rounded-full border border-emerald-500/30"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+                />
+                <span className="absolute bottom-1 text-[8px] font-mono text-emerald-400/70 tracking-widest uppercase bg-[#001433] px-2 py-0.5 rounded-full border border-emerald-500/20">
+                  ACCESS BOUNDARY
+                </span>
+
+                {/* Inner Ring: IDENTITY with Scanning Laser Sweep */}
+                <div className="absolute inset-8 rounded-full border border-sky-400/50 bg-[#001B3D] shadow-inner flex items-center justify-center overflow-hidden">
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00D6A3]/30 to-transparent"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                  />
+                  
+                  {/* Central Shield Hero Core */}
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0878D1] to-[#00D6A3] p-0.5 shadow-lg shadow-sky-500/30">
+                      <div className="w-full h-full bg-[#001738] rounded-[14px] flex items-center justify-center">
+                        <ShieldCheck className="w-7 h-7 text-[#00D6A3] group-hover:scale-110 transition-transform" />
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-mono font-black text-white tracking-wider mt-2">SECURITY CORE</span>
+                    <span className="text-[8px] font-mono text-[#00D6A3] font-bold">✓ PROTECTED 24/7</span>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-blue-300/70 bg-blue-950 px-2.5 py-1 rounded border border-blue-800/60">
-                    01 // TOTP AUTH
-                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors mb-3">
-                  Multi-Factor Authentication
-                </h3>
-                <p className="text-sm text-blue-100/75 leading-relaxed font-normal">
-                  TOTP-based MFA on every staff login, with throttling after repeated failed attempts and no user-existence disclosure on invalid credentials. Agency data can't be breached by a leaked password alone.
-                </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-blue-800/50 flex items-center gap-2 text-[11px] font-mono text-emerald-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>TOTP • Throttled Anti-Brute-Force</span>
+
+              {/* Core Security Telemetry Strip */}
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[10.5px] font-mono pt-2">
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                  <span>IDENTITY: VERIFIED</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#39BFF5]" />
+                  <span>ACCESS: 403 ENFORCED</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
+                  <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+                  <span>REVOCATION: &lt; 60s</span>
+                </div>
               </div>
             </motion.div>
 
-            {/* Security Pillar 02 */}
-            <motion.div 
-              variants={fadeInUp}
-              className="bg-[#001E45]/80 hover:bg-[#002654] p-7 sm:p-8 rounded-2xl border border-blue-800/60 hover:border-sky-400/40 backdrop-blur-md transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-blue-900/60 border border-blue-500/30 text-sky-400 group-hover:text-emerald-300 group-hover:border-emerald-500/40 flex items-center justify-center transition-all">
-                    <Lock className="w-6 h-6" />
+            {/* 2. THE 3 CONNECTED SECURITY CONTROL MODULES */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+              
+              {/* ============================================================ */}
+              {/* MODULE 01 — MULTI-FACTOR AUTHENTICATION                     */}
+              {/* ============================================================ */}
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="rounded-[30px] bg-gradient-to-b from-[#001F47]/95 via-[#001738]/95 to-[#001026] p-7 sm:p-8 border border-sky-500/35 hover:border-[#39BFF5] shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(57,191,245,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div className="space-y-5">
+                  {/* Tag & Icon Header */}
+                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-900/60 border border-sky-400/40 text-[#39BFF5] group-hover:text-emerald-300 group-hover:border-emerald-500/40 flex items-center justify-center transition-colors shadow-inner">
+                      <Key className="w-6 h-6" />
+                    </div>
+                    <span className="text-[11px] font-mono font-bold text-[#39BFF5] bg-[#001228] px-3 py-1 rounded-full border border-sky-500/30">
+                      01 // TOTP AUTH
+                    </span>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-blue-300/70 bg-blue-950 px-2.5 py-1 rounded border border-blue-800/60">
-                    02 // 403 RBAC
+
+                  {/* Title & Description */}
+                  <div className="space-y-2.5">
+                    <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
+                      Multi-Factor Authentication
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
+                      TOTP-based MFA on every staff login, with throttling after repeated failed attempts and no user-existence disclosure on invalid credentials. Agency data can't be breached by a leaked password alone.
+                    </p>
+                  </div>
+
+                  {/* Micro Verification Step-by-Step Flow */}
+                  <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
+                    <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
+                      AUTHENTICATION FLOW
+                    </div>
+                    <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] font-mono font-bold">
+                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/50 text-slate-300">
+                        1. PASSWORD
+                      </div>
+                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-sky-500/40 text-sky-300">
+                        2. TOTP CODE
+                      </div>
+                      <div className="p-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/60 text-[#00D6A3] flex items-center justify-center gap-1">
+                        <span>3. PASS</span>
+                        <Check className="w-3 h-3" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Telemetry Status */}
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
+                  <div className="flex items-center gap-1.5 text-slate-300">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Throttled Anti-Brute-Force</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                    ACTIVE
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors mb-3">
-                  Role-Based Access Boundaries
-                </h3>
-                <p className="text-sm text-blue-100/75 leading-relaxed font-normal">
-                  Managers see only their own team's leads; agents can never open another agent's record even by direct URL — enforced server-side with 403s.
-                </p>
+              </motion.div>
+
+              {/* ============================================================ */}
+              {/* MODULE 02 — ROLE-BASED ACCESS BOUNDARIES (403 RBAC)         */}
+              {/* ============================================================ */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="rounded-[30px] bg-gradient-to-b from-[#00224D]/95 via-[#001738]/95 to-[#001026] p-7 sm:p-8 border border-emerald-500/35 hover:border-[#00D6A3] shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(0,214,163,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div className="space-y-5">
+                  {/* Tag & Icon Header */}
+                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-[#00D6A3] group-hover:text-sky-300 flex items-center justify-center transition-colors shadow-inner">
+                      <Lock className="w-6 h-6" />
+                    </div>
+                    <span className="text-[11px] font-mono font-bold text-[#00D6A3] bg-[#001228] px-3 py-1 rounded-full border border-emerald-500/30">
+                      02 // 403 RBAC
+                    </span>
+                  </div>
+
+                  {/* Title & Description */}
+                  <div className="space-y-2.5">
+                    <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
+                      Role-Based Access Boundaries
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
+                      Managers see only their own team's leads; agents can never open another agent's record by direct URL — enforced server-side with 403s.
+                    </p>
+                  </div>
+
+                  {/* Micro Access Boundary Visualization */}
+                  <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
+                    <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
+                      ACCESS BOUNDARY RULES
+                    </div>
+                    <div className="space-y-1 text-[10px] font-mono">
+                      <div className="flex items-center justify-between p-1 px-2 rounded-md bg-blue-950/80 border border-blue-800/40">
+                        <span className="text-slate-300">Manager:</span>
+                        <span className="text-[#39BFF5] font-bold">Team Leads Only ✓</span>
+                      </div>
+                      <div className="flex items-center justify-between p-1 px-2 rounded-md bg-blue-950/80 border border-blue-800/40">
+                        <span className="text-slate-300">Agent:</span>
+                        <span className="text-emerald-400 font-bold">Own Records Only ✓</span>
+                      </div>
+                      <div className="flex items-center justify-between p-1 px-2 rounded-md bg-rose-950/50 border border-rose-500/30 text-rose-300">
+                        <span>Direct URL Bypass:</span>
+                        <span className="font-bold flex items-center gap-1">403 FORBIDDEN 🔒</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Telemetry Status */}
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
+                  <div className="flex items-center gap-1.5 text-slate-300">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Zero URL Leak Guarantee</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                    ENFORCED
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* ============================================================ */}
+              {/* MODULE 03 — INSTANT OFFBOARDING (SESSION REVOCATION)        */}
+              {/* ============================================================ */}
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="rounded-[30px] bg-gradient-to-b from-[#001F47]/95 via-[#001738]/95 to-[#001026] p-7 sm:p-8 border border-amber-500/35 hover:border-[#F5B91E] shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,185,30,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div className="space-y-5">
+                  {/* Tag & Icon Header */}
+                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-amber-950/60 border border-amber-500/40 text-[#F5B91E] group-hover:text-emerald-300 flex items-center justify-center transition-colors shadow-inner">
+                      <UserX className="w-6 h-6" />
+                    </div>
+                    <span className="text-[11px] font-mono font-bold text-[#F5B91E] bg-[#001228] px-3 py-1 rounded-full border border-amber-500/30">
+                      03 // INSTANT REVOKE
+                    </span>
+                  </div>
+
+                  {/* Title & Description */}
+                  <div className="space-y-2.5">
+                    <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
+                      Instant Offboarding
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
+                      Terminated staff lose all session and token access in under a minute, with their leads automatically reassigned or parked per policy.
+                    </p>
+                  </div>
+
+                  {/* Micro Revocation Timeline */}
+                  <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
+                    <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
+                      OFFBOARDING TIMELINE (&lt; 60s)
+                    </div>
+                    <div className="grid grid-cols-2 gap-1.5 text-[9.5px] font-mono">
+                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
+                        <span className="text-amber-400">1.</span> Status: Terminated
+                      </div>
+                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
+                        <span className="text-amber-400">2.</span> Session Killed
+                      </div>
+                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
+                        <span className="text-amber-400">3.</span> Tokens Revoked
+                      </div>
+                      <div className="p-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 flex items-center gap-1">
+                        <span className="text-emerald-400">4.</span> Leads Reassigned ✓
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Telemetry Status */}
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
+                  <div className="flex items-center gap-1.5 text-slate-300">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Sub-60s Session Kill</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-amber-300 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30">
+                    AUTO-PARK
+                  </span>
+                </div>
+              </motion.div>
+
+            </div>
+
+            {/* 3. MINIMAL TRUST / COMPLIANCE STRIP (BOTTOM OF SECTION) */}
+            <motion.div 
+              className="p-5 sm:p-6 rounded-2xl bg-[#001838]/90 border border-blue-900/70 shadow-xl flex flex-wrap items-center justify-center lg:justify-between gap-4 sm:gap-6 text-xs font-mono"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-2 text-slate-300">
+                <Lock className="w-4 h-4 text-[#39BFF5]" />
+                <span className="font-bold text-white">ENCRYPTED AT REST & IN TRANSIT</span>
               </div>
-              <div className="mt-6 pt-4 border-t border-blue-800/50 flex items-center gap-2 text-[11px] font-mono text-emerald-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Server-Side RBAC • Zero URL Leak</span>
+              <div className="hidden lg:block text-slate-600">•</div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <ShieldCheck className="w-4 h-4 text-[#00D6A3]" />
+                <span className="font-bold text-white">SERVER-SIDE ACCESS CONTROL</span>
+              </div>
+              <div className="hidden lg:block text-slate-600">•</div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <UserCheck className="w-4 h-4 text-[#39BFF5]" />
+                <span className="font-bold text-white">INSTANT SESSION REVOCATION</span>
+              </div>
+              <div className="hidden lg:block text-slate-600">•</div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <Award className="w-4 h-4 text-[#F5B91E]" />
+                <span className="font-bold text-white">AUDIT READY GCC SECURITY</span>
               </div>
             </motion.div>
 
-            {/* Security Pillar 03 */}
-            <motion.div 
-              variants={fadeInUp}
-              className="bg-[#001E45]/80 hover:bg-[#002654] p-7 sm:p-8 rounded-2xl border border-blue-800/60 hover:border-sky-400/40 backdrop-blur-md transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-blue-900/60 border border-blue-500/30 text-sky-400 group-hover:text-emerald-300 group-hover:border-emerald-500/40 flex items-center justify-center transition-all">
-                    <UserX className="w-6 h-6" />
-                  </div>
-                  <span className="text-[11px] font-mono font-bold text-blue-300/70 bg-blue-950 px-2.5 py-1 rounded border border-blue-800/60">
-                    03 // INSTANT REVOKE
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors mb-3">
-                  Instant Offboarding
-                </h3>
-                <p className="text-sm text-blue-100/75 leading-relaxed font-normal">
-                  Terminated staff lose all session and token access in under a minute, with their leads automatically reassigned or parked per policy.
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-blue-800/50 flex items-center gap-2 text-[11px] font-mono text-emerald-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Sub-60s Session Kill • Auto-Reassign</span>
-              </div>
-            </motion.div>
-          </motion.div>
+          </div>
 
         </div>
       </section>
