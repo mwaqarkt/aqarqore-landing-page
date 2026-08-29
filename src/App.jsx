@@ -498,14 +498,14 @@ export default function App() {
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[140px] pointer-events-none z-0" />
 
         {/* MAIN HERO CONTENT CONTAINER (LEFT COPY + RIGHT VISUAL) */}
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-center">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
             
             {/* ---------------------------------------------------------------------- */}
-            {/* LEFT COLUMN: VALUE PROPOSITION & TYPOGRAPHIC ENGINE (~50%)             */}
+            {/* LEFT COLUMN: VALUE PROPOSITION & TYPOGRAPHIC ENGINE (~42%)             */}
             {/* ---------------------------------------------------------------------- */}
             <motion.div 
-              className="lg:col-span-6 xl:col-span-6 space-y-6 text-left"
+              className="lg:col-span-5 xl:col-span-5 space-y-6 text-left"
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
@@ -515,7 +515,7 @@ export default function App() {
                 <span className="px-3.5 py-1 rounded-full bg-[#032653]/90 border border-[#39BFF5]/40 text-[#39BFF5] text-xs font-bold uppercase tracking-widest font-mono shadow-sm">
                   GCC PROPERTY OPERATING SYSTEM
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00D6A3]/10 border border-[#00D6A3]/30 text-[#00D6A3] text-xs font-mono font-semibold">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#00D6A3]/10 border border-[#00D6A3]/30 text-[#00D6A3] text-xs font-mono font-semibold">
                   <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
                   LIVE NETWORK — DUBAI • DOHA • RIYADH
                 </span>
@@ -524,7 +524,7 @@ export default function App() {
               {/* Main Dominant Display Headline */}
               <motion.h1 
                 variants={fadeInUp}
-                className="text-4xl sm:text-5xl xl:text-[58px] font-extrabold tracking-tight text-white leading-[1.08] max-w-[620px]"
+                className="text-4xl sm:text-5xl xl:text-[56px] font-extrabold tracking-tight text-white leading-[1.08] max-w-[580px]"
               >
                 {isRtl ? (
                   <>
@@ -552,7 +552,7 @@ export default function App() {
               {/* High-Readability Supporting Paragraph */}
               <motion.p 
                 variants={fadeInUp} 
-                className="text-base sm:text-lg lg:text-[18px] text-[#A9C9E8] font-normal leading-[1.65] max-w-[600px]"
+                className="text-base sm:text-lg lg:text-[17.5px] text-[#A9C9E8] font-normal leading-[1.65] max-w-[560px]"
               >
                 {isRtl ? (
                   'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ. تأهيل العملاء بالذكاء الاصطناعي، وتطبيق ميداني، وموافقة عمولات بخطوتين في نظام خليجي موحد'
@@ -562,11 +562,11 @@ export default function App() {
               </motion.p>
 
               {/* Premium Asymmetric CTA Action Row */}
-              <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                 {/* Primary CTA Button with Radiant Glow */}
                 <a
                   href={DEMO_CTA_URL}
-                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#0878D1] via-[#168FE5] to-[#0878D1] hover:from-[#168FE5] hover:to-[#0878D1] text-white font-bold text-sm sm:text-base shadow-[0_0_28px_rgba(22,143,229,0.45)] hover:shadow-[0_0_36px_rgba(57,191,245,0.6)] transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-[#39BFF5]/40 group cursor-pointer text-center"
+                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-[#0878D1] via-[#168FE5] to-[#0878D1] hover:from-[#168FE5] hover:to-[#0878D1] text-white font-bold text-sm sm:text-base shadow-[0_0_28px_rgba(22,143,229,0.45)] hover:shadow-[0_0_36px_rgba(57,191,245,0.6)] transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-[#39BFF5]/40 group cursor-pointer text-center"
                 >
                   <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
                   <ArrowRight className={`w-4 h-4 text-blue-100 group-hover:translate-x-1.5 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1.5' : ''}`} />
@@ -575,7 +575,7 @@ export default function App() {
                 {/* Secondary Translucent Glass Button with Scale Icon */}
                 <button
                   onClick={() => setIsVideoModalOpen(true)}
-                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
+                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
                 >
                   <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
@@ -585,7 +585,7 @@ export default function App() {
               </motion.div>
 
               {/* Verified Trust Badges */}
-              <motion.div variants={fadeInUp} className="pt-3 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-[#A9C9E8] font-medium">
+              <motion.div variants={fadeInUp} className="pt-3 flex flex-wrap items-center gap-y-2.5 gap-x-5 text-xs text-[#A9C9E8] font-medium">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
                   <span>Meta Official Cloud API Partner</span>
@@ -602,32 +602,32 @@ export default function App() {
             </motion.div>
 
             {/* ---------------------------------------------------------------------- */}
-            {/* RIGHT COLUMN: FLOATING AQARQORE COMMAND CENTER UI GRAPHIC (~50%)       */}
+            {/* RIGHT COLUMN: FLOATING AQARQORE COMMAND CENTER UI GRAPHIC (~58%)       */}
             {/* ---------------------------------------------------------------------- */}
             <motion.div 
-              className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end"
+              className="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center lg:justify-end"
               initial={{ opacity: 0, scale: 0.94, y: 25 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Parallax Container with Subtle Floating Animation */}
+              {/* Parallax Container with Large Scale & Prominence */}
               <motion.div
                 style={{
-                  x: mouseOffset.x * 0.5,
-                  y: mouseOffset.y * 0.5,
+                  x: mouseOffset.x * 0.4,
+                  y: mouseOffset.y * 0.4,
                   transition: 'transform 0.15s ease-out'
                 }}
-                className="relative w-full max-w-[620px] lg:max-w-none flex items-center justify-center"
+                className="relative w-full max-w-[700px] lg:max-w-none flex items-center justify-center lg:justify-end lg:scale-105 xl:scale-115 2xl:scale-120 transform origin-center lg:origin-right"
               >
-                <div className="relative group">
-                  {/* Subtle Outer Cyan Glow Aura */}
-                  <div className="absolute -inset-1.5 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-xl opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                <div className="relative group w-full flex items-center justify-center lg:justify-end">
+                  {/* Outer Cyan Glow Backlight */}
+                  <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/30 to-[#0878D1]/25 rounded-3xl blur-2xl opacity-85 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   
                   {/* High-Resolution Transparent Command Center Image */}
                   <img 
                     src="/aqarqore-command-center.png" 
                     alt="AqarQore Intelligence Command Center"
-                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.85)] filter saturate-105 rounded-2xl"
+                    className="relative z-10 w-full max-w-[780px] xl:max-w-[860px] 2xl:max-w-[920px] h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] filter saturate-105 rounded-2xl"
                   />
                 </div>
               </motion.div>
