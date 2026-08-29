@@ -350,12 +350,12 @@ export default function App() {
                 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-[1.15]"
               >
                 {isRtl ? (
-                  <>حويل اتصالات العقارات إلى صفقات مؤكدة <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-white">بدون إهدار أي عميل.</span></>
+                  <>تحويل اتصالات العقارات إلى صفقات مؤكدة <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-white">بدون إهدار أي عميل</span></>
                 ) : (
                   <>
-                    Stop Losing High-Value Property Leads.
+                    Stop Losing High Value Property Leads
                     <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-white">
-                      Run Your Entire Agency Automatically.
+                      Run Your Entire Agency Automatically
                     </span>
                   </>
                 )}
@@ -364,9 +364,9 @@ export default function App() {
               {/* Supporting Paragraph */}
               <motion.p variants={fadeInUp} className="text-base sm:text-lg text-blue-100/90 font-normal leading-relaxed">
                 {isRtl ? (
-                  'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ مع التأكد من توثيق العمولات والصفقات.'
+                  'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ مع التأكد من توثيق العمولات والصفقات'
                 ) : (
-                  'Auto-assign leads from Property Finder, Bayut, and Meta WhatsApp in under 10 seconds. AI buyer qualification, offline mobile app, and 2-step commission signoffs in one unified GCC system.'
+                  'Auto assign leads from Property Finder, Bayut, and Meta WhatsApp in under 10 seconds AI buyer qualification, offline mobile app, and 2 step commission signoffs in one unified GCC system'
                 )}
               </motion.p>
 
@@ -374,18 +374,17 @@ export default function App() {
               <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                 <a
                   href={DEMO_CTA_URL}
-                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-sm shadow-lg shadow-blue-600/35 hover:shadow-blue-500/45 transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-blue-400/35 group cursor-pointer text-center"
+                  className="inline-flex items-center justify-center whitespace-nowrap px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-sm shadow-lg shadow-blue-600/35 hover:shadow-blue-500/45 transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-blue-400/35 group cursor-pointer text-center"
                 >
                   <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
-                  <ArrowRight className={`w-4 h-4 text-blue-100 group-hover:translate-x-1 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
                 </a>
 
                 <button
                   onClick={() => setIsVideoModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-blue-950/80 hover:bg-blue-900/90 text-blue-100 font-semibold text-sm border border-blue-400/25 transition-all hover:border-blue-400/50 backdrop-blur-md cursor-pointer text-center"
+                  className="inline-flex items-center justify-center whitespace-nowrap gap-2 px-5 py-3.5 rounded-xl bg-blue-950/80 hover:bg-blue-900/90 text-blue-100 font-semibold text-sm border border-blue-400/25 transition-all hover:border-blue-400/50 backdrop-blur-md cursor-pointer text-center"
                 >
                   <Play className="w-4 h-4 fill-current text-sky-400" />
-                  <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2-Min Product Tour'}</span>
+                  <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
                 </button>
               </motion.div>
 
