@@ -486,13 +486,14 @@ export default function App() {
       >
         {/* Layer 1: Official GCC Skyline (Dubai • Doha • Riyadh) Connected Network Image */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-90"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-85"
           style={{ backgroundImage: 'url(/gcc-hero-bg.jpg)' }}
         />
 
-        {/* Layer 2: Balanced Contrast Overlay (Text Readability + Crisp Skyline) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001B3D]/75 via-[#001B3D]/35 to-[#001B3D]/45 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/60 via-transparent to-[#001B3D]/70 z-0 pointer-events-none" />
+        {/* Layer 2: Deep Midnight & Cyan Ambient Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001B3D]/85 via-[#001B3D]/50 to-[#001B3D]/65 z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/70 via-transparent to-[#001B3D]/85 z-0 pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/10 to-transparent blur-[120px] pointer-events-none z-0" />
 
         {/* MAIN HERO CONTENT CONTAINER (LEFT COPY + RIGHT VISUAL) */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
@@ -896,13 +897,14 @@ export default function App() {
       <section id="problem" className="py-24 sm:py-32 bg-[#001738] text-white relative border-b border-blue-950/80 overflow-hidden">
         {/* Layer 1: GCC Telemetry & Holographic Regional Map Artwork */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-85"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-80"
           style={{ backgroundImage: 'url(/gcc-telemetry-bg.png)' }}
         />
 
-        {/* Layer 2: Balanced Contrast Overlay (Card Readability + Crisp Telemetry Map) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001738]/70 via-[#001738]/30 to-[#001738]/45 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001738]/60 via-transparent to-[#001738]/70 z-0 pointer-events-none" />
+        {/* Layer 2: Deep Midnight & Rose/Amber Ambient Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001738]/85 via-[#001738]/50 to-[#001738]/65 z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001738]/70 via-transparent to-[#001738]/85 z-0 pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/10 blur-[120px] pointer-events-none z-0" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
