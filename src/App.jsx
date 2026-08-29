@@ -674,15 +674,15 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 2. REAL ESTATE INDUSTRY SHOWCASE HUB: LIVE PROPERTY FEED (REFERENCE DESIGN) */}
+      {/* 2. REAL ESTATE INDUSTRY SHOWCASE HUB: LIVE PROPERTY FEED (WHITE BG)        */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="showcase" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/90 overflow-hidden">
+      <section id="showcase" className="py-24 sm:py-32 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
         {/* Subtle Architectural Grid Background Accent */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(16,120,192,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(16,120,192,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Section Header Matching Reference */}
+          {/* Section Header */}
           <motion.div 
             className="text-center max-w-3xl mx-auto space-y-3.5 mb-10 sm:mb-12"
             initial={{ opacity: 0, y: 20 }}
@@ -691,49 +691,45 @@ export default function App() {
             transition={{ duration: 0.6 }}
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest text-[#00D6A3]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest text-[#0858A8] bg-blue-50 border border-blue-200/60 shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0858A8] animate-pulse" />
               <span>• LIVE PROPERTY FEED •</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0858A8] animate-pulse" />
             </div>
 
             {/* H2 Title */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white">
-              Premium Properties.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39BFF5] via-[#168FE5] to-[#0878D1]">
-                Live
-              </span>{' '}
-              from GCC.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+              Premium Properties. Live from GCC.
             </h2>
 
             {/* Subtitle */}
-            <p className="text-blue-100/70 text-sm sm:text-base leading-relaxed font-normal">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
               Verified. Qualified. Connected to your agency in real time.
             </p>
 
-            {/* 4 Feature Badges Strip (Reference Header) */}
+            {/* 4 Feature Badges Strip */}
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-3">
-              <div className="px-3.5 py-1.5 rounded-full bg-[#001D42]/80 border border-blue-800/60 text-xs text-blue-200 font-medium flex items-center gap-2 shadow-xs">
-                <Building className="w-3.5 h-3.5 text-[#39BFF5]" />
+              <div className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs text-slate-700 font-medium flex items-center gap-2 shadow-xs">
+                <Building className="w-3.5 h-3.5 text-[#1078C0]" />
                 <span>Live from Property Portals</span>
               </div>
-              <div className="px-3.5 py-1.5 rounded-full bg-[#002B36]/80 border border-[#00D6A3]/60 text-xs text-emerald-300 font-medium flex items-center gap-2 shadow-[0_0_12px_rgba(0,214,163,0.2)]">
-                <Target className="w-3.5 h-3.5 text-[#00D6A3]" />
+              <div className="px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-xs text-emerald-800 font-medium flex items-center gap-2 shadow-xs">
+                <Target className="w-3.5 h-3.5 text-emerald-600" />
                 <span>AI Verified Leads</span>
               </div>
-              <div className="px-3.5 py-1.5 rounded-full bg-[#001D42]/80 border border-blue-800/60 text-xs text-blue-200 font-medium flex items-center gap-2 shadow-xs">
-                <Bot className="w-3.5 h-3.5 text-[#39BFF5]" />
+              <div className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs text-slate-700 font-medium flex items-center gap-2 shadow-xs">
+                <Bot className="w-3.5 h-3.5 text-[#1078C0]" />
                 <span>Agent Auto-Assignment</span>
               </div>
-              <div className="px-3.5 py-1.5 rounded-full bg-[#001D42]/80 border border-amber-500/40 text-xs text-amber-200 font-medium flex items-center gap-2 shadow-xs">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#F5B91E]" />
+              <div className="px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-300 text-xs text-amber-800 font-medium flex items-center gap-2 shadow-xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-600" />
                 <span>2-Step Commission Signoff</span>
               </div>
             </div>
 
             {/* Editorial City Switcher */}
             <div className="flex justify-center pt-2">
-              <div className="inline-flex p-1 bg-[#001738]/90 rounded-2xl border border-blue-900/60 shadow-inner">
+              <div className="inline-flex p-1 bg-slate-200/80 rounded-2xl border border-slate-300/70 shadow-inner">
                 {[
                   { id: 'doha', label: 'Doha & Pearl Qatar' },
                   { id: 'dubai', label: 'Dubai & Abu Dhabi' },
@@ -747,8 +743,8 @@ export default function App() {
                     }}
                     className={`px-3.5 sm:px-4 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                       activePropertyTab === tab.id
-                        ? 'bg-gradient-to-r from-[#0878D1] to-[#168FE5] text-white shadow-md'
-                        : 'text-slate-400 hover:text-white hover:bg-blue-950/50'
+                        ? 'bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white shadow-md'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-300/50'
                     }`}
                   >
                     {tab.label}
@@ -787,7 +783,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="rounded-[28px] bg-[#001738]/95 border border-blue-900/60 hover:border-[#1078C0]/70 shadow-[0_20px_50px_rgba(0,0,0,0.7)] flex flex-col justify-between overflow-hidden group transition-all duration-300 hover:-translate-y-1.5"
+                  className="rounded-[28px] bg-[#001738] border border-blue-900/70 hover:border-[#1078C0] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.35)] hover:shadow-[0_25px_55px_-10px_rgba(0,27,61,0.5)] flex flex-col justify-between overflow-hidden group transition-all duration-300 hover:-translate-y-1.5"
                 >
                   {/* TOP: IMMERSIVE PROPERTY PHOTOGRAPHY */}
                   <div className="relative h-[250px] overflow-hidden bg-slate-900">
@@ -887,9 +883,9 @@ export default function App() {
             })}
           </div>
 
-          {/* BOTTOM 5-ITEM TRUST FEATURE BAR (MATCHING REFERENCE BOTTOM EXACTLY) */}
+          {/* BOTTOM 5-ITEM TRUST FEATURE BAR */}
           <motion.div 
-            className="mt-14 p-6 sm:p-7 rounded-2xl bg-[#00142E]/90 border border-blue-900/60 shadow-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-center"
+            className="mt-14 p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -897,56 +893,56 @@ export default function App() {
           >
             {/* Item 1 */}
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5 text-[#39BFF5]" />
+              <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/70 flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-5 h-5 text-[#0858A8]" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-white">100% Verified Listings</div>
-                <div className="text-[11px] text-blue-200/60 leading-tight">Live & genuine properties from trusted portals</div>
+                <div className="text-xs font-bold text-slate-900">100% Verified Listings</div>
+                <div className="text-[11px] text-slate-500 leading-tight">Live & genuine properties from trusted portals</div>
               </div>
             </div>
 
             {/* Item 2 */}
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shrink-0">
-                <Cpu className="w-5 h-5 text-[#00D6A3]" />
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/70 flex items-center justify-center shrink-0">
+                <Cpu className="w-5 h-5 text-emerald-600" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-white">AI Powered Matching</div>
-                <div className="text-[11px] text-blue-200/60 leading-tight">Smart buyer qualification & auto agent assignment</div>
+                <div className="text-xs font-bold text-slate-900">AI Powered Matching</div>
+                <div className="text-[11px] text-slate-500 leading-tight">Smart buyer qualification & auto agent assignment</div>
               </div>
             </div>
 
             {/* Item 3 */}
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shrink-0">
-                <Lock className="w-5 h-5 text-[#39BFF5]" />
+              <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/70 flex items-center justify-center shrink-0">
+                <Lock className="w-5 h-5 text-[#0858A8]" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-white">Secure & Compliant</div>
-                <div className="text-[11px] text-blue-200/60 leading-tight">End-to-end encrypted GCC compliant system</div>
+                <div className="text-xs font-bold text-slate-900">Secure & Compliant</div>
+                <div className="text-[11px] text-slate-500 leading-tight">End-to-end encrypted GCC compliant system</div>
               </div>
             </div>
 
             {/* Item 4 */}
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shrink-0">
-                <RefreshCw className="w-5 h-5 text-[#39BFF5]" />
+              <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/70 flex items-center justify-center shrink-0">
+                <RefreshCw className="w-5 h-5 text-[#0858A8]" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-white">Real-time Sync</div>
-                <div className="text-[11px] text-blue-200/60 leading-tight">Live updates from all major GCC property platforms</div>
+                <div className="text-xs font-bold text-slate-900">Real-time Sync</div>
+                <div className="text-[11px] text-slate-500 leading-tight">Live updates from all major GCC property platforms</div>
               </div>
             </div>
 
             {/* Item 5 */}
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center shrink-0">
-                <Award className="w-5 h-5 text-[#F5B91E]" />
+              <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200/70 flex items-center justify-center shrink-0">
+                <Award className="w-5 h-5 text-amber-600" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-white">Higher Conversions</div>
-                <div className="text-[11px] text-blue-200/60 leading-tight">Faster response. Better leads. More closed deals.</div>
+                <div className="text-xs font-bold text-slate-900">Higher Conversions</div>
+                <div className="text-[11px] text-slate-500 leading-tight">Faster response. Better leads. More closed deals.</div>
               </div>
             </div>
           </motion.div>
