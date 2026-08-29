@@ -79,6 +79,169 @@ const PROPERTY_IMAGES = {
   modernApartment: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
 };
 
+// Dynamic Real Estate Showcase Data per Selected GCC Market
+const MARKET_PROPERTIES = {
+  doha: [
+    {
+      id: 'doha-1',
+      title: 'Beachfront Standalone Villa',
+      location: 'West Bay Lagoon • Doha, Qatar',
+      price: 'QAR 8,500,000',
+      image: PROPERTY_IMAGES.waterfrontVilla,
+      badge: 'Auto-Assigned in 3s',
+      badgeColor: 'bg-emerald-500',
+      specs: [
+        { label: '5 Beds', icon: BedDouble },
+        { label: '6 Baths', icon: Bath },
+        { label: '750 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'WhatsApp Lead Qualification',
+      footerValue: 'Buyer Verified',
+      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+    },
+    {
+      id: 'doha-2',
+      title: 'The Pearl Marina Sky Penthouse',
+      location: 'Porto Arabia • The Pearl, Qatar',
+      price: 'QAR 6,200,000',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+      badge: 'AI Bot Active 24/7',
+      badgeColor: 'bg-sky-600',
+      specs: [
+        { label: '4 Beds', icon: BedDouble },
+        { label: '5 Baths', icon: Bath },
+        { label: '520 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'Portal Auto-Sync',
+      footerValue: 'Property Finder Qatar Live',
+      footerValueColor: 'text-sky-700 bg-sky-100/70'
+    },
+    {
+      id: 'doha-3',
+      title: 'Lusail Waterfront Commercial Tower',
+      location: 'Marina Promenade • Lusail, Qatar',
+      price: 'QAR 18,500,000',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+      badge: 'Duplicate Protection',
+      badgeColor: 'bg-emerald-500',
+      specs: [
+        { label: 'Grade A', icon: Building },
+        { label: '12 Floors', icon: Bath },
+        { label: '2,800 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'Commission Signoff',
+      footerValue: '2-Step Director Lock',
+      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+    }
+  ],
+  dubai: [
+    {
+      id: 'dubai-1',
+      title: 'Sky Penthouse with Private Pool',
+      location: 'Palm Jumeirah • Dubai, UAE',
+      price: 'AED 14,900,000',
+      image: PROPERTY_IMAGES.heroPenthouse,
+      badge: 'Auto-Assigned in 2s',
+      badgeColor: 'bg-emerald-500',
+      specs: [
+        { label: '4 Beds', icon: BedDouble },
+        { label: '5 Baths', icon: Bath },
+        { label: '580 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'WhatsApp Lead Qualification',
+      footerValue: 'High Net Worth Verified',
+      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+    },
+    {
+      id: 'dubai-2',
+      title: 'Downtown Burj View Luxury Suite',
+      location: 'Opera District • Downtown Dubai, UAE',
+      price: 'AED 8,750,000',
+      image: PROPERTY_IMAGES.luxuryInterior,
+      badge: 'Bayut & PF Direct Sync',
+      badgeColor: 'bg-sky-600',
+      specs: [
+        { label: '3 Beds', icon: BedDouble },
+        { label: '4 Baths', icon: Bath },
+        { label: '340 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'Commission Signoff',
+      footerValue: '2-Step Director Lock',
+      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+    },
+    {
+      id: 'dubai-3',
+      title: 'Saadiyat Beachfront Signature Villa',
+      location: 'Saadiyat Island • Abu Dhabi, UAE',
+      price: 'AED 21,000,000',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      badge: 'Duplicate Protection',
+      badgeColor: 'bg-purple-600',
+      specs: [
+        { label: '6 Beds', icon: BedDouble },
+        { label: '7 Baths', icon: Bath },
+        { label: '920 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'Offline Mobile Sync',
+      footerValue: 'Live Field Update',
+      footerValueColor: 'text-purple-700 bg-purple-100/70'
+    }
+  ],
+  riyadh: [
+    {
+      id: 'riyadh-1',
+      title: 'Commercial Corporate Headquarters',
+      location: 'KAFD Financial District • Riyadh, KSA',
+      price: 'SAR 24,000,000',
+      image: PROPERTY_IMAGES.riyadhTower,
+      badge: 'Duplicate Protection',
+      badgeColor: 'bg-emerald-500',
+      specs: [
+        { label: 'Grade A', icon: Building },
+        { label: '8 Floors', icon: Bath },
+        { label: '1,400 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'Saudi Cloud Hosting',
+      footerValue: 'PDPL & CITC Compliant',
+      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+    },
+    {
+      id: 'riyadh-2',
+      title: 'Al-Hizam Luxury Private Estate',
+      location: 'Al-Hizam Al-Dhahabi • Riyadh, KSA',
+      price: 'SAR 16,800,000',
+      image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80',
+      badge: 'AI Bot Active 24/7',
+      badgeColor: 'bg-sky-600',
+      specs: [
+        { label: '6 Beds', icon: BedDouble },
+        { label: '8 Baths', icon: Bath },
+        { label: '1,100 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'WhatsApp Lead Qualification',
+      footerValue: 'VIP Arabic Flow',
+      footerValueColor: 'text-emerald-700 bg-emerald-100/70'
+    },
+    {
+      id: 'riyadh-3',
+      title: 'Jeddah Corniche Waterfront Residence',
+      location: 'North Corniche • Jeddah, KSA',
+      price: 'SAR 11,500,000',
+      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
+      badge: 'Aqar.fm Portal Sync',
+      badgeColor: 'bg-blue-600',
+      specs: [
+        { label: '4 Beds', icon: BedDouble },
+        { label: '5 Baths', icon: Bath },
+        { label: '620 sqm', icon: Maximize2 }
+      ],
+      footerLabel: 'Deal Audit Trail',
+      footerValue: 'Immutable Timestamp',
+      footerValueColor: 'text-sky-700 bg-sky-100/70'
+    }
+  ]
+};
+
 // Motion Variants with Reduced Motion Safety
 const fadeInUp = {
   hidden: { opacity: 0, y: 35 },
@@ -580,7 +743,7 @@ export default function App() {
             <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/60 text-xs font-bold uppercase tracking-wider shadow-sm">
               {isRtl ? 'مركز إدارة العقارات المباشر' : 'Live Property & Lead Hub'}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
               Built for Every Asset Class in the GCC Real Estate Market
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
@@ -600,7 +763,7 @@ export default function App() {
                     onClick={() => setActivePropertyTab(tab.id)}
                     className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       activePropertyTab === tab.id
-                        ? 'bg-[#003068] text-white shadow-md'
+                        ? 'bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white shadow-md shadow-blue-500/20'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                     }`}
                   >
@@ -611,183 +774,75 @@ export default function App() {
             </div>
           </motion.div>
 
-          {/* EDITORIAL PROPERTY CARDS GRID */}
+          {/* DYNAMIC EDITORIAL PROPERTY CARDS GRID */}
           <motion.div 
+            key={activePropertyTab}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 xl:gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            variants={staggerContainer}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
           >
-            {/* Property Card 1: Doha Waterfront */}
-            <motion.div 
-              variants={fadeInUp} 
-              className={`bg-white rounded-2xl overflow-hidden border transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between ${
-                activePropertyTab === 'doha' 
-                  ? 'border-[#1078C0]/50 shadow-[0_16px_35px_-8px_rgba(16,120,192,0.15)] ring-2 ring-[#1078C0]/20' 
-                  : 'border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_20px_35px_-10px_rgba(0,48,104,0.12)]'
-              }`}
-            >
-              <div>
-                <div className="relative h-64 overflow-hidden bg-slate-100">
-                  <img 
-                    src={PROPERTY_IMAGES.waterfrontVilla} 
-                    alt="West Bay Waterfront Villa" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none" />
-                  
-                  {/* Floating Price Tag */}
-                  <div className="absolute top-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-[#003068]/95 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-lg">
-                    QAR 8,500,000
+            {(MARKET_PROPERTIES[activePropertyTab] || MARKET_PROPERTIES.doha).map((property, idx) => (
+              <motion.div 
+                key={property.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_20px_35px_-10px_rgba(0,48,104,0.14)] hover:border-[#1078C0]/50 transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="relative h-64 overflow-hidden bg-slate-100">
+                    <img 
+                      src={property.image} 
+                      alt={property.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none" />
+                    
+                    {/* Floating Price Tag */}
+                    <div className="absolute top-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-[#003068]/95 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-lg">
+                      {property.price}
+                    </div>
+                    
+                    {/* Status Badge */}
+                    <div className={`absolute bottom-3.5 right-3.5 px-3 py-1 rounded-lg ${property.badgeColor} text-white text-[11px] font-semibold flex items-center gap-1.5 shadow-md backdrop-blur-sm`}>
+                      <CheckCircle className="w-3.5 h-3.5" /> {property.badge}
+                    </div>
                   </div>
-                  
-                  {/* Status Badge */}
-                  <div className="absolute bottom-3.5 right-3.5 px-3 py-1 rounded-lg bg-emerald-500 text-white text-[11px] font-semibold flex items-center gap-1.5 shadow-md backdrop-blur-sm">
-                    <CheckCircle className="w-3.5 h-3.5" /> Auto-Assigned in 3s
+
+                  {/* Card Content */}
+                  <div className="p-5 sm:p-6 space-y-3.5">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+                      <MapPin className="w-3.5 h-3.5 text-[#1078C0] shrink-0" /> {property.location}
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#1078C0] transition-colors leading-snug">
+                      {property.title}
+                    </h3>
+                    
+                    {/* Specifications Bar */}
+                    <div className="flex items-center gap-4 text-xs text-slate-600 pt-3 border-t border-slate-100">
+                      {property.specs.map((spec, sIdx) => {
+                        const IconComponent = spec.icon;
+                        return (
+                          <span key={sIdx} className="flex items-center gap-1.5">
+                            <IconComponent className="w-4 h-4 text-slate-400" /> {spec.label}
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
 
-                {/* Card Content */}
-                <div className="p-5 sm:p-6 space-y-3.5">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-[#1078C0] shrink-0" /> West Bay Lagoon • Doha, Qatar
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#1078C0] transition-colors leading-snug">
-                    Beachfront Standalone Villa
-                  </h3>
-                  
-                  {/* Specifications Bar */}
-                  <div className="flex items-center gap-4 text-xs text-slate-600 pt-3 border-t border-slate-100">
-                    <span className="flex items-center gap-1.5"><BedDouble className="w-4 h-4 text-slate-400" /> 5 Beds</span>
-                    <span className="flex items-center gap-1.5"><Bath className="w-4 h-4 text-slate-400" /> 6 Baths</span>
-                    <span className="flex items-center gap-1.5"><Maximize2 className="w-4 h-4 text-slate-400" /> 750 sqm</span>
+                {/* Card Footer Strip */}
+                <div className="px-5 sm:px-6 pb-5">
+                  <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 text-[11px] text-[#0858A8] font-semibold flex justify-between items-center">
+                    <span>{property.footerLabel}</span>
+                    <span className={`font-bold px-2 py-0.5 rounded ${property.footerValueColor}`}>{property.footerValue}</span>
                   </div>
                 </div>
-              </div>
-
-              {/* Card Footer Strip */}
-              <div className="px-5 sm:px-6 pb-5">
-                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 text-[11px] text-[#0858A8] font-semibold flex justify-between items-center">
-                  <span>WhatsApp Lead Qualification</span>
-                  <span className="text-emerald-700 font-bold bg-emerald-100/70 px-2 py-0.5 rounded">Buyer Verified</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Property Card 2: Dubai Penthouse */}
-            <motion.div 
-              variants={fadeInUp} 
-              className={`bg-white rounded-2xl overflow-hidden border transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between ${
-                activePropertyTab === 'dubai' 
-                  ? 'border-[#1078C0]/50 shadow-[0_16px_35px_-8px_rgba(16,120,192,0.15)] ring-2 ring-[#1078C0]/20' 
-                  : 'border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_20px_35px_-10px_rgba(0,48,104,0.12)]'
-              }`}
-            >
-              <div>
-                <div className="relative h-64 overflow-hidden bg-slate-100">
-                  <img 
-                    src={PROPERTY_IMAGES.heroPenthouse} 
-                    alt="Dubai Marina Luxury Penthouse" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none" />
-                  
-                  {/* Floating Price Tag */}
-                  <div className="absolute top-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-[#003068]/95 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-lg">
-                    AED 12,900,000
-                  </div>
-                  
-                  {/* Status Badge */}
-                  <div className="absolute bottom-3.5 right-3.5 px-3 py-1 rounded-lg bg-sky-600 text-white text-[11px] font-semibold flex items-center gap-1.5 shadow-md backdrop-blur-sm">
-                    <Bot className="w-3.5 h-3.5 text-sky-200" /> AI Bot Active 24/7
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-5 sm:p-6 space-y-3.5">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-[#1078C0] shrink-0" /> Palm Jumeirah • Dubai, UAE
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#1078C0] transition-colors leading-snug">
-                    Sky Penthouse with Private Pool
-                  </h3>
-                  
-                  {/* Specifications Bar */}
-                  <div className="flex items-center gap-4 text-xs text-slate-600 pt-3 border-t border-slate-100">
-                    <span className="flex items-center gap-1.5"><BedDouble className="w-4 h-4 text-slate-400" /> 4 Beds</span>
-                    <span className="flex items-center gap-1.5"><Bath className="w-4 h-4 text-slate-400" /> 5 Baths</span>
-                    <span className="flex items-center gap-1.5"><Maximize2 className="w-4 h-4 text-slate-400" /> 580 sqm</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Footer Strip */}
-              <div className="px-5 sm:px-6 pb-5">
-                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 text-[11px] text-[#0858A8] font-semibold flex justify-between items-center">
-                  <span>Commission Signoff</span>
-                  <span className="text-emerald-700 font-bold bg-emerald-100/70 px-2 py-0.5 rounded">2-Step Director Lock</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Property Card 3: Riyadh Commercial */}
-            <motion.div 
-              variants={fadeInUp} 
-              className={`bg-white rounded-2xl overflow-hidden border transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between ${
-                activePropertyTab === 'riyadh' 
-                  ? 'border-[#1078C0]/50 shadow-[0_16px_35px_-8px_rgba(16,120,192,0.15)] ring-2 ring-[#1078C0]/20' 
-                  : 'border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,48,104,0.06)] hover:shadow-[0_20px_35px_-10px_rgba(0,48,104,0.12)]'
-              }`}
-            >
-              <div>
-                <div className="relative h-64 overflow-hidden bg-slate-100">
-                  <img 
-                    src={PROPERTY_IMAGES.riyadhTower} 
-                    alt="Riyadh Commercial Tower" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none" />
-                  
-                  {/* Floating Price Tag */}
-                  <div className="absolute top-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-[#003068]/95 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-lg">
-                    SAR 24,000,000
-                  </div>
-                  
-                  {/* Status Badge */}
-                  <div className="absolute bottom-3.5 right-3.5 px-3 py-1 rounded-lg bg-emerald-500 text-white text-[11px] font-semibold flex items-center gap-1.5 shadow-md backdrop-blur-sm">
-                    <ShieldCheck className="w-3.5 h-3.5" /> Duplicate Protection
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-5 sm:p-6 space-y-3.5">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-[#1078C0] shrink-0" /> KAFD Financial District • Riyadh, KSA
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#1078C0] transition-colors leading-snug">
-                    Commercial Corporate Headquarters
-                  </h3>
-                  
-                  {/* Specifications Bar */}
-                  <div className="flex items-center gap-4 text-xs text-slate-600 pt-3 border-t border-slate-100">
-                    <span className="flex items-center gap-1.5"><Building className="w-4 h-4 text-slate-400" /> Grade A</span>
-                    <span className="flex items-center gap-1.5"><Maximize2 className="w-4 h-4 text-slate-400" /> 1,400 sqm</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Footer Strip */}
-              <div className="px-5 sm:px-6 pb-5">
-                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 text-[11px] text-[#0858A8] font-semibold flex justify-between items-center">
-                  <span>Portal Listing Status</span>
-                  <span className="text-emerald-700 font-bold bg-emerald-100/70 px-2 py-0.5 rounded">100% Unique Verified</span>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </motion.div>
 
         </div>
