@@ -2125,19 +2125,90 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 10. FOOTER                                                                 */}
+      {/* 10. FOOTER: PREMIUM ENTERPRISE REAL ESTATE SIGNATURE                       */}
       {/* -------------------------------------------------------------------------- */}
-      <footer className="bg-[#001D42] text-blue-200/80 text-xs py-14 border-t border-blue-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400">
+      <footer className="bg-[#001128] text-blue-200/80 text-xs pt-20 pb-12 border-t border-blue-900/60 relative overflow-hidden">
+        {/* Subtle Decorative Technical Micro-Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+          
+          {/* Main Footer Multi-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
+            
+            {/* Brand Signature Column (Col Span 5) */}
+            <div className="lg:col-span-5 space-y-5">
+              <a href="#" className="flex items-center gap-3 group w-fit">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1078C0] to-[#0858A8] flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform border border-blue-400/30">
+                  <Building2 className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <span className="text-xl font-extrabold tracking-tight text-white block">AqarQore</span>
+                  <span className="text-[10px] uppercase font-mono tracking-widest text-sky-400 font-semibold">GCC Agency OS</span>
+                </div>
+              </a>
+
+              <p className="text-blue-100/70 text-sm leading-relaxed max-w-sm">
+                The autonomous real estate operating system engineered specifically for high-volume GCC brokerages across Qatar, the UAE, and Saudi Arabia.
+              </p>
+
+              <div className="pt-2 flex items-center gap-2 text-[11px] text-sky-300 font-mono">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Regional Hubs: Dubai (DIFC) • Doha • Riyadh</span>
+              </div>
+            </div>
+
+            {/* Column 2: Platform Architecture (Col Span 2) */}
+            <div className="lg:col-span-2 space-y-4">
+              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">Platform</h4>
+              <ul className="space-y-2.5 text-blue-200/70 text-xs">
+                <li><a href="#features" className="hover:text-white transition-colors">Speed to Lead</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">WhatsApp AI Bot</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">Offline Mobile App</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">Commission Signoff</a></li>
+                <li><a href="#connected" className="hover:text-white transition-colors">Connected Mesh</a></li>
+              </ul>
+            </div>
+
+            {/* Column 3: GCC Markets (Col Span 2) */}
+            <div className="lg:col-span-2 space-y-4">
+              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">GCC Markets</h4>
+              <ul className="space-y-2.5 text-blue-200/70 text-xs">
+                <li><a href="#showcase" className="hover:text-white transition-colors">Dubai Brokerages</a></li>
+                <li><a href="#showcase" className="hover:text-white transition-colors">Doha Waterfront</a></li>
+                <li><a href="#showcase" className="hover:text-white transition-colors">Riyadh Towers</a></li>
+                <li><a href="#roi" className="hover:text-white transition-colors">Revenue Calculator</a></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors">Agency Plans</a></li>
+              </ul>
+            </div>
+
+            {/* Column 4: Enterprise Trust & Support (Col Span 3) */}
+            <div className="lg:col-span-3 space-y-4">
+              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">Enterprise Trust</h4>
+              <ul className="space-y-2.5 text-blue-200/70 text-xs">
+                <li><a href="#security" className="hover:text-white transition-colors">Institutional Security</a></li>
+                <li><a href="#security" className="hover:text-white transition-colors">GCC Data Sovereignty</a></li>
+                <li><a href="#security" className="hover:text-white transition-colors">Role-Based 403 Access</a></li>
+                <li><a href="#faq" className="hover:text-white transition-colors">Knowledge Base &amp; FAQ</a></li>
+                <li><a href={DEMO_CTA_URL} className="hover:text-sky-300 font-semibold transition-colors">Book Live Demo →</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Bottom Legal & Copyright Bar */}
+          <div className="pt-8 border-t border-blue-900/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs">
             <div>
               © {new Date().getFullYear()} AqarQore Technologies Inc. All rights reserved.
             </div>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <span className="text-slate-600">|</span>
+              <span className="text-sky-400/90 font-mono text-[11px]">GCC Compliance Certified</span>
             </div>
           </div>
+
         </div>
       </footer>
 
