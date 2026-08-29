@@ -317,8 +317,6 @@ export default function App() {
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [mobileCardIndex, setMobileCardIndex] = useState(0);
-  const [faqCategory, setFaqCategory] = useState('all');
-  const [faqSearch, setFaqSearch] = useState('');
 
   const handleHeroMouseMove = (e) => {
     if (typeof window !== 'undefined' && window.innerWidth < 1024) return;
@@ -2740,197 +2738,177 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 8B. FAQ: ENTERPRISE INTERACTIVE KNOWLEDGE CONSOLE                          */}
+      {/* 8B. FAQ: EDITORIAL INTERACTIVE KNOWLEDGE SYSTEM                            */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="faq" className="py-24 sm:py-32 bg-slate-50 text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+      <section id="faq" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
         {/* Subtle Decorative Technical Micro-Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-500/5 blur-[140px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
-          
-          {/* Top Centered Section Header */}
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
-              <HelpCircle className="w-3.5 h-3.5 text-[#0858A8]" />
-              <span>ENTERPRISE KNOWLEDGE BASE</span>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-start">
+            
+            {/* ------------------------------------------------------------------ */}
+            {/* LEFT COLUMN: EDITORIAL FAQ HEADER & REGIONAL SUPPORT CARD          */}
+            {/* ------------------------------------------------------------------ */}
+            <motion.div 
+              className="lg:col-span-5 lg:sticky lg:top-28 space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
+                <HelpCircle className="w-3.5 h-3.5 text-[#0858A8]" />
+                <span>FREQUENTLY ASKED QUESTIONS</span>
+              </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
-              {isRtl ? (
-                'كل ما تحتاج معرفته عن نظام AqarQore'
-              ) : (
-                <>
-                  Clear, Upfront Answers.{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                    Built for GCC Brokerages.
-                  </span>
-                </>
-              )}
-            </h2>
+              {/* Title */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
+                {isRtl ? (
+                  'كل ما تحتاج معرفته عن نظام AqarQore'
+                ) : (
+                  <>
+                    Everything You Need to Know.{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      Clear, Upfront Answers.
+                    </span>
+                  </>
+                )}
+              </h2>
 
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-              {isRtl ? (
-                'كل ما يتعلق بسرعة ربط البوابات، وتوافق واتساب السحابي، ودقة احتساب العمولات، وجدول بدء التشغيل في وكالتك.'
-              ) : (
-                'Answers to critical operational questions regarding portal ingestion, WhatsApp Cloud API compliance, offline viewings, and 48-hour onboarding.'
-              )}
-            </p>
-          </div>
+              {/* Subtitle */}
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
+                {isRtl ? (
+                  'كل ما يتعلق بسرعة ربط البوابات، وتوافق واتساب السحابي، ودقة احتساب العمولات، وجدول بدء التشغيل في وكالتك.'
+                ) : (
+                  'Everything you need to know about migrating your agency, portal sync speed, WhatsApp Cloud API compliance, and 48-hour onboarding.'
+                )}
+              </p>
 
-          {/* Search & Category Filter Control Bar */}
-          <div className="max-w-4xl mx-auto space-y-4">
-            {/* Search Input */}
-            <div className="relative">
-              <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                value={faqSearch}
-                onChange={(e) => setFaqSearch(e.target.value)}
-                placeholder="Search topics (e.g. Bayut, WhatsApp, commission, offline sync, 48 hours)..."
-                className="w-full pl-12 pr-10 py-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0858A8] focus:ring-2 focus:ring-blue-100 transition-all"
-              />
-              {faqSearch && (
-                <button
-                  onClick={() => setFaqSearch('')}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              )}
-            </div>
+              {/* Regional Support Assistance Card */}
+              <div className="pt-2">
+                <div className="p-6 rounded-3xl bg-[#F8FAFC] border border-slate-200 shadow-sm space-y-4 hover:border-slate-300 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-blue-50 border border-blue-200 text-[#0858A8] flex items-center justify-center shrink-0 shadow-2xs font-bold">
+                        <ShieldCheck className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-slate-900">Custom Architecture Inquiries?</div>
+                        <div className="text-xs text-slate-500">Dedicated specialists in Dubai &amp; Doha</div>
+                      </div>
+                    </div>
+                  </div>
 
-            {/* Category Filter Tabs */}
-            <div className="flex items-center justify-center flex-wrap gap-2 pt-1">
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Have specific regulatory questions, sovereign data hosting requirements, or bespoke ERP integration workflows? Connect with our GCC engineering team.
+                  </p>
+
+                  <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between">
+                    <span className="text-[11px] font-mono text-emerald-600 font-bold flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      Avg. Response: &lt; 15 mins
+                    </span>
+                    <a 
+                      href={DEMO_CTA_URL}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0858A8] hover:text-[#003068] transition-colors"
+                    >
+                      <span>Talk to an Architect</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ------------------------------------------------------------------ */}
+            {/* RIGHT COLUMN: INTERACTIVE ACCORDION KNOWLEDGE INTERFACE            */}
+            {/* ------------------------------------------------------------------ */}
+            <motion.div 
+              className="lg:col-span-7 space-y-3.5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
+            >
               {[
-                { id: 'all', label: 'All Inquiries' },
-                { id: 'routing', label: 'Speed & Routing' },
-                { id: 'whatsapp', label: 'Meta WhatsApp' },
-                { id: 'mobile', label: 'Offline Mobile' },
-                { id: 'finance', label: 'Commissions & Audit' },
-                { id: 'onboarding', label: '48h Onboarding' }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setFaqCategory(tab.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                    faqCategory === tab.id
-                      ? 'bg-slate-900 text-white shadow-sm'
-                      : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-300'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Interactive Knowledge Cards Grid */}
-          <div className="max-w-5xl mx-auto space-y-4">
-            {[
-              {
-                id: '01',
-                category: 'routing',
-                tag: 'SPEED TO LEAD',
-                metric: 'SLA: < 10 SECONDS',
-                question: isRtl 
-                  ? 'ما مدى سرعة توزيع العملاء المحتملين من البوابات العقارية؟' 
-                  : 'How quickly does AqarQore auto-assign portal leads?',
-                answer: isRtl 
-                  ? 'يتم استلام وتوزيع استفسارات Property Finder و Bayut و Meta WhatsApp في أقل من 10 ثوانٍ عبر محرك القواعد الذكي، متجاوزاً الوكلاء المشغولين أو خارج الدوام لضمان التواصل الفوري.'
-                  : 'Inquiries from Property Finder, Bayut, Dubizzle, and Meta WhatsApp are ingested and auto-assigned by your rule engine in under 10 seconds. The system automatically skips agents who are off-duty or at maximum lead capacity, ensuring hot buyers receive immediate outreach.'
-              },
-              {
-                id: '02',
-                category: 'whatsapp',
-                tag: 'META CLOUD API',
-                metric: 'OFFICIAL META TIER',
-                question: isRtl 
-                  ? 'هل يتوافق روبوت واتساب مع معايير واجهة Meta الرسمية؟' 
-                  : "Is the WhatsApp integration compliant with Meta's official Cloud API?",
-                answer: isRtl 
-                  ? 'نعم، يتصل AqarQore مباشرة عبر شريك Meta Cloud API الرسمي، مما يحافظ على علامة التوثيق الخضراء ويحمي بيانات عملائك داخل بيئة الوكالة الرسمية بدلاً من هواتف الوكلاء الشخصية.'
-                  : "Yes. AqarQore connects directly via Meta's Official Cloud API partner tier, preserving your official business verification badge, operating within the 24-hour customer service window, and preventing client data loss when staff leave."
-              },
-              {
-                id: '03',
-                category: 'mobile',
-                tag: 'OFFLINE FIELD APP',
-                metric: 'SQLITE 5G AUTO-REPLAY',
-                question: isRtl 
-                  ? 'كيف يعمل تطبيق المعاينات في الأماكن المغلقة ومواقف السيارات؟' 
-                  : 'How does the offline mobile app work during basement or underground viewings?',
-                answer: isRtl 
-                  ? 'يستطيع الوكيل استعراض بيانات الوحدات وتسجيل ملاحظات وتوقيع العميل دون الحاجة لإنترنت، وفور توفر شبكة 4G/5G يتم مزامنة كافة البيانات فورياً دون فقدان أي تفاصيل.'
-                  : 'Agents can pull listing specs, log client feedback, and capture viewing signatures completely offline in underground parking or thick concrete towers. As soon as the device reconnects to 4G/5G or Wi-Fi, all changes sync automatically to the CRM.'
-              },
-              {
-                id: '04',
-                category: 'finance',
-                tag: 'COMMISSION AUDIT',
-                metric: '2-STEP SERVER SIGNOFF',
-                question: isRtl 
-                  ? 'كيف يمنع نظام اعتماد العمولات على خطوتين النزاعات المالية؟' 
-                  : 'How does the 2-step deal and commission approval prevent disputes?',
-                answer: isRtl 
-                  ? 'تتطلب كل صفقة موافقة إلكترونية متسلسلة تبدأ من مدير المبيعات ثم تنتقل إلى المحاسبة، ولا يمكن تخطي أي خطوة، مما يضمن دقة الصرف وسجل تدقيق مالي ثابت.'
-                  : 'Every closed transaction requires sequential signoffs: first from the Sales Director, followed by Accounting verification. Neither party can bypass the other, and payouts are locked to prevent double-crediting and disputed commissions.'
-              },
-              {
-                id: '05',
-                category: 'onboarding',
-                tag: '48H MIGRATION',
-                metric: 'ZERO DOWNTIME GUARANTEE',
-                question: isRtl 
-                  ? 'كم يستغرق نقل بيانات الوكالة وبدء التشغيل الفعلي؟' 
-                  : 'How long does agency onboarding and portal migration take?',
-                answer: isRtl 
-                  ? 'تبدأ معظم الوكالات العمل بالكامل خلال أقل من 48 ساعة بمساعدة فريق الدعم الإقليمي في دبي والدوحة لنقل القوائم وتفعيل محركات التوزيع دون انقطاع.'
-                  : 'Most GCC brokerages go live in under 48 hours. Our dedicated regional onboarding team in Dubai and Doha helps import your active listings, configure your agent routing rules, and connect your portal webhook pipelines without agency downtime.'
-              }
-            ]
-              .filter((faq) => {
-                const matchesCat = faqCategory === 'all' || faq.category === faqCategory;
-                const matchesSearch = !faqSearch || 
-                  faq.question.toLowerCase().includes(faqSearch.toLowerCase()) || 
-                  faq.answer.toLowerCase().includes(faqSearch.toLowerCase()) ||
-                  faq.tag.toLowerCase().includes(faqSearch.toLowerCase());
-                return matchesCat && matchesSearch;
-              })
-              .map((faq, index) => {
+                {
+                  id: '01',
+                  tag: 'LEAD ROUTING',
+                  question: isRtl 
+                    ? 'ما مدى سرعة توزيع العملاء المحتملين من البوابات العقارية؟' 
+                    : 'How quickly does AqarQore auto-assign portal leads?',
+                  answer: isRtl 
+                    ? 'يتم استلام وتوزيع استفسارات Property Finder و Bayut و Meta WhatsApp في أقل من 10 ثوانٍ عبر محرك القواعد الذكي، متجاوزاً الوكلاء المشغولين أو خارج الدوام لضمان التواصل الفوري.'
+                    : 'Inquiries from Property Finder, Bayut, Dubizzle, and Meta WhatsApp are ingested and auto-assigned by your rule engine in under 10 seconds. The system automatically skips agents who are off-duty or at maximum lead capacity, ensuring hot buyers receive immediate outreach.'
+                },
+                {
+                  id: '02',
+                  tag: 'META CLOUD API',
+                  question: isRtl 
+                    ? 'هل يتوافق روبوت واتساب مع معايير واجهة Meta الرسمية؟' 
+                    : "Is the WhatsApp integration compliant with Meta's official Cloud API?",
+                  answer: isRtl 
+                    ? 'نعم، يتصل AqarQore مباشرة عبر شريك Meta Cloud API الرسمي، مما يحافظ على علامة التوثيق الخضراء ويحمي بيانات عملائك داخل بيئة الوكالة الرسمية بدلاً من هواتف الوكلاء الشخصية.'
+                    : "Yes. AqarQore connects directly via Meta's Official Cloud API partner tier, preserving your official business verification badge, operating within the 24-hour customer service window, and preventing client data loss when staff leave."
+                },
+                {
+                  id: '03',
+                  tag: 'OFFLINE FIELD APP',
+                  question: isRtl 
+                    ? 'كيف يعمل تطبيق المعاينات في الأماكن المغلقة ومواقف السيارات؟' 
+                    : 'How does the offline mobile app work during basement or underground viewings?',
+                  answer: isRtl 
+                    ? 'يستطيع الوكيل استعراض بيانات الوحدات وتسجيل ملاحظات وتوقيع العميل دون الحاجة لإنترنت، وفور توفر شبكة 4G/5G يتم مزامنة كافة البيانات فورياً دون فقدان أي تفاصيل.'
+                    : 'Agents can pull listing specs, log client feedback, and capture viewing signatures completely offline in underground parking or thick concrete towers. As soon as the device reconnects to 4G/5G or Wi-Fi, all changes sync automatically to the CRM.'
+                },
+                {
+                  id: '04',
+                  tag: 'COMMISSION AUDIT',
+                  question: isRtl 
+                    ? 'كيف يمنع نظام اعتماد العمولات على خطوتين النزاعات المالية؟' 
+                    : 'How does the 2-step deal and commission approval prevent disputes?',
+                  answer: isRtl 
+                    ? 'تتطلب كل صفقة موافقة إلكترونية متسلسلة تبدأ من مدير المبيعات ثم تنتقل إلى المحاسبة، ولا يمكن تخطي أي خطوة، مما يضمن دقة الصرف وسجل تدقيق مالي ثابت.'
+                    : 'Every closed transaction requires sequential signoffs: first from the Sales Director, followed by Accounting verification. Neither party can bypass the other, and payouts are locked to prevent double-crediting and disputed commissions.'
+                },
+                {
+                  id: '05',
+                  tag: '48H ONBOARDING',
+                  question: isRtl 
+                    ? 'كم يستغرق نقل بيانات الوكالة وبدء التشغيل الفعلي؟' 
+                    : 'How long does agency onboarding and portal migration take?',
+                  answer: isRtl 
+                    ? 'تبدأ معظم الوكالات العمل بالكامل خلال أقل من 48 ساعة بمساعدة فريق الدعم الإقليمي في دبي والدوحة لنقل القوائم وتفعيل محركات التوزيع دون انقطاع.'
+                    : 'Most GCC brokerages go live in under 48 hours. Our dedicated regional onboarding team in Dubai and Doha helps import your active listings, configure your agent routing rules, and connect your portal webhook pipelines without agency downtime.'
+                }
+              ].map((faq, index) => {
                 const isOpen = openFaqIndex === index;
                 return (
                   <motion.div
                     key={faq.id}
-                    layout
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={`rounded-3xl transition-all duration-200 border ${
+                    variants={fadeInUp}
+                    className={`rounded-2xl transition-all duration-200 border ${
                       isOpen 
-                        ? 'bg-white border-sky-400/80 shadow-md ring-1 ring-sky-200/50' 
-                        : 'bg-white hover:bg-slate-50/80 border-slate-200 shadow-2xs hover:border-slate-300'
+                        ? 'bg-white border-blue-400/80 shadow-[0_10px_30px_-5px_rgba(0,48,104,0.08)]' 
+                        : 'bg-[#F8FAFC] hover:bg-white border-slate-200 hover:border-slate-300'
                     }`}
                   >
                     <button
                       type="button"
                       onClick={() => setOpenFaqIndex(isOpen ? -1 : index)}
                       aria-expanded={isOpen}
-                      className="w-full p-6 sm:p-7 flex items-start justify-between gap-4 text-left cursor-pointer group"
+                      className="w-full p-5 sm:p-6 flex items-start justify-between gap-4 text-left cursor-pointer group"
                     >
-                      <div className="flex items-start gap-4">
-                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-mono font-bold text-xs shrink-0 transition-colors ${
-                          isOpen ? 'bg-[#001D42] text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-blue-50 group-hover:text-[#0858A8]'
-                        }`}>
+                      <div className="flex items-start gap-3.5">
+                        <span className={`text-xs font-mono font-bold mt-0.5 shrink-0 ${isOpen ? 'text-[#0858A8]' : 'text-slate-400'}`}>
                           {faq.id}
-                        </div>
-                        <div className="space-y-1.5">
-                          <div className="flex items-center gap-2">
-                            <span className="text-[9.5px] font-mono font-bold uppercase tracking-wider text-[#0858A8] bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-100">
+                        </span>
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#0858A8] bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
                               {faq.tag}
-                            </span>
-                            <span className="text-[9.5px] font-mono font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                              {faq.metric}
                             </span>
                           </div>
                           <h3 className={`text-base sm:text-lg font-bold leading-snug transition-colors ${
@@ -2941,8 +2919,8 @@ export default function App() {
                         </div>
                       </div>
 
-                      <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-all ${
-                        isOpen ? 'bg-[#0858A8] text-white shadow-xs' : 'bg-slate-100 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#0858A8]'
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${
+                        isOpen ? 'bg-[#0858A8] text-white shadow-xs' : 'bg-slate-200/80 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#0858A8]'
                       }`}>
                         {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                       </div>
@@ -2957,8 +2935,8 @@ export default function App() {
                           transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
                           className="overflow-hidden"
                         >
-                          <div className="px-6 sm:px-7 pb-7 pt-2 pl-16 sm:pl-20 text-sm sm:text-[15px] text-slate-600 leading-relaxed border-t border-slate-100 space-y-3">
-                            <p>{faq.answer}</p>
+                          <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                            {faq.answer}
                           </div>
                         </motion.div>
                       )}
@@ -2966,29 +2944,9 @@ export default function App() {
                   </motion.div>
                 );
               })}
+            </motion.div>
+
           </div>
-
-          {/* Bottom Specialist Support Strip */}
-          <div className="max-w-4xl mx-auto p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4 text-left">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 text-[#0858A8] flex items-center justify-center shrink-0 font-bold">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-base font-bold text-slate-900">Have a specific enterprise requirement?</div>
-                <div className="text-xs text-slate-500 mt-0.5">Direct consultation with solution architects in Dubai (DIFC) &amp; Doha</div>
-              </div>
-            </div>
-
-            <a
-              href={DEMO_CTA_URL}
-              className="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm whitespace-nowrap shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center gap-2 shrink-0"
-            >
-              <span>Book Technical Briefing</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-
         </div>
       </section>
 
