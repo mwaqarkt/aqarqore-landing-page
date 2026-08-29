@@ -2101,11 +2101,12 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 6B. ENTIRE AGENCY CONNECTED ⭐ NEW (INTERACTIVE NETWORK VISUALIZATION)     */}
+      {/* 6B. ENTIRE AGENCY CONNECTED: INTERACTIVE NETWORK VISUALIZATION             */}
       {/* -------------------------------------------------------------------------- */}
       <section id="connected" className="py-24 sm:py-32 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
         {/* Subtle Decorative Technical Micro-Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-sky-500/5 blur-[160px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center">
@@ -2120,184 +2121,243 @@ export default function App() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0858A8] text-xs font-bold uppercase tracking-wider shadow-sm">
-                ENTIRE AGENCY CONNECTED
-              </span>
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
+                <RefreshCw className="w-3.5 h-3.5 text-[#0858A8] animate-spin" style={{ animationDuration: '6s' }} />
+                <span>ENTIRE AGENCY CONNECTED</span>
+              </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+              {/* Heading */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
                 {isRtl ? (
                   'وكالتك بالكامل متصلة في نظام تشغيل موحد'
                 ) : (
                   <>
-                    Your Entire Brokerage. Connected Into One System.
+                    Your Entire Brokerage.{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      Connected Into One System.
+                    </span>
                   </>
                 )}
               </h2>
 
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+              {/* Description */}
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
                 {isRtl ? (
                   'ربط فوري بين عملاء البوابات، وروبوت واتساب الذكي، وتطبيق المعاينات الميدانية، واعتمادات العمولات المحاسبية في لوحة تحكم واحدة متزامنة.'
                 ) : (
-                  'Connect your portal lead streams, Meta WhatsApp automation, field viewing agents, and accounting signoffs into one synchronized command center.'
+                  'Eliminate data silos permanently. Connect portal lead ingestion, Meta WhatsApp bots, offline mobile viewing agents, and accounting signoffs into one synchronized live command center.'
                 )}
               </p>
 
-              {/* Core Ecosystem Checklist */}
-              <div className="pt-2 space-y-3">
-                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-300">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+              {/* Core Feature Cards */}
+              <div className="space-y-3 pt-1">
+                <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-2xs flex items-start gap-3.5 hover:border-slate-300 transition-all">
+                  <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0858A8] flex items-center justify-center shrink-0 mt-0.5 border border-blue-100 font-bold">
+                    <Zap className="w-4 h-4" />
                   </div>
-                  <span>Real-time bidirectional sync across all agency nodes</span>
+                  <div>
+                    <div className="text-xs sm:text-sm font-bold text-slate-900">Instant Bidirectional Synchronization</div>
+                    <div className="text-xs text-slate-500 mt-0.5">Every lead assignment, viewing log, and price change syncs in &lt; 10ms.</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-300">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+
+                <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-2xs flex items-start gap-3.5 hover:border-slate-300 transition-all">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-100 font-bold">
+                    <ShieldCheck className="w-4 h-4" />
                   </div>
-                  <span>Zero data silos — from first portal click to final payout</span>
+                  <div>
+                    <div className="text-xs sm:text-sm font-bold text-slate-900">Zero Data Leakage &amp; Full Audit Trail</div>
+                    <div className="text-xs text-slate-500 mt-0.5">Server-enforced RBAC and instant token offboarding protect agency records.</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-300">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+
+                <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-2xs flex items-start gap-3.5 hover:border-slate-300 transition-all">
+                  <div className="w-8 h-8 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center shrink-0 mt-0.5 border border-purple-100 font-bold">
+                    <Smartphone className="w-4 h-4" />
                   </div>
-                  <span>Server-enforced security & compliance across GCC</span>
+                  <div>
+                    <div className="text-xs sm:text-sm font-bold text-slate-900">Seamless Field-to-Desk Workflow</div>
+                    <div className="text-xs text-slate-500 mt-0.5">Agents log basement viewings offline; directors approve commissions anywhere.</div>
+                  </div>
                 </div>
               </div>
 
               {/* CTA Action */}
-              <div className="pt-3">
+              <div className="pt-2">
                 <a
                   href={DEMO_CTA_URL}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-sm shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all transform hover:-translate-y-0.5 border border-blue-400/35 cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
                 >
-                  <span>{isRtl ? 'شاهد ربط النظام المباشر' : 'See Live Agency Integration'}</span>
-                  <ArrowRight className={`w-4 h-4 text-blue-100 ${isRtl ? 'rotate-180' : ''}`} />
+                  <span>{isRtl ? 'شاهد ربط النظام المباشر' : 'Explore Connected Platform Demo'}</span>
+                  <ArrowRight className={`w-4 h-4 text-blue-200 ${isRtl ? 'rotate-180' : ''}`} />
                 </a>
               </div>
             </motion.div>
 
             {/* ------------------------------------------------------------------ */}
-            {/* RIGHT COLUMN: INTERACTIVE CONNECTED AGENCY NETWORK VISUALIZATION    */}
+            {/* RIGHT COLUMN: INTERACTIVE CONNECTED ARCHITECTURE CONSOLE           */}
             {/* ------------------------------------------------------------------ */}
             <motion.div 
               className="lg:col-span-7 relative"
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
             >
-              {/* Network Board Container */}
-              <div className="relative rounded-3xl bg-white p-6 sm:p-8 border border-slate-200/90 shadow-[0_20px_50px_-15px_rgba(0,48,104,0.08)]">
+              {/* Outer High-End Console Shell */}
+              <div className="rounded-[32px] bg-white p-6 sm:p-8 border border-slate-200 shadow-[0_20px_50px_-15px_rgba(0,48,104,0.08)] relative overflow-hidden">
                 
-                {/* Network Header */}
-                <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
-                    <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
-                      AGENCY TOPOLOGY • ALL SYSTEMS OPERATIONAL
+                {/* Console Top Live Telemetry Header */}
+                <div className="flex items-center justify-between pb-5 mb-6 border-b border-slate-100">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                    <span className="text-xs font-mono font-bold text-slate-800 uppercase tracking-wider">
+                      AGENCY TOPOLOGY • ALL 4 NODES LIVE
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-[#0858A8] font-semibold bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/70">
-                    LATENCY &lt; 10ms
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono text-emerald-700 font-bold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                      LATENCY: 4ms
+                    </span>
+                  </div>
                 </div>
 
-                {/* Central Mesh Grid Layout */}
+                {/* 4 Connected Satellite Nodes surrounding Central Backbone */}
                 <div className="space-y-4">
                   
-                  {/* Top Row: Portal Ingestion + WhatsApp Bot */}
+                  {/* Top Row: Portal Ingestion + Meta WhatsApp Bot */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Node 1 */}
-                    <div className="p-4 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-sky-400 hover:shadow-md transition-all duration-300 group">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-9 h-9 rounded-xl bg-sky-100 border border-sky-200 text-[#0858A8] flex items-center justify-center shrink-0">
-                          <Zap className="w-4 h-4" />
+                    {/* Node 1: Portal Ingestion */}
+                    <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0858A8] hover:bg-white hover:shadow-md transition-all duration-300 group">
+                      <div className="flex items-center justify-between mb-2.5">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0858A8] flex items-center justify-center border border-blue-200/80 shadow-2xs">
+                            <Zap className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-[#0858A8] transition-colors">
+                              Portal Ingestion
+                            </div>
+                            <div className="text-[10px] font-mono text-slate-500">Property Finder &amp; Bayut</div>
+                          </div>
                         </div>
-                        <div>
-                          <div className="text-xs font-bold text-slate-900 group-hover:text-[#0858A8] transition-colors">Portal Ingestion</div>
-                          <div className="text-[10px] text-emerald-600 font-mono font-semibold">Property Finder &amp; Bayut</div>
-                        </div>
+                        <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                          &lt; 6s SYNC
+                        </span>
                       </div>
                       <p className="text-[11px] text-slate-600 leading-normal">
-                        Auto-capture and sub-10s round-robin assignment to active agents.
+                        Instant webhook capture with automated round-robin lead assignment.
                       </p>
                     </div>
 
-                    {/* Node 2 */}
-                    <div className="p-4 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-emerald-500 hover:shadow-md transition-all duration-300 group">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-9 h-9 rounded-xl bg-emerald-100 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
-                          <Bot className="w-4 h-4" />
+                    {/* Node 2: Meta WhatsApp AI Bot */}
+                    <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-white hover:shadow-md transition-all duration-300 group">
+                      <div className="flex items-center justify-between mb-2.5">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-200/80 shadow-2xs">
+                            <Bot className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                              Meta WhatsApp AI
+                            </div>
+                            <div className="text-[10px] font-mono text-slate-500">24/7 Buyer Qualification</div>
+                          </div>
                         </div>
-                        <div>
-                          <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Meta WhatsApp Bot</div>
-                          <div className="text-[10px] text-emerald-600 font-mono font-semibold">24/7 AI Buyer Qualification</div>
-                        </div>
+                        <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                          VERIFIED
+                        </span>
                       </div>
                       <p className="text-[11px] text-slate-600 leading-normal">
-                        Pre-qualifies budget and area conversationally before human handoff.
+                        Conversational budget &amp; location qualification in Arabic &amp; English.
                       </p>
                     </div>
                   </div>
 
-                  {/* CENTERPIECE: Central Core Hub */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#003068] text-white border border-blue-400/40 shadow-lg text-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none" />
+                  {/* CENTERPIECE: The Central AqarQore Backbone Hub */}
+                  <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#001E47] via-[#002D62] to-[#001738] text-white border-2 border-sky-400/50 shadow-xl relative overflow-hidden group">
+                    {/* Ambient subtle glow and grid */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none" />
+                    <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-sky-500/20 rounded-full blur-3xl pointer-events-none" />
+
                     <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                      <div className="flex items-center gap-3.5 text-left">
-                        <div className="w-12 h-12 flex items-center justify-center shrink-0">
-                          <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain filter drop-shadow-md" />
+                      <div className="flex items-center gap-4 text-left">
+                        <div className="w-12 h-12 rounded-2xl bg-[#001228] border border-sky-400/40 p-1.5 flex items-center justify-center shadow-lg shrink-0">
+                          <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain filter drop-shadow-sm" />
                         </div>
                         <div>
-                          <div className="text-base font-extrabold text-white">AqarQore Core Engine</div>
-                          <div className="text-xs text-sky-200 font-medium">GCC Central Agency Operating System</div>
+                          <div className="text-base font-extrabold text-white tracking-tight flex items-center gap-2">
+                            <span>AqarQore Central OS</span>
+                            <span className="text-[9px] font-mono font-bold text-sky-300 bg-blue-900/80 px-2 py-0.5 rounded-full border border-sky-400/30">
+                              v2.4 CORE
+                            </span>
+                          </div>
+                          <div className="text-xs text-blue-200/80 font-normal mt-0.5">
+                            GCC Real Estate Real-Time Operating Infrastructure
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-300 bg-[#001D42]/80 px-3 py-1.5 rounded-xl border border-emerald-400/30 shrink-0">
+
+                      <div className="flex items-center gap-2 text-[10.5px] font-mono text-emerald-300 bg-[#001430]/90 px-3 py-1.5 rounded-xl border border-emerald-400/30 shrink-0 shadow-inner">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                        Live Synchronized Backbone
+                        <span>SYNCHRONIZED BACKBONE</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Bottom Row: Mobile Field Sync + Financial Approval Lock */}
+                  {/* Bottom Row: Offline Mobile Field App + Financial Commission Signoff */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Node 3 */}
-                    <div className="p-4 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-purple-400 hover:shadow-md transition-all duration-300 group">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-9 h-9 rounded-xl bg-purple-100 border border-purple-200 text-purple-700 flex items-center justify-center shrink-0">
-                          <CheckCircle className="w-4 h-4" />
+                    {/* Node 3: Offline Mobile App */}
+                    <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-violet-500 hover:bg-white hover:shadow-md transition-all duration-300 group">
+                      <div className="flex items-center justify-between mb-2.5">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-8 h-8 rounded-xl bg-violet-50 text-violet-700 flex items-center justify-center border border-violet-200/80 shadow-2xs">
+                            <Smartphone className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+                              Offline Mobile App
+                            </div>
+                            <div className="text-[10px] font-mono text-slate-500">Basement &amp; Field Viewings</div>
+                          </div>
                         </div>
-                        <div>
-                          <div className="text-xs font-bold text-slate-900 group-hover:text-purple-700 transition-colors">Offline Mobile App</div>
-                          <div className="text-[10px] text-purple-600 font-mono font-semibold">Basement &amp; Field Viewings</div>
-                        </div>
+                        <span className="text-[9.5px] font-mono font-bold text-violet-700 bg-violet-50 px-2 py-0.5 rounded-md border border-violet-200">
+                          SQLITE 5G
+                        </span>
                       </div>
                       <p className="text-[11px] text-slate-600 leading-normal">
-                        Offline viewing sync with instant queue replay once reconnected.
+                        Offline viewing log queue with instant replay once 5G connects.
                       </p>
                     </div>
 
-                    {/* Node 4 */}
-                    <div className="p-4 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-amber-400 hover:shadow-md transition-all duration-300 group">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-200 text-amber-700 flex items-center justify-center shrink-0">
-                          <DollarSign className="w-4 h-4" />
+                    {/* Node 4: Financial Commission Engine */}
+                    <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-500 hover:bg-white hover:shadow-md transition-all duration-300 group">
+                      <div className="flex items-center justify-between mb-2.5">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center border border-amber-200/80 shadow-2xs">
+                            <Lock className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
+                              Financial Control
+                            </div>
+                            <div className="text-[10px] font-mono text-slate-500">2-Step Deal Signoffs</div>
+                          </div>
                         </div>
-                        <div>
-                          <div className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">Financial Control</div>
-                          <div className="text-[10px] text-amber-600 font-mono font-semibold">2-Step Server Signoff</div>
-                        </div>
+                        <span className="text-[9.5px] font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
+                          AUDIT LOCK
+                        </span>
                       </div>
                       <p className="text-[11px] text-slate-600 leading-normal">
-                        Sales Director to Accounting approval lock with immutable audit.
+                        Sales Director to Accounting approval lock with zero URL leakage.
                       </p>
                     </div>
                   </div>
 
                 </div>
 
-                {/* Footer Security Badge */}
+                {/* Console Footer */}
                 <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
                   <span className="flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
