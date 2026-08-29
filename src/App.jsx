@@ -1838,76 +1838,200 @@ export default function App() {
       {/* -------------------------------------------------------------------------- */}
       {/* 8. PRICING TEASER                                                         */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="pricing" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <span className="px-3.5 py-1 rounded-full bg-blue-100 text-[#0858A8] text-xs font-bold uppercase tracking-wider">
+      <section id="pricing" className="py-24 sm:py-32 bg-white relative border-b border-slate-200/80 overflow-hidden">
+        {/* Subtle Decorative Technical Micro-Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-bold uppercase tracking-wider shadow-sm">
               Transparent Agency Tiering
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-              Simple Per-Seat Plans Built to Scale With Your Agency
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+              {isRtl ? (
+                'خطط مرنة لكل مقعد مصممة للنمو مع وكالتك'
+              ) : (
+                <>
+                  Simple Per-Seat Plans.
+                  <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#1078C0]">
+                    Built to Scale With Your Agency.
+                  </span>
+                </>
+              )}
             </h2>
-            <p className="text-slate-600 text-base">
-              No hidden portal sync fees or setup traps. All plans include Meta WhatsApp Cloud API integration.
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+              {isRtl ? (
+                'بدون رسوم مزامنة بوابات خفية أو فخاخ إعداد. تشمل جميع الخطط التكامل مع واجهة Meta WhatsApp Cloud API الرسمية.'
+              ) : (
+                'No hidden portal sync fees or setup traps. All plans include Meta WhatsApp Cloud API integration.'
+              )}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#F7F9FB] p-8 rounded-2xl border border-slate-200 space-y-6 flex flex-col justify-between">
-              <div>
-                <h3 className="text-xl font-bold text-slate-900">Starter Brokerage</h3>
-                <p className="text-xs text-slate-500 mt-1">For growing teams up to 5 agents</p>
-                <div className="mt-4 text-3xl font-extrabold text-slate-900">
-                  $149 <span className="text-xs text-slate-500 font-normal">/ seat / month</span>
+          {/* Pricing Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            
+            {/* Card 1: Starter Brokerage */}
+            <motion.div 
+              className="bg-white p-8 sm:p-9 rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,48,104,0.05)] hover:shadow-xl hover:border-slate-300 space-y-7 flex flex-col justify-between transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="space-y-6">
+                <div>
+                  <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest">Tier 01</span>
+                  <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Starter Brokerage</h3>
+                  <p className="text-xs text-slate-500 mt-1.5 font-medium">For growing teams up to 5 agents</p>
                 </div>
-                <ul className="mt-6 space-y-3 text-xs text-slate-700">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-600" /> Auto Lead Distribution (&lt;10s)</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-600" /> Property Finder & Bayut Sync</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-600" /> Mobile App (Offline Mode)</li>
-                </ul>
-              </div>
-              <a href={DEMO_CTA_URL} className="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors block">
-                Book Starter Demo
-              </a>
-            </div>
 
-            <div className="bg-[#003068] p-8 rounded-2xl border-2 border-[#1078C0] text-white shadow-xl space-y-6 flex flex-col justify-between relative transform lg:-translate-y-2">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#1078C0] text-white text-[10px] font-bold uppercase tracking-wider">
-                Most Popular for GCC Agencies
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">Growth Agency</h3>
-                <p className="text-xs text-blue-200 mt-1">For established teams 6-25 agents</p>
-                <div className="mt-4 text-3xl font-extrabold text-white">
-                  $199 <span className="text-xs text-blue-200 font-normal">/ seat / month</span>
+                <div className="pt-2 pb-4 border-b border-slate-100">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-4xl sm:text-5xl font-black text-slate-900 font-mono tracking-tight">$149</span>
+                    <span className="text-xs text-slate-500 font-medium">/ seat / month</span>
+                  </div>
                 </div>
-                <ul className="mt-6 space-y-3 text-xs text-blue-100">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> All Starter Features Included</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Meta WhatsApp AI Qualification Bot</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> 2-Step Deal Commission Approvals</li>
-                </ul>
-              </div>
-              <a href={DEMO_CTA_URL} className="w-full py-3 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white font-bold text-xs text-center shadow-lg transition-colors block">
-                Schedule Growth Demo
-              </a>
-            </div>
 
-            <div className="bg-[#F7F9FB] p-8 rounded-2xl border border-slate-200 space-y-6 flex flex-col justify-between">
-              <div>
-                <h3 className="text-xl font-bold text-slate-900">Enterprise Group</h3>
-                <p className="text-xs text-slate-500 mt-1">For large brokerages (25+ agents)</p>
-                <div className="mt-4 text-3xl font-extrabold text-slate-900">
-                  Custom Quote
-                </div>
-                <ul className="mt-6 space-y-3 text-xs text-slate-700">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-600" /> Dedicated Account Manager in Dubai/Doha</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-600" /> Custom ERP / Accounting Integrations</li>
+                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700">
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span>Auto Lead Distribution (&lt;10s)</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span>Property Finder &amp; Bayut Sync</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span>Mobile App (Offline Mode)</span>
+                  </li>
                 </ul>
               </div>
-              <a href={DEMO_CTA_URL} className="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center transition-colors block">
-                Request Enterprise Quote
-              </a>
-            </div>
+
+              <div className="pt-4">
+                <a 
+                  href={DEMO_CTA_URL} 
+                  className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
+                >
+                  Book Starter Demo
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Card 2: Growth Agency (Featured Highlight) */}
+            <motion.div 
+              className="bg-gradient-to-b from-[#00224D] via-[#001D42] to-[#001433] p-8 sm:p-9 rounded-3xl border-2 border-blue-400/60 text-white shadow-[0_25px_60px_-15px_rgba(0,34,77,0.5),0_0_35px_rgba(16,120,192,0.2)] space-y-7 flex flex-col justify-between relative transform lg:-translate-y-3 transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white text-[10px] font-mono font-bold uppercase tracking-wider shadow-lg border border-blue-300/40">
+                ⭐ Most Popular for GCC Agencies
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <span className="text-[11px] font-mono font-bold text-sky-300 uppercase tracking-widest">Tier 02 • Recommended</span>
+                  <h3 className="text-2xl font-extrabold text-white mt-1">Growth Agency</h3>
+                  <p className="text-xs text-blue-200/80 mt-1.5 font-medium">For established teams 6-25 agents</p>
+                </div>
+
+                <div className="pt-2 pb-4 border-b border-blue-800/60">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-4xl sm:text-5xl font-black text-white font-mono tracking-tight">$199</span>
+                    <span className="text-xs text-blue-200/80 font-medium">/ seat / month</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3.5 text-xs sm:text-sm text-blue-100">
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/40">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span className="font-semibold text-white">All Starter Features Included</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/40">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span>Meta WhatsApp AI Qualification Bot</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/40">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span>2-Step Deal Commission Approvals</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-4">
+                <a 
+                  href={DEMO_CTA_URL} 
+                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-xs sm:text-sm text-center shadow-lg shadow-blue-600/35 transition-all block transform hover:-translate-y-0.5 border border-blue-300/30 cursor-pointer"
+                >
+                  Schedule Growth Demo
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Card 3: Enterprise Group */}
+            <motion.div 
+              className="bg-white p-8 sm:p-9 rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,48,104,0.05)] hover:shadow-xl hover:border-slate-300 space-y-7 flex flex-col justify-between transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="space-y-6">
+                <div>
+                  <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest">Tier 03</span>
+                  <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Enterprise Group</h3>
+                  <p className="text-xs text-slate-500 mt-1.5 font-medium">For large brokerages (25+ agents)</p>
+                </div>
+
+                <div className="pt-2 pb-4 border-b border-slate-100">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-black text-slate-900 font-mono tracking-tight">Custom Quote</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700">
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span>Dedicated Account Manager in Dubai/Doha</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span>Custom ERP / Accounting Integrations</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-4">
+                <a 
+                  href={DEMO_CTA_URL} 
+                  className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
+                >
+                  Request Enterprise Quote
+                </a>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
