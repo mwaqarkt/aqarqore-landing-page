@@ -2745,13 +2745,12 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 8B. FAQ: PREMIUM ENTERPRISE KNOWLEDGE SECTION                              */}
+      {/* 8B. FAQ: PREMIUM ENTERPRISE KNOWLEDGE SECTION (WHITE CANVAS)               */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="faq" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/80 overflow-hidden">
-        {/* Subtle Technical Layers */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
-        <div className="absolute top-1/4 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-sky-500/10 blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-600/10 blur-[130px] pointer-events-none" />
+      <section id="faq" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+        {/* Subtle Technical Grid Layers */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-sky-500/5 blur-[150px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-start">
@@ -2768,24 +2767,24 @@ export default function App() {
             >
               {/* Eyebrow */}
               <div className="space-y-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-sky-400/30 text-sky-400 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
-                  <HelpCircle className="w-3.5 h-3.5 text-sky-400" />
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
+                  <HelpCircle className="w-3.5 h-3.5 text-[#0858A8]" />
                   <span>FREQUENTLY ASKED</span>
                 </span>
 
                 {/* Main Heading */}
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-white">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
                   {isRtl ? (
                     <>
                       كل ما تحتاج لمعرفته{' '}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-300 to-[#00D6A3]">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
                         عن المنظومة.
                       </span>
                     </>
                   ) : (
                     <>
                       Everything You Need to{' '}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-300 to-[#00D6A3]">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
                         Know.
                       </span>
                     </>
@@ -2793,7 +2792,7 @@ export default function App() {
                 </h2>
 
                 {/* Supporting Text */}
-                <p className="text-blue-100/75 text-sm sm:text-base leading-relaxed font-normal max-w-md">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal max-w-md">
                   {isRtl ? (
                     'إجابات واضحة ودقيقة لأكثر الأسئلة شيوعاً حول منظومة دول مجلس التعاون وكيف تمكّن وكالتك العقارية من النمو.'
                   ) : (
@@ -2803,7 +2802,7 @@ export default function App() {
               </div>
 
               {/* Technical System Radar Visual */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#001738]/80 border border-blue-900/60 shadow-2xl relative overflow-hidden group">
+              <div className="p-6 sm:p-8 rounded-3xl bg-[#001738] text-white border border-blue-900/60 shadow-xl relative overflow-hidden group">
                 <div className="relative w-full max-w-[280px] h-[260px] mx-auto flex items-center justify-center">
                   
                   {/* Concentric Orbital Rings */}
@@ -2883,8 +2882,8 @@ export default function App() {
                     onClick={() => setFaqCategory(tab.id)}
                     className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                       faqCategory === tab.id
-                        ? 'bg-sky-500/20 text-sky-300 border border-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.25)]'
-                        : 'bg-[#001738]/60 text-blue-200/70 hover:text-white border border-blue-900/60 hover:border-blue-700'
+                        ? 'bg-slate-900 text-white shadow-sm'
+                        : 'bg-[#F1F5F9] text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-300'
                     }`}
                   >
                     {tab.label}
@@ -2945,8 +2944,8 @@ export default function App() {
                         transition={{ duration: 0.3 }}
                         className={`rounded-2xl transition-all duration-300 border ${
                           isOpen 
-                            ? 'bg-[#001F47]/95 border-sky-400 shadow-[0_10px_35px_rgba(8,120,209,0.25)] -translate-y-0.5' 
-                            : 'bg-[#001738]/90 hover:bg-[#001C42] border-blue-900/60 hover:border-sky-500/50 hover:-translate-y-0.5 shadow-sm'
+                            ? 'bg-white border-sky-400 shadow-md ring-1 ring-sky-200/50 -translate-y-0.5' 
+                            : 'bg-[#F8FAFC] hover:bg-white border-slate-200 hover:border-slate-300 hover:-translate-y-0.5 shadow-2xs'
                         }`}
                       >
                         <button
@@ -2956,18 +2955,20 @@ export default function App() {
                           className="w-full p-5 sm:p-6 flex items-start justify-between gap-4 text-left cursor-pointer group"
                         >
                           <div className="flex items-start gap-4">
-                            <span className="text-xs font-mono font-semibold text-sky-400 mt-1 shrink-0">
+                            <span className="text-xs font-mono font-bold text-[#0858A8] mt-1 shrink-0">
                               {faq.id}
                             </span>
-                            <span className="text-base sm:text-lg font-bold text-white group-hover:text-sky-200 transition-colors leading-snug">
+                            <span className={`text-base sm:text-lg font-bold transition-colors leading-snug ${
+                              isOpen ? 'text-[#001D42]' : 'text-slate-900 group-hover:text-[#0858A8]'
+                            }`}>
                               {faq.question}
                             </span>
                           </div>
 
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                             isOpen 
-                              ? 'bg-sky-500 text-white shadow-md rotate-180' 
-                              : 'bg-blue-950 border border-blue-800 text-blue-300 group-hover:border-sky-400 group-hover:text-white group-hover:scale-105'
+                              ? 'bg-[#0858A8] text-white shadow-xs rotate-180' 
+                              : 'bg-slate-200/80 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#0858A8] group-hover:scale-105'
                           }`}>
                             {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                           </div>
@@ -2982,39 +2983,39 @@ export default function App() {
                               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                               className="overflow-hidden"
                             >
-                              <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm sm:text-[14.5px] text-blue-100/80 leading-relaxed border-t border-blue-900/60 space-y-4">
+                              <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm sm:text-[14.5px] text-slate-600 leading-relaxed border-t border-slate-100 space-y-4">
                                 <p>{faq.answer}</p>
 
                                 {/* 3 Feature Indicators on Expanded Card */}
                                 {faq.hasFeatureBox && (
-                                  <div className="p-4 rounded-2xl bg-[#001228]/90 border border-sky-500/30 grid grid-cols-1 sm:grid-cols-3 gap-3 text-center sm:text-left">
+                                  <div className="p-4 rounded-2xl bg-[#F0F7FF] border border-blue-200/70 grid grid-cols-1 sm:grid-cols-3 gap-3 text-center sm:text-left">
                                     <div className="flex items-center sm:items-start gap-2.5">
-                                      <div className="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-300 flex items-center justify-center shrink-0 border border-sky-400/30">
+                                      <div className="w-7 h-7 rounded-lg bg-blue-100 text-[#0858A8] flex items-center justify-center shrink-0 border border-blue-200">
                                         <Rocket className="w-3.5 h-3.5" />
                                       </div>
                                       <div>
-                                        <div className="text-[11px] font-bold text-white">Quick Setup</div>
-                                        <div className="text-[10px] font-mono text-sky-300">24–48 Hours</div>
+                                        <div className="text-[11px] font-bold text-slate-900">Quick Setup</div>
+                                        <div className="text-[10px] font-mono text-[#0858A8] font-bold">24–48 Hours</div>
                                       </div>
                                     </div>
 
                                     <div className="flex items-center sm:items-start gap-2.5">
-                                      <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0 border border-emerald-400/30">
+                                      <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-200">
                                         <Users className="w-3.5 h-3.5" />
                                       </div>
                                       <div>
-                                        <div className="text-[11px] font-bold text-white">Expert Onboarding</div>
-                                        <div className="text-[10px] font-mono text-emerald-300">Personal Support</div>
+                                        <div className="text-[11px] font-bold text-slate-900">Expert Onboarding</div>
+                                        <div className="text-[10px] font-mono text-emerald-700 font-bold">Personal Support</div>
                                       </div>
                                     </div>
 
                                     <div className="flex items-center sm:items-start gap-2.5">
-                                      <div className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-400/30">
+                                      <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 border border-amber-200">
                                         <Play className="w-3.5 h-3.5" />
                                       </div>
                                       <div>
-                                        <div className="text-[11px] font-bold text-white">Go Live Fast</div>
-                                        <div className="text-[10px] font-mono text-amber-300">Start Winning</div>
+                                        <div className="text-[11px] font-bold text-slate-900">Go Live Fast</div>
+                                        <div className="text-[10px] font-mono text-amber-700 font-bold">Start Winning</div>
                                       </div>
                                     </div>
                                   </div>
@@ -3029,15 +3030,15 @@ export default function App() {
               </div>
 
               {/* Bottom Support CTA Prompt */}
-              <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-[#001738]/80 border border-blue-900/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-center sm:text-left">
-                  <div className="text-sm font-bold text-white">Still have questions?</div>
-                  <div className="text-xs text-blue-200/70 mt-0.5">Our team is here to help you.</div>
+                  <div className="text-sm font-bold text-slate-900">Still have questions?</div>
+                  <div className="text-xs text-slate-500 mt-0.5">Our team is here to help you.</div>
                 </div>
 
                 <a
                   href={DEMO_CTA_URL}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5 border border-blue-400/30 flex items-center gap-2 cursor-pointer shrink-0"
+                  className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer shrink-0"
                 >
                   <span>Contact Support</span>
                   <ArrowRight className="w-4 h-4" />
