@@ -2482,200 +2482,360 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 8. PRICING TEASER                                                         */}
+      {/* 8. AGARQORE PRICING: CHOOSE YOUR AGENCY OPERATING LEVEL (GROWTH PATH)      */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="pricing" className="py-24 sm:py-32 bg-white relative border-b border-slate-200/80 overflow-hidden">
-        {/* Subtle Decorative Technical Micro-Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+      <section id="pricing" className="py-24 sm:py-32 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+        {/* Subtle Decorative Technical Micro-Grid & Ambient Illumination */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-sky-500/5 blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-bold uppercase tracking-wider shadow-sm">
-              Transparent Agency Tiering
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-              {isRtl ? (
-                'خطط مرنة لكل مقعد مصممة للنمو مع وكالتك'
-              ) : (
-                <>
-                  Simple Per-Seat Plans. Built to Scale With Your Agency.
-                </>
-              )}
+          <motion.div 
+            className="text-center max-w-3xl mx-auto space-y-4 mb-14 sm:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-widest shadow-xs">
+              <Zap className="w-3.5 h-3.5 text-[#0858A8] animate-pulse" />
+              <span>AGARQORE PRICING</span>
+            </div>
+
+            {/* Headline */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]">
+              Scale Your Agency.{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                Not Your Complexity.
+              </span>
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
-              {isRtl ? (
-                'بدون رسوم مزامنة بوابات خفية أو فخاخ إعداد. تشمل جميع الخطط التكامل مع واجهة Meta WhatsApp Cloud API الرسمية.'
-              ) : (
-                'No hidden portal sync fees or setup traps. All plans include Meta WhatsApp Cloud API integration.'
-              )}
+
+            {/* Subtitle */}
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+              Choose the operating level that matches your brokerage today — and upgrade seamlessly as your agency grows.
             </p>
+
+            {/* Billing Selector */}
+            <div className="pt-2 flex justify-center">
+              <div className="inline-flex items-center p-1 bg-slate-200/80 rounded-2xl border border-slate-300/70 shadow-inner text-xs font-mono font-bold">
+                <span className="px-4 py-1.5 rounded-xl bg-white text-slate-900 shadow-xs border border-slate-200/80">
+                  MONTHLY BILLING
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* PLAN PROGRESSION VISUAL BAR (FOUNDATION ➔ AUTOMATION ➔ INFRASTRUCTURE) */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8 px-4 text-xs font-mono">
+            <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/80 border border-slate-200/80 shadow-xs">
+              <span className="w-7 h-7 rounded-xl bg-blue-50 text-[#0858A8] flex items-center justify-center font-bold">01</span>
+              <div>
+                <div className="font-bold text-slate-900">FOUNDATION</div>
+                <div className="text-[10px] text-slate-500">Starter Brokerage (≤ 5 Agents)</div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-2xl bg-[#001E47] border border-sky-400/40 text-white shadow-md">
+              <span className="w-7 h-7 rounded-xl bg-[#1078C0] text-white flex items-center justify-center font-bold shadow-xs">02</span>
+              <div>
+                <div className="font-bold text-[#39BFF5]">AI AUTOMATION</div>
+                <div className="text-[10px] text-blue-200/75">Growth Agency (6–25 Agents) ⭐</div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/80 border border-slate-200/80 shadow-xs">
+              <span className="w-7 h-7 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center font-bold">03</span>
+              <div>
+                <div className="font-bold text-slate-900">INFRASTRUCTURE</div>
+                <div className="text-[10px] text-slate-500">Enterprise Group (25+ Agents)</div>
+              </div>
+            </div>
           </div>
 
-          {/* Pricing Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          {/* AGENCY GROWTH PATH: 3 CONNECTED PRICING MODULES */}
+          <div className="relative max-w-6xl mx-auto">
             
-            {/* Card 1: Starter Brokerage */}
-            <motion.div 
-              className="bg-white p-8 sm:p-9 rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,48,104,0.05)] hover:shadow-xl hover:border-slate-300 space-y-7 flex flex-col justify-between transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest">Tier 01</span>
-                  <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Starter Brokerage</h3>
-                  <p className="text-xs text-slate-500 mt-1.5 font-medium">For growing teams up to 5 agents</p>
-                </div>
+            {/* Glowing Growth Path Highway Line (Desktop) */}
+            <div className="hidden lg:block absolute top-[48%] left-8 right-8 h-[2px] -translate-y-1/2 z-0 pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-[#1078C0]/60 to-emerald-400/50" />
+              <motion.div 
+                className="absolute top-0 bottom-0 w-36 bg-gradient-to-r from-transparent via-[#39BFF5] to-transparent shadow-[0_0_12px_#39BFF5]"
+                animate={{ x: ['-20%', '750%'] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
+              />
+            </div>
 
-                <div className="pt-2 pb-4 border-b border-slate-100">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-4xl sm:text-5xl font-black text-slate-900 font-mono tracking-tight">$149</span>
-                    <span className="text-xs text-slate-500 font-medium">/ seat / month</span>
+            {/* Pricing Cards Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 xl:gap-8 items-stretch relative z-10">
+              
+              {/* ============================================================ */}
+              {/* TIER 01: STARTER BROKERAGE (FOUNDATION LAYER)                */}
+              {/* ============================================================ */}
+              <motion.div 
+                className="bg-white p-7 sm:p-8 rounded-[32px] border border-slate-200/90 shadow-[0_15px_35px_-10px_rgba(0,48,104,0.06)] hover:shadow-xl hover:border-slate-300 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.05 }}
+              >
+                <div className="space-y-6">
+                  {/* Tier Badge & Header */}
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <span className="text-[10.5px] font-mono font-bold text-[#0858A8] bg-blue-50 px-3 py-1 rounded-full border border-blue-200/60">
+                      TIER 01 // FOUNDATION
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400 font-medium">≤ 5 AGENTS</span>
+                  </div>
+
+                  {/* Title & Subtitle */}
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">Starter Brokerage</h3>
+                    <p className="text-xs text-slate-500 mt-1 font-medium leading-relaxed">
+                      For growing teams establishing rapid lead routing and portal sync.
+                    </p>
+                  </div>
+
+                  {/* Price Block */}
+                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-1">
+                    <div className="text-[10px] font-mono font-bold uppercase text-slate-400">PER SEAT PRICING</div>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-4xl font-black text-slate-900 font-mono tracking-tight">$149</span>
+                      <span className="text-xs text-slate-500 font-medium">/ seat / month</span>
+                    </div>
+                  </div>
+
+                  {/* Capability Modules */}
+                  <div className="space-y-2.5 pt-1">
+                    <div className="text-[10px] font-mono font-bold uppercase text-slate-400 tracking-wider">
+                      INCLUDED CAPABILITIES
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-start gap-2.5 text-xs text-slate-700 shadow-2xs">
+                      <Zap className="w-4 h-4 text-[#0858A8] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900">Auto Lead Distribution</div>
+                        <div className="text-[11px] text-slate-500">Sub-10s routing to on-duty agents</div>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-start gap-2.5 text-xs text-slate-700 shadow-2xs">
+                      <Building className="w-4 h-4 text-[#0858A8] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900">Property Finder &amp; Bayut Sync</div>
+                        <div className="text-[11px] text-slate-500">Real-time webhook inquiry ingestion</div>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-start gap-2.5 text-xs text-slate-700 shadow-2xs">
+                      <Smartphone className="w-4 h-4 text-[#0858A8] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900">Mobile App (Offline Mode)</div>
+                        <div className="text-[11px] text-slate-500">Basement viewing queue &amp; 5G auto-sync</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700">
-                  <li className="flex items-start gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>Auto Lead Distribution (&lt;10s)</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>Property Finder &amp; Bayut Sync</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>Mobile App (Offline Mode)</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="pt-4">
-                <a 
-                  href={DEMO_CTA_URL} 
-                  className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
-                >
-                  Book Starter Demo
-                </a>
-              </div>
-            </motion.div>
-
-            {/* Card 2: Growth Agency (Featured Highlight) */}
-            <motion.div 
-              className="bg-gradient-to-b from-[#00224D] via-[#001D42] to-[#001433] p-8 sm:p-9 rounded-3xl border-2 border-blue-400/60 text-white shadow-[0_25px_60px_-15px_rgba(0,34,77,0.5),0_0_35px_rgba(16,120,192,0.2)] space-y-7 flex flex-col justify-between relative transform lg:-translate-y-3 transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white text-[10px] font-mono font-bold uppercase tracking-wider shadow-lg border border-blue-300/40">
-                ⭐ Most Popular for GCC Agencies
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[11px] font-mono font-bold text-sky-300 uppercase tracking-widest">Tier 02 • Recommended</span>
-                  <h3 className="text-2xl font-extrabold text-white mt-1">Growth Agency</h3>
-                  <p className="text-xs text-blue-200/80 mt-1.5 font-medium">For established teams 6-25 agents</p>
+                {/* Action CTA */}
+                <div className="pt-6">
+                  <a 
+                    href={DEMO_CTA_URL} 
+                    className="w-full py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    Book Starter Demo
+                  </a>
                 </div>
+              </motion.div>
 
-                <div className="pt-2 pb-4 border-b border-blue-800/60">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-4xl sm:text-5xl font-black text-white font-mono tracking-tight">$199</span>
-                    <span className="text-xs text-blue-200/80 font-medium">/ seat / month</span>
+              {/* ============================================================ */}
+              {/* TIER 02: GROWTH AGENCY (THE HERO DESTINATION TIER) ⭐         */}
+              {/* ============================================================ */}
+              <motion.div 
+                className="bg-gradient-to-b from-[#00224D] via-[#001D42] to-[#001433] p-7 sm:p-8 rounded-[34px] border-2 border-sky-400/70 text-white shadow-[0_25px_60px_-10px_rgba(0,34,77,0.5),0_0_40px_rgba(57,191,245,0.25)] flex flex-col justify-between relative transform lg:-translate-y-3 transition-all duration-300 hover:-translate-y-4 group"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+              >
+                <div className="space-y-6">
+                  {/* Integrated Glowing Badge Header */}
+                  <div className="flex items-center justify-between border-b border-blue-800/60 pb-4">
+                    <span className="text-[10.5px] font-mono font-bold text-[#00D6A3] bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/50 shadow-[0_0_12px_rgba(0,214,163,0.3)]">
+                      ⭐ MOST POPULAR FOR GCC
+                    </span>
+                    <span className="text-[10px] font-mono text-sky-300 font-bold">6–25 AGENTS</span>
+                  </div>
+
+                  {/* Title & Subtitle */}
+                  <div>
+                    <h3 className="text-2xl font-black text-white tracking-tight">Growth Agency</h3>
+                    <p className="text-xs text-blue-200/80 mt-1 font-medium leading-relaxed">
+                      Complete AI automation engine with WhatsApp bots &amp; deal governance.
+                    </p>
+                  </div>
+
+                  {/* Price Block */}
+                  <div className="p-4 rounded-2xl bg-[#001530] border border-blue-700/60 space-y-1 shadow-inner">
+                    <div className="text-[10px] font-mono font-bold uppercase text-sky-300">RECOMMENDED OPERATING LEVEL</div>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-4xl font-black text-white font-mono tracking-tight">$199</span>
+                      <span className="text-xs text-blue-200/80 font-medium">/ seat / month</span>
+                    </div>
+                  </div>
+
+                  {/* Capability Modules */}
+                  <div className="space-y-2.5 pt-1">
+                    <div className="text-[10px] font-mono font-bold uppercase text-sky-300 tracking-wider">
+                      FULL GROWTH SUITE
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-[#001A3D]/90 border border-blue-700/70 flex items-start gap-2.5 text-xs text-white shadow-xs">
+                      <Check className="w-4 h-4 text-[#00D6A3] shrink-0 mt-0.5 stroke-[3]" />
+                      <div>
+                        <div className="font-bold text-white">All Starter Features Included</div>
+                        <div className="text-[11px] text-blue-200/70">Lead distribution, portal sync &amp; mobile app</div>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-[#001A3D]/90 border border-emerald-500/40 flex items-start gap-2.5 text-xs text-white shadow-xs">
+                      <MessageSquare className="w-4 h-4 text-[#00D6A3] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-emerald-300">Meta WhatsApp AI Qualification Bot</div>
+                        <div className="text-[11px] text-blue-200/70">Official Meta Cloud API • Arabic &amp; English</div>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-[#001A3D]/90 border border-sky-400/40 flex items-start gap-2.5 text-xs text-white shadow-xs">
+                      <Lock className="w-4 h-4 text-[#39BFF5] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-sky-200">2-Step Deal Commission Approvals</div>
+                        <div className="text-[11px] text-blue-200/70">Director to accounting locked signoff workflow</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <ul className="space-y-3.5 text-xs sm:text-sm text-blue-100">
-                  <li className="flex items-start gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/40">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span className="font-semibold text-white">All Starter Features Included</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/40">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>Meta WhatsApp AI Qualification Bot</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/40">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>2-Step Deal Commission Approvals</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="pt-4">
-                <a 
-                  href={DEMO_CTA_URL} 
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-xs sm:text-sm text-center shadow-lg shadow-blue-600/35 transition-all block transform hover:-translate-y-0.5 border border-blue-300/30 cursor-pointer"
-                >
-                  Schedule Growth Demo
-                </a>
-              </div>
-            </motion.div>
-
-            {/* Card 3: Enterprise Group */}
-            <motion.div 
-              className="bg-white p-8 sm:p-9 rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,48,104,0.05)] hover:shadow-xl hover:border-slate-300 space-y-7 flex flex-col justify-between transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest">Tier 03</span>
-                  <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Enterprise Group</h3>
-                  <p className="text-xs text-slate-500 mt-1.5 font-medium">For large brokerages (25+ agents)</p>
+                {/* Action CTA */}
+                <div className="pt-6">
+                  <a 
+                    href={DEMO_CTA_URL} 
+                    className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-xs sm:text-sm text-center shadow-lg shadow-blue-600/35 transition-all block transform hover:-translate-y-0.5 border border-blue-300/30 cursor-pointer"
+                  >
+                    Schedule Growth Demo
+                  </a>
                 </div>
+              </motion.div>
 
-                <div className="pt-2 pb-4 border-b border-slate-100">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-black text-slate-900 font-mono tracking-tight">Custom Quote</span>
+              {/* ============================================================ */}
+              {/* TIER 03: ENTERPRISE GROUP (FULL INFRASTRUCTURE)              */}
+              {/* ============================================================ */}
+              <motion.div 
+                className="bg-white p-7 sm:p-8 rounded-[32px] border border-slate-200/90 shadow-[0_15px_35px_-10px_rgba(0,48,104,0.06)] hover:shadow-xl hover:border-slate-300 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.25 }}
+              >
+                <div className="space-y-6">
+                  {/* Tier Badge & Header */}
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <span className="text-[10.5px] font-mono font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+                      TIER 03 // INFRASTRUCTURE
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400 font-medium">25+ AGENTS</span>
+                  </div>
+
+                  {/* Title & Subtitle */}
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">Enterprise Group</h3>
+                    <p className="text-xs text-slate-500 mt-1 font-medium leading-relaxed">
+                      Custom infrastructure, dedicated GCC account director, and ERP integrations.
+                    </p>
+                  </div>
+
+                  {/* Price Block */}
+                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-1">
+                    <div className="text-[10px] font-mono font-bold uppercase text-slate-400">INSTITUTIONAL TIER</div>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-3xl sm:text-4xl font-black text-slate-900 font-mono tracking-tight">Custom Quote</span>
+                    </div>
+                  </div>
+
+                  {/* Capability Modules */}
+                  <div className="space-y-2.5 pt-1">
+                    <div className="text-[10px] font-mono font-bold uppercase text-slate-400 tracking-wider">
+                      ENTERPRISE INFRASTRUCTURE
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-start gap-2.5 text-xs text-slate-700 shadow-2xs">
+                      <Users className="w-4 h-4 text-[#0858A8] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900">Dedicated Account Manager</div>
+                        <div className="text-[11px] text-slate-500">On-ground executive support in Dubai &amp; Doha</div>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-start gap-2.5 text-xs text-slate-700 shadow-2xs">
+                      <Database className="w-4 h-4 text-[#0858A8] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900">Custom ERP &amp; Accounting Sync</div>
+                        <div className="text-[11px] text-slate-500">SAP, Oracle, Zoho &amp; bespoke financial pipelines</div>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-start gap-2.5 text-xs text-slate-700 shadow-2xs">
+                      <ShieldCheck className="w-4 h-4 text-[#0858A8] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900">Sovereign Data Hosting</div>
+                        <div className="text-[11px] text-slate-500">KSA &amp; UAE local data compliance isolation</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700">
-                  <li className="flex items-start gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>Dedicated Account Manager in Dubai/Doha</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-300">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>Custom ERP / Accounting Integrations</span>
-                  </li>
-                </ul>
-              </div>
+                {/* Action CTA */}
+                <div className="pt-6">
+                  <a 
+                    href={DEMO_CTA_URL} 
+                    className="w-full py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    Request Enterprise Quote
+                  </a>
+                </div>
+              </motion.div>
 
-              <div className="pt-4">
-                <a 
-                  href={DEMO_CTA_URL} 
-                  className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
-                >
-                  Request Enterprise Quote
-                </a>
-              </div>
-            </motion.div>
-
+            </div>
           </div>
+
+          {/* AGENCY JOURNEY BOTTOM PROGRESSION INDICATOR */}
+          <motion.div 
+            className="mt-14 max-w-4xl mx-auto p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="font-bold text-slate-900 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#0858A8]" />
+              <span>YOUR AGENCY JOURNEY:</span>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px]">
+              <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600">1. LEADS</span>
+              <span className="text-slate-400">→</span>
+              <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600">2. ROUTING</span>
+              <span className="text-slate-400">→</span>
+              <span className="px-2.5 py-1 rounded-lg bg-[#001E47] text-[#39BFF5] font-bold border border-sky-400/40">3. AI AUTOMATION ⭐</span>
+              <span className="text-slate-400">→</span>
+              <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600">4. DEAL LOCK</span>
+              <span className="text-slate-400">→</span>
+              <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600">5. SCALE</span>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
