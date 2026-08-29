@@ -9,14 +9,18 @@
   }
 }
 
-body {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+html, body, #root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: #F7F9FB;
 }
 
+button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, div {
+  font-family: inherit;
+}
+
 /* Custom RTL Font support when active */
-[dir="rtl"] body {
-  font-family: 'Tajawal', 'Plus Jakarta Sans', system-ui, sans-serif;
+[dir="rtl"] html, [dir="rtl"] body, [dir="rtl"] #root {
+  font-family: 'Tajawal', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 /* Glassmorphism Utilities */
