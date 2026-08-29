@@ -2223,79 +2223,66 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 9. FINAL EXECUTIVE CTA CONVERSION HUB                                      */}
+      {/* 9. FINAL EXECUTIVE CTA BANNER (SLEEK PANORAMIC BAND)                       */}
       {/* -------------------------------------------------------------------------- */}
-      <section className="py-24 sm:py-32 bg-[#001433] text-white relative overflow-hidden">
-        {/* Subtle Decorative Technical Micro-Grid & Ambient Radial Lighting */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1078C0]/15 blur-[160px] pointer-events-none" />
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-[#00224D] via-[#003068] to-[#0858A8] text-white relative border-y border-blue-400/35 overflow-hidden shadow-2xl">
+        {/* Subtle Decorative Technical Micro-Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 bg-sky-400/15 blur-[120px] pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            className="rounded-3xl bg-gradient-to-b from-[#002859] via-[#00204A] to-[#001738] p-10 sm:p-16 text-center space-y-8 border-2 border-blue-400/50 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.8),0_0_50px_rgba(16,120,192,0.25)] relative overflow-hidden"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-          >
-            {/* Subtle internal grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" />
-
-            <div className="relative z-10 space-y-6 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold shadow-inner">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            
+            {/* Left Column: Scarcity Badge + Headline + Subtext */}
+            <div className="space-y-3 text-center lg:text-left max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                 <span>Limited Q3 Onboarding Slots for Dubai &amp; Doha</span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
                 {isRtl ? (
                   'توقف عن فقدان عملاء العقارات في الخليج اليوم'
                 ) : (
                   <>
-                    Stop Losing GCC Real Estate
-                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-white to-blue-200">
-                      Leads Today.
-                    </span>
+                    Stop Losing GCC Real Estate Leads Today.
                   </>
                 )}
               </h2>
 
-              <p className="text-blue-100/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto font-normal">
+              <p className="text-blue-100/80 text-xs sm:text-sm leading-relaxed font-normal">
                 {isRtl ? (
-                  'احجز جلسة استشارية مخصصة واكتشف كيف يُمكن لـ AqarQore تسريع استجابة وكالتك وتحويل العملاء في أقل من 10 ثوانٍ.'
+                  'اربط بواباتك العقارية وفعّل روبوت واتساب الذكي وامنع تسرب العملاء في دبي والدوحة والرياض.'
                 ) : (
                   'Connect your portals, deploy your Meta WhatsApp AI bot, and eliminate lead leakages across Dubai, Doha, and Riyadh.'
                 )}
               </p>
+            </div>
 
-              {/* Fast Trust Indicators */}
-              <div className="pt-2 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs font-medium text-blue-200/90">
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 stroke-[3]" />
-                  <span>48-Hour Full Migration</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 stroke-[3]" />
-                  <span>Meta Official Cloud API</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 stroke-[3]" />
-                  <span>100% GCC Data Sovereignty</span>
-                </div>
-              </div>
+            {/* Right Column: Prominent CTA Button + Inline Trust Points */}
+            <div className="flex flex-col items-center lg:items-end gap-3 shrink-0">
+              <a
+                href={DEMO_CTA_URL}
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#002859] hover:bg-sky-50 font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 border border-white cursor-pointer"
+              >
+                <span>{isRtl ? 'احجز العرض التوضيحي الآن' : 'Book Your 20-Min Demo Now'}</span>
+                <ArrowRight className={`w-4 h-4 sm:w-5 sm:h-5 text-[#002859] ${isRtl ? 'rotate-180' : ''}`} />
+              </a>
 
-              {/* Action Button */}
-              <div className="pt-4">
-                <a
-                  href={DEMO_CTA_URL}
-                  className="inline-flex items-center gap-3 px-10 py-4.5 rounded-2xl bg-white text-[#002859] hover:bg-sky-50 font-extrabold text-base shadow-[0_15px_35px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_45px_rgba(255,255,255,0.3)] transition-all transform hover:-translate-y-1 border border-white cursor-pointer"
-                >
-                  <span>{isRtl ? 'احجز العرض التوضيحي الآن' : 'Book Your 20-Min Demo Now'}</span>
-                  <ArrowRight className={`w-5 h-5 text-[#002859] ${isRtl ? 'rotate-180' : ''}`} />
-                </a>
+              <div className="flex items-center gap-4 text-[11px] font-medium text-blue-100/80">
+                <span className="flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[3]" />
+                  48h Full Migration
+                </span>
+                <span className="text-blue-300/40">•</span>
+                <span className="flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[3]" />
+                  Meta Verified
+                </span>
               </div>
             </div>
-          </motion.div>
+
+          </div>
         </div>
       </section>
 
