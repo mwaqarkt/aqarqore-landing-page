@@ -2377,9 +2377,13 @@ export default function App() {
       {/* -------------------------------------------------------------------------- */}
       {/* 7. AUTOMATION / ROI PROOF & CALCULATOR                                     */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="roi" className="py-24 sm:py-32 bg-[#001433] text-white relative border-b border-blue-950/80 overflow-hidden">
-        {/* Subtle Decorative Technical Micro-Grid & Ambient Radial Lighting */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+      <section id="roi" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/80 overflow-hidden">
+        {/* User-Provided Futuristic GCC Skyline Background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+          style={{ backgroundImage: `url('/roi-calculator-bg.png')` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/70 via-transparent to-[#001128]/85 pointer-events-none" />
         <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[150px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
