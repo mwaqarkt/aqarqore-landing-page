@@ -478,244 +478,427 @@ export default function App() {
       </header>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 1. HERO SECTION: ASYMMETRIC ENTERPRISE PRODUCT COMMAND CENTER EXPERIENCE    */}
+      {/* 1. HERO SECTION: GCC PROPERTY INTELLIGENCE COMMAND CENTER & LIVING NETWORK */}
       {/* -------------------------------------------------------------------------- */}
       <section 
         onMouseMove={handleHeroMouseMove}
-        className="relative min-h-[92vh] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001D42] text-white overflow-hidden tech-grid"
+        className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001B3D] text-white overflow-hidden"
       >
-        {/* Layer 1: Background Architectural Photo Overlay & Subtle Radial Lighting */}
-        <div 
-          className="absolute inset-0 z-0 opacity-15 bg-cover bg-center filter saturate-150 transform scale-105 pointer-events-none" 
-          style={{ backgroundImage: `url(${PROPERTY_IMAGES.heroPenthouse})` }} 
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001D42]/90 via-[#00244D]/95 to-[#001738] z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(16,120,192,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(16,120,192,0.07)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] z-0 pointer-events-none" />
+        {/* BACKGROUND LAYER 1: Subtle GCC Technical Grid & Architectural Atmosphere */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(57,191,245,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(57,191,245,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-radial from-[#062D5C]/60 via-[#032653]/80 to-[#001B3D] pointer-events-none z-0" />
         
-        {/* Soft Radial Illumination behind Product Visual */}
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-sky-500/15 via-[#1078C0]/10 to-transparent blur-[110px] pointer-events-none z-0" />
+        {/* Soft Radial Cyan/Blue Glow behind Command Center */}
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#0878D1]/20 via-[#39BFF5]/12 to-transparent blur-[130px] pointer-events-none z-0" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-12 items-center">
+        {/* BACKGROUND LAYER 2: GCC Regional Network Geo-Nodes (Dubai • Doha • Riyadh) */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-40 lg:opacity-70">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="netGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#39BFF5" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#0878D1" stopOpacity="0.2" />
+              </linearGradient>
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            {/* Connection Lines between GCC Hubs */}
+            <path d="M 680 180 Q 820 120 980 220" stroke="url(#netGrad1)" strokeWidth="1.5" fill="none" strokeDasharray="4 6" className="animate-pulse" />
+            <path d="M 980 220 Q 1120 300 1280 240" stroke="url(#netGrad1)" strokeWidth="1.5" fill="none" strokeDasharray="4 6" />
+            <path d="M 680 180 Q 980 340 1280 240" stroke="url(#netGrad1)" strokeWidth="1" fill="none" strokeDasharray="3 5" opacity="0.5" />
+
+            {/* Hub Node 1: Doha */}
+            <g transform="translate(680, 180)">
+              <circle r="14" fill="#39BFF5" fillOpacity="0.12" />
+              <circle r="6" fill="#39BFF5" filter="url(#glow)" />
+              <circle r="3" fill="#FFFFFF" />
+              <text x="14" y="4" fill="#A9C9E8" fontSize="10" fontFamily="monospace" fontWeight="bold" letterSpacing="1">DOHA</text>
+            </g>
+
+            {/* Hub Node 2: Riyadh */}
+            <g transform="translate(980, 220)">
+              <circle r="16" fill="#0878D1" fillOpacity="0.15" />
+              <circle r="7" fill="#0878D1" filter="url(#glow)" />
+              <circle r="3.5" fill="#FFFFFF" />
+              <text x="14" y="4" fill="#A9C9E8" fontSize="10" fontFamily="monospace" fontWeight="bold" letterSpacing="1">RIYADH</text>
+            </g>
+
+            {/* Hub Node 3: Dubai */}
+            <g transform="translate(1280, 240)">
+              <circle r="16" fill="#00D6A3" fillOpacity="0.15" />
+              <circle r="7" fill="#00D6A3" filter="url(#glow)" />
+              <circle r="3.5" fill="#FFFFFF" />
+              <text x="14" y="4" fill="#A9C9E8" fontSize="10" fontFamily="monospace" fontWeight="bold" letterSpacing="1">DUBAI</text>
+            </g>
+          </svg>
+        </div>
+
+        {/* MAIN HERO CONTENT CONTAINER */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-14 items-center">
             
             {/* ---------------------------------------------------------------------- */}
-            {/* LEFT COLUMN: DOMINANT TYPOGRAPHIC & VALUE PROPOSITION HERO ENGINE     */}
+            {/* LEFT COLUMN: HIGH-IMPACT TYPOGRAPHIC & ENTERPRISE VALUE ENGINE (~48%)  */}
             {/* ---------------------------------------------------------------------- */}
             <motion.div 
-              className="lg:col-span-6 space-y-6 text-left"
+              className="lg:col-span-6 xl:col-span-5 space-y-6 text-left"
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
             >
-              {/* Clean Dominant Headline */}
+              {/* Premium Eyebrow + Live Indicator */}
+              <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-2.5">
+                <span className="px-3 py-1 rounded-full bg-[#032653]/90 border border-[#39BFF5]/40 text-[#39BFF5] text-[11px] font-bold uppercase tracking-widest font-mono shadow-sm">
+                  GCC PROPERTY OPERATING SYSTEM
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00D6A3]/10 border border-[#00D6A3]/30 text-[#00D6A3] text-[11px] font-mono font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
+                  LIVE NETWORK — DUBAI • DOHA • RIYADH
+                </span>
+              </motion.div>
+
+              {/* Main Dominant Display Headline */}
               <motion.h1 
                 variants={fadeInUp}
-                className="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-[1.15]"
+                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold tracking-tight text-white leading-[1.06] max-w-[650px]"
               >
                 {isRtl ? (
-                  <>تحويل اتصالات العقارات إلى صفقات مؤكدة <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-white">بدون إهدار أي عميل</span></>
+                  <>
+                    <span>أوقف إهدار عملاء العقارات ذوي القيمة العالية</span>
+                    <span className="block mt-2 text-white">
+                      أدر وكالتك بالكامل{' '}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-[#39BFF5] to-[#0878D1]">
+                        تلقائياً
+                      </span>
+                    </span>
+                  </>
                 ) : (
                   <>
-                    Stop Losing High Value Property Leads
-                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-white">
-                      Run Your Entire Agency Automatically
+                    <span>Stop Losing High Value Property Leads</span>
+                    <span className="block mt-2">
+                      <span className="text-white">Run Your Entire Agency</span>{' '}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-[#39BFF5] to-[#168FE5]">
+                        Automatically
+                      </span>
                     </span>
                   </>
                 )}
               </motion.h1>
 
-              {/* Supporting Paragraph */}
-              <motion.p variants={fadeInUp} className="text-base sm:text-lg text-blue-100/90 font-normal leading-relaxed">
+              {/* High-Readability Supporting Paragraph */}
+              <motion.p 
+                variants={fadeInUp} 
+                className="text-base sm:text-lg lg:text-[18px] text-[#A9C9E8] font-normal leading-[1.65] max-w-[650px]"
+              >
                 {isRtl ? (
-                  'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ مع التأكد من توثيق العمولات والصفقات'
+                  'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ. تأهيل العملاء بالذكاء الاصطناعي، وتطبيق ميداني، وموافقة عمولات بخطوتين في نظام خليجي موحد'
                 ) : (
-                  'Auto assign leads from Property Finder, Bayut, and Meta WhatsApp in under 10 seconds AI buyer qualification, offline mobile app, and 2 step commission signoffs in one unified GCC system'
+                  'Auto assign leads from Property Finder, Bayut, and Meta WhatsApp in under 10 seconds. AI buyer qualification, offline mobile app, and 2 step commission signoffs in one unified GCC system'
                 )}
               </motion.p>
 
-              {/* Action Buttons */}
-              <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+              {/* Premium Asymmetric CTA Action Row */}
+              <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                {/* Primary CTA Button with Radiant Glow */}
                 <a
                   href={DEMO_CTA_URL}
-                  className="inline-flex items-center justify-center whitespace-nowrap px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-sm shadow-lg shadow-blue-600/35 hover:shadow-blue-500/45 transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-blue-400/35 group cursor-pointer text-center"
+                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#0878D1] via-[#168FE5] to-[#0878D1] hover:from-[#168FE5] hover:to-[#0878D1] text-white font-bold text-sm sm:text-base shadow-[0_0_28px_rgba(22,143,229,0.45)] hover:shadow-[0_0_36px_rgba(57,191,245,0.6)] transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-[#39BFF5]/40 group cursor-pointer text-center"
                 >
                   <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
+                  <ArrowRight className={`w-4 h-4 text-blue-100 group-hover:translate-x-1.5 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1.5' : ''}`} />
                 </a>
 
+                {/* Secondary Translucent Glass Button with Scale Icon */}
                 <button
                   onClick={() => setIsVideoModalOpen(true)}
-                  className="inline-flex items-center justify-center whitespace-nowrap gap-2 px-5 py-3.5 rounded-xl bg-blue-950/80 hover:bg-blue-900/90 text-blue-100 font-semibold text-sm border border-blue-400/25 transition-all hover:border-blue-400/50 backdrop-blur-md cursor-pointer text-center"
+                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
                 >
-                  <Play className="w-4 h-4 fill-current text-sky-400" />
+                  <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
+                  </span>
                   <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
                 </button>
               </motion.div>
 
-              {/* Partner Badges */}
-              <motion.div variants={fadeInUp} className="pt-3 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-blue-200/80 font-medium">
-                <div className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" /> Meta Official Cloud API Partner</div>
-                <div className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" /> Property Finder & Bayut Live Sync</div>
-                <div className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" /> Go Live in Under 48 Hours</div>
+              {/* Verified Trust Badges */}
+              <motion.div variants={fadeInUp} className="pt-2 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-[#A9C9E8] font-medium">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                  <span>Meta Official Cloud API Partner</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                  <span>Property Finder & Bayut Live Sync</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
+                  <span>Go Live in Under 48 Hours</span>
+                </div>
               </motion.div>
             </motion.div>
 
             {/* ---------------------------------------------------------------------- */}
-            {/* RIGHT COLUMN: SLEEK HIGH-END ENTERPRISE PRODUCT COMMAND CENTER          */}
+            {/* RIGHT COLUMN: FLOATING AQARQORE COMMAND CENTER & LIVING NETWORK (~52%)  */}
             {/* ---------------------------------------------------------------------- */}
             <motion.div 
-              className="lg:col-span-6 relative"
-              initial={{ opacity: 0, y: 30 }}
+              className="lg:col-span-6 xl:col-span-7 relative"
+              initial={{ opacity: 0, y: 35 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Main Interactive Product Window */}
-              <motion.div 
+              {/* Parallax Container */}
+              <motion.div
                 style={{
-                  x: mouseOffset.x,
-                  y: mouseOffset.y,
+                  x: mouseOffset.x * 0.6,
+                  y: mouseOffset.y * 0.6,
                   transition: 'transform 0.15s ease-out'
                 }}
-                className="relative rounded-2xl bg-gradient-to-b from-[#002B5E]/90 via-[#001E45]/95 to-[#001433] border border-blue-400/30 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.85),0_0_45px_rgba(16,120,192,0.2)] backdrop-blur-2xl overflow-hidden"
+                className="relative"
               >
-                {/* Window Chrome Header */}
-                <div className="flex items-center justify-between px-4 py-3 bg-[#001838]/90 border-b border-blue-800/60">
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                    </div>
-                    <span className="text-[11px] text-blue-300/80 font-mono hidden sm:inline">aqarqore.com / gcc-brokerage-dashboard</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-[11px] text-emerald-300 font-semibold bg-emerald-500/15 px-3 py-1 rounded-full border border-emerald-500/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    Live Sync: Dubai • Doha • Riyadh
-                  </div>
-                </div>
-
-                {/* Top Metrics Strip */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 sm:p-4 bg-[#001D42]/60 border-b border-blue-900/50">
-                  <div className="p-2.5 rounded-xl bg-blue-950/40 border border-blue-800/40">
-                    <div className="text-[10px] uppercase tracking-wider text-blue-300/90 font-semibold truncate">Speed to Lead</div>
-                    <div className="text-base sm:text-lg font-extrabold text-white mt-0.5">4.2s</div>
-                    <div className="text-[10px] text-emerald-400 font-medium">↓ 98% faster reply</div>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-blue-950/40 border border-blue-800/40">
-                    <div className="text-[10px] uppercase tracking-wider text-blue-300/90 font-semibold truncate">WhatsApp AI Bot</div>
-                    <div className="text-base sm:text-lg font-extrabold text-white mt-0.5">12 Handlers</div>
-                    <div className="text-[10px] text-sky-300 font-medium">24/7 Auto-Qualify</div>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-blue-950/40 border border-blue-800/40">
-                    <div className="text-[10px] uppercase tracking-wider text-blue-300/90 font-semibold truncate">Commission Signoffs</div>
-                    <div className="text-base sm:text-lg font-extrabold text-amber-400 mt-0.5">3 Pending</div>
-                    <div className="text-[10px] text-amber-300 font-medium">2-Step Server Lock</div>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-blue-950/40 border border-blue-800/40">
-                    <div className="text-[10px] uppercase tracking-wider text-blue-300/90 font-semibold truncate">Closed Volume</div>
-                    <div className="text-base sm:text-lg font-extrabold text-emerald-400 mt-0.5">AED 42.8M</div>
-                    <div className="text-[10px] text-emerald-300 font-medium">Reconciled to Audit</div>
-                  </div>
-                </div>
-
-                {/* Dashboard Main Workspace */}
-                <div className="p-4 sm:p-5 space-y-4">
+                {/* ------------------------------------------------------------------ */}
+                {/* 1. MAIN COMMAND CENTER GLASS CHASSIS                               */}
+                {/* ------------------------------------------------------------------ */}
+                <div className="relative rounded-3xl bg-[#032653]/85 border border-[#39BFF5]/35 shadow-[0_25px_65px_-15px_rgba(0,0,0,0.85),0_0_40px_rgba(8,120,209,0.25)] backdrop-blur-2xl overflow-hidden">
                   
-                  {/* Workspace Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+                  {/* Top Bar Header */}
+                  <div className="px-5 py-3.5 bg-[#001B3D]/90 border-b border-blue-800/70 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#00D6A3]" />
+                      </div>
+                      <div className="flex items-center gap-2 pl-2 border-l border-blue-800/80">
+                        <span className="text-xs font-bold text-white tracking-wide">AqarQore Intelligence</span>
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#00D6A3]/15 text-[#00D6A3] text-[10px] font-mono font-bold">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3] animate-ping" />
+                          LIVE
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="text-[11px] font-mono text-sky-300 font-semibold hidden sm:flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                      <span>Dubai • Doha • Riyadh</span>
+                    </div>
+                  </div>
+
+                  {/* Sub-Header Status */}
+                  <div className="px-5 py-2 bg-[#062D5C]/60 border-b border-blue-900/60 flex items-center justify-between text-[11px]">
+                    <span className="text-[#A9C9E8] font-mono">Agency Network • Live Operations</span>
+                    <span className="text-[#00D6A3] font-mono font-medium">99.98% Gateway Active</span>
+                  </div>
+
+                  {/* ------------------------------------------------------------------ */}
+                  {/* 2. CENTRAL LIVE PROPERTY NETWORK SVG VISUALIZATION                 */}
+                  {/* ------------------------------------------------------------------ */}
+                  <div className="relative h-[290px] sm:h-[320px] p-4 flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#032653]/60 via-[#001B3D]/80 to-[#032653]/90">
                     
-                    {/* Left Panel: Live Property Lead Stream */}
-                    <div className="md:col-span-7 bg-[#001D42]/80 border border-blue-800/60 rounded-xl p-3.5 space-y-3">
-                      <div className="flex items-center justify-between pb-2 border-b border-blue-900/60">
-                        <div className="flex items-center gap-2">
-                          <Zap className="w-3.5 h-3.5 text-amber-400" />
-                          <span className="text-xs font-bold text-white tracking-wide">Live Property Lead Stream</span>
-                        </div>
-                        <span className="text-[9.5px] font-mono text-sky-300 bg-sky-950/80 px-2 py-0.5 rounded border border-sky-800/60">Rule Queue: Active</span>
-                      </div>
+                    {/* Background SVG Grid & Animated Connecting Circuitry */}
+                    <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                      <defs>
+                        <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#39BFF5" stopOpacity="0.8" />
+                          <stop offset="100%" stopColor="#0878D1" stopOpacity="0.3" />
+                        </linearGradient>
+                      </defs>
 
-                      <div className="space-y-2.5">
-                        {/* Lead 1 */}
-                        <div className="flex items-center gap-3 p-2.5 rounded-xl bg-[#0858A8]/20 hover:bg-[#0858A8]/30 border border-blue-500/30 transition-all">
-                          <img 
-                            src={PROPERTY_IMAGES.heroPenthouse} 
-                            alt="Dubai Penthouse" 
-                            className="w-12 h-11 rounded-lg object-cover border border-blue-400/40 shrink-0" 
-                          />
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center justify-between">
-                              <span className="font-bold text-xs text-white truncate">Palm Jumeirah Penthouse</span>
-                              <span className="text-[9px] text-emerald-400 font-mono bg-emerald-500/10 px-1.5 py-0.5 rounded">4s Ago</span>
-                            </div>
-                            <div className="text-[10px] text-blue-200 truncate">Source: Property Finder • Budget: AED 14.5M</div>
-                            <div className="mt-0.5 flex items-center gap-1 text-[9.5px] text-emerald-300 font-medium">
-                              <CheckCircle className="w-3 h-3 text-emerald-400 shrink-0" /> Auto-Assigned → Agent Karim (Dubai)
-                            </div>
+                      {/* Connection Curves from Portals to Core Hub */}
+                      <path d="M 70 60 Q 180 90 280 150" stroke="#39BFF5" strokeWidth="1.5" strokeOpacity="0.45" strokeDasharray="3 4" fill="none" />
+                      <path d="M 70 150 L 280 150" stroke="#39BFF5" strokeWidth="1.5" strokeOpacity="0.45" strokeDasharray="3 4" fill="none" />
+                      <path d="M 70 240 Q 180 210 280 150" stroke="#39BFF5" strokeWidth="1.5" strokeOpacity="0.45" strokeDasharray="3 4" fill="none" />
+
+                      {/* Connection Curves from Core Hub to Execution Nodes */}
+                      <path d="M 380 150 Q 460 80 540 60" stroke="#00D6A3" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 4" fill="none" />
+                      <path d="M 380 150 L 540 150" stroke="#0878D1" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 4" fill="none" />
+                      <path d="M 380 150 Q 460 220 540 240" stroke="#F5B91E" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 4" fill="none" />
+
+                      {/* Animated Flow Light Packets */}
+                      <circle cx="170" cy="115" r="3" fill="#39BFF5" className="animate-ping" />
+                      <circle cx="450" cy="110" r="3" fill="#00D6A3" className="animate-ping" />
+                      <circle cx="470" cy="190" r="3" fill="#F5B91E" className="animate-ping" />
+                    </svg>
+
+                    {/* Central Flow Map Nodes Layout */}
+                    <div className="relative z-10 w-full h-full flex items-center justify-between px-2 sm:px-6">
+                      
+                      {/* Left Pipeline Ingestion: Lead Sources */}
+                      <div className="flex flex-col gap-3.5">
+                        <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-sky-400/40 shadow-md flex items-center gap-2 text-left hover:border-sky-300 transition-colors">
+                          <div className="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-[10px]">PF</div>
+                          <div>
+                            <div className="text-[11px] font-bold text-white leading-tight">Property Finder</div>
+                            <div className="text-[9px] text-[#00D6A3] font-mono">Auto-Sync • 10s</div>
                           </div>
                         </div>
 
-                        {/* Lead 2 */}
-                        <div className="flex items-center gap-3 p-2.5 rounded-xl bg-[#0858A8]/15 hover:bg-[#0858A8]/25 border border-blue-700/30 transition-all">
-                          <img 
-                            src={PROPERTY_IMAGES.waterfrontVilla} 
-                            alt="Pearl Qatar Villa" 
-                            className="w-12 h-11 rounded-lg object-cover border border-blue-400/40 shrink-0" 
-                          />
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center justify-between">
-                              <span className="font-bold text-xs text-white truncate">West Bay Lagoon Villa</span>
-                              <span className="text-[9px] text-sky-300 font-mono bg-sky-500/10 px-1.5 py-0.5 rounded">12s Ago</span>
-                            </div>
-                            <div className="text-[10px] text-blue-200 truncate">Source: WhatsApp AI Bot • Budget: QAR 6.8M</div>
-                            <div className="mt-0.5 flex items-center gap-1 text-[9.5px] text-sky-300 font-medium">
-                              <Bot className="w-3 h-3 text-sky-400 shrink-0" /> AI Qualified → Viewing Booked for Sat
-                            </div>
+                        <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-emerald-400/40 shadow-md flex items-center gap-2 text-left hover:border-emerald-300 transition-colors">
+                          <div className="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">BY</div>
+                          <div>
+                            <div className="text-[11px] font-bold text-white leading-tight">Bayut Live</div>
+                            <div className="text-[9px] text-emerald-300 font-mono">Lead Ingested</div>
+                          </div>
+                        </div>
+
+                        <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-green-500/40 shadow-md flex items-center gap-2 text-left hover:border-green-400 transition-colors">
+                          <div className="w-6 h-6 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center font-bold text-[10px]">WA</div>
+                          <div>
+                            <div className="text-[11px] font-bold text-white leading-tight">Meta WhatsApp</div>
+                            <div className="text-[9px] text-sky-300 font-mono">AI Bot Active</div>
                           </div>
                         </div>
                       </div>
+
+                      {/* Centerpiece: Glowing AqarQore Intelligence Core Engine */}
+                      <div className="relative flex flex-col items-center justify-center text-center p-4 rounded-2xl bg-gradient-to-br from-[#0878D1] via-[#032653] to-[#001B3D] border-2 border-[#39BFF5] shadow-[0_0_35px_rgba(57,191,245,0.4)]">
+                        <div className="w-12 h-12 rounded-xl bg-white p-1 flex items-center justify-center shadow-lg mb-1.5">
+                          <img src="/aqarqore-emblem.png" alt="AqarQore" className="w-full h-full object-contain" />
+                        </div>
+                        <span className="text-xs font-black text-white tracking-wide uppercase">AGARQORE</span>
+                        <span className="text-[9px] uppercase font-mono tracking-widest text-[#39BFF5] font-bold">INTELLIGENCE</span>
+                      </div>
+
+                      {/* Right Pipeline Execution: Qualification, Dispatch, Payout */}
+                      <div className="flex flex-col gap-3.5">
+                        <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-sky-400/40 shadow-md flex items-center gap-2 text-left hover:border-sky-300 transition-colors">
+                          <div className="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-[10px]">AI</div>
+                          <div>
+                            <div className="text-[11px] font-bold text-white leading-tight">AI Qualification</div>
+                            <div className="text-[9px] text-[#00D6A3] font-mono">Score: 94%</div>
+                          </div>
+                        </div>
+
+                        <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-blue-400/40 shadow-md flex items-center gap-2 text-left hover:border-blue-300 transition-colors">
+                          <div className="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-[10px]">AG</div>
+                          <div>
+                            <div className="text-[11px] font-bold text-white leading-tight">Agent Karim (DXB)</div>
+                            <div className="text-[9px] text-sky-300 font-mono">Assigned in 4s</div>
+                          </div>
+                        </div>
+
+                        <div className="p-2.5 rounded-xl bg-[#001B3D]/95 border border-amber-400/40 shadow-md flex items-center gap-2 text-left hover:border-amber-300 transition-colors">
+                          <div className="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-[10px]">CM</div>
+                          <div>
+                            <div className="text-[11px] font-bold text-white leading-tight">Deal Signoff</div>
+                            <div className="text-[9px] text-[#F5B91E] font-mono">2-Step Locked</div>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
+                  </div>
 
-                    {/* Right Panel: Deal Approval Chain */}
-                    <div className="md:col-span-5 bg-[#001D42]/80 border border-blue-800/60 rounded-xl p-3.5 flex flex-col justify-between space-y-3">
-                      <div>
-                        <div className="flex items-center justify-between pb-2 border-b border-blue-900/60">
-                          <div className="flex items-center gap-1.5">
-                            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                            <span className="text-xs font-bold text-white tracking-wide">Deal Approval Chain</span>
-                          </div>
-                          <span className="text-[9px] font-mono text-sky-300 bg-sky-950/80 px-1.5 py-0.5 rounded border border-sky-800/60">2-STEP</span>
-                        </div>
-
-                        <div className="mt-2.5 p-2.5 rounded-xl bg-blue-950/60 border border-blue-800/50 space-y-2 text-xs">
-                          <div className="flex justify-between font-bold text-white text-[11px]">
-                            <span>Deal #908 - Lusail Marina</span>
-                            <span className="text-emerald-400 font-mono">QAR 120,000 Comm.</span>
-                          </div>
-                          <div className="space-y-1 text-[10px] pt-1">
-                            <div className="flex justify-between text-emerald-300">
-                              <span>1. Agent Verification</span>
-                              <span>✓ Completed</span>
-                            </div>
-                            <div className="flex justify-between text-emerald-300">
-                              <span>2. Director Signoff</span>
-                              <span>✓ Signed by N. Al-Thani</span>
-                            </div>
-                            <div className="flex justify-between text-amber-300 font-medium">
-                              <span>3. Payout Batch</span>
-                              <span>⏱ Queued #42</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="pt-2 border-t border-blue-900/60 flex items-center justify-between text-[10px] text-blue-300">
-                        <span className="flex items-center gap-1"><Lock className="w-3 h-3 text-emerald-400" /> Server Audit</span>
-                        <span className="text-sky-300 font-mono">GCC-SEC-99</span>
-                      </div>
+                  {/* ------------------------------------------------------------------ */}
+                  {/* 3. SLIM LIVE METRICS STRIP                                         */}
+                  {/* ------------------------------------------------------------------ */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 sm:p-4 bg-[#001B3D]/90 border-t border-blue-900/70">
+                    <div className="p-2.5 rounded-xl bg-[#032653]/60 border border-blue-800/40">
+                      <div className="text-[10px] uppercase font-mono text-[#A9C9E8] font-semibold truncate">LEADS TODAY</div>
+                      <div className="text-base sm:text-lg font-extrabold text-white mt-0.5">128</div>
+                      <div className="text-[10px] text-[#00D6A3] font-medium font-mono">↑ 24% vs yesterday</div>
                     </div>
-
+                    <div className="p-2.5 rounded-xl bg-[#032653]/60 border border-blue-800/40">
+                      <div className="text-[10px] uppercase font-mono text-[#A9C9E8] font-semibold truncate">AI QUALIFIED</div>
+                      <div className="text-base sm:text-lg font-extrabold text-[#39BFF5] mt-0.5">94%</div>
+                      <div className="text-[10px] text-sky-200 font-medium font-mono">High-Intent Match</div>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-[#032653]/60 border border-blue-800/40">
+                      <div className="text-[10px] uppercase font-mono text-[#A9C9E8] font-semibold truncate">AVG RESPONSE</div>
+                      <div className="text-base sm:text-lg font-extrabold text-[#00D6A3] mt-0.5">4.2s</div>
+                      <div className="text-[10px] text-emerald-300 font-medium font-mono">Auto-Distributed</div>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-[#032653]/60 border border-blue-800/40">
+                      <div className="text-[10px] uppercase font-mono text-[#A9C9E8] font-semibold truncate">CLOSED VOLUME</div>
+                      <div className="text-base sm:text-lg font-extrabold text-[#F5B91E] mt-0.5">AED 42.8M</div>
+                      <div className="text-[10px] text-amber-200 font-medium font-mono">Audit Verified</div>
+                    </div>
                   </div>
 
                 </div>
+
+                {/* ------------------------------------------------------------------ */}
+                {/* 4. THREE FLOATING ASYMMETRICAL FOREGROUND INTELLIGENCE CARDS       */}
+                {/* ------------------------------------------------------------------ */}
+                
+                {/* FLOATING CARD 1: LIVE PROPERTY LEAD (Top-Right Offset Float) */}
+                <motion.div
+                  style={{
+                    x: mouseOffset.x * 1.1,
+                    y: mouseOffset.y * 1.1
+                  }}
+                  initial={{ opacity: 0, scale: 0.9, y: -20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.35 }}
+                  className="hidden xl:flex absolute -top-8 -right-6 z-20 items-center gap-3 p-3 rounded-2xl bg-[#001B3D]/95 border border-[#39BFF5]/50 shadow-[0_15px_35px_rgba(0,0,0,0.6),0_0_20px_rgba(57,191,245,0.2)] backdrop-blur-xl max-w-xs hover:scale-105 transition-transform"
+                >
+                  <img 
+                    src={PROPERTY_IMAGES.heroPenthouse} 
+                    alt="Palm Jumeirah Penthouse" 
+                    className="w-12 h-12 rounded-xl object-cover border border-[#39BFF5]/40 shrink-0" 
+                  />
+                  <div className="flex-1 min-w-0 text-left">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[9px] font-mono uppercase font-bold text-[#39BFF5]">LIVE PROPERTY LEAD</span>
+                      <span className="text-[9px] text-[#00D6A3] font-mono bg-[#00D6A3]/15 px-1.5 py-0.5 rounded">4s ago</span>
+                    </div>
+                    <div className="text-xs font-bold text-white truncate">Palm Jumeirah Penthouse</div>
+                    <div className="text-[10px] text-[#A9C9E8] truncate">Source: Property Finder • Karim (Dubai)</div>
+                  </div>
+                </motion.div>
+
+                {/* FLOATING CARD 2: AI BUYER QUALIFICATION (Bottom-Left Offset Float) */}
+                <motion.div
+                  style={{
+                    x: mouseOffset.x * -0.9,
+                    y: mouseOffset.y * -0.9
+                  }}
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.45 }}
+                  className="hidden lg:flex absolute -bottom-7 -left-8 z-20 items-center gap-3.5 p-3.5 rounded-2xl bg-[#001B3D]/95 border border-[#00D6A3]/50 shadow-[0_15px_35px_rgba(0,0,0,0.6),0_0_20px_rgba(0,214,163,0.2)] backdrop-blur-xl hover:scale-105 transition-transform"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-[#00D6A3]/15 border border-[#00D6A3]/40 flex flex-col items-center justify-center text-center shrink-0">
+                    <span className="text-xs font-black text-[#00D6A3]">94%</span>
+                    <span className="text-[8px] font-mono text-emerald-300 font-bold">SCORE</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[9px] font-mono uppercase font-bold text-[#00D6A3]">AI BUYER QUALIFICATION</div>
+                    <div className="text-xs font-bold text-white">HIGH INTENT • VIP FLOW</div>
+                    <div className="flex items-center gap-2 mt-0.5 text-[9.5px] font-mono text-sky-200">
+                      <span>Budget ✓</span>
+                      <span>Location ✓</span>
+                      <span>Timeline ✓</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* FLOATING CARD 3: DEAL APPROVAL (Bottom-Right Offset Float) */}
+                <motion.div
+                  style={{
+                    x: mouseOffset.x * 1.3,
+                    y: mouseOffset.y * 1.3
+                  }}
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.55 }}
+                  className="hidden md:flex absolute -bottom-7 -right-6 z-20 items-center gap-3 p-3.5 rounded-2xl bg-[#001B3D]/95 border border-[#F5B91E]/50 shadow-[0_15px_35px_rgba(0,0,0,0.6),0_0_20px_rgba(245,185,30,0.2)] backdrop-blur-xl hover:scale-105 transition-transform text-left"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#F5B91E]/15 border border-[#F5B91E]/40 flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-5 h-5 text-[#F5B91E]" />
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-[9px] font-mono uppercase font-bold text-sky-300">DEAL APPROVAL #908</span>
+                      <span className="text-[9px] text-[#00D6A3] font-mono font-bold bg-[#00D6A3]/15 px-1.5 py-0.2 rounded">APPROVED</span>
+                    </div>
+                    <div className="text-xs font-bold text-white">Lusail Marina Residence</div>
+                    <div className="text-[10px] font-mono text-[#F5B91E] font-bold">QAR 120,000 Comm. • 2-Step Signed</div>
+                  </div>
+                </motion.div>
+
               </motion.div>
             </motion.div>
 
