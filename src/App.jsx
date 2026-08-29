@@ -782,7 +782,7 @@ export default function App() {
             <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/60 text-xs font-bold uppercase tracking-wider shadow-sm">
               Real Estate Operations Transformation
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
               Designed for Agency Owners Who Refuse to Lose Market Share
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
@@ -1081,7 +1081,7 @@ export default function App() {
             <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/60 text-xs font-bold uppercase tracking-wider shadow-sm">
               Complete Feature Engine
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
               Engineered Specifically for High-Volume GCC Brokerages
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
@@ -1101,7 +1101,7 @@ export default function App() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-[#1078C0] border border-blue-200/60 text-xs font-bold uppercase tracking-wider">
                 <Zap className="w-3.5 h-3.5" /> Feature 01 • Speed to Lead
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
                 Never Lose a Hot Lead to a Slow Response
               </h3>
               <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
@@ -1178,7 +1178,7 @@ export default function App() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/60 text-xs font-bold uppercase tracking-wider">
                 <Bot className="w-3.5 h-3.5 text-emerald-600" /> Feature 02 • Conversational AI
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
                 Qualify Buyer Budget & Area Automatically 24/7
               </h3>
               <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
@@ -1241,7 +1241,7 @@ export default function App() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200/60 text-xs font-bold uppercase tracking-wider">
                 <DollarSign className="w-3.5 h-3.5 text-amber-600" /> Feature 03 • Financial Control
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
                 Dispute-Proof Commission Signoffs & Approvals
               </h3>
               <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
@@ -1442,15 +1442,12 @@ export default function App() {
                 ⭐ NEW • ENTIRE AGENCY CONNECTED
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
                 {isRtl ? (
                   'وكالتك بالكامل متصلة في نظام تشغيل موحد'
                 ) : (
                   <>
-                    Your Entire Brokerage.
-                    <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#1078C0]">
-                      Connected Into One System.
-                    </span>
+                    Your Entire Brokerage. Connected Into One System.
                   </>
                 )}
               </h2>
@@ -1816,15 +1813,12 @@ export default function App() {
             <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-bold uppercase tracking-wider shadow-sm">
               Transparent Agency Tiering
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
               {isRtl ? (
                 'خطط مرنة لكل مقعد مصممة للنمو مع وكالتك'
               ) : (
                 <>
-                  Simple Per-Seat Plans.
-                  <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#1078C0]">
-                    Built to Scale With Your Agency.
-                  </span>
+                  Simple Per-Seat Plans. Built to Scale With Your Agency.
                 </>
               )}
             </h2>
@@ -2027,15 +2021,12 @@ export default function App() {
                 ⭐ NEW • FREQUENTLY ASKED QUESTIONS
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
                 {isRtl ? (
                   'كل ما تحتاج معرفته عن نظام AqarQore'
                 ) : (
                   <>
-                    Everything You Need to Know.
-                    <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#003068] via-[#0858A8] to-[#1078C0]">
-                      Clear, Upfront Answers.
-                    </span>
+                    Everything You Need to Know. Clear, Upfront Answers.
                   </>
                 )}
               </h2>
