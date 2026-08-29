@@ -57,7 +57,8 @@ import {
   Cpu,
   Flame,
   CircleDot,
-  Bookmark
+  Bookmark,
+  HelpCircle
 } from 'lucide-react';
 
 /*
