@@ -227,10 +227,9 @@ export default function App() {
             <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 text-xs font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
+                className="px-3.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 text-xs font-bold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
               >
-                <Globe className="w-3.5 h-3.5 text-[#0858A8]" />
-                <span>{isRtl ? 'English' : 'العربية (RTL)'}</span>
+                <span>{isRtl ? 'English' : 'العربية'}</span>
               </button>
 
               <a
