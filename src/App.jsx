@@ -897,16 +897,14 @@ export default function App() {
       {/* 4. PROBLEM / AGITATION SECTION: 74% REVENUE LEAK CONNECTED SYSTEM          */}
       {/* -------------------------------------------------------------------------- */}
       <section id="problem" className="py-24 sm:py-32 bg-[#001738] text-white relative border-b border-blue-950/80 overflow-hidden">
-        {/* Layer 1: GCC Telemetry & Holographic Regional Map Artwork */}
+        {/* Layer 1: GCC Telemetry & Holographic Regional Map Artwork (Clear & Crisp) */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat filter brightness-95 saturate-110 pointer-events-none"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-90"
           style={{ backgroundImage: 'url(/gcc-telemetry-bg.png)' }}
         />
 
-        {/* Layer 2: Deep Midnight Gradient Vignette for High Text & Card Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001738]/90 via-[#001738]/65 to-[#001738]/85 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001738]/85 via-transparent to-[#001738]/95 z-0 pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-rose-500/10 blur-[130px] pointer-events-none z-0" />
+        {/* Minimal Edge Softening Only */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001738]/40 via-transparent to-[#001738]/50 z-0 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
