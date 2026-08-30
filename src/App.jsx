@@ -656,11 +656,11 @@ export default function App() {
                   {/* Subtle Outer Cyan Glow Aura */}
                   <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   
-                  {/* High-Resolution GCC Command Center Graphic */}
+                  {/* High-Resolution 3D GCC Command Center Holographic Graphic */}
                   <img 
-                    src="/hero-panoramic.png" 
+                    src="/hero-command-center-3d.png" 
                     alt="AqarQore GCC Command Center"
-                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105 rounded-2xl"
+                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105"
                   />
                 </div>
               </motion.div>
