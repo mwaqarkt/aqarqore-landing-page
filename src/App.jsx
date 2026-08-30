@@ -1746,14 +1746,15 @@ export default function App() {
               </div>
             </div>
 
-            {/* Feature 1 Mockup: High-Tech Rule Pipeline Terminal (White Card + Line Pattern) */}
+            {/* Feature 1 Mockup: High-Tech Rule Pipeline Terminal with Luxury Villa Background */}
             <div className="lg:col-span-6">
               <div className="rounded-2xl bg-white p-5 sm:p-6 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden">
-                {/* Architectural Line Pattern Background Texture */}
+                {/* Luxury Villa Background Photo */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08] pointer-events-none"
-                  style={{ backgroundImage: "url('/real-estate-line-pattern.png')" }}
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-30"
+                  style={{ backgroundImage: "url('/feature-luxury-villa-bg.jpg')" }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/95 pointer-events-none" />
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
