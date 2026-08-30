@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import {
   Menu,
@@ -77,7 +80,7 @@ PROPERTY ASSETS INCLUDED:
 ================================================================================
 */
 
-const DEMO_CTA_URL = "/book-a-demo";
+// Demo CTA path is resolved per locale inside the component (see demoHref).
 
 // Curated Property Images (High Resolution Architecture & Real Estate)
 const PROPERTY_IMAGES = {
@@ -273,8 +276,8 @@ const MARKET_PROPERTIES = {
       featureLeftIcon: DollarSign,
       featureLeftLabel: 'Deal Audit Trail',
       featureLeftLabelAr: 'سجل تدقيق الصفقات',
-      featureRightLabel: 'PDPL & CITC Compliant',
-      featureRightLabelAr: 'متوافق مع هيئة البيانات والاتصالات',
+      featureRightLabel: 'Immutable Audit Log',
+      featureRightLabelAr: 'سجل تدقيق غير قابل للتعديل',
       featureRightType: 'lock',
       theme: 'gold'
     },
@@ -313,7 +316,7 @@ const MARKET_PROPERTIES = {
       price: 'SAR 11,500,000',
       priceAr: '11,500,000 ر.س',
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
-      badge: 'Aqar.fm Portal Sync',
+      badge: 'Aqar Portal Sync',
       badgeAr: 'تزامن مباشر مع عقار.إف إم',
       badgeIcon: RefreshCw,
       badgeColor: 'cyan',
@@ -325,7 +328,7 @@ const MARKET_PROPERTIES = {
       featureLeftIcon: RefreshCw,
       featureLeftLabel: 'Portal Auto-Sync',
       featureLeftLabelAr: 'تزامن فوري مع البوابات',
-      featureRightLabel: 'Aqar.fm Direct Live',
+      featureRightLabel: 'Aqar Direct Live',
       featureRightLabelAr: 'عقار.إف إم مباشر',
       featureRightType: 'check',
       theme: 'teal'
@@ -360,8 +363,13 @@ const scaleIn = {
   }
 };
 
-export default function App() {
-  const [isRtl, setIsRtl] = useState(false);
+export default function LandingPage({ locale = 'en' }) {
+  // Language is derived from the URL, not component state. This is what makes
+  // /ar/ a real, indexable, server-rendered page instead of a client toggle.
+  const isRtl = locale === 'ar';
+  const otherLocaleHref = isRtl ? '/' : '/ar/';
+  const demoHref = isRtl ? '/ar/book-a-demo/' : '/book-a-demo/';
+  const pricingHref = isRtl ? '/ar/pricing/' : '/pricing/';
   const [activeFaq, setActiveFaq] = useState(null);
   const [agentCount, setAgentCount] = useState(15);
   const [avgDealValue, setAvgDealValue] = useState(1200000);
@@ -418,19 +426,19 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleLanguage = () => {
-    const nextRtl = !isRtl;
-    setIsRtl(nextRtl);
-    document.documentElement.dir = nextRtl ? 'rtl' : 'ltr';
-    document.documentElement.lang = nextRtl ? 'ar' : 'en';
-  };
-
   const annualSavedRevenue = Math.round(agentCount * (avgDealValue * 0.02) * 1.8);
   const monthlyHoursSaved = agentCount * 14;
 
   return (
     <div className={`min-h-screen bg-[#F7F9FB] text-slate-900 overflow-x-hidden ${isRtl ? 'font-tajawal' : ''}`}>
       
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-slate-900 focus:font-bold focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+
       {/* -------------------------------------------------------------------------- */}
       {/* TOP SCROLL PROGRESS BAR                                                   */}
       {/* -------------------------------------------------------------------------- */}
@@ -454,9 +462,9 @@ export default function App() {
             
             {/* Left: Brand Emblem + Typography Lockup */}
             <div className="flex-shrink-0">
-              <a href="#" className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#1078C0] rounded-xl p-1">
+              <Link href={isRtl ? "/ar/" : "/"} className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#1078C0] rounded-xl p-1">
                 <div className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain" />
+                  <img src="/aqarqore-emblem.png" alt="AqarQore home" width="156" height="149" decoding="async" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-none">
@@ -466,7 +474,7 @@ export default function App() {
                     {isRtl ? 'نظام تشغيل وكالات العقار بالخليج' : 'GCC Agency OS'}
                   </span>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Center: Existing Navigation Links */}
@@ -493,15 +501,18 @@ export default function App() {
 
             {/* Right: Existing Action Items & Primary CTA */}
             <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-              <button
-                onClick={toggleLanguage}
+              <Link
+                href={otherLocaleHref}
+                hrefLang={isRtl ? 'en' : 'ar'}
+                lang={isRtl ? 'en' : 'ar'}
+                aria-label={isRtl ? 'Switch to English' : 'التبديل إلى العربية'}
                 className="px-3.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 text-xs font-bold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
               >
                 <span>{isRtl ? 'English' : 'العربية'}</span>
-              </button>
+              </Link>
 
               <a
-                href={DEMO_CTA_URL}
+                href={demoHref}
                 className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-blue-600/20 hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-blue-400/30 flex items-center justify-center"
               >
                 <span className="relative z-10">
@@ -580,6 +591,8 @@ export default function App() {
           </AnimatePresence>
         </nav>
       </header>
+
+      <main id="main">
 
       {/* -------------------------------------------------------------------------- */}
       {/* 1. HERO SECTION: GCC PROPERTY OPERATING SYSTEM                             */}
@@ -661,7 +674,7 @@ export default function App() {
               <motion.div variants={fadeInUp} className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 {/* Primary CTA Button with Radiant Glow */}
                 <a
-                  href={DEMO_CTA_URL}
+                  href={demoHref}
                   className="inline-flex items-center justify-center whitespace-nowrap px-7 py-4 rounded-xl bg-gradient-to-r from-[#0878D1] via-[#168FE5] to-[#0878D1] hover:from-[#168FE5] hover:to-[#0878D1] text-white font-bold text-sm sm:text-base shadow-[0_0_28px_rgba(22,143,229,0.45)] hover:shadow-[0_0_36px_rgba(57,191,245,0.6)] transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-[#39BFF5]/40 group cursor-pointer text-center"
                 >
                   <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
@@ -683,7 +696,7 @@ export default function App() {
               <motion.div variants={fadeInUp} className="pt-3 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-[#A9C9E8] font-medium">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
-                  <span>Meta Official Cloud API Partner</span>
+                  <span>Built on Meta&apos;s Official WhatsApp Cloud API</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle className="w-4 h-4 text-[#00D6A3] shrink-0" />
@@ -721,7 +734,12 @@ export default function App() {
                   {/* High-Resolution GCC Command Center Dashboard & Glowing Node Base Graphic */}
                   <img 
                     src="/hero-command-center-hud.png" 
-                    alt="AqarQore GCC Command Center"
+                    alt="AqarQore dashboard showing live lead assignment across Dubai, Doha and Riyadh"
+                    width="1024"
+                    height="682"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                     className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105"
                   />
                 </div>
@@ -800,6 +818,7 @@ export default function App() {
                       setActivePropertyTab(tab.id);
                       setMobileCardIndex(0);
                     }}
+                    aria-pressed={activePropertyTab === tab.id}
                     className={`px-3.5 sm:px-4 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                       activePropertyTab === tab.id
                         ? 'bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white shadow-md'
@@ -848,7 +867,11 @@ export default function App() {
                   <div className="relative h-[250px] overflow-hidden bg-slate-900">
                     <img 
                       src={property.image} 
-                      alt={isRtl ? (property.titleAr || property.title) : property.title} 
+                      alt={`${isRtl ? (property.titleAr || property.title) : property.title} — ${isRtl ? (property.locationAr || property.location) : property.location}`}
+                      width="1200"
+                      height="800"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700 ease-out" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#001738] via-transparent to-black/40 pointer-events-none" />
@@ -1022,7 +1045,7 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 3. AGARQORE ENGINE: THE CONNECTED INTELLIGENT OPERATING SYSTEM (WHITE BG)   */}
+      {/* 3. AqarQore ENGINE: THE CONNECTED INTELLIGENT OPERATING SYSTEM (WHITE BG)   */}
       {/* -------------------------------------------------------------------------- */}
       <section id="engine" className="py-24 sm:py-32 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
         {/* Subtle Technical Grid */}
@@ -1041,7 +1064,7 @@ export default function App() {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/70 text-xs font-mono font-bold uppercase tracking-widest text-[#0858A8] shadow-xs">
               <Zap className="w-3.5 h-3.5 text-[#0858A8] animate-pulse" />
-              <span>{isRtl ? 'محرك AGARQORE الذكي' : 'AGARQORE ENGINE'}</span>
+              <span>{isRtl ? 'محرك AqarQore الذكي' : 'AqarQore ENGINE'}</span>
             </div>
 
             {/* Headline */}
@@ -1295,7 +1318,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Large Visual: Meta Verified Communication Hub */}
+                  {/* Large Visual: Meta Cloud API Communication Hub */}
                   <div className="relative py-2 flex items-center justify-center">
                     <div className="relative w-28 h-28 flex items-center justify-center">
                       {/* Concentric Communication Signal Waves */}
@@ -1316,7 +1339,7 @@ export default function App() {
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
                     <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#F5B91E] transition-colors">
-                      {isRtl ? 'توثيق رسمي من ميتا' : 'Meta Verified'}
+                      {isRtl ? 'واجهة ميتا السحابية' : 'Meta Cloud API'}
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
                       {isRtl ? 'واجهة واتساب السحابية الرسمية' : 'Official WhatsApp Cloud API'}
@@ -1425,7 +1448,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* AGARQORE ENGINE LIVE TELEMETRY STATUS STRIP (WHITE BG STYLE) */}
+          {/* AqarQore ENGINE LIVE TELEMETRY STATUS STRIP (WHITE BG STYLE) */}
           <motion.div 
             className="mt-14 sm:mt-16 p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-md flex flex-col lg:flex-row items-center justify-between gap-5 relative z-10"
             initial={{ opacity: 0, y: 20 }}
@@ -1436,7 +1459,7 @@ export default function App() {
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
               <span className="text-xs font-mono font-bold tracking-wider text-slate-900">
-                {isRtl ? 'حالة محرك AGARQORE' : 'AGARQORE ENGINE STATUS'}
+                {isRtl ? 'حالة محرك AqarQore' : 'AqarQore ENGINE STATUS'}
               </span>
               <span className="text-[11px] font-mono font-bold text-emerald-800 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-300">
                 {isRtl ? 'جميع الأنظمة تعمل بكفاءة' : 'ALL SYSTEMS OPERATIONAL'}
@@ -1676,7 +1699,7 @@ export default function App() {
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               {isRtl 
                 ? 'كل ميزة صُممت لحل نقاط الاحتكاك الحقيقية التي يواجهها أصحاب الوكالات في قطر ودبي والرياض.' 
-                : 'Every story built to solve a real friction point reported by Qatar, Dubai, and Riyadh agency owners.'}
+                : 'Every feature built to solve a real friction point reported by Qatar, Dubai, and Riyadh agency owners.'}
             </p>
           </motion.div>
 
@@ -1931,7 +1954,7 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 6. AGARQORE SECURITY CONTROL SYSTEM: ENTERPRISE TRUST & ACCESS GOVERNANCE   */}
+      {/* 6. AqarQore SECURITY CONTROL SYSTEM: ENTERPRISE TRUST & ACCESS GOVERNANCE   */}
       {/* -------------------------------------------------------------------------- */}
       <section id="security" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/80 overflow-hidden">
         {/* User-Provided Futuristic Skyline & Radar Telemetry Mesh Background */}
@@ -1955,7 +1978,7 @@ export default function App() {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest shadow-xs">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 animate-pulse" />
-              <span>{isRtl ? 'أمان وحماية AGARQORE' : 'AGARQORE SECURITY'}</span>
+              <span>{isRtl ? 'أمان وحماية AqarQore' : 'AqarQore SECURITY'}</span>
             </div>
 
             {/* Headline */}
@@ -1988,7 +2011,7 @@ export default function App() {
           {/* MAIN SECURITY ARCHITECTURE: CENTRAL CORE & 3 FLOATING SECURITY MODULES */}
           <div className="space-y-12 lg:space-y-14">
             
-            {/* 1. HERO VISUAL: CENTRAL AGARQORE SECURITY CORE */}
+            {/* 1. HERO VISUAL: CENTRAL AqarQore SECURITY CORE */}
             <motion.div 
               className="relative max-w-xl mx-auto flex flex-col items-center justify-center text-center p-8 rounded-[36px] bg-gradient-to-b from-[#00224D]/90 via-[#001838]/95 to-[#001026] border border-sky-400/40 shadow-[0_0_50px_rgba(8,120,209,0.25)] group"
               initial={{ opacity: 0, scale: 0.92 }}
@@ -2404,7 +2427,7 @@ export default function App() {
               {/* CTA Action */}
               <div className="pt-2">
                 <a
-                  href={DEMO_CTA_URL}
+                  href={demoHref}
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   <span>{isRtl ? 'شاهد ربط النظام المباشر' : 'Explore Connected Platform Demo'}</span>
@@ -2508,7 +2531,7 @@ export default function App() {
                     <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                       <div className="flex items-center gap-4 text-left">
                         <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-lg shrink-0">
-                          <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain" />
+                          <img src="/aqarqore-emblem.png" alt="" aria-hidden="true" width="156" height="149" loading="lazy" decoding="async" className="w-full h-full object-contain" />
                         </div>
                         <div>
                           <div className="text-base font-extrabold text-white tracking-tight flex items-center gap-2">
@@ -2598,7 +2621,7 @@ export default function App() {
                     <span>{isRtl ? 'شبكة خليجية مشفرة' : 'Encrypted GCC Network'}</span>
                   </span>
                   <span className="text-[#0858A8] font-semibold">
-                    {isRtl ? 'سيادة بيانات 100%' : '100% Data Sovereignty'}
+                    {isRtl ? 'استضافة إقليمية' : 'Regional Data Hosting'}
                   </span>
                 </div>
 
@@ -2803,7 +2826,7 @@ export default function App() {
       </section>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 8. AGARQORE PRICING: CLEAN & SIMPLE AGENCY TIERING                         */}
+      {/* 8. AqarQore PRICING: CLEAN & SIMPLE AGENCY TIERING                         */}
       {/* -------------------------------------------------------------------------- */}
       <section id="pricing" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -2889,7 +2912,7 @@ export default function App() {
 
               <div className="pt-8">
                 <a 
-                  href={DEMO_CTA_URL} 
+                  href={demoHref} 
                   className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-sm hover:shadow-md cursor-pointer"
                 >
                   {isRtl ? 'احجز عرض الخطة الناشئة' : 'Book Starter Demo'}
@@ -2954,7 +2977,7 @@ export default function App() {
 
               <div className="pt-8">
                 <a 
-                  href={DEMO_CTA_URL} 
+                  href={demoHref} 
                   className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-xs sm:text-sm text-center shadow-lg shadow-blue-600/30 transition-all block cursor-pointer"
                 >
                   {isRtl ? 'احجز عرض خطة النمو' : 'Schedule Growth Demo'}
@@ -3002,7 +3025,7 @@ export default function App() {
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{isRtl ? 'استضافة بيانات سيادية معزولة (السعودية / الإمارات)' : 'Sovereign Data Hosting Isolation (KSA / UAE)'}</span>
+                    <span>{isRtl ? 'خيارات استضافة إقليمية (السعودية / الإمارات)' : 'Regional Data Hosting Options (KSA / UAE)'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -3013,7 +3036,7 @@ export default function App() {
 
               <div className="pt-8">
                 <a 
-                  href={DEMO_CTA_URL} 
+                  href={demoHref} 
                   className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-sm hover:shadow-md cursor-pointer"
                 >
                   {isRtl ? 'طلب عرض سعر للشركات' : 'Request Enterprise Quote'}
@@ -3029,7 +3052,7 @@ export default function App() {
             <span>
               {isRtl 
                 ? 'جميع الخطط تشمل ربط واتساب السحابي الرسمي من ميتا، وتشفير مصرفي، وتوافق تام مع لوائح بيانات دول مجلس التعاون.' 
-                : 'All plans include official Meta WhatsApp Cloud API access, bank-grade encryption, and GCC data compliance.'}
+                : 'All plans include official Meta WhatsApp Cloud API access, bank-grade encryption, and regional data hosting options.'}
             </span>
           </div>
 
@@ -3088,7 +3111,7 @@ export default function App() {
                   {isRtl ? (
                     'إجابات واضحة ودقيقة لأكثر الأسئلة شيوعاً حول منظومة دول مجلس التعاون وكيف تمكّن وكالتك العقارية من النمو.'
                   ) : (
-                    'Clear answers to the most common questions about GCC and how it empowers your brokerage.'
+                    'Clear answers to the most common questions about AqarQore and how it empowers your brokerage.'
                   )}
                 </p>
               </div>
@@ -3174,6 +3197,7 @@ export default function App() {
                   <button
                     key={tab.id}
                     onClick={() => setFaqCategory(tab.id)}
+                    aria-pressed={faqCategory === tab.id}
                     className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                       faqCategory === tab.id
                         ? 'bg-slate-900 text-white shadow-sm'
@@ -3193,7 +3217,7 @@ export default function App() {
                     category: 'For Brokers',
                     question: isRtl 
                       ? 'كيف تساعد منصة AqarQore وكالتي العقارية؟' 
-                      : 'How does GCC help my brokerage?',
+                      : 'How does AqarQore help my brokerage?',
                     answer: isRtl 
                       ? 'يتم التقاط وتوزيع استفسارات Property Finder و Bayut و WhatsApp تلقائياً في أقل من 10 ثوانٍ. نقوم بأتمتة تأهيل العملاء، وتسجيل المعاينات الميدانية دون اتصال، واعتماد العمولات المالية بخطوتين في نظام تشغيل متزامن وموحد.' 
                       : 'Inquiries from Property Finder, Bayut, and WhatsApp are captured and auto-assigned in under 10 seconds. We automate lead qualification, offline field logging, and 2-step financial commission workflows into one synchronized operating system.'
@@ -3214,10 +3238,10 @@ export default function App() {
                     category: 'Listings',
                     question: isRtl 
                       ? 'هل يمكنني ربط المنظومة مع نظام إدارة علاقات العملاء (CRM) الحالي؟' 
-                      : 'Can I integrate GCC with my existing CRM?',
+                      : 'Can I integrate AqarQore with my existing CRM?',
                     answer: isRtl 
                       ? 'نعم. توفر AqarQore واجهات برمجة ثنائية الاتجاه (Webhooks) وموصلات جاهزة لأنظمة CRM الكبرى، وProperty Finder، وBayut، وقواعد بيانات ERP دون مقاطعة مسارات المبيعات الجارية.' 
-                      : 'Yes. GCC provides two-way API webhooks and native connectors for major CRM systems, Property Finder, Bayut, and custom ERP databases without interrupting active sales pipelines.'
+                      : 'Yes. AqarQore provides two-way API webhooks and native connectors for major CRM systems, Property Finder, Bayut, and custom ERP databases without interrupting active sales pipelines.'
                   },
                   {
                     id: '04',
@@ -3226,8 +3250,8 @@ export default function App() {
                       ? 'هل بيانات وكالتي وعملائي آمنة ومحمية؟' 
                       : 'Is my brokerage data secure?',
                     answer: isRtl 
-                      ? 'بكل تأكيد. جميع بيانات الوكالة معزولة بضوابط وصول حسب الأدوار (RBAC) مفروضة من الخادم، ومصادقة متعددة العوامل TOTP إلزامية، وإلغاء فوري للجلسات في أقل من 60 ثانية، مع توافق كامل للاستضافة السيادية داخل الإمارات وقطر والسعودية.' 
-                      : 'Absolutely. All agency data is isolated with server-enforced role-based access boundaries (RBAC), mandatory TOTP multi-factor authentication, sub-60s session revocation, and sovereign GCC hosting compliance in the UAE, Qatar, and KSA.'
+                      ? 'بكل تأكيد. جميع بيانات الوكالة معزولة بضوابط وصول حسب الأدوار (RBAC) مفروضة من الخادم، ومصادقة متعددة العوامل TOTP إلزامية، وإلغاء فوري للجلسات في أقل من 60 ثانية، مع خيارات استضافة إقليمية داخل الإمارات وقطر والسعودية.' 
+                      : 'Absolutely. All agency data is isolated with server-enforced role-based access boundaries (RBAC), mandatory TOTP multi-factor authentication, sub-60s session revocation, and regional data hosting options in the UAE, Qatar, and KSA.'
                   },
                   {
                     id: '05',
@@ -3244,7 +3268,7 @@ export default function App() {
                     category: 'Payments',
                     question: isRtl 
                       ? 'كيف يتم تسعير اشتراكات AqarQore؟' 
-                      : 'How is GCC priced?',
+                      : 'How is AqarQore priced?',
                     answer: isRtl 
                       ? 'نقدم باقات اشتراك شهرية شفافة لكل مقعد مخصصة للوكالات الناشئة، والوكالات المتنامية، والمجموعات العقارية الكبرى متعددة الفروع، دون أي رسوم مزامنة بوابات خفية أو غرامات خروج.' 
                       : 'We offer transparent per-seat monthly subscription tiers tailored to boutique brokerages, scaling agencies, and multi-branch enterprise groups with zero hidden portal sync fees or exit penalties.'
@@ -3371,7 +3395,7 @@ export default function App() {
                 </div>
 
                 <a
-                  href={DEMO_CTA_URL}
+                  href={demoHref}
                   className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer shrink-0"
                 >
                   <span>{isRtl ? 'تواصل مع الدعم' : 'Contact Support'}</span>
@@ -3431,7 +3455,7 @@ export default function App() {
             {/* Right Column: Prominent CTA Button + Inline Trust Points */}
             <div className={`flex flex-col items-center ${isRtl ? 'lg:items-start' : 'lg:items-end'} gap-3 shrink-0`}>
               <a
-                href={DEMO_CTA_URL}
+                href={demoHref}
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#002859] hover:bg-sky-50 font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 border border-white cursor-pointer"
               >
                 <span>{isRtl ? 'احجز العرض التوضيحي الآن' : 'Book Your 20-Min Demo Now'}</span>
@@ -3446,7 +3470,7 @@ export default function App() {
                 <span className="text-blue-300/40">•</span>
                 <span className="flex items-center gap-1.5">
                   <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[3]" />
-                  {isRtl ? 'توثيق رسمي من ميتا' : 'Meta Verified'}
+                  {isRtl ? 'واجهة ميتا الرسمية' : 'Official Meta API'}
                 </span>
               </div>
             </div>
@@ -3454,6 +3478,8 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* -------------------------------------------------------------------------- */}
       {/* 10. FOOTER: PREMIUM ENTERPRISE REAL ESTATE SIGNATURE                       */}
@@ -3476,9 +3502,9 @@ export default function App() {
             
             {/* Brand Signature Column (Col Span 5) */}
             <div className="lg:col-span-5 space-y-5">
-              <a href="#" className="flex items-center gap-3.5 group w-fit">
+              <Link href={isRtl ? "/ar/" : "/"} className="flex items-center gap-3.5 group w-fit">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white p-2 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-slate-200">
-                  <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain" />
+                  <img src="/aqarqore-emblem.png" alt="AqarQore home" width="156" height="149" loading="lazy" decoding="async" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <span className="text-2xl font-extrabold tracking-tight text-white block leading-none">
@@ -3488,7 +3514,7 @@ export default function App() {
                     {isRtl ? 'نظام تشغيل وكالات العقار بالخليج' : 'GCC Agency OS'}
                   </span>
                 </div>
-              </a>
+              </Link>
 
               <p className="text-blue-100/70 text-sm leading-relaxed max-w-sm">
                 {isRtl 
@@ -3542,7 +3568,7 @@ export default function App() {
                 <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'سيادة بيانات الخليج' : 'GCC Data Sovereignty'}</a></li>
                 <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'صلاحيات الوصول 403' : 'Role-Based 403 Access'}</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">{isRtl ? 'قاعدة المعرفة والأسئلة' : 'Knowledge Base & FAQ'}</a></li>
-                <li><a href={DEMO_CTA_URL} className="hover:text-sky-300 font-semibold transition-colors">{isRtl ? 'احجز عرضاً مباشراً ←' : 'Book Live Demo →'}</a></li>
+                <li><a href={demoHref} className="hover:text-sky-300 font-semibold transition-colors">{isRtl ? 'احجز عرضاً مباشراً ←' : 'Book Live Demo →'}</a></li>
               </ul>
             </div>
 
@@ -3556,10 +3582,10 @@ export default function App() {
                 : `© ${new Date().getFullYear()} AqarQore Technologies Inc. All rights reserved.`}
             </div>
             <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-white transition-colors">{isRtl ? 'سياسة الخصوصية' : 'Privacy Policy'}</a>
-              <a href="#" className="hover:text-white transition-colors">{isRtl ? 'شروط الخدمة' : 'Terms of Service'}</a>
+              <Link href={isRtl ? "/ar/privacy/" : "/privacy/"} className="hover:text-white transition-colors">{isRtl ? 'سياسة الخصوصية' : 'Privacy Policy'}</Link>
+              <Link href={isRtl ? "/ar/terms/" : "/terms/"} className="hover:text-white transition-colors">{isRtl ? 'شروط الخدمة' : 'Terms of Service'}</Link>
               <span className="text-slate-600">|</span>
-              <span className="text-sky-400/90 font-mono text-[11px]">{isRtl ? 'معتمد وفق معايير الخليج' : 'GCC Compliance Certified'}</span>
+              <span className="text-sky-400/90 font-mono text-[11px]">{isRtl ? 'مصمم لوكالات الخليج' : 'Built for GCC Brokerages'}</span>
             </div>
           </div>
 
@@ -3570,7 +3596,7 @@ export default function App() {
       {isVideoModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
           <div className="relative w-full max-w-3xl bg-[#003068] border border-blue-500/40 rounded-2xl p-6 text-white shadow-2xl space-y-4">
-            <button onClick={() => setIsVideoModalOpen(false)} className="absolute top-4 right-4 text-blue-200 hover:text-white p-1 rounded-lg bg-blue-900/50">
+            <button onClick={() => setIsVideoModalOpen(false)} aria-label="Close video" className="absolute top-4 right-4 text-blue-200 hover:text-white p-1 rounded-lg bg-blue-900/50">
               <X className="w-5 h-5" />
             </button>
             <div className="flex items-center gap-2 text-sm font-bold text-sky-300">
