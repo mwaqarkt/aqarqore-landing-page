@@ -1956,71 +1956,84 @@ export default function App() {
               </div>
             </div>
 
-            {/* Feature 2 UI Console: Clean Light Theme WhatsApp Suite */}
+            {/* Feature 2 UI Console: Clean Seamless WhatsApp AI Studio */}
             <div className="lg:col-span-7 lg:order-1">
-              <div className="rounded-3xl bg-white p-6 sm:p-7 border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,30,80,0.08)] relative overflow-hidden">
-                <div className="max-w-md mx-auto rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white">
-                  {/* WhatsApp Header Bar */}
-                  <div className="bg-[#075E54] px-4 py-3 flex items-center justify-between text-white">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-emerald-400 text-slate-900 font-black text-xs flex items-center justify-center">
-                        AQ
-                      </div>
-                      <div>
-                        <div className="font-bold text-sm leading-tight flex items-center gap-1.5">
-                          <span>{isRtl ? 'مساعد AqarQore الذكي' : 'AqarQore Property AI'}</span>
-                          <span className="w-3.5 h-3.5 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center text-[8px] font-black">✓</span>
-                        </div>
-                        <div className="text-[10px] text-emerald-200 font-mono">
-                          {isRtl ? 'حساب تجاري موثق • متصل الآن' : 'Official Business Account • Online'}
-                        </div>
-                      </div>
+              <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,30,80,0.08)] bg-white">
+                {/* Console Top Bar */}
+                <div className="bg-[#075E54] px-5 py-3.5 flex items-center justify-between text-white border-b border-[#054c44]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-400 text-slate-900 font-black text-xs flex items-center justify-center shadow-xs">
+                      AQ
                     </div>
-                  </div>
-
-                  {/* Authentic WhatsApp Message Feed */}
-                  <div className="p-4 space-y-3 bg-[#EFEAE2] text-xs font-sans">
-                    {/* Bot Greeting */}
-                    <div className="bg-white text-slate-900 p-3 rounded-2xl rounded-tl-xs max-w-[88%] border border-slate-200/80 shadow-2xs leading-relaxed text-left">
-                      <p className="font-medium">
-                        {isRtl 
-                          ? 'مرحباً د. حمد! هل تبحث عن فيلا مستقلة بإطلالة بحرية في لاغون الخليج الغربي بميزانية 8 إلى 10 مليون ر.ق؟' 
-                          : 'Hello Dr. Hamad! Looking for a standalone beachfront villa in West Bay Lagoon around QAR 8M–10M?'}
-                      </p>
-                      <span className="text-[9px] text-slate-400 text-right block mt-1 font-mono">14:31</span>
-                    </div>
-
-                    {/* Buyer Response */}
-                    <div className="bg-[#D9FDD3] text-slate-900 p-3 rounded-2xl rounded-tr-xs max-w-[85%] ml-auto text-right border border-emerald-200 shadow-2xs leading-relaxed">
-                      <p className="font-medium">
-                        {isRtl 
-                          ? 'نعم بالضبط، 5 غرف نوم مع بركة سباحة خاصة، وجاهز لتوقيع العقد هذا الأسبوع.' 
-                          : 'Yes exactly, 5 bedrooms with private pool. Ready to sign this week.'}
-                      </p>
-                      <span className="text-[9px] text-emerald-700 text-right block mt-1 font-mono">14:32 ✓✓</span>
-                    </div>
-
-                    {/* AI Qualified Lead Handoff Card */}
-                    <div className="bg-white p-3.5 rounded-xl border-2 border-emerald-500/80 shadow-sm space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px] uppercase font-mono">
-                          {isRtl ? '⚡ تم التأهيل والتحويل الفوري' : '⚡ QUALIFIED VIP INVESTOR'}
-                        </span>
-                        <span className="text-[10px] text-emerald-700 font-mono font-bold">100% Match</span>
+                    <div>
+                      <div className="font-bold text-sm leading-tight flex items-center gap-1.5">
+                        <span>{isRtl ? 'مساعد AqarQore الذكي' : 'AqarQore Property AI Assistant'}</span>
+                        <span className="w-3.5 h-3.5 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center text-[8px] font-black">✓</span>
                       </div>
-
-                      <div className="text-xs text-slate-800 space-y-1 pt-1 font-medium">
-                        <div className="flex justify-between">
-                          <span className="text-slate-500">{isRtl ? 'الميزانية المعتمدة:' : 'Budget:'}</span>
-                          <span className="font-bold text-emerald-700">{isRtl ? '8.5 - 10 مليون ر.ق' : 'QAR 8.5M - 10.0M'}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-slate-500">{isRtl ? 'الوكيل المستلم:' : 'Assigned Agent:'}</span>
-                          <span className="font-bold text-[#0858A8]">{isRtl ? 'مريم الكواري (مدير تنفيذي)' : 'Mariam Al-Kuwari (Director)'}</span>
-                        </div>
+                      <div className="text-[11px] text-emerald-200 font-mono flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <span>{isRtl ? 'حساب تجاري رسمي موثق • متصل 24/7' : 'Official WhatsApp Cloud API • Active 24/7'}</span>
                       </div>
                     </div>
                   </div>
+                  <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/15 border border-white/20 text-[11px] font-mono font-bold text-white">
+                    {isRtl ? 'استجابة < 1.2 ث' : 'Speed < 1.2s'}
+                  </span>
+                </div>
+
+                {/* WhatsApp Chat Body */}
+                <div className="p-5 space-y-3.5 bg-[#EFEAE2] text-xs font-sans">
+                  {/* Bot Message */}
+                  <div className="bg-white text-slate-900 p-3.5 rounded-2xl rounded-tl-xs max-w-[88%] border border-slate-200/80 shadow-2xs leading-relaxed text-left">
+                    <p className="font-medium text-slate-800 text-xs">
+                      {isRtl 
+                        ? 'مرحباً د. حمد! هل تبحث عن فيلا مستقلة بإطلالة بحرية في لاغون الخليج الغربي بميزانية 8 إلى 10 مليون ر.ق؟' 
+                        : 'Hello Dr. Hamad! Looking for a standalone beachfront villa in West Bay Lagoon around QAR 8M–10M?'}
+                    </p>
+                    <span className="text-[9px] text-slate-400 text-right block mt-1 font-mono">14:31</span>
+                  </div>
+
+                  {/* Buyer Response */}
+                  <div className="bg-[#D9FDD3] text-slate-900 p-3.5 rounded-2xl rounded-tr-xs max-w-[85%] ml-auto text-right border border-emerald-200 shadow-2xs leading-relaxed">
+                    <p className="font-medium text-slate-900 text-xs">
+                      {isRtl 
+                        ? 'نعم بالضبط، 5 غرف نوم مع بركة سباحة خاصة، وجاهز لتوقيع العقد هذا الأسبوع.' 
+                        : 'Yes exactly, 5 bedrooms with private pool. Ready to sign this week.'}
+                    </p>
+                    <span className="text-[9px] text-emerald-700 text-right block mt-1 font-mono">14:32 ✓✓</span>
+                  </div>
+
+                  {/* Qualified VIP Lead Handoff Card */}
+                  <div className="bg-white p-4 rounded-xl border-2 border-emerald-500 shadow-xs space-y-2.5">
+                    <div className="flex items-center justify-between">
+                      <span className="px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-bold text-[10px] uppercase font-mono tracking-wider">
+                        {isRtl ? '⚡ تم التأهيل والتحويل الفوري للوكيل' : '⚡ QUALIFIED VIP INVESTOR HANDOFF'}
+                      </span>
+                      <span className="text-[11px] text-emerald-700 font-mono font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                        100% Match
+                      </span>
+                    </div>
+
+                    <div className="text-xs text-slate-800 space-y-1.5 pt-1 font-medium">
+                      <div className="flex justify-between items-center py-0.5 border-b border-slate-100">
+                        <span className="text-slate-500">{isRtl ? 'الميزانية المؤهلة:' : 'Qualified Budget:'}</span>
+                        <span className="font-bold text-emerald-700 font-mono text-xs">{isRtl ? '8.5 - 10 مليون ر.ق' : 'QAR 8.5M - 10.0M'}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-0.5">
+                        <span className="text-slate-500">{isRtl ? 'الوكيل التنفيذي المعين:' : 'Assigned Director:'}</span>
+                        <span className="font-bold text-[#0858A8]">{isRtl ? 'مريم الكواري (الخليج الغربي)' : 'Mariam Al-Kuwari (West Bay)'}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Console Footer */}
+                <div className="bg-white px-5 py-3 border-t border-slate-200 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <span>{isRtl ? 'توثيق رسمي من ميتا' : 'Meta Business Verified API'}</span>
+                  </span>
+                  <span className="text-[#0858A8] font-bold">{isRtl ? 'تسليم فوري دون فقدان سياق' : 'Zero Context Loss Handoff'}</span>
                 </div>
               </div>
             </div>
