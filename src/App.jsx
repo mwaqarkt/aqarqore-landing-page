@@ -588,16 +588,11 @@ export default function App() {
         onMouseMove={handleHeroMouseMove}
         className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001128] text-white overflow-hidden"
       >
-        {/* Full Hero Luxury GCC Waterfront Skyline Background Image */}
+        {/* Full Hero Luxury GCC Waterfront Skyline Background Image (Pure Image) */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
           style={{ backgroundImage: "url('/hero-gcc-waterfront-bg.png')" }}
         />
-        {/* Deep Contrast Overlays for Maximum Text Legibility & Visual Balance */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001128]/95 via-[#001128]/60 to-[#001128]/25 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/65 via-transparent to-[#001128]/85 z-0 pointer-events-none" />
-        {/* Subtle Decorative Technical Micro-Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none z-0" />
 
         {/* MAIN HERO CONTENT CONTAINER */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
