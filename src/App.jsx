@@ -2816,18 +2816,31 @@ export default function App() {
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
               <Zap className="w-3.5 h-3.5 text-[#0858A8]" />
-              <span>TRANSPARENT PRICING</span>
+              <span>{isRtl ? 'أسعار شفافة وبسيطة' : 'TRANSPARENT PRICING'}</span>
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
-              Simple, Predictable Plans.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                Built to Scale.
-              </span>
+              {isRtl ? (
+                <>
+                  <span>خطط واضحة ومدروسة.</span>{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                    صُممت لتواكب نموك.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Simple, Predictable Plans.{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                    Built to Scale.
+                  </span>
+                </>
+              )}
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-              No hidden portal sync fees or setup traps. Choose the plan that fits your brokerage today and upgrade as you grow.
+              {isRtl 
+                ? 'لا توجد رسوم مزامنة بوابات مخفية أو عقود معقدة. اختر الخطة المناسبة لوكالتك اليوم وقم بالترقية مع نمو فريقك.' 
+                : 'No hidden portal sync fees or setup traps. Choose the plan that fits your brokerage today and upgrade as you grow.'}
             </p>
           </div>
 
@@ -2835,39 +2848,45 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
             
             {/* 1. Starter Plan */}
-            <div className="bg-white p-8 sm:p-9 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 flex flex-col justify-between transition-all duration-200">
+            <div className={`bg-white p-8 sm:p-9 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 flex flex-col justify-between transition-all duration-200 ${isRtl ? 'text-right' : 'text-left'}`}>
               <div className="space-y-6">
                 <div>
                   <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest">
-                    TIER 01 • STARTER
+                    {isRtl ? 'المستوى 01 • البداية' : 'TIER 01 • STARTER'}
                   </span>
-                  <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Starter Brokerage</h3>
-                  <p className="text-xs text-slate-500 mt-1 font-medium">For growing teams up to 5 agents</p>
+                  <h3 className="text-2xl font-extrabold text-slate-900 mt-1">
+                    {isRtl ? 'وكالة ناشئة' : 'Starter Brokerage'}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1 font-medium">
+                    {isRtl ? 'للفرق النامية حتى 5 وكلاء' : 'For growing teams up to 5 agents'}
+                  </p>
                 </div>
 
                 <div className="pt-2 pb-5 border-b border-slate-100">
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-4xl sm:text-5xl font-black text-slate-900 font-mono tracking-tight">$149</span>
-                    <span className="text-xs text-slate-500 font-medium">/ seat / month</span>
+                    <span className="text-xs text-slate-500 font-medium">
+                      {isRtl ? '/ مقعد / شهرياً' : '/ seat / month'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="space-y-3.5 text-xs sm:text-sm text-slate-700">
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Auto Lead Distribution (&lt; 10s routing)</span>
+                    <span>{isRtl ? 'توزيع تلقائي للعملاء (توجيه < 10 ث)' : 'Auto Lead Distribution (< 10s routing)'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Property Finder &amp; Bayut Real-Time Sync</span>
+                    <span>{isRtl ? 'مزامنة فورية مع Property Finder و Bayut' : 'Property Finder & Bayut Real-Time Sync'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Mobile App with Offline Queue &amp; 5G Sync</span>
+                    <span>{isRtl ? 'تطبيق جوال مع قائمة دون إنترنت وتزامن 5G' : 'Mobile App with Offline Queue & 5G Sync'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Lead Tracking &amp; Activity History</span>
+                    <span>{isRtl ? 'تتبع العملاء وسجل النشاطات الكامل' : 'Lead Tracking & Activity History'}</span>
                   </div>
                 </div>
               </div>
@@ -2877,54 +2896,62 @@ export default function App() {
                   href={DEMO_CTA_URL} 
                   className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-sm hover:shadow-md cursor-pointer"
                 >
-                  Book Starter Demo
+                  {isRtl ? 'احجز عرض الخطة الناشئة' : 'Book Starter Demo'}
                 </a>
               </div>
             </div>
 
             {/* 2. Growth Plan (Recommended / Hero) */}
-            <div className="bg-[#001D42] p-8 sm:p-9 rounded-3xl border-2 border-sky-400/80 text-white shadow-xl flex flex-col justify-between relative transition-all duration-200 transform lg:-translate-y-2">
+            <div className={`bg-[#001D42] p-8 sm:p-9 rounded-3xl border-2 border-sky-400/80 text-white shadow-xl flex flex-col justify-between relative transition-all duration-200 transform lg:-translate-y-2 ${isRtl ? 'text-right' : 'text-left'}`}>
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-[11px] font-mono font-bold text-sky-300 uppercase tracking-widest">
-                      TIER 02 • RECOMMENDED
+                      {isRtl ? 'المستوى 02 • الموصى بها' : 'TIER 02 • RECOMMENDED'}
                     </span>
-                    <h3 className="text-2xl font-extrabold text-white mt-1">Growth Agency</h3>
-                    <p className="text-xs text-blue-200/80 mt-1 font-medium">For established teams 6–25 agents</p>
+                    <h3 className="text-2xl font-extrabold text-white mt-1">
+                      {isRtl ? 'وكالة متنامية' : 'Growth Agency'}
+                    </h3>
+                    <p className="text-xs text-blue-200/80 mt-1 font-medium">
+                      {isRtl ? 'للفرق القائمة من 6 إلى 25 وكيلاً' : 'For established teams 6–25 agents'}
+                    </p>
                   </div>
                   <span className="text-[10px] font-mono font-bold text-emerald-300 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/40">
-                    POPULAR
+                    {isRtl ? 'الأكثر طلباً' : 'POPULAR'}
                   </span>
                 </div>
 
                 <div className="pt-2 pb-5 border-b border-blue-800/70">
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-4xl sm:text-5xl font-black text-white font-mono tracking-tight">$199</span>
-                    <span className="text-xs text-blue-200/80 font-medium">/ seat / month</span>
+                    <span className="text-xs text-blue-200/80 font-medium">
+                      {isRtl ? '/ مقعد / شهرياً' : '/ seat / month'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="space-y-3.5 text-xs sm:text-sm text-blue-100">
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-[#00D6A3] shrink-0 mt-0.5" />
-                    <span className="font-semibold text-white">All Starter Features Included</span>
+                    <span className="font-semibold text-white">
+                      {isRtl ? 'تشمل جميع ميزات الخطة الناشئة' : 'All Starter Features Included'}
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-[#00D6A3] shrink-0 mt-0.5" />
-                    <span>Meta WhatsApp AI Qualification Bot</span>
+                    <span>{isRtl ? 'روبوت تأهيل العملاء الذكي عبر واتساب ميتا' : 'Meta WhatsApp AI Qualification Bot'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-[#00D6A3] shrink-0 mt-0.5" />
-                    <span>2-Step Deal Commission Approvals</span>
+                    <span>{isRtl ? 'اعتمادات العمولات والصفقات على خطوتين' : '2-Step Deal Commission Approvals'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-[#00D6A3] shrink-0 mt-0.5" />
-                    <span>Live Agent Telemetry &amp; Response Speed Score</span>
+                    <span>{isRtl ? 'مؤشرات الأداء اللحظية وسرعة استجابة الوكلاء' : 'Live Agent Telemetry & Response Speed Score'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-[#00D6A3] shrink-0 mt-0.5" />
-                    <span>Multi-Factor Authentication (TOTP) &amp; RBAC</span>
+                    <span>{isRtl ? 'مصادقة متعددة العوامل (TOTP) وصلاحيات RBAC' : 'Multi-Factor Authentication (TOTP) & RBAC'}</span>
                   </div>
                 </div>
               </div>
@@ -2934,48 +2961,56 @@ export default function App() {
                   href={DEMO_CTA_URL} 
                   className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-xs sm:text-sm text-center shadow-lg shadow-blue-600/30 transition-all block cursor-pointer"
                 >
-                  Schedule Growth Demo
+                  {isRtl ? 'احجز عرض خطة النمو' : 'Schedule Growth Demo'}
                 </a>
               </div>
             </div>
 
             {/* 3. Enterprise Plan */}
-            <div className="bg-white p-8 sm:p-9 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 flex flex-col justify-between transition-all duration-200">
+            <div className={`bg-white p-8 sm:p-9 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 flex flex-col justify-between transition-all duration-200 ${isRtl ? 'text-right' : 'text-left'}`}>
               <div className="space-y-6">
                 <div>
                   <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest">
-                    TIER 03 • ENTERPRISE
+                    {isRtl ? 'المستوى 03 • الشركات الكبرى' : 'TIER 03 • ENTERPRISE'}
                   </span>
-                  <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Enterprise Group</h3>
-                  <p className="text-xs text-slate-500 mt-1 font-medium">For large brokerages (25+ agents)</p>
+                  <h3 className="text-2xl font-extrabold text-slate-900 mt-1">
+                    {isRtl ? 'مجموعة كبرى' : 'Enterprise Group'}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1 font-medium">
+                    {isRtl ? 'للوكالات العقارية الكبرى (+25 وكيلاً)' : 'For large brokerages (25+ agents)'}
+                  </p>
                 </div>
 
                 <div className="pt-2 pb-5 border-b border-slate-100">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-black text-slate-900 font-mono tracking-tight">Custom Quote</span>
+                    <span className="text-3xl sm:text-4xl font-black text-slate-900 font-mono tracking-tight">
+                      {isRtl ? 'عرض سعر مخصص' : 'Custom Quote'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="space-y-3.5 text-xs sm:text-sm text-slate-700">
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span className="font-semibold text-slate-900">All Growth Features Included</span>
+                    <span className="font-semibold text-slate-900">
+                      {isRtl ? 'تشمل جميع ميزات خطة النمو' : 'All Growth Features Included'}
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Dedicated Account Manager in Dubai / Doha</span>
+                    <span>{isRtl ? 'مدير حسابات إقليمي مخصص في دبي والدوحة' : 'Dedicated Account Manager in Dubai / Doha'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Custom ERP, Accounting &amp; Zoho Integrations</span>
+                    <span>{isRtl ? 'تكامل مخصص مع أنظمة ERP والمحاسبة و Zoho' : 'Custom ERP, Accounting & Zoho Integrations'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Sovereign Data Hosting Isolation (KSA / UAE)</span>
+                    <span>{isRtl ? 'استضافة بيانات سيادية معزولة (السعودية / الإمارات)' : 'Sovereign Data Hosting Isolation (KSA / UAE)'}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Custom Enterprise SLA &amp; VIP Onboarding</span>
+                    <span>{isRtl ? 'اتفاقية مستوى خدمة SLA مخصصة وتدريب VIP' : 'Custom Enterprise SLA & VIP Onboarding'}</span>
                   </div>
                 </div>
               </div>
@@ -2985,7 +3020,7 @@ export default function App() {
                   href={DEMO_CTA_URL} 
                   className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition-all block shadow-sm hover:shadow-md cursor-pointer"
                 >
-                  Request Enterprise Quote
+                  {isRtl ? 'طلب عرض سعر للشركات' : 'Request Enterprise Quote'}
                 </a>
               </div>
             </div>
@@ -2995,7 +3030,11 @@ export default function App() {
           {/* Clean Trust Note */}
           <div className="mt-12 text-center text-xs text-slate-500 font-medium flex items-center justify-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>All plans include official Meta WhatsApp Cloud API access, bank-grade encryption, and GCC data compliance.</span>
+            <span>
+              {isRtl 
+                ? 'جميع الخطط تشمل ربط واتساب السحابي الرسمي من ميتا، وتشفير مصرفي، وتوافق تام مع لوائح بيانات دول مجلس التعاون.' 
+                : 'All plans include official Meta WhatsApp Cloud API access, bank-grade encryption, and GCC data compliance.'}
+            </span>
           </div>
 
         </div>
@@ -3016,7 +3055,7 @@ export default function App() {
             {/* LEFT COLUMN: INTRO & TECHNICAL RADAR VISUAL (~40% width)           */}
             {/* ------------------------------------------------------------------ */}
             <motion.div 
-              className="lg:col-span-5 lg:sticky lg:top-28 space-y-8"
+              className={`lg:col-span-5 lg:sticky lg:top-28 space-y-8 ${isRtl ? 'text-right' : 'text-left'}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -3026,14 +3065,14 @@ export default function App() {
               <div className="space-y-4">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
                   <HelpCircle className="w-3.5 h-3.5 text-[#0858A8]" />
-                  <span>FREQUENTLY ASKED</span>
+                  <span>{isRtl ? 'الأسئلة الشائعة' : 'FREQUENTLY ASKED'}</span>
                 </span>
 
                 {/* Main Heading */}
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
                   {isRtl ? (
                     <>
-                      كل ما تحتاج لمعرفته{' '}
+                      <span>كل ما تحتاج لمعرفته</span>{' '}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
                         عن المنظومة.
                       </span>
@@ -3080,32 +3119,34 @@ export default function App() {
                   {/* Central Node */}
                   <div className="relative z-10 w-16 h-16 rounded-full bg-[#001026] border-2 border-sky-400/80 flex flex-col items-center justify-center shadow-[0_0_25px_rgba(56,189,248,0.35)]">
                     <span className="text-sky-300 font-extrabold text-lg font-mono">?</span>
-                    <span className="text-[8px] font-mono text-sky-400 tracking-tighter uppercase font-bold">GCC CORE</span>
+                    <span className="text-[8px] font-mono text-sky-400 tracking-tighter uppercase font-bold">
+                      {isRtl ? 'نواة الخليج' : 'GCC CORE'}
+                    </span>
                   </div>
 
                   {/* 4 Satellite System Nodes */}
                   {/* Top Node: SECURE */}
                   <div className="absolute top-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-emerald-500/40 text-emerald-300 text-[10px] font-mono font-bold shadow-md">
                     <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                    <span>SECURE</span>
+                    <span>{isRtl ? 'أمان' : 'SECURE'}</span>
                   </div>
 
                   {/* Left Node: ANALYTICS */}
                   <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-sky-500/40 text-sky-300 text-[10px] font-mono font-bold shadow-md">
                     <BarChart3 className="w-3 h-3 text-sky-400" />
-                    <span>ANALYTICS</span>
+                    <span>{isRtl ? 'تحليلات' : 'ANALYTICS'}</span>
                   </div>
 
                   {/* Right Node: AUTOMATE */}
                   <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-amber-500/40 text-amber-300 text-[10px] font-mono font-bold shadow-md">
                     <Zap className="w-3 h-3 text-amber-400" />
-                    <span>AUTOMATE</span>
+                    <span>{isRtl ? 'أتمتة' : 'AUTOMATE'}</span>
                   </div>
 
                   {/* Bottom Node: CLOUD */}
                   <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-violet-500/40 text-violet-300 text-[10px] font-mono font-bold shadow-md">
                     <Cloud className="w-3 h-3 text-violet-400" />
-                    <span>CLOUD</span>
+                    <span>{isRtl ? 'سحابي' : 'CLOUD'}</span>
                   </div>
 
                 </div>
@@ -3113,9 +3154,9 @@ export default function App() {
                 <div className="mt-4 pt-3 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono text-blue-200/70">
                   <span className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    Autonomous Node Topology
+                    <span>{isRtl ? 'بنية عقد مستقلة' : 'Autonomous Node Topology'}</span>
                   </span>
-                  <span className="text-sky-300 font-semibold">24/7 Monitored</span>
+                  <span className="text-sky-300 font-semibold">{isRtl ? 'مراقبة 24/7' : '24/7 Monitored'}</span>
                 </div>
               </div>
             </motion.div>
@@ -3128,11 +3169,11 @@ export default function App() {
               {/* Category Filter Pills */}
               <div className="flex items-center flex-wrap gap-2 pb-2">
                 {[
-                  { id: 'All Questions', label: 'All Questions' },
-                  { id: 'For Brokers', label: 'For Brokers' },
-                  { id: 'Listings', label: 'Listings' },
-                  { id: 'Payments', label: 'Payments' },
-                  { id: 'Security', label: 'Security' }
+                  { id: 'All Questions', label: isRtl ? 'جميع الأسئلة' : 'All Questions' },
+                  { id: 'For Brokers', label: isRtl ? 'للوكلاء والوسطاء' : 'For Brokers' },
+                  { id: 'Listings', label: isRtl ? 'القوائم والعقارات' : 'Listings' },
+                  { id: 'Payments', label: isRtl ? 'المدفوعات والعمولات' : 'Payments' },
+                  { id: 'Security', label: isRtl ? 'الأمان والحماية' : 'Security' }
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -3154,39 +3195,63 @@ export default function App() {
                   {
                     id: '01',
                     category: 'For Brokers',
-                    question: 'How does GCC help my brokerage?',
-                    answer: 'Inquiries from Property Finder, Bayut, and WhatsApp are captured and auto-assigned in under 10 seconds. We automate lead qualification, offline field logging, and 2-step financial commission workflows into one synchronized operating system.'
+                    question: isRtl 
+                      ? 'كيف تساعد منصة AqarQore وكالتي العقارية؟' 
+                      : 'How does GCC help my brokerage?',
+                    answer: isRtl 
+                      ? 'يتم التقاط وتوزيع استفسارات Property Finder و Bayut و WhatsApp تلقائياً في أقل من 10 ثوانٍ. نقوم بأتمتة تأهيل العملاء، وتسجيل المعاينات الميدانية دون اتصال، واعتماد العمولات المالية بخطوتين في نظام تشغيل متزامن وموحد.' 
+                      : 'Inquiries from Property Finder, Bayut, and WhatsApp are captured and auto-assigned in under 10 seconds. We automate lead qualification, offline field logging, and 2-step financial commission workflows into one synchronized operating system.'
                   },
                   {
                     id: '02',
                     category: 'For Brokers',
-                    question: 'How quickly can I get started?',
-                    answer: 'You can get started in as little as 24–48 hours. Our onboarding team will help you set up your account, import your data and train your team so you can go live fast.',
+                    question: isRtl 
+                      ? 'ما هي المدة اللازمة لبدء تشغيل النظام في الوكالة؟' 
+                      : 'How quickly can I get started?',
+                    answer: isRtl 
+                      ? 'يمكنك البدء خلال 24 إلى 48 ساعة فقط. سيساعدك فريق الإعداد المتخصص لدينا في تهيئة حسابك واستيراد بياناتك وتدريب فريقك للبدء الفوري.' 
+                      : 'You can get started in as little as 24–48 hours. Our onboarding team will help you set up your account, import your data and train your team so you can go live fast.',
                     hasFeatureBox: true
                   },
                   {
                     id: '03',
                     category: 'Listings',
-                    question: 'Can I integrate GCC with my existing CRM?',
-                    answer: 'Yes. GCC provides two-way API webhooks and native connectors for major CRM systems, Property Finder, Bayut, and custom ERP databases without interrupting active sales pipelines.'
+                    question: isRtl 
+                      ? 'هل يمكنني ربط المنظومة مع نظام إدارة علاقات العملاء (CRM) الحالي؟' 
+                      : 'Can I integrate GCC with my existing CRM?',
+                    answer: isRtl 
+                      ? 'نعم. توفر AqarQore واجهات برمجة ثنائية الاتجاه (Webhooks) وموصلات جاهزة لأنظمة CRM الكبرى، وProperty Finder، وBayut، وقواعد بيانات ERP دون مقاطعة مسارات المبيعات الجارية.' 
+                      : 'Yes. GCC provides two-way API webhooks and native connectors for major CRM systems, Property Finder, Bayut, and custom ERP databases without interrupting active sales pipelines.'
                   },
                   {
                     id: '04',
                     category: 'Security',
-                    question: 'Is my brokerage data secure?',
-                    answer: 'Absolutely. All agency data is isolated with server-enforced role-based access boundaries (RBAC), mandatory TOTP multi-factor authentication, sub-60s session revocation, and sovereign GCC hosting compliance in the UAE, Qatar, and KSA.'
+                    question: isRtl 
+                      ? 'هل بيانات وكالتي وعملائي آمنة ومحمية؟' 
+                      : 'Is my brokerage data secure?',
+                    answer: isRtl 
+                      ? 'بكل تأكيد. جميع بيانات الوكالة معزولة بضوابط وصول حسب الأدوار (RBAC) مفروضة من الخادم، ومصادقة متعددة العوامل TOTP إلزامية، وإلغاء فوري للجلسات في أقل من 60 ثانية، مع توافق كامل للاستضافة السيادية داخل الإمارات وقطر والسعودية.' 
+                      : 'Absolutely. All agency data is isolated with server-enforced role-based access boundaries (RBAC), mandatory TOTP multi-factor authentication, sub-60s session revocation, and sovereign GCC hosting compliance in the UAE, Qatar, and KSA.'
                   },
                   {
                     id: '05',
                     category: 'For Brokers',
-                    question: 'What kind of support do you provide?',
-                    answer: 'Every agency receives a dedicated regional account manager in Dubai and Doha, 24/7 priority SLA support, live WhatsApp escalation channels, and custom architectural integration consulting.'
+                    question: isRtl 
+                      ? 'ما نوع الدعم الفني والتشغيلي الذي تقدمونه؟' 
+                      : 'What kind of support do you provide?',
+                    answer: isRtl 
+                      ? 'تحصل كل وكالة على مدير حسابات إقليمي مخصص في دبي والدوحة، ودعم بأولوية 24/7 وفق اتفاقية مستوى الخدمة SLA، وقنوات تصعيد مباشرة عبر واتساب، واستشارات تكامل بنية مخصصة.' 
+                      : 'Every agency receives a dedicated regional account manager in Dubai and Doha, 24/7 priority SLA support, live WhatsApp escalation channels, and custom architectural integration consulting.'
                   },
                   {
                     id: '06',
                     category: 'Payments',
-                    question: 'How is GCC priced?',
-                    answer: 'We offer transparent per-seat monthly subscription tiers tailored to boutique brokerages, scaling agencies, and multi-branch enterprise groups with zero hidden portal sync fees or exit penalties.'
+                    question: isRtl 
+                      ? 'كيف يتم تسعير اشتراكات AqarQore؟' 
+                      : 'How is GCC priced?',
+                    answer: isRtl 
+                      ? 'نقدم باقات اشتراك شهرية شفافة لكل مقعد مخصصة للوكالات الناشئة، والوكالات المتنامية، والمجموعات العقارية الكبرى متعددة الفروع، دون أي رسوم مزامنة بوابات خفية أو غرامات خروج.' 
+                      : 'We offer transparent per-seat monthly subscription tiers tailored to boutique brokerages, scaling agencies, and multi-branch enterprise groups with zero hidden portal sync fees or exit penalties.'
                   }
                 ]
                   .filter((faq) => faqCategory === 'All Questions' || faq.category === faqCategory)
@@ -3240,7 +3305,7 @@ export default function App() {
                               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                               className="overflow-hidden"
                             >
-                              <div className="px-5 sm:px-6 pb-6 pt-1 pl-12 sm:pl-14 text-sm sm:text-[14.5px] text-slate-600 leading-relaxed border-t border-slate-100 space-y-4">
+                              <div className={`px-5 sm:px-6 pb-6 pt-1 ${isRtl ? 'pr-12 sm:pr-14 text-right' : 'pl-12 sm:pl-14 text-left'} text-sm sm:text-[14.5px] text-slate-600 leading-relaxed border-t border-slate-100 space-y-4`}>
                                 <p>{faq.answer}</p>
 
                                 {/* 3 Feature Indicators on Expanded Card */}
@@ -3251,8 +3316,12 @@ export default function App() {
                                         <Rocket className="w-3.5 h-3.5" />
                                       </div>
                                       <div>
-                                        <div className="text-[11px] font-bold text-slate-900">Quick Setup</div>
-                                        <div className="text-[10px] font-mono text-[#0858A8] font-bold">24–48 Hours</div>
+                                        <div className="text-[11px] font-bold text-slate-900">
+                                          {isRtl ? 'إعداد سريع' : 'Quick Setup'}
+                                        </div>
+                                        <div className="text-[10px] font-mono text-[#0858A8] font-bold">
+                                          {isRtl ? '24–48 ساعة' : '24–48 Hours'}
+                                        </div>
                                       </div>
                                     </div>
 
@@ -3261,8 +3330,12 @@ export default function App() {
                                         <Users className="w-3.5 h-3.5" />
                                       </div>
                                       <div>
-                                        <div className="text-[11px] font-bold text-slate-900">Expert Onboarding</div>
-                                        <div className="text-[10px] font-mono text-emerald-700 font-bold">Personal Support</div>
+                                        <div className="text-[11px] font-bold text-slate-900">
+                                          {isRtl ? 'تدريب متخصص' : 'Expert Onboarding'}
+                                        </div>
+                                        <div className="text-[10px] font-mono text-emerald-700 font-bold">
+                                          {isRtl ? 'دعم شخصي' : 'Personal Support'}
+                                        </div>
                                       </div>
                                     </div>
 
@@ -3271,8 +3344,12 @@ export default function App() {
                                         <Play className="w-3.5 h-3.5" />
                                       </div>
                                       <div>
-                                        <div className="text-[11px] font-bold text-slate-900">Go Live Fast</div>
-                                        <div className="text-[10px] font-mono text-amber-700 font-bold">Start Winning</div>
+                                        <div className="text-[11px] font-bold text-slate-900">
+                                          {isRtl ? 'انطلاق فوري' : 'Go Live Fast'}
+                                        </div>
+                                        <div className="text-[10px] font-mono text-amber-700 font-bold">
+                                          {isRtl ? 'ابدأ بالنجاح' : 'Start Winning'}
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -3289,16 +3366,20 @@ export default function App() {
               {/* Bottom Support CTA Prompt */}
               <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-center sm:text-left">
-                  <div className="text-sm font-bold text-slate-900">Still have questions?</div>
-                  <div className="text-xs text-slate-500 mt-0.5">Our team is here to help you.</div>
+                  <div className="text-sm font-bold text-slate-900">
+                    {isRtl ? 'هل لا تزال لديك استفسارات؟' : 'Still have questions?'}
+                  </div>
+                  <div className="text-xs text-slate-500 mt-0.5">
+                    {isRtl ? 'فريقنا المتخصص جاهز لمساعدتك.' : 'Our team is here to help you.'}
+                  </div>
                 </div>
 
                 <a
                   href={DEMO_CTA_URL}
                   className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer shrink-0"
                 >
-                  <span>Contact Support</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>{isRtl ? 'تواصل مع الدعم' : 'Contact Support'}</span>
+                  <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
                 </a>
               </div>
 
@@ -3324,10 +3405,12 @@ export default function App() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             
             {/* Left Column: Scarcity Badge + Headline + Subtext */}
-            <div className="space-y-3 text-center lg:text-left max-w-2xl">
+            <div className={`space-y-3 text-center ${isRtl ? 'lg:text-right' : 'lg:text-left'} max-w-2xl`}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span>Limited Q3 Onboarding Slots for Dubai &amp; Doha</span>
+                <span>
+                  {isRtl ? 'مقاعد انضمام محدودة للربع الثالث في دبي والدوحة' : 'Limited Q3 Onboarding Slots for Dubai & Doha'}
+                </span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -3350,7 +3433,7 @@ export default function App() {
             </div>
 
             {/* Right Column: Prominent CTA Button + Inline Trust Points */}
-            <div className="flex flex-col items-center lg:items-end gap-3 shrink-0">
+            <div className={`flex flex-col items-center ${isRtl ? 'lg:items-start' : 'lg:items-end'} gap-3 shrink-0`}>
               <a
                 href={DEMO_CTA_URL}
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#002859] hover:bg-sky-50 font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 border border-white cursor-pointer"
@@ -3362,12 +3445,12 @@ export default function App() {
               <div className="flex items-center gap-4 text-[11px] font-medium text-blue-100/80">
                 <span className="flex items-center gap-1.5">
                   <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[3]" />
-                  48h Full Migration
+                  {isRtl ? 'انتقال كامل خلال 48 ساعة' : '48h Full Migration'}
                 </span>
                 <span className="text-blue-300/40">•</span>
                 <span className="flex items-center gap-1.5">
                   <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[3]" />
-                  Meta Verified
+                  {isRtl ? 'توثيق رسمي من ميتا' : 'Meta Verified'}
                 </span>
               </div>
             </div>
@@ -3379,7 +3462,7 @@ export default function App() {
       {/* -------------------------------------------------------------------------- */}
       {/* 10. FOOTER: PREMIUM ENTERPRISE REAL ESTATE SIGNATURE                       */}
       {/* -------------------------------------------------------------------------- */}
-      <footer className="bg-[#001128] text-blue-200/80 text-xs pt-20 pb-12 border-t border-blue-900/60 relative overflow-hidden">
+      <footer className={`bg-[#001128] text-blue-200/80 text-xs pt-20 pb-12 border-t border-blue-900/60 relative overflow-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
         {/* Subtle Decorative Technical Micro-Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
@@ -3396,53 +3479,65 @@ export default function App() {
                 </div>
                 <div>
                   <span className="text-2xl font-extrabold tracking-tight text-white block leading-none">AqarQore</span>
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-sky-400 font-semibold block mt-1">GCC Agency OS</span>
+                  <span className="text-[10px] uppercase font-mono tracking-widest text-sky-400 font-semibold block mt-1">
+                    {isRtl ? 'نظام تشغيل وكالات العقار بالخليج' : 'GCC Agency OS'}
+                  </span>
                 </div>
               </a>
 
               <p className="text-blue-100/70 text-sm leading-relaxed max-w-sm">
-                The autonomous real estate operating system engineered specifically for high-volume GCC brokerages across Qatar, the UAE, and Saudi Arabia.
+                {isRtl 
+                  ? 'نظام التشغيل العقاري الذاتي المصمم خصيصاً لوكالات العقارات الكبرى في قطر والإمارات والمملكة العربية السعودية.' 
+                  : 'The autonomous real estate operating system engineered specifically for high-volume GCC brokerages across Qatar, the UAE, and Saudi Arabia.'}
               </p>
 
               <div className="pt-2 flex items-center gap-2 text-[11px] text-sky-300 font-mono">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Regional Hubs: Dubai (DIFC) • Doha • Riyadh</span>
+                <span>
+                  {isRtl ? 'المراكز الإقليمية: دبي (DIFC) • الدوحة • الرياض' : 'Regional Hubs: Dubai (DIFC) • Doha • Riyadh'}
+                </span>
               </div>
             </div>
 
             {/* Column 2: Platform Architecture (Col Span 2) */}
             <div className="lg:col-span-2 space-y-4">
-              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">Platform</h4>
+              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">
+                {isRtl ? 'المنصة' : 'Platform'}
+              </h4>
               <ul className="space-y-2.5 text-blue-200/70 text-xs">
-                <li><a href="#features" className="hover:text-white transition-colors">Speed to Lead</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">WhatsApp AI Bot</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Offline Mobile App</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Commission Signoff</a></li>
-                <li><a href="#connected" className="hover:text-white transition-colors">Connected Mesh</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'سرعة الوصول للعميل' : 'Speed to Lead'}</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'روبوت واتساب الذكي' : 'WhatsApp AI Bot'}</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'تطبيق الميدان دون إنترنت' : 'Offline Mobile App'}</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'اعتماد العمولات' : 'Commission Signoff'}</a></li>
+                <li><a href="#connected" className="hover:text-white transition-colors">{isRtl ? 'الشبكة المتصلة' : 'Connected Mesh'}</a></li>
               </ul>
             </div>
 
             {/* Column 3: GCC Markets (Col Span 2) */}
             <div className="lg:col-span-2 space-y-4">
-              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">GCC Markets</h4>
+              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">
+                {isRtl ? 'أسواق الخليج' : 'GCC Markets'}
+              </h4>
               <ul className="space-y-2.5 text-blue-200/70 text-xs">
-                <li><a href="#showcase" className="hover:text-white transition-colors">Dubai Brokerages</a></li>
-                <li><a href="#showcase" className="hover:text-white transition-colors">Doha Waterfront</a></li>
-                <li><a href="#showcase" className="hover:text-white transition-colors">Riyadh Towers</a></li>
-                <li><a href="#roi" className="hover:text-white transition-colors">Revenue Calculator</a></li>
-                <li><a href="#pricing" className="hover:text-white transition-colors">Agency Plans</a></li>
+                <li><a href="#showcase" className="hover:text-white transition-colors">{isRtl ? 'وكالات دبي' : 'Dubai Brokerages'}</a></li>
+                <li><a href="#showcase" className="hover:text-white transition-colors">{isRtl ? 'واجهة الدوحة البحرية' : 'Doha Waterfront'}</a></li>
+                <li><a href="#showcase" className="hover:text-white transition-colors">{isRtl ? 'أبراج الرياض' : 'Riyadh Towers'}</a></li>
+                <li><a href="#roi" className="hover:text-white transition-colors">{isRtl ? 'حاسبة الإيرادات' : 'Revenue Calculator'}</a></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors">{isRtl ? 'خطط الوكالات' : 'Agency Plans'}</a></li>
               </ul>
             </div>
 
             {/* Column 4: Enterprise Trust & Support (Col Span 3) */}
             <div className="lg:col-span-3 space-y-4">
-              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">Enterprise Trust</h4>
+              <h4 className="text-xs uppercase tracking-wider font-mono font-bold text-white">
+                {isRtl ? 'الثقة والأمان' : 'Enterprise Trust'}
+              </h4>
               <ul className="space-y-2.5 text-blue-200/70 text-xs">
-                <li><a href="#security" className="hover:text-white transition-colors">Institutional Security</a></li>
-                <li><a href="#security" className="hover:text-white transition-colors">GCC Data Sovereignty</a></li>
-                <li><a href="#security" className="hover:text-white transition-colors">Role-Based 403 Access</a></li>
-                <li><a href="#faq" className="hover:text-white transition-colors">Knowledge Base &amp; FAQ</a></li>
-                <li><a href={DEMO_CTA_URL} className="hover:text-sky-300 font-semibold transition-colors">Book Live Demo →</a></li>
+                <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'أمان على مستوى المؤسسات' : 'Institutional Security'}</a></li>
+                <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'سيادة بيانات الخليج' : 'GCC Data Sovereignty'}</a></li>
+                <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'صلاحيات الوصول 403' : 'Role-Based 403 Access'}</a></li>
+                <li><a href="#faq" className="hover:text-white transition-colors">{isRtl ? 'قاعدة المعرفة والأسئلة' : 'Knowledge Base & FAQ'}</a></li>
+                <li><a href={DEMO_CTA_URL} className="hover:text-sky-300 font-semibold transition-colors">{isRtl ? 'احجز عرضاً مباشراً ←' : 'Book Live Demo →'}</a></li>
               </ul>
             </div>
 
@@ -3451,13 +3546,15 @@ export default function App() {
           {/* Bottom Legal & Copyright Bar */}
           <div className="pt-8 border-t border-blue-900/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs">
             <div>
-              © {new Date().getFullYear()} AqarQore Technologies Inc. All rights reserved.
+              {isRtl 
+                ? `© ${new Date().getFullYear()} شركة AqarQore للتقنية. جميع الحقوق محفوظة.` 
+                : `© ${new Date().getFullYear()} AqarQore Technologies Inc. All rights reserved.`}
             </div>
             <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors">{isRtl ? 'سياسة الخصوصية' : 'Privacy Policy'}</a>
+              <a href="#" className="hover:text-white transition-colors">{isRtl ? 'شروط الخدمة' : 'Terms of Service'}</a>
               <span className="text-slate-600">|</span>
-              <span className="text-sky-400/90 font-mono text-[11px]">GCC Compliance Certified</span>
+              <span className="text-sky-400/90 font-mono text-[11px]">{isRtl ? 'معتمد وفق معايير الخليج' : 'GCC Compliance Certified'}</span>
             </div>
           </div>
 
