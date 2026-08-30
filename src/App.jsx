@@ -3461,11 +3461,11 @@ export default function App() {
       <footer className={`bg-[#001128] text-blue-200/80 text-xs pt-20 pb-12 border-t border-blue-900/60 relative overflow-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
         {/* GCC Skyline Mesh Background Image */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-40 mix-blend-luminosity"
+          className="absolute inset-0 z-0 bg-cover bg-bottom bg-no-repeat pointer-events-none"
           style={{ backgroundImage: "url('/gcc-hero-skyline-bg.png')" }}
         />
-        {/* High-Contrast Gradient Overlays for Crisp Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001128] via-[#001128]/85 to-[#001128]/95 z-0 pointer-events-none" />
+        {/* Clean Contrast Gradients for Readability and Depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/75 via-[#001128]/65 to-[#001128]/90 z-0 pointer-events-none" />
         {/* Subtle Decorative Technical Micro-Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
