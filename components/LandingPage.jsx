@@ -3537,10 +3537,10 @@ export default function LandingPage({ locale = 'en' }) {
               <ul className="space-y-2.5 text-blue-200/70 text-xs">
                 {isRtl ? (
                   <>
-                    <li><a href="#features" className="hover:text-white transition-colors">سرعة الوصول للعميل</a></li>
-                    <li><a href="#features" className="hover:text-white transition-colors">روبوت واتساب الذكي</a></li>
+                    <li><Link href="/ar/features/lead-distribution/" className="hover:text-white transition-colors">التوزيع التلقائي للعملاء</Link></li>
+                    <li><Link href="/ar/features/whatsapp-ai-qualification/" className="hover:text-white transition-colors">ربط واتساب الذكي</Link></li>
                     <li><a href="#features" className="hover:text-white transition-colors">تطبيق الميدان دون إنترنت</a></li>
-                    <li><a href="#features" className="hover:text-white transition-colors">اعتماد العمولات</a></li>
+                    <li><Link href="/ar/features/commission-approvals/" className="hover:text-white transition-colors">اعتماد العمولات</Link></li>
                   </>
                 ) : (
                   <>
