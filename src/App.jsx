@@ -2199,10 +2199,13 @@ export default function App() {
       {/* -------------------------------------------------------------------------- */}
       {/* 6. AGARQORE SECURITY CONTROL SYSTEM: ENTERPRISE TRUST & ACCESS GOVERNANCE   */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="security" className="py-24 sm:py-32 bg-slate-50/70 text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
-        {/* Subtle Architectural Mesh Grid Backdrop */}
-        <div className="absolute inset-0 bg-[radial-gradient(#0858A8_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.035] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-blue-100/40 blur-[140px] pointer-events-none" />
+      <section id="security" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+        {/* Architectural Blueprint Towers Skyline Background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat pointer-events-none opacity-40"
+          style={{ backgroundImage: `url('/security-blueprint-skyline.jpg')` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/70 to-white/90 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
