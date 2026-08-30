@@ -1748,55 +1748,56 @@ export default function App() {
 
             {/* Feature 1 Mockup: High-Tech Rule Pipeline Terminal with Luxury Villa Background */}
             <div className="lg:col-span-6">
-              <div className="rounded-2xl bg-white p-5 sm:p-6 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden">
-                {/* Luxury Villa Background Photo */}
+              <div className="rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden bg-slate-100 min-h-[320px] flex items-center">
+                {/* Luxury Villa Background Photo (Clearly Visible & Balanced) */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-30"
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
                   style={{ backgroundImage: "url('/feature-luxury-villa-bg.jpg')" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/95 pointer-events-none" />
+                {/* Balanced Light Tone Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-white/20 pointer-events-none" />
 
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+                <div className="relative z-10 w-full bg-white/92 backdrop-blur-md p-4 sm:p-5 rounded-xl border border-white/90 shadow-lg">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-200/80">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-rose-400" />
                       <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
                       <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                      <span className="text-[11px] text-slate-600 font-mono font-bold ml-2">
+                      <span className="text-[11px] text-slate-700 font-mono font-bold ml-1.5">
                         {isRtl ? 'سجل مسار التوزيع التلقائي' : 'AUTOMATED RULE PIPELINE LOG'}
                       </span>
                     </div>
-                    <span className="text-[10px] text-emerald-700 font-mono font-bold bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">
+                    <span className="text-[10px] text-emerald-800 font-mono font-bold bg-emerald-100/90 px-2.5 py-0.5 rounded border border-emerald-300">
                       {isRtl ? 'تنفيذ خلال 0.04 ث' : '00:00:04s Execution'}
                     </span>
                   </div>
 
-                  <div className="space-y-3 font-sans text-xs">
-                    <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200/80 shadow-2xs">
+                  <div className="space-y-2.5 font-sans text-xs">
+                    <div className="p-3.5 rounded-xl bg-white/95 border border-blue-200 shadow-2xs">
                       <div className="flex justify-between items-center font-bold text-slate-900 text-sm">
                         <span>{isRtl ? 'استفسار: برج مارينا لوسيل - غرفتان' : 'Inquiry: Lusail Marina Tower 2BR'}</span>
-                        <span className="text-xs text-[#0858A8] font-mono font-bold bg-white px-2.5 py-0.5 rounded border border-blue-200 shadow-2xs">
+                        <span className="text-xs text-[#0858A8] font-mono font-bold bg-blue-50 px-2.5 py-0.5 rounded border border-blue-200 shadow-2xs">
                           {isRtl ? '2.8 مليون ر.ق' : 'QAR 2.8M'}
                         </span>
                       </div>
-                      <div className="mt-3.5 space-y-2 text-slate-600 text-xs">
+                      <div className="mt-3 space-y-1.5 text-slate-700 text-xs">
                         <div className="flex items-center gap-2">
-                          <span className="text-amber-500 font-bold">✕</span>
+                          <span className="text-amber-600 font-bold">✕</span>
                           <span>{isRtl ? 'فحص الوكيل #104 (عطلة الجمعة) ← تم التجاوز' : 'Checking Agent #104 (Off-duty Friday) → Skipped'}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-amber-500 font-bold">✕</span>
+                          <span className="text-amber-600 font-bold">✕</span>
                           <span>{isRtl ? 'فحص الوكيل #109 (الحد الأقصى 25 عميل) ← تم التجاوز' : 'Checking Agent #109 (At Max 25 Active Leads) → Skipped'}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-emerald-800 font-bold pt-1.5 border-t border-blue-200/60 bg-emerald-50/80 p-2 rounded-lg border border-emerald-200">
-                          <span className="text-emerald-600">✓</span>
+                        <div className="flex items-center gap-2 text-emerald-950 font-bold pt-1.5 border-t border-slate-200 bg-emerald-50/90 p-2 rounded-lg border border-emerald-200">
+                          <span className="text-emerald-600 font-bold">✓</span>
                           <span>{isRtl ? 'تم التعيين للوكيل #112 (راشد الدوسري) ← تم الإجراء' : 'Assigned to Agent #112 (Rashid Al-Dosari) → Actioned'}</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                  <div className="mt-3 pt-2.5 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-600 font-mono">
                     <span>{isRtl ? 'القاعدة: المطابقة الجغرافية + السعة' : 'Rule: Geo-Match + Capacity'}</span>
                     <span className="text-emerald-700 font-bold">{isRtl ? 'تم التحقق والتوثيق' : 'Verified & Logged'}</span>
                   </div>
