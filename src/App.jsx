@@ -588,14 +588,10 @@ export default function App() {
         onMouseMove={handleHeroMouseMove}
         className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001128] text-white overflow-hidden"
       >
-        {/* Full Hero Skyline Mesh Background Image */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-          style={{ backgroundImage: "url('/gcc-hero-skyline-bg.png')" }}
-        />
-        {/* Deep Contrast Overlays for Maximum Text Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001128]/95 via-[#001128]/70 to-transparent z-0 pointer-events-none lg:max-w-2xl" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/60 via-transparent to-[#001128]/85 z-0 pointer-events-none" />
+        {/* Subtle Ambient Radial Lighting Effects */}
+        <div className="absolute top-1/4 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/10 blur-[160px] pointer-events-none" />
+        <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[#1078C0]/10 blur-[150px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
         {/* MAIN HERO CONTENT CONTAINER */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
@@ -3463,6 +3459,13 @@ export default function App() {
       {/* 10. FOOTER: PREMIUM ENTERPRISE REAL ESTATE SIGNATURE                       */}
       {/* -------------------------------------------------------------------------- */}
       <footer className={`bg-[#001128] text-blue-200/80 text-xs pt-20 pb-12 border-t border-blue-900/60 relative overflow-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
+        {/* GCC Skyline Mesh Background Image */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-40 mix-blend-luminosity"
+          style={{ backgroundImage: "url('/gcc-hero-skyline-bg.png')" }}
+        />
+        {/* High-Contrast Gradient Overlays for Crisp Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#001128] via-[#001128]/85 to-[#001128]/95 z-0 pointer-events-none" />
         {/* Subtle Decorative Technical Micro-Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
