@@ -1023,6 +1023,11 @@ export default function App() {
       {/* 3. AGARQORE ENGINE: THE CONNECTED INTELLIGENT OPERATING SYSTEM (WHITE BG)   */}
       {/* -------------------------------------------------------------------------- */}
       <section id="engine" className="py-24 sm:py-32 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+        {/* Architectural Blueprint Section Backdrop */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-[0.08]"
+          style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+        />
         {/* Subtle Technical Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
@@ -1116,10 +1121,15 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.05 }}
                 className="rounded-[28px] bg-gradient-to-b from-[#001F47] to-[#00142E] p-6 sm:p-7 border border-sky-500/35 hover:border-[#39BFF5] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(8,120,209,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
               >
+                {/* Architectural Blueprint Background Texture */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-luminosity pointer-events-none"
+                  style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+                />
                 {/* Top Corner Technical Accent */}
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#39BFF5]/15 to-transparent pointer-events-none rounded-bl-3xl" />
 
-                <div className="space-y-6">
+                <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
@@ -1172,7 +1182,7 @@ export default function App() {
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between relative z-10">
                   <span className="text-[10px] font-mono font-bold text-[#39BFF5] flex items-center gap-1.5">
                     <Zap className="w-3 h-3 text-[#39BFF5]" />
                     {isRtl ? 'توزيع تحت 10 ثوانٍ' : 'SUB-10S ROUTING'}
@@ -1193,10 +1203,15 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="rounded-[28px] bg-gradient-to-b from-[#00223D] to-[#00142E] p-6 sm:p-7 border border-emerald-500/35 hover:border-[#00D6A3] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(0,214,163,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
               >
+                {/* Architectural Blueprint Background Texture */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-luminosity pointer-events-none"
+                  style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+                />
                 {/* Top Corner Technical Accent */}
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#00D6A3]/15 to-transparent pointer-events-none rounded-bl-3xl" />
 
-                <div className="space-y-6">
+                <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
@@ -1252,7 +1267,7 @@ export default function App() {
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between relative z-10">
                   <span className="text-[10px] font-mono font-bold text-[#00D6A3] flex items-center gap-1.5">
                     <Lock className="w-3 h-3 text-[#00D6A3]" />
                     {isRtl ? 'تدقيق موثق' : 'AUDIT VERIFIED'}
@@ -1273,10 +1288,15 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="rounded-[28px] bg-gradient-to-b from-[#001D40] to-[#00142E] p-6 sm:p-7 border border-amber-500/35 hover:border-[#F5B91E] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(245,185,30,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
               >
+                {/* Architectural Blueprint Background Texture */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-luminosity pointer-events-none"
+                  style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+                />
                 {/* Top Corner Technical Accent */}
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#F5B91E]/15 to-transparent pointer-events-none rounded-bl-3xl" />
 
-                <div className="space-y-6">
+                <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
@@ -1326,7 +1346,7 @@ export default function App() {
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between relative z-10">
                   <span className="text-[10px] font-mono font-bold text-[#F5B91E] flex items-center gap-1.5">
                     <CheckCircle className="w-3 h-3 text-[#F5B91E]" />
                     {isRtl ? 'واجهة برمجة رسمية' : 'OFFICIAL API'}
@@ -1347,10 +1367,15 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="rounded-[28px] bg-gradient-to-b from-[#0B1A42] to-[#00142E] p-6 sm:p-7 border border-violet-500/35 hover:border-[#A78BFA] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(167,139,250,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
               >
+                {/* Architectural Blueprint Background Texture */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-luminosity pointer-events-none"
+                  style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+                />
                 {/* Top Corner Technical Accent */}
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#A78BFA]/15 to-transparent pointer-events-none rounded-bl-3xl" />
 
-                <div className="space-y-6">
+                <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
@@ -1409,7 +1434,7 @@ export default function App() {
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between relative z-10">
                   <span className="text-[10px] font-mono font-bold text-[#A78BFA] flex items-center gap-1.5">
                     <Smartphone className="w-3 h-3 text-[#A78BFA]" />
                     {isRtl ? 'وضع دون اتصال' : 'OFFLINE MODE'}
