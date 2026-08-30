@@ -3091,67 +3091,13 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Technical System Radar Visual */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#001738] text-white border border-blue-900/60 shadow-xl relative overflow-hidden group">
-                <div className="relative w-full max-w-[280px] h-[260px] mx-auto flex items-center justify-center">
-                  
-                  {/* Concentric Orbital Rings */}
-                  <div className="absolute w-56 h-56 rounded-full border border-sky-500/20 border-dashed animate-spin" style={{ animationDuration: '40s' }} />
-                  <div className="absolute w-44 h-44 rounded-full border border-blue-500/30" />
-                  <div className="absolute w-32 h-32 rounded-full border border-sky-400/40 bg-sky-500/5 blur-[1px]" />
-                  
-                  {/* Rotating Laser Scan Sweep */}
-                  <motion.div 
-                    className="absolute w-52 h-52 rounded-full pointer-events-none"
-                    style={{
-                      background: 'conic-gradient(from 0deg at 50% 50%, rgba(56, 189, 248, 0.25) 0deg, transparent 60deg, transparent 360deg)'
-                    }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                  />
-
-                  {/* Central Node */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#001026] border-2 border-sky-400/80 flex flex-col items-center justify-center shadow-[0_0_25px_rgba(56,189,248,0.35)]">
-                    <span className="text-sky-300 font-extrabold text-lg font-mono">?</span>
-                    <span className="text-[8px] font-mono text-sky-400 tracking-tighter uppercase font-bold">
-                      {isRtl ? 'نواة الخليج' : 'GCC CORE'}
-                    </span>
-                  </div>
-
-                  {/* 4 Satellite System Nodes */}
-                  {/* Top Node: SECURE */}
-                  <div className="absolute top-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-emerald-500/40 text-emerald-300 text-[10px] font-mono font-bold shadow-md">
-                    <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                    <span>{isRtl ? 'أمان' : 'SECURE'}</span>
-                  </div>
-
-                  {/* Left Node: ANALYTICS */}
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-sky-500/40 text-sky-300 text-[10px] font-mono font-bold shadow-md">
-                    <BarChart3 className="w-3 h-3 text-sky-400" />
-                    <span>{isRtl ? 'تحليلات' : 'ANALYTICS'}</span>
-                  </div>
-
-                  {/* Right Node: AUTOMATE */}
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-amber-500/40 text-amber-300 text-[10px] font-mono font-bold shadow-md">
-                    <Zap className="w-3 h-3 text-amber-400" />
-                    <span>{isRtl ? 'أتمتة' : 'AUTOMATE'}</span>
-                  </div>
-
-                  {/* Bottom Node: CLOUD */}
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-violet-500/40 text-violet-300 text-[10px] font-mono font-bold shadow-md">
-                    <Cloud className="w-3 h-3 text-violet-400" />
-                    <span>{isRtl ? 'سحابي' : 'CLOUD'}</span>
-                  </div>
-
-                </div>
-
-                <div className="mt-4 pt-3 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono text-blue-200/70">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{isRtl ? 'بنية عقد مستقلة' : 'Autonomous Node Topology'}</span>
-                  </span>
-                  <span className="text-sky-300 font-semibold">{isRtl ? 'مراقبة 24/7' : '24/7 Monitored'}</span>
-                </div>
+              {/* Premium Architectural Showcase Visual */}
+              <div className="rounded-3xl overflow-hidden border border-slate-200/90 shadow-lg bg-white relative group">
+                <img 
+                  src="/faq-modern-building.jpg" 
+                  alt="GCC Luxury Architectural Development"
+                  className="w-full h-[360px] sm:h-[380px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
               </div>
             </motion.div>
 
