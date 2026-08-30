@@ -58,3 +58,56 @@ button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, div {
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Section background images.
+   The plain url() line is the fallback; browsers that understand image-set()
+   override it with AVIF, then WebP. Declared as classes rather than inline
+   styles so the progressive enhancement actually works.
+   --------------------------------------------------------------------------- */
+.bg-art {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-art-telemetry {
+  background-image: url('/gcc-telemetry-bg.webp');
+  background-image: image-set(
+    url('/gcc-telemetry-bg.avif') type('image/avif'),
+    url('/gcc-telemetry-bg.webp') type('image/webp')
+  );
+}
+
+.bg-art-security {
+  background-image: url('/security-section-bg.webp');
+  background-image: image-set(
+    url('/security-section-bg.avif') type('image/avif'),
+    url('/security-section-bg.webp') type('image/webp')
+  );
+}
+
+.bg-art-roi {
+  background-image: url('/roi-calculator-bg.webp');
+  background-image: image-set(
+    url('/roi-calculator-bg.avif') type('image/avif'),
+    url('/roi-calculator-bg.webp') type('image/webp')
+  );
+}
+
+.bg-art-cta {
+  background-image: url('/cta-banner-bg.webp');
+  background-image: image-set(
+    url('/cta-banner-bg.avif') type('image/avif'),
+    url('/cta-banner-bg.webp') type('image/webp')
+  );
+}
+
+.bg-art-skyline {
+  background-position: bottom;
+  background-image: url('/gcc-hero-skyline-bg.webp');
+  background-image: image-set(
+    url('/gcc-hero-skyline-bg.avif') type('image/avif'),
+    url('/gcc-hero-skyline-bg.webp') type('image/webp')
+  );
+}

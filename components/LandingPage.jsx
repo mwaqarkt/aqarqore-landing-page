@@ -732,16 +732,20 @@ export default function LandingPage({ locale = 'en' }) {
                   <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   
                   {/* High-Resolution GCC Command Center Dashboard & Glowing Node Base Graphic */}
-                  <img 
-                    src="/hero-command-center-hud.png" 
-                    alt="AqarQore dashboard showing live lead assignment across Dubai, Doha and Riyadh"
-                    width="1024"
-                    height="682"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105"
-                  />
+                  <picture>
+                    <source srcSet="/hero-command-center-hud.avif" type="image/avif" />
+                    <source srcSet="/hero-command-center-hud.webp" type="image/webp" />
+                    <img
+                      src="/hero-command-center-hud.png"
+                      alt="AqarQore dashboard showing live lead assignment across Dubai, Doha and Riyadh"
+                      width="1024"
+                      height="682"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105"
+                    />
+                  </picture>
                 </div>
               </motion.div>
             </motion.div>
@@ -1495,8 +1499,7 @@ export default function LandingPage({ locale = 'en' }) {
       <section id="problem" className="py-24 sm:py-32 bg-[#001738] text-white relative border-b border-blue-950/80 overflow-hidden">
         {/* Layer 1: GCC Telemetry & Holographic Regional Map Artwork (Full Clarity, Zero Gradient Overlays) */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-100"
-          style={{ backgroundImage: 'url(/gcc-telemetry-bg.png)' }}
+          className="absolute inset-0 z-0 bg-art bg-art-telemetry pointer-events-none opacity-100"
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1959,8 +1962,7 @@ export default function LandingPage({ locale = 'en' }) {
       <section id="security" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/80 overflow-hidden">
         {/* User-Provided Futuristic Skyline & Radar Telemetry Mesh Background */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-          style={{ backgroundImage: `url('/security-section-bg.png')` }}
+          className="absolute inset-0 bg-art bg-art-security pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/75 via-transparent to-[#001128]/85 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-sky-500/10 blur-[150px] pointer-events-none" />
@@ -2638,8 +2640,7 @@ export default function LandingPage({ locale = 'en' }) {
       <section id="roi" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/80 overflow-hidden">
         {/* User-Provided Futuristic GCC Skyline Background */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-          style={{ backgroundImage: `url('/roi-calculator-bg.png')` }}
+          className="absolute inset-0 bg-art bg-art-roi pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/70 via-transparent to-[#001128]/85 pointer-events-none" />
         <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[150px] pointer-events-none" />
@@ -3415,8 +3416,7 @@ export default function LandingPage({ locale = 'en' }) {
       <section className="py-16 sm:py-20 bg-[#001128] text-white relative border-y border-blue-400/35 overflow-hidden shadow-2xl">
         {/* User-Provided Analytics & Radar Mesh Background */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-          style={{ backgroundImage: `url('/cta-banner-bg.png')` }}
+          className="absolute inset-0 bg-art bg-art-cta pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#001128]/80 via-[#001128]/50 to-[#001128]/80 pointer-events-none" />
         <div className="absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 bg-sky-400/15 blur-[120px] pointer-events-none" />
@@ -3487,8 +3487,7 @@ export default function LandingPage({ locale = 'en' }) {
       <footer className={`bg-[#001128] text-blue-200/80 text-xs pt-20 pb-12 border-t border-blue-900/60 relative overflow-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
         {/* GCC Skyline Mesh Background Image */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-bottom bg-no-repeat pointer-events-none"
-          style={{ backgroundImage: "url('/gcc-hero-skyline-bg.png')" }}
+          className="absolute inset-0 z-0 bg-art bg-art-skyline pointer-events-none"
         />
         {/* Clean Contrast Gradients for Readability and Depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/75 via-[#001128]/65 to-[#001128]/90 z-0 pointer-events-none" />
