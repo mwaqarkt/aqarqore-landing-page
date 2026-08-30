@@ -3088,13 +3088,13 @@ export default function App() {
             </div>
 
             {/* 2. Growth Plan (Recommended / Hero with Futuristic Skyline Background) */}
-            <div className={`bg-[#001D42] p-8 sm:p-9 rounded-3xl border-2 border-sky-400/80 text-white shadow-2xl flex flex-col justify-between relative overflow-hidden transition-all duration-200 transform lg:-translate-y-2 group ${isRtl ? 'text-right' : 'text-left'}`}>
-              {/* Futuristic Cyber Skyline Background Image */}
+            <div className={`p-8 sm:p-9 rounded-3xl border-2 border-sky-400 text-white shadow-2xl flex flex-col justify-between relative overflow-hidden transition-all duration-200 transform lg:-translate-y-2 group ${isRtl ? 'text-right' : 'text-left'}`}>
+              {/* Futuristic Cyber Skyline Background Image (Full Visual Clarity) */}
               <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-45 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none group-hover:scale-105 transition-transform duration-700"
                 style={{ backgroundImage: `url('/pricing-center-card-bg.png')` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#001D42]/80 via-[#001D42]/65 to-[#001D42]/90 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#001430]/75 via-[#001430]/40 to-[#001430]/85 pointer-events-none" />
 
               <div className="relative z-10 space-y-6">
                 <div className="flex items-center justify-between">
