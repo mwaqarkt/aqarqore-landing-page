@@ -2200,9 +2200,9 @@ export default function App() {
       {/* 6. AGARQORE SECURITY CONTROL SYSTEM: ENTERPRISE TRUST & ACCESS GOVERNANCE   */}
       {/* -------------------------------------------------------------------------- */}
       <section id="security" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
-        {/* Architectural Blueprint Towers Skyline Background (Very Light Opacity Softening) */}
+        {/* Architectural Blueprint Towers Skyline Background (Balanced Medium-Light Opacity) */}
         <div 
-          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat pointer-events-none opacity-80"
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat pointer-events-none opacity-55"
           style={{ backgroundImage: `url('/security-blueprint-skyline.jpg')` }}
         />
 
