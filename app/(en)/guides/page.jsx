@@ -24,6 +24,30 @@ const TRAIL = [
 
 const GUIDES = [
   {
+    href: '/guides/dld/',
+    market: 'UAE · Dubai',
+    title: 'Dubai Land Department: The Systems Every Broker Uses',
+    blurb:
+      'A working map of RERA, Trakheesi, Ejari, Oqood, Mollak and Dubai REST — what each does, and the records a brokerage needs to keep against them.',
+    read: '9 min',
+  },
+  {
+    href: '/guides/trakheesi/',
+    market: 'UAE · Dubai',
+    title: 'Trakheesi Permits: The Dubai Advertising Rule',
+    blurb:
+      'Every Dubai property advert needs a permit number — portals, social, print. What you need to apply, how long it lasts, and how to track expiry at portfolio scale.',
+    read: '8 min',
+  },
+  {
+    href: '/guides/rera-dubai/',
+    market: 'UAE · Dubai',
+    title: 'RERA Dubai: Broker Registration, Cards and Renewal',
+    blurb:
+      'What RERA is, how the broker card works, the DREI training and exam, annual renewal, and tracking licence expiry across a team.',
+    read: '8 min',
+  },
+  {
     href: '/guides/ejari/',
     market: 'UAE · Dubai',
     title: 'Ejari: Registration, Renewal and the Broker Workflow',
