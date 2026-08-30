@@ -1119,21 +1119,21 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.05 }}
-                className="rounded-[28px] bg-gradient-to-b from-[#001F47] to-[#00142E] p-6 sm:p-7 border border-sky-500/35 hover:border-[#39BFF5] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(8,120,209,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+                className="rounded-[28px] bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#0858A8]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
               >
-                {/* Architectural Blueprint Background Texture */}
+                {/* Architectural Blueprint Background Texture on White Canvas */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-luminosity pointer-events-none"
-                  style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none"
+                  style={{ backgroundImage: "url('/real-estate-line-pattern.png')" }}
                 />
                 {/* Top Corner Technical Accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#39BFF5]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-blue-500/10 to-transparent pointer-events-none rounded-bl-3xl" />
 
                 <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#39BFF5] tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-[#0858A8] tracking-wider">
                         {isRtl ? 'المعيار 01' : 'METRIC 01'}
                       </span>
                       <span className="text-[9px] font-mono text-slate-400">
@@ -1141,8 +1141,8 @@ export default function App() {
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#39BFF5] animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#39BFF5]" />
+                      <span className="w-2 h-2 rounded-full bg-[#0858A8] animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0858A8]" />
                     </div>
                   </div>
 
@@ -1151,16 +1151,16 @@ export default function App() {
                     <div className="relative w-28 h-28 flex items-center justify-center">
                       {/* Rotating Outer Radar Ring */}
                       <motion.div 
-                        className="absolute inset-0 rounded-full border border-dashed border-[#39BFF5]/40"
+                        className="absolute inset-0 rounded-full border border-dashed border-blue-300/60"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 16, repeat: Infinity, ease: 'linear' }}
                       />
                       {/* Pulsing Aura */}
-                      <div className="absolute inset-2 rounded-full bg-[#0878D1]/20 blur-md group-hover:bg-[#39BFF5]/30 transition-colors" />
+                      <div className="absolute inset-2 rounded-full bg-blue-50 blur-md group-hover:bg-blue-100 transition-colors" />
                       {/* Central Speedometer Core */}
-                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-sky-400/50 flex flex-col items-center justify-center text-center shadow-inner">
-                        <Clock className="w-6 h-6 text-[#39BFF5] group-hover:scale-110 transition-transform" />
-                        <span className="text-[10px] font-mono font-extrabold text-sky-200 mt-1">
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-blue-50/80 border border-blue-200/80 flex flex-col items-center justify-center text-center shadow-xs">
+                        <Clock className="w-6 h-6 text-[#0858A8] group-hover:scale-110 transition-transform" />
+                        <span className="text-[10px] font-mono font-extrabold text-[#0858A8] mt-1">
                           {isRtl ? '< 10 ث' : '< 10s'}
                         </span>
                       </div>
@@ -1169,25 +1169,25 @@ export default function App() {
 
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#39BFF5] transition-colors">
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-[#0858A8] transition-colors">
                       {isRtl ? '10 ثوانٍ' : '10 Seconds'}
                     </div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                    <div className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                       {isRtl ? 'نافذة التوزيع التلقائي للعملاء' : 'Max lead assignment window'}
                     </div>
-                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                    <p className="text-[11.5px] text-slate-500 leading-relaxed pt-1">
                       {isRtl ? '«أتمتة فائقة السرعة تُبقيك دائماً في المقدمة.»' : '“Lightning-fast automation that keeps you ahead.”'}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between relative z-10">
-                  <span className="text-[10px] font-mono font-bold text-[#39BFF5] flex items-center gap-1.5">
-                    <Zap className="w-3 h-3 text-[#39BFF5]" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <span className="text-[10px] font-mono font-bold text-[#0858A8] flex items-center gap-1.5">
+                    <Zap className="w-3 h-3 text-[#0858A8]" />
                     {isRtl ? 'توزيع تحت 10 ثوانٍ' : 'SUB-10S ROUTING'}
                   </span>
-                  <span className="text-[9.5px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                  <span className="text-[9.5px] font-mono text-emerald-700 font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
                     {isRtl ? 'نشط' : 'ACTIVE'}
                   </span>
                 </div>
@@ -1201,21 +1201,21 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="rounded-[28px] bg-gradient-to-b from-[#00223D] to-[#00142E] p-6 sm:p-7 border border-emerald-500/35 hover:border-[#00D6A3] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(0,214,163,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
+                className="rounded-[28px] bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
               >
-                {/* Architectural Blueprint Background Texture */}
+                {/* Architectural Blueprint Background Texture on White Canvas */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-luminosity pointer-events-none"
-                  style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none"
+                  style={{ backgroundImage: "url('/real-estate-line-pattern.png')" }}
                 />
                 {/* Top Corner Technical Accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#00D6A3]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-emerald-500/10 to-transparent pointer-events-none rounded-bl-3xl" />
 
                 <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#00D6A3] tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-emerald-700 tracking-wider">
                         {isRtl ? 'المعيار 02' : 'METRIC 02'}
                       </span>
                       <span className="text-[9px] font-mono text-slate-400">
@@ -1223,8 +1223,8 @@ export default function App() {
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]" />
+                      <span className="w-2 h-2 rounded-full bg-emerald-600 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                     </div>
                   </div>
 
@@ -1232,19 +1232,19 @@ export default function App() {
                   <div className="relative py-2 flex items-center justify-center">
                     <div className="relative w-28 h-28 flex items-center justify-center">
                       {/* Scanning Ring */}
-                      <div className="absolute inset-0 rounded-full border border-emerald-500/30" />
-                      <div className="absolute inset-2 rounded-full bg-emerald-500/15 blur-md group-hover:bg-emerald-500/25 transition-colors" />
+                      <div className="absolute inset-0 rounded-full border border-emerald-300/60" />
+                      <div className="absolute inset-2 rounded-full bg-emerald-50 blur-md group-hover:bg-emerald-100 transition-colors" />
                       
                       {/* Shield Core */}
-                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-emerald-500/50 flex flex-col items-center justify-center text-center shadow-inner overflow-hidden">
-                        <ShieldCheck className="w-7 h-7 text-[#00D6A3] group-hover:scale-110 transition-transform" />
-                        <span className="text-[9px] font-mono font-extrabold text-emerald-300 mt-1">
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-emerald-50/80 border border-emerald-200/80 flex flex-col items-center justify-center text-center shadow-xs overflow-hidden">
+                        <ShieldCheck className="w-7 h-7 text-emerald-600 group-hover:scale-110 transition-transform" />
+                        <span className="text-[9px] font-mono font-extrabold text-emerald-700 mt-1">
                           {isRtl ? 'موثق' : 'VERIFIED'}
                         </span>
                         
                         {/* Laser Scan Sweep */}
                         <motion.div 
-                          className="absolute left-0 right-0 h-[2px] bg-[#00D6A3] shadow-[0_0_8px_#00D6A3]"
+                          className="absolute left-0 right-0 h-[2px] bg-emerald-500 shadow-[0_0_8px_#059669]"
                           animate={{ top: ['0%', '100%', '0%'] }}
                           transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
                         />
@@ -1254,25 +1254,25 @@ export default function App() {
 
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#00D6A3] transition-colors">
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-emerald-700 transition-colors">
                       {isRtl ? 'تدقيق 100%' : '100% Audit'}
                     </div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                    <div className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                       {isRtl ? 'مطابقة واعتماد العمولات بخطوتين' : 'Reconciled commission signoffs'}
                     </div>
-                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                    <p className="text-[11.5px] text-slate-500 leading-relaxed pt-1">
                       {isRtl ? '«شفافية كاملة ومحاسبة دقيقة لكل صفقة.»' : '“Complete transparency. Every deal accounted for.”'}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between relative z-10">
-                  <span className="text-[10px] font-mono font-bold text-[#00D6A3] flex items-center gap-1.5">
-                    <Lock className="w-3 h-3 text-[#00D6A3]" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <span className="text-[10px] font-mono font-bold text-emerald-700 flex items-center gap-1.5">
+                    <Lock className="w-3 h-3 text-emerald-600" />
                     {isRtl ? 'تدقيق موثق' : 'AUDIT VERIFIED'}
                   </span>
-                  <span className="text-[9.5px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                  <span className="text-[9.5px] font-mono text-emerald-700 font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
                     {isRtl ? 'قفل بخطوتين' : '2-STEP LOCK'}
                   </span>
                 </div>
@@ -1286,21 +1286,21 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.25 }}
-                className="rounded-[28px] bg-gradient-to-b from-[#001D40] to-[#00142E] p-6 sm:p-7 border border-amber-500/35 hover:border-[#F5B91E] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(245,185,30,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+                className="rounded-[28px] bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-amber-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
               >
-                {/* Architectural Blueprint Background Texture */}
+                {/* Architectural Blueprint Background Texture on White Canvas */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-luminosity pointer-events-none"
-                  style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none"
+                  style={{ backgroundImage: "url('/real-estate-line-pattern.png')" }}
                 />
                 {/* Top Corner Technical Accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#F5B91E]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-amber-500/10 to-transparent pointer-events-none rounded-bl-3xl" />
 
                 <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#F5B91E] tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-amber-700 tracking-wider">
                         {isRtl ? 'المعيار 03' : 'METRIC 03'}
                       </span>
                       <span className="text-[9px] font-mono text-slate-400">
@@ -1308,8 +1308,8 @@ export default function App() {
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#F5B91E] animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5B91E]" />
+                      <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                     </div>
                   </div>
 
@@ -1317,14 +1317,14 @@ export default function App() {
                   <div className="relative py-2 flex items-center justify-center">
                     <div className="relative w-28 h-28 flex items-center justify-center">
                       {/* Concentric Communication Signal Waves */}
-                      <div className="absolute inset-0 rounded-full border border-amber-500/30 animate-ping opacity-30" />
-                      <div className="absolute inset-1 rounded-full border border-amber-500/40" />
-                      <div className="absolute inset-3 rounded-full bg-amber-500/15 blur-md group-hover:bg-amber-500/25 transition-colors" />
+                      <div className="absolute inset-0 rounded-full border border-amber-300/60 animate-ping opacity-30" />
+                      <div className="absolute inset-1 rounded-full border border-amber-300/50" />
+                      <div className="absolute inset-3 rounded-full bg-amber-50 blur-md group-hover:bg-amber-100 transition-colors" />
 
                       {/* Hub Core */}
-                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-amber-500/50 flex flex-col items-center justify-center text-center shadow-inner">
-                        <MessageSquare className="w-7 h-7 text-[#F5B91E] group-hover:scale-110 transition-transform" />
-                        <span className="text-[9px] font-mono font-extrabold text-amber-300 mt-1">
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-amber-50/80 border border-amber-200/80 flex flex-col items-center justify-center text-center shadow-xs">
+                        <MessageSquare className="w-7 h-7 text-amber-600 group-hover:scale-110 transition-transform" />
+                        <span className="text-[9px] font-mono font-extrabold text-amber-700 mt-1">
                           {isRtl ? 'سحابة ميتا' : 'META CLOUD'}
                         </span>
                       </div>
@@ -1333,25 +1333,25 @@ export default function App() {
 
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#F5B91E] transition-colors">
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-amber-700 transition-colors">
                       {isRtl ? 'توثيق رسمي من ميتا' : 'Meta Verified'}
                     </div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                    <div className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                       {isRtl ? 'واجهة واتساب السحابية الرسمية' : 'Official WhatsApp Cloud API'}
                     </div>
-                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                    <p className="text-[11.5px] text-slate-500 leading-relaxed pt-1">
                       {isRtl ? '«موثوق، آمن، ورسمي مباشرة من شركة ميتا.»' : '“Trusted. Secure. Official. Direct from Meta.”'}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between relative z-10">
-                  <span className="text-[10px] font-mono font-bold text-[#F5B91E] flex items-center gap-1.5">
-                    <CheckCircle className="w-3 h-3 text-[#F5B91E]" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <span className="text-[10px] font-mono font-bold text-amber-700 flex items-center gap-1.5">
+                    <CheckCircle className="w-3 h-3 text-amber-600" />
                     {isRtl ? 'واجهة برمجة رسمية' : 'OFFICIAL API'}
                   </span>
-                  <span className="text-[9.5px] font-mono text-amber-300 font-bold px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30">
+                  <span className="text-[9.5px] font-mono text-amber-800 font-bold px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200">
                     {isRtl ? 'سحابة ميتا' : 'META CLOUD'}
                   </span>
                 </div>
@@ -1365,21 +1365,21 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
-                className="rounded-[28px] bg-gradient-to-b from-[#0B1A42] to-[#00142E] p-6 sm:p-7 border border-violet-500/35 hover:border-[#A78BFA] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(167,139,250,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
+                className="rounded-[28px] bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-violet-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
               >
-                {/* Architectural Blueprint Background Texture */}
+                {/* Architectural Blueprint Background Texture on White Canvas */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-luminosity pointer-events-none"
-                  style={{ backgroundImage: "url('/real-estate-blueprint-sketch.jpg')" }}
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none"
+                  style={{ backgroundImage: "url('/real-estate-line-pattern.png')" }}
                 />
                 {/* Top Corner Technical Accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#A78BFA]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-violet-500/10 to-transparent pointer-events-none rounded-bl-3xl" />
 
                 <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#A78BFA] tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-violet-700 tracking-wider">
                         {isRtl ? 'المعيار 04' : 'METRIC 04'}
                       </span>
                       <span className="text-[9px] font-mono text-slate-400">
@@ -1387,59 +1387,59 @@ export default function App() {
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#A78BFA]" />
+                      <span className="w-2 h-2 rounded-full bg-violet-600 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-violet-600" />
                     </div>
                   </div>
 
                   {/* Large Visual: Modern Smartphone Mockup with Simulated Mini Lead Card */}
                   <div className="relative py-2 flex items-center justify-center">
                     <div className="relative w-28 h-28 flex items-center justify-center">
-                      <div className="absolute inset-0 rounded-full border border-violet-500/30" />
-                      <div className="absolute inset-2 rounded-full bg-violet-500/15 blur-md group-hover:bg-violet-500/25 transition-colors" />
+                      <div className="absolute inset-0 rounded-full border border-violet-300/60" />
+                      <div className="absolute inset-2 rounded-full bg-violet-50 blur-md group-hover:bg-violet-100 transition-colors" />
 
                       {/* Phone Outline */}
-                      <div className="relative z-10 w-16 h-24 rounded-2xl bg-[#001026] border-2 border-violet-400/60 p-1.5 flex flex-col justify-between shadow-xl group-hover:scale-105 transition-transform">
+                      <div className="relative z-10 w-16 h-24 rounded-2xl bg-white border-2 border-violet-300 p-1.5 flex flex-col justify-between shadow-md group-hover:scale-105 transition-transform">
                         {/* Mini Phone Speaker notch */}
-                        <div className="w-4 h-1 rounded-full bg-violet-400/40 mx-auto" />
+                        <div className="w-4 h-1 rounded-full bg-violet-300 mx-auto" />
                         
                         {/* Mini Lead Card simulation */}
-                        <div className="p-1 rounded-md bg-[#032653] border border-sky-400/40 space-y-1">
-                          <div className="w-full h-1 bg-[#39BFF5] rounded-full" />
-                          <div className="w-3/4 h-0.5 bg-sky-200/50 rounded-full" />
-                          <div className="flex items-center justify-between text-[6px] font-mono text-[#00D6A3] pt-0.5">
+                        <div className="p-1 rounded-md bg-violet-50 border border-violet-200/80 space-y-1">
+                          <div className="w-full h-1 bg-violet-600 rounded-full" />
+                          <div className="w-3/4 h-0.5 bg-violet-400/50 rounded-full" />
+                          <div className="flex items-center justify-between text-[6px] font-mono text-emerald-700 pt-0.5 font-bold">
                             <span>{isRtl ? 'متزامن' : 'SYNCED'}</span>
                             <span>✓</span>
                           </div>
                         </div>
 
                         {/* Mini Home Indicator */}
-                        <div className="w-6 h-0.5 rounded-full bg-violet-400/40 mx-auto" />
+                        <div className="w-6 h-0.5 rounded-full bg-violet-300 mx-auto" />
                       </div>
                     </div>
                   </div>
 
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#A78BFA] transition-colors">
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-violet-700 transition-colors">
                       {isRtl ? 'تطبيق دون إنترنت' : 'Offline App'}
                     </div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                    <div className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                       {isRtl ? 'تزامن معاينات القبو والمواقف' : 'Basement viewing sync'}
                     </div>
-                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                    <p className="text-[11.5px] text-slate-500 leading-relaxed pt-1">
                       {isRtl ? '«اعمل في أي مكان وتزامن فور عودة الاتصال.»' : '“Work anywhere. Sync when you\'re back.”'}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between relative z-10">
-                  <span className="text-[10px] font-mono font-bold text-[#A78BFA] flex items-center gap-1.5">
-                    <Smartphone className="w-3 h-3 text-[#A78BFA]" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <span className="text-[10px] font-mono font-bold text-violet-700 flex items-center gap-1.5">
+                    <Smartphone className="w-3 h-3 text-violet-600" />
                     {isRtl ? 'وضع دون اتصال' : 'OFFLINE MODE'}
                   </span>
-                  <span className="text-[9.5px] font-mono text-purple-300 font-bold px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/30">
+                  <span className="text-[9.5px] font-mono text-violet-700 font-bold px-2.5 py-0.5 rounded-full bg-violet-50 border border-violet-200">
                     {isRtl ? 'تزامن 5G' : '5G SYNC'}
                   </span>
                 </div>
