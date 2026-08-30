@@ -97,7 +97,10 @@ export default function PageShell({ locale = 'en', hasTranslation = true, childr
               {isRtl ? 'تواصل معنا' : 'Contact'}
             </Link>
             {!isRtl && (
-              <Link href="/guides/" className="hover:text-white transition-colors">Guides</Link>
+              <>
+                <Link href="/features/" className="hover:text-white transition-colors">Features</Link>
+                <Link href="/guides/" className="hover:text-white transition-colors">Guides</Link>
+              </>
             )}
           </span>
         </div>

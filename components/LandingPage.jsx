@@ -3536,10 +3536,21 @@ export default function LandingPage({ locale = 'en' }) {
                 {isRtl ? 'المنصة' : 'Platform'}
               </h4>
               <ul className="space-y-2.5 text-blue-200/70 text-xs">
-                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'سرعة الوصول للعميل' : 'Speed to Lead'}</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'روبوت واتساب الذكي' : 'WhatsApp AI Bot'}</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'تطبيق الميدان دون إنترنت' : 'Offline Mobile App'}</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'اعتماد العمولات' : 'Commission Signoff'}</a></li>
+                {isRtl ? (
+                  <>
+                    <li><a href="#features" className="hover:text-white transition-colors">سرعة الوصول للعميل</a></li>
+                    <li><a href="#features" className="hover:text-white transition-colors">روبوت واتساب الذكي</a></li>
+                    <li><a href="#features" className="hover:text-white transition-colors">تطبيق الميدان دون إنترنت</a></li>
+                    <li><a href="#features" className="hover:text-white transition-colors">اعتماد العمولات</a></li>
+                  </>
+                ) : (
+                  <>
+                    <li><Link href="/features/lead-distribution/" className="hover:text-white transition-colors">Speed to Lead</Link></li>
+                    <li><Link href="/features/whatsapp-ai-qualification/" className="hover:text-white transition-colors">WhatsApp AI Bot</Link></li>
+                    <li><a href="#features" className="hover:text-white transition-colors">Offline Mobile App</a></li>
+                    <li><Link href="/features/commission-approvals/" className="hover:text-white transition-colors">Commission Signoff</Link></li>
+                  </>
+                )}
                 <li><a href="#connected" className="hover:text-white transition-colors">{isRtl ? 'الشبكة المتصلة' : 'Connected Mesh'}</a></li>
               </ul>
             </div>
