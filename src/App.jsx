@@ -522,14 +522,14 @@ export default function App() {
         onMouseMove={handleHeroMouseMove}
         className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001128] text-white overflow-hidden"
       >
-        {/* Full Hero Panoramic Background Image */}
+        {/* Full Hero Skyline Mesh Background Image */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-right lg:bg-center bg-no-repeat pointer-events-none"
-          style={{ backgroundImage: "url('/hero-panoramic.png')" }}
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+          style={{ backgroundImage: "url('/gcc-hero-skyline-bg.png')" }}
         />
-        {/* Left Side Readability Gradient for Headline & CTA */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001128]/95 via-[#001128]/60 to-transparent z-0 pointer-events-none lg:max-w-2xl" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/60 via-transparent to-[#001128]/80 z-0 pointer-events-none" />
+        {/* Deep Contrast Overlays for Maximum Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001128]/95 via-[#001128]/70 to-transparent z-0 pointer-events-none lg:max-w-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/60 via-transparent to-[#001128]/85 z-0 pointer-events-none" />
 
         {/* MAIN HERO CONTENT CONTAINER */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
@@ -635,9 +635,36 @@ export default function App() {
             </motion.div>
 
             {/* ---------------------------------------------------------------------- */}
-            {/* RIGHT COLUMN: CLEAR APERTURE FOR PANORAMIC BACKGROUND DASHBOARD        */}
+            {/* RIGHT COLUMN: FLOATING AQARQORE COMMAND CENTER UI GRAPHIC (~50%)       */}
             {/* ---------------------------------------------------------------------- */}
-            <div className="hidden lg:block lg:col-span-6 xl:col-span-6 min-h-[500px]" />
+            <motion.div 
+              className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end"
+              initial={{ opacity: 0, scale: 0.94, y: 25 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Parallax Container with Subtle Floating Animation */}
+              <motion.div
+                style={{
+                  x: mouseOffset.x * 0.5,
+                  y: mouseOffset.y * 0.5,
+                  transition: 'transform 0.15s ease-out'
+                }}
+                className="relative w-full max-w-[620px] lg:max-w-none flex items-center justify-center"
+              >
+                <div className="relative group w-full">
+                  {/* Subtle Outer Cyan Glow Aura */}
+                  <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  
+                  {/* High-Resolution GCC Command Center Graphic */}
+                  <img 
+                    src="/hero-panoramic.png" 
+                    alt="AqarQore GCC Command Center"
+                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105 rounded-2xl"
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
 
           </div>
         </div>
