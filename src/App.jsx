@@ -1670,13 +1670,17 @@ export default function App() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/60 text-xs font-bold uppercase tracking-wider shadow-sm">
-              Complete Feature Engine
+              {isRtl ? 'محرك الميزات المتكامل' : 'Complete Feature Engine'}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-              Engineered Specifically for High-Volume GCC Brokerages
+              {isRtl 
+                ? 'صُمم خصيصاً لوكالات العقارات الكبرى في الخليج' 
+                : 'Engineered Specifically for High-Volume GCC Brokerages'}
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Every story built to solve a real friction point reported by Qatar, Dubai, and Riyadh agency owners.
+              {isRtl 
+                ? 'كل ميزة صُممت لحل نقاط الاحتكاك الحقيقية التي يواجهها أصحاب الوكالات في قطر ودبي والرياض.' 
+                : 'Every story built to solve a real friction point reported by Qatar, Dubai, and Riyadh agency owners.'}
             </p>
           </motion.div>
 
@@ -1688,28 +1692,37 @@ export default function App() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
-            <div className="lg:col-span-6 space-y-6">
+            <div className={`lg:col-span-6 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-[#1078C0] border border-blue-200/60 text-xs font-bold uppercase tracking-wider">
-                <Zap className="w-3.5 h-3.5" /> Feature 01 • Speed to Lead
+                <Zap className="w-3.5 h-3.5" />
+                <span>{isRtl ? 'الميزة 01 • سرعة الوصول للعميل' : 'Feature 01 • Speed to Lead'}</span>
               </div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                Never Lose a Hot Lead to a Slow Response
+                {isRtl 
+                  ? 'لا تفقد عميلاً مهتماً أبداً بسبب بطء الاستجابة' 
+                  : 'Never Lose a Hot Lead to a Slow Response'}
               </h3>
               <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
-                Every new lead is auto-assigned by a rule pipeline in under 10 seconds, skipping agents who are at capacity, off-hours, or unavailable, with a full decision trail stored for every assignment. No lead sits unassigned; every inquiry reaches an available agent while the prospect is still hot.
+                {isRtl 
+                  ? 'يتم توزيع كل عميل جديد تلقائياً في أقل من 10 ثوانٍ عبر مسار القواعد الذكية، مع تجاوز الوكلاء المشغولين أو خارج الدوام، وتوثيق سجل قرار التوزيع بالكامل. لا يظل أي عميل دون تعيين بينما ما زال اهتمامه في ذروته.' 
+                  : 'Every new lead is auto-assigned by a rule pipeline in under 10 seconds, skipping agents who are at capacity, off-hours, or unavailable, with a full decision trail stored for every assignment. No lead sits unassigned; every inquiry reaches an available agent while the prospect is still hot.'}
               </p>
               <div className="pt-2 space-y-3">
                 <div className="flex items-start gap-3 text-sm text-slate-700 font-medium">
                   <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </div>
-                  <span>Sub-10 second round-robin and capacity distribution</span>
+                  <span>
+                    {isRtl ? 'توزيع دوري وسعة استيعاب في أقل من 10 ثوانٍ' : 'Sub-10 second round-robin and capacity distribution'}
+                  </span>
                 </div>
                 <div className="flex items-start gap-3 text-sm text-slate-700 font-medium">
                   <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </div>
-                  <span>Enforced audit trail for every lead assignment decision</span>
+                  <span>
+                    {isRtl ? 'سجل تدقيق ملزم وموثق لكل قرار توزيع' : 'Enforced audit trail for every lead assignment decision'}
+                  </span>
                 </div>
               </div>
             </div>
@@ -1722,34 +1735,43 @@ export default function App() {
                     <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                     <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                    <span className="text-[11px] text-blue-300 font-mono ml-2">AUTOMATED RULE PIPELINE LOG</span>
+                    <span className="text-[11px] text-blue-300 font-mono ml-2">
+                      {isRtl ? 'سجل مسار التوزيع التلقائي' : 'AUTOMATED RULE PIPELINE LOG'}
+                    </span>
                   </div>
-                  <span className="text-[10px] text-emerald-400 font-mono bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/30">00:00:04s Execution</span>
+                  <span className="text-[10px] text-emerald-400 font-mono bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/30">
+                    {isRtl ? 'تنفيذ خلال 0.04 ث' : '00:00:04s Execution'}
+                  </span>
                 </div>
 
                 <div className="space-y-3 font-sans text-xs">
                   <div className="p-4 rounded-xl bg-[#0858A8]/30 border border-blue-500/30">
                     <div className="flex justify-between items-center font-bold text-white text-sm">
-                      <span>Inquiry: Lusail Marina Tower 2BR</span>
-                      <span className="text-xs text-sky-300 font-mono bg-sky-950 px-2 py-0.5 rounded border border-sky-800">QAR 2.8M</span>
+                      <span>{isRtl ? 'استفسار: برج مارينا لوسيل - غرفتان' : 'Inquiry: Lusail Marina Tower 2BR'}</span>
+                      <span className="text-xs text-sky-300 font-mono bg-sky-950 px-2 py-0.5 rounded border border-sky-800">
+                        {isRtl ? '2.8 مليون ر.ق' : 'QAR 2.8M'}
+                      </span>
                     </div>
                     <div className="mt-3.5 space-y-2 text-blue-100 text-xs">
                       <div className="flex items-center gap-2 text-slate-400">
-                        <span className="text-amber-400">✕</span> Checking Agent #104 (Off-duty Friday) → Skipped
+                        <span className="text-amber-400">✕</span>
+                        <span>{isRtl ? 'فحص الوكيل #104 (عطلة الجمعة) ← تم التجاوز' : 'Checking Agent #104 (Off-duty Friday) → Skipped'}</span>
                       </div>
                       <div className="flex items-center gap-2 text-slate-400">
-                        <span className="text-amber-400">✕</span> Checking Agent #109 (At Max 25 Active Leads) → Skipped
+                        <span className="text-amber-400">✕</span>
+                        <span>{isRtl ? 'فحص الوكيل #109 (الحد الأقصى 25 عميل) ← تم التجاوز' : 'Checking Agent #109 (At Max 25 Active Leads) → Skipped'}</span>
                       </div>
                       <div className="flex items-center gap-2 text-emerald-300 font-semibold pt-1 border-t border-blue-700/40">
-                        <span className="text-emerald-400">✓</span> Assigned to Agent #112 (Rashid Al-Dosari) → Actioned
+                        <span className="text-emerald-400">✓</span>
+                        <span>{isRtl ? 'تم التعيين للوكيل #112 (راشد الدوسري) ← تم الإجراء' : 'Assigned to Agent #112 (Rashid Al-Dosari) → Actioned'}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-blue-800/40 flex items-center justify-between text-[11px] text-blue-300 font-mono">
-                  <span>Rule: Geo-Match + Capacity</span>
-                  <span className="text-emerald-400">Verified & Logged</span>
+                  <span>{isRtl ? 'القاعدة: المطابقة الجغرافية + السعة' : 'Rule: Geo-Match + Capacity'}</span>
+                  <span className="text-emerald-400">{isRtl ? 'تم التحقق والتوثيق' : 'Verified & Logged'}</span>
                 </div>
               </div>
             </div>
@@ -1765,15 +1787,20 @@ export default function App() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
-            <div className="lg:col-span-6 lg:order-2 space-y-6">
+            <div className={`lg:col-span-6 lg:order-2 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/60 text-xs font-bold uppercase tracking-wider">
-                <Bot className="w-3.5 h-3.5 text-emerald-600" /> Feature 02 • Conversational AI
+                <Bot className="w-3.5 h-3.5 text-emerald-600" />
+                <span>{isRtl ? 'الميزة 02 • الذكاء الاصطناعي للمحادثات' : 'Feature 02 • Conversational AI'}</span>
               </div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                Qualify Buyer Budget & Area Automatically 24/7
+                {isRtl 
+                  ? 'تأهيل ميزانية المشتري ومنطقته المفضلة تلقائياً على مدار الساعة' 
+                  : 'Qualify Buyer Budget & Area Automatically 24/7'}
               </h3>
               <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
-                The bot greets, qualifies budget/area/property type conversationally, presents matching listings as cards, then hands off to a human agent with full captured context inside Meta's 24-hour messaging window. Agents open every WhatsApp chat already knowing what the customer wants — no repeated questions, faster response, higher close rate.
+                {isRtl 
+                  ? 'يرحب الروبوت بالمشتري ويؤهل ميزانيته والمنطقة ونوع العقار بمحادثة ذكية، ويعرض العقارات المطابقة كبطاقات، ثم يحيل المحادثة للوكيل البشري بكامل السياق داخل نافذة الـ 24 ساعة المعتمدة من ميتا. يفتح الوكلاء كل محادثة وهم يعلمون بالضبط طلب العميل.' 
+                  : 'The bot greets, qualifies budget/area/property type conversationally, presents matching listings as cards, then hands off to a human agent with full captured context inside Meta\'s 24-hour messaging window. Agents open every WhatsApp chat already knowing what the customer wants — no repeated questions, faster response, higher close rate.'}
               </p>
             </div>
 
@@ -1786,9 +1813,10 @@ export default function App() {
                     <div className="flex items-center gap-2.5">
                       <div className="w-8 h-8 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center font-bold text-xs">AQ</div>
                       <div>
-                        <div className="font-bold text-sm">AqarQore AI Assistant</div>
+                        <div className="font-bold text-sm">{isRtl ? 'مساعد AqarQore الذكي' : 'AqarQore AI Assistant'}</div>
                         <div className="text-[10px] text-emerald-200 flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Official Meta API Verified
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span>{isRtl ? 'موثق رسمياً من ميتا' : 'Official Meta API Verified'}</span>
                         </div>
                       </div>
                     </div>
@@ -1796,20 +1824,20 @@ export default function App() {
 
                   {/* Chat Bubbles */}
                   <div className="p-4 space-y-3 text-xs bg-[#0B141A]">
-                    <div className="bg-[#202C33] text-slate-100 p-3 rounded-2xl rounded-tl-sm max-w-[85%] border border-slate-700/50 shadow-sm leading-relaxed">
-                      Hello! Looking for a 3BR villa in West Bay Lagoon under QAR 4M?
+                    <div className="bg-[#202C33] text-slate-100 p-3 rounded-2xl rounded-tl-sm max-w-[85%] border border-slate-700/50 shadow-sm leading-relaxed text-left">
+                      {isRtl ? 'مرحباً! هل تبحث عن فيلا 3 غرف في لاغون الخليج الغربي بسعر أقل من 4 مليون ر.ق؟' : 'Hello! Looking for a 3BR villa in West Bay Lagoon under QAR 4M?'}
                     </div>
                     <div className="bg-[#005C4B] text-white p-3 rounded-2xl rounded-tr-sm max-w-[80%] ml-auto text-right shadow-sm leading-relaxed">
-                      Yes, budget up to 4.2M QAR. Ready to view this Saturday.
+                      {isRtl ? 'نعم، الميزانية تصل إلى 4.2 مليون ر.ق، وجاهز للمعاينة هذا السبت.' : 'Yes, budget up to 4.2M QAR. Ready to view this Saturday.'}
                     </div>
                     <div className="bg-[#182229] text-slate-200 p-3.5 rounded-xl border border-emerald-500/40 shadow-md">
                       <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mb-1.5">
-                        ⚡ Instant Handoff to Human Agent
+                        {isRtl ? '⚡ تحويل فوري للوكيل العقاري' : '⚡ Instant Handoff to Human Agent'}
                       </span>
                       <div className="text-xs text-blue-100 space-y-1 font-medium">
-                        <div>• Buyer Profile: <span className="text-white font-bold">Verified Buyer</span></div>
-                        <div>• Budget: <span className="text-emerald-400 font-bold">QAR 4.2M</span> • Preferred: West Bay</div>
-                        <div>• Assigned Agent: <span className="text-sky-300 font-bold">Mariam Al-Kuwari</span></div>
+                        <div>• {isRtl ? 'ملف المشتري:' : 'Buyer Profile:'} <span className="text-white font-bold">{isRtl ? 'مشتري موثق' : 'Verified Buyer'}</span></div>
+                        <div>• {isRtl ? 'الميزانية:' : 'Budget:'} <span className="text-emerald-400 font-bold">{isRtl ? '4.2 مليون ر.ق' : 'QAR 4.2M'}</span> • {isRtl ? 'المفضلة: الخليج الغربي' : 'Preferred: West Bay'}</div>
+                        <div>• {isRtl ? 'الوكيل المعين:' : 'Assigned Agent:'} <span className="text-sky-300 font-bold">{isRtl ? 'مريم الكواري' : 'Mariam Al-Kuwari'}</span></div>
                       </div>
                     </div>
                   </div>
@@ -1828,15 +1856,20 @@ export default function App() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
-            <div className="lg:col-span-6 space-y-6">
+            <div className={`lg:col-span-6 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200/60 text-xs font-bold uppercase tracking-wider">
-                <DollarSign className="w-3.5 h-3.5 text-amber-600" /> Feature 03 • Financial Control
+                <DollarSign className="w-3.5 h-3.5 text-amber-600" />
+                <span>{isRtl ? 'الميزة 03 • الرقابة المالية' : 'Feature 03 • Financial Control'}</span>
               </div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                Dispute-Proof Commission Signoffs & Approvals
+                {isRtl 
+                  ? 'اعتمادات عمولات دقيقة ومحمية من النزاعات' 
+                  : 'Dispute-Proof Commission Signoffs & Approvals'}
               </h3>
               <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
-                Every closed deal moves through an enforced Sales Director → Accounting approval chain (neither can skip or bypass the other), with commissions auto-calculated on approval and idempotency-protected payout batches. Agents trust their payout numbers, and leadership gets clean, dispute-proof financial control.
+                {isRtl 
+                  ? 'تمر كل صفقة مغلقة عبر مسار اعتماد إلزامي من مدير المبيعات إلى الإدارة المالية (لا يمكن لأي طرف تجاوز الآخر)، مع حساب العمولات تلقائياً وحماية دفعات الصرف من التكرار.' 
+                  : 'Every closed deal moves through an enforced Sales Director → Accounting approval chain (neither can skip or bypass the other), with commissions auto-calculated on approval and idempotency-protected payout batches. Agents trust their payout numbers, and leadership gets clean, dispute-proof financial control.'}
               </p>
             </div>
 
@@ -1844,8 +1877,10 @@ export default function App() {
             <div className="lg:col-span-6">
               <div className="rounded-2xl bg-gradient-to-b from-[#002B5E] to-[#001738] p-5 sm:p-6 border border-blue-800/80 shadow-[0_20px_50px_-15px_rgba(0,48,104,0.3)] text-white">
                 <div className="text-xs font-bold text-blue-200 pb-3 mb-4 border-b border-blue-800/60 flex items-center justify-between">
-                  <span>ENFORCED APPROVAL WORKFLOW</span>
-                  <span className="text-emerald-400 font-mono text-[11px] bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30">STRICT SERVER 2-STEP</span>
+                  <span>{isRtl ? 'مسار الاعتماد الإلزامي' : 'ENFORCED APPROVAL WORKFLOW'}</span>
+                  <span className="text-emerald-400 font-mono text-[11px] bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+                    {isRtl ? 'اعتماد صارم بخطوتين' : 'STRICT SERVER 2-STEP'}
+                  </span>
                 </div>
                 
                 <div className="space-y-3">
@@ -1855,11 +1890,17 @@ export default function App() {
                         <CheckCircle className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="font-bold text-white text-sm">Step 1: Sales Director Signoff</div>
-                        <div className="text-[11px] text-emerald-300">Signed by Nasser Al-Thani</div>
+                        <div className="font-bold text-white text-sm">
+                          {isRtl ? 'الخطوة 1: توقيع مدير المبيعات' : 'Step 1: Sales Director Signoff'}
+                        </div>
+                        <div className="text-[11px] text-emerald-300">
+                          {isRtl ? 'تم التوقيع بواسطة ناصر آل ثاني' : 'Signed by Nasser Al-Thani'}
+                        </div>
                       </div>
                     </div>
-                    <span className="text-emerald-300 font-bold px-2.5 py-1 rounded bg-emerald-500/20 border border-emerald-500/40 text-[10px]">APPROVED</span>
+                    <span className="text-emerald-300 font-bold px-2.5 py-1 rounded bg-emerald-500/20 border border-emerald-500/40 text-[10px]">
+                      {isRtl ? 'معتمد' : 'APPROVED'}
+                    </span>
                   </div>
 
                   <div className="flex items-center justify-between p-4 rounded-xl bg-blue-950/70 border border-blue-700/50 text-xs">
@@ -1868,17 +1909,23 @@ export default function App() {
                         <Clock className="w-5 h-5 animate-spin" />
                       </div>
                       <div>
-                        <div className="font-bold text-white text-sm">Step 2: Accounting Payout Batch #902</div>
-                        <div className="text-[11px] text-amber-300">Dispute-Proof Lock Active</div>
+                        <div className="font-bold text-white text-sm">
+                          {isRtl ? 'الخطوة 2: دفعة المحاسبة #902' : 'Step 2: Accounting Payout Batch #902'}
+                        </div>
+                        <div className="text-[11px] text-amber-300">
+                          {isRtl ? 'قفل الحماية من النزاعات نشط' : 'Dispute-Proof Lock Active'}
+                        </div>
                       </div>
                     </div>
-                    <span className="text-amber-300 font-bold px-2.5 py-1 rounded bg-amber-500/20 border border-amber-500/40 text-[10px]">QUEUED</span>
+                    <span className="text-amber-300 font-bold px-2.5 py-1 rounded bg-amber-500/20 border border-amber-500/40 text-[10px]">
+                      {isRtl ? 'في الانتظار' : 'QUEUED'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-blue-800/40 flex items-center justify-between text-[11px] text-blue-300 font-mono">
-                  <span>Audit Stamp: Immutable Ledger</span>
-                  <span className="text-sky-300">100% Payout Accuracy</span>
+                  <span>{isRtl ? 'سجل التدقيق: قيد غير قابل للتعديل' : 'Audit Stamp: Immutable Ledger'}</span>
+                  <span className="text-sky-300">{isRtl ? 'دقة صرف 100%' : '100% Payout Accuracy'}</span>
                 </div>
               </div>
             </div>
@@ -1912,20 +1959,33 @@ export default function App() {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest shadow-xs">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 animate-pulse" />
-              <span>AGARQORE SECURITY</span>
+              <span>{isRtl ? 'أمان وحماية AGARQORE' : 'AGARQORE SECURITY'}</span>
             </div>
 
             {/* Headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
-              Security Built Into{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39BFF5] via-[#168FE5] to-[#00D6A3]">
-                Every Layer.
-              </span>
+              {isRtl ? (
+                <>
+                  <span>الأمان مدمج في</span>{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39BFF5] via-[#168FE5] to-[#00D6A3]">
+                    كل طبقة.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Security Built Into{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39BFF5] via-[#168FE5] to-[#00D6A3]">
+                    Every Layer.
+                  </span>
+                </>
+              )}
             </h2>
 
             {/* Subtitle */}
             <p className="text-blue-100/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
-              Protect every login, every lead, and every agency action with enterprise-grade access controls.
+              {isRtl 
+                ? 'حماية كل تسجيل دخول، وكل عميل، وكل إجراء في الوكالة بضوابط وصول صارمة على مستوى المؤسسات.' 
+                : 'Protect every login, every lead, and every agency action with enterprise-grade access controls.'}
             </p>
           </motion.div>
 
@@ -1949,7 +2009,7 @@ export default function App() {
                   transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
                 />
                 <span className="absolute top-1 text-[8px] font-mono text-sky-400/70 tracking-widest uppercase bg-[#001433] px-2 py-0.5 rounded-full border border-sky-500/20">
-                  SESSION LAYER
+                  {isRtl ? 'طبقة الجلسة' : 'SESSION LAYER'}
                 </span>
 
                 {/* Middle Ring: ACCESS */}
@@ -1959,7 +2019,7 @@ export default function App() {
                   transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
                 />
                 <span className="absolute bottom-1 text-[8px] font-mono text-emerald-400/70 tracking-widest uppercase bg-[#001433] px-2 py-0.5 rounded-full border border-emerald-500/20">
-                  ACCESS BOUNDARY
+                  {isRtl ? 'حدود الوصول' : 'ACCESS BOUNDARY'}
                 </span>
 
                 {/* Inner Ring: IDENTITY with Scanning Laser Sweep */}
@@ -1977,8 +2037,12 @@ export default function App() {
                         <ShieldCheck className="w-7 h-7 text-[#00D6A3] group-hover:scale-110 transition-transform" />
                       </div>
                     </div>
-                    <span className="text-[10px] font-mono font-black text-white tracking-wider mt-2">SECURITY CORE</span>
-                    <span className="text-[8px] font-mono text-[#00D6A3] font-bold">✓ PROTECTED 24/7</span>
+                    <span className="text-[10px] font-mono font-black text-white tracking-wider mt-2">
+                      {isRtl ? 'نواة الأمان' : 'SECURITY CORE'}
+                    </span>
+                    <span className="text-[8px] font-mono text-[#00D6A3] font-bold">
+                      {isRtl ? '✓ محمي 24/7' : '✓ PROTECTED 24/7'}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1987,15 +2051,15 @@ export default function App() {
               <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[10.5px] font-mono pt-2">
                 <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                  <span>IDENTITY: VERIFIED</span>
+                  <span>{isRtl ? 'الهوية: موثقة' : 'IDENTITY: VERIFIED'}</span>
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#39BFF5]" />
-                  <span>ACCESS: 403 ENFORCED</span>
+                  <span>{isRtl ? 'الوصول: 403 إلزامي' : 'ACCESS: 403 ENFORCED'}</span>
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-                  <span>REVOCATION: &lt; 60s</span>
+                  <span>{isRtl ? 'إلغاء الصلاحية: < 60 ث' : 'REVOCATION: < 60s'}</span>
                 </div>
               </div>
             </motion.div>
@@ -2020,34 +2084,36 @@ export default function App() {
                       <Key className="w-6 h-6" />
                     </div>
                     <span className="text-[11px] font-mono font-bold text-[#39BFF5] bg-[#001228] px-3 py-1 rounded-full border border-sky-500/30">
-                      01 • TOTP AUTH
+                      {isRtl ? '01 • مصادقة TOTP' : '01 • TOTP AUTH'}
                     </span>
                   </div>
 
                   {/* Title & Description */}
                   <div className="space-y-2.5">
                     <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
-                      Multi-Factor Authentication
+                      {isRtl ? 'المصادقة المتعددة العوامل' : 'Multi-Factor Authentication'}
                     </h3>
                     <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
-                      TOTP-based MFA on every staff login, with throttling after repeated failed attempts and no user-existence disclosure on invalid credentials. Agency data can't be breached by a leaked password alone.
+                      {isRtl 
+                        ? 'مصادقة MFA مبنية على تطبيق TOTP لكل موظف، مع تقييد محاولات التخمين وعدم كشف وجود المستخدم عند إدخال بيانات غير صحيحة. بياناتك لن تُخترق بكلمة مرور مسربة فقط.' 
+                        : 'TOTP-based MFA on every staff login, with throttling after repeated failed attempts and no user-existence disclosure on invalid credentials. Agency data can\'t be breached by a leaked password alone.'}
                     </p>
                   </div>
 
                   {/* Micro Verification Step-by-Step Flow */}
                   <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
                     <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
-                      AUTHENTICATION FLOW
+                      {isRtl ? 'مسار المصادقة' : 'AUTHENTICATION FLOW'}
                     </div>
                     <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] font-mono font-bold">
                       <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/50 text-slate-300">
-                        1. PASSWORD
+                        {isRtl ? '1. كلمة المرور' : '1. PASSWORD'}
                       </div>
                       <div className="p-1.5 rounded-lg bg-blue-950/80 border border-sky-500/40 text-sky-300">
-                        2. TOTP CODE
+                        {isRtl ? '2. رمز TOTP' : '2. TOTP CODE'}
                       </div>
                       <div className="p-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/60 text-[#00D6A3] flex items-center justify-center gap-1">
-                        <span>3. PASS</span>
+                        <span>{isRtl ? '3. مصرح' : '3. PASS'}</span>
                         <Check className="w-3 h-3" />
                       </div>
                     </div>
@@ -2058,10 +2124,10 @@ export default function App() {
                 <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
                   <div className="flex items-center gap-1.5 text-slate-300">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Throttled Anti-Brute-Force</span>
+                    <span>{isRtl ? 'حماية من محاولات التخمين' : 'Throttled Anti-Brute-Force'}</span>
                   </div>
                   <span className="text-[10px] font-bold text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
-                    ACTIVE
+                    {isRtl ? 'نشط' : 'ACTIVE'}
                   </span>
                 </div>
               </motion.div>
@@ -2083,37 +2149,39 @@ export default function App() {
                       <Lock className="w-6 h-6" />
                     </div>
                     <span className="text-[11px] font-mono font-bold text-[#00D6A3] bg-[#001228] px-3 py-1 rounded-full border border-emerald-500/30">
-                      02 • 403 RBAC
+                      {isRtl ? '02 • حظر 403 وصلاحيات' : '02 • 403 RBAC'}
                     </span>
                   </div>
 
                   {/* Title & Description */}
                   <div className="space-y-2.5">
                     <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
-                      Role-Based Access Boundaries
+                      {isRtl ? 'حدود الصلاحيات حسب الأدوار' : 'Role-Based Access Boundaries'}
                     </h3>
                     <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
-                      Managers see only their own team's leads; agents can never open another agent's record by direct URL — enforced server-side with 403s.
+                      {isRtl 
+                        ? 'يرى المديرون عملاء فريقهم فقط، ولا يمكن لأي وكيل فتح سجل وكيل آخر عبر رابط مباشر URL — محمي ومفروض بالكامل من الخادم بخطأ 403.' 
+                        : 'Managers see only their own team\'s leads; agents can never open another agent\'s record by direct URL — enforced server-side with 403s.'}
                     </p>
                   </div>
 
                   {/* Micro Access Boundary Visualization */}
                   <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
                     <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
-                      ACCESS BOUNDARY RULES
+                      {isRtl ? 'قواعد حدود الوصول' : 'ACCESS BOUNDARY RULES'}
                     </div>
                     <div className="space-y-1 text-[10px] font-mono">
                       <div className="flex items-center justify-between p-1 px-2 rounded-md bg-blue-950/80 border border-blue-800/40">
-                        <span className="text-slate-300">Manager:</span>
-                        <span className="text-[#39BFF5] font-bold">Team Leads Only ✓</span>
+                        <span className="text-slate-300">{isRtl ? 'المدير:' : 'Manager:'}</span>
+                        <span className="text-[#39BFF5] font-bold">{isRtl ? 'عملاء الفريق فقط ✓' : 'Team Leads Only ✓'}</span>
                       </div>
                       <div className="flex items-center justify-between p-1 px-2 rounded-md bg-blue-950/80 border border-blue-800/40">
-                        <span className="text-slate-300">Agent:</span>
-                        <span className="text-emerald-400 font-bold">Own Records Only ✓</span>
+                        <span className="text-slate-300">{isRtl ? 'الوكيل:' : 'Agent:'}</span>
+                        <span className="text-emerald-400 font-bold">{isRtl ? 'سجلاته الخاصة فقط ✓' : 'Own Records Only ✓'}</span>
                       </div>
                       <div className="flex items-center justify-between p-1 px-2 rounded-md bg-rose-950/50 border border-rose-500/30 text-rose-300">
-                        <span>Direct URL Bypass:</span>
-                        <span className="font-bold">403 FORBIDDEN</span>
+                        <span>{isRtl ? 'تجاوز الرابط المباشر:' : 'Direct URL Bypass:'}</span>
+                        <span className="font-bold">{isRtl ? '403 محظور' : '403 FORBIDDEN'}</span>
                       </div>
                     </div>
                   </div>
@@ -2123,10 +2191,10 @@ export default function App() {
                 <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
                   <div className="flex items-center gap-1.5 text-slate-300">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Zero URL Leak Guarantee</span>
+                    <span>{isRtl ? 'ضمان منع تسرب الروابط' : 'Zero URL Leak Guarantee'}</span>
                   </div>
                   <span className="text-[10px] font-bold text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
-                    ENFORCED
+                    {isRtl ? 'إلزامي' : 'ENFORCED'}
                   </span>
                 </div>
               </motion.div>
@@ -2148,37 +2216,39 @@ export default function App() {
                       <UserX className="w-6 h-6" />
                     </div>
                     <span className="text-[11px] font-mono font-bold text-[#F5B91E] bg-[#001228] px-3 py-1 rounded-full border border-amber-500/30">
-                      03 • INSTANT REVOKE
+                      {isRtl ? '03 • إلغاء فوري للجلسات' : '03 • INSTANT REVOKE'}
                     </span>
                   </div>
 
                   {/* Title & Description */}
                   <div className="space-y-2.5">
                     <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
-                      Instant Offboarding
+                      {isRtl ? 'إنهاء الصلاحيات الفوري' : 'Instant Offboarding'}
                     </h3>
                     <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
-                      Terminated staff lose all session and token access in under a minute, with their leads automatically reassigned or parked per policy.
+                      {isRtl 
+                        ? 'يفقد الموظف المنتهية خدماته جميع الجلسات والرموز المميزة في أقل من دقيقة، مع إعادة توزيع عملائه أو حفظهم تلقائياً حسب السياسة.' 
+                        : 'Terminated staff lose all session and token access in under a minute, with their leads automatically reassigned or parked per policy.'}
                     </p>
                   </div>
 
                   {/* Micro Revocation Timeline */}
                   <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
                     <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
-                      OFFBOARDING TIMELINE (&lt; 60s)
+                      {isRtl ? 'الجدول الزمني للإلغاء (< 60 ث)' : 'OFFBOARDING TIMELINE (< 60s)'}
                     </div>
                     <div className="grid grid-cols-2 gap-1.5 text-[9.5px] font-mono">
                       <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
-                        <span className="text-amber-400">1.</span> Status: Terminated
+                        <span className="text-amber-400">1.</span> {isRtl ? 'الحالة: منتهٍ' : 'Status: Terminated'}
                       </div>
                       <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
-                        <span className="text-amber-400">2.</span> Session Killed
+                        <span className="text-amber-400">2.</span> {isRtl ? 'إنهاء الجلسة' : 'Session Killed'}
                       </div>
                       <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
-                        <span className="text-amber-400">3.</span> Tokens Revoked
+                        <span className="text-amber-400">3.</span> {isRtl ? 'إبطال الرموز' : 'Tokens Revoked'}
                       </div>
                       <div className="p-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 flex items-center gap-1">
-                        <span className="text-emerald-400">4.</span> Leads Reassigned ✓
+                        <span className="text-emerald-400">4.</span> {isRtl ? 'إعادة التعيين ✓' : 'Leads Reassigned ✓'}
                       </div>
                     </div>
                   </div>
@@ -2188,10 +2258,10 @@ export default function App() {
                 <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
                   <div className="flex items-center gap-1.5 text-slate-300">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Sub-60s Session Kill</span>
+                    <span>{isRtl ? 'إنهاء جلسة في أقل من 60 ث' : 'Sub-60s Session Kill'}</span>
                   </div>
                   <span className="text-[10px] font-bold text-amber-300 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30">
-                    AUTO-PARK
+                    {isRtl ? 'حفظ تلقائي' : 'AUTO-PARK'}
                   </span>
                 </div>
               </motion.div>
@@ -2208,22 +2278,30 @@ export default function App() {
             >
               <div className="flex items-center gap-2 text-slate-300">
                 <Lock className="w-4 h-4 text-[#39BFF5]" />
-                <span className="font-bold text-white">ENCRYPTED AT REST & IN TRANSIT</span>
+                <span className="font-bold text-white">
+                  {isRtl ? 'تشفير تام أثناء التخزين والنقل' : 'ENCRYPTED AT REST & IN TRANSIT'}
+                </span>
               </div>
               <div className="hidden lg:block text-slate-600">•</div>
               <div className="flex items-center gap-2 text-slate-300">
                 <ShieldCheck className="w-4 h-4 text-[#00D6A3]" />
-                <span className="font-bold text-white">SERVER-SIDE ACCESS CONTROL</span>
+                <span className="font-bold text-white">
+                  {isRtl ? 'تحكم بالوصول من جانب الخادم' : 'SERVER-SIDE ACCESS CONTROL'}
+                </span>
               </div>
               <div className="hidden lg:block text-slate-600">•</div>
               <div className="flex items-center gap-2 text-slate-300">
                 <UserCheck className="w-4 h-4 text-[#39BFF5]" />
-                <span className="font-bold text-white">INSTANT SESSION REVOCATION</span>
+                <span className="font-bold text-white">
+                  {isRtl ? 'إلغاء فوري للجلسات' : 'INSTANT SESSION REVOCATION'}
+                </span>
               </div>
               <div className="hidden lg:block text-slate-600">•</div>
               <div className="flex items-center gap-2 text-slate-300">
                 <Award className="w-4 h-4 text-[#F5B91E]" />
-                <span className="font-bold text-white">AUDIT READY GCC SECURITY</span>
+                <span className="font-bold text-white">
+                  {isRtl ? 'أمان متوافق مع معايير الخليج' : 'AUDIT READY GCC SECURITY'}
+                </span>
               </div>
             </motion.div>
 
@@ -2256,13 +2334,13 @@ export default function App() {
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#0858A8] text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
                 <RefreshCw className="w-3.5 h-3.5 text-[#0858A8] animate-spin" style={{ animationDuration: '6s' }} />
-                <span>ENTIRE AGENCY CONNECTED</span>
+                <span>{isRtl ? 'اتصال الوكالة بالكامل' : 'ENTIRE AGENCY CONNECTED'}</span>
               </div>
 
               {/* Heading */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
                 {isRtl ? (
-                  'وكالتك بالكامل متصلة في نظام تشغيل موحد'
+                  <span>وكالتك بالكامل متصلة في نظام تشغيل موحد</span>
                 ) : (
                   <>
                     Your Entire Brokerage.{' '}
@@ -2276,7 +2354,7 @@ export default function App() {
               {/* Description */}
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
                 {isRtl ? (
-                  'ربط فوري بين عملاء البوابات، وروبوت واتساب الذكي، وتطبيق المعاينات الميدانية، واعتمادات العمولات المحاسبية في لوحة تحكم واحدة متزامنة.'
+                  'القضاء التام على عزلة البيانات. ربط استلام عملاء البوابات، وروبوتات واتساب من ميتا، والوكلاء الميدانيين في المعاينات، واعتمادات المحاسبة في مركز قيادة مباشر واحد.'
                 ) : (
                   'Eliminate data silos permanently. Connect portal lead ingestion, Meta WhatsApp bots, offline mobile viewing agents, and accounting signoffs into one synchronized live command center.'
                 )}
@@ -2289,8 +2367,12 @@ export default function App() {
                     <Zap className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-xs sm:text-sm font-bold text-slate-900">Instant Bidirectional Synchronization</div>
-                    <div className="text-xs text-slate-500 mt-0.5">Every lead assignment, viewing log, and price change syncs in &lt; 10ms.</div>
+                    <div className="text-xs sm:text-sm font-bold text-slate-900">
+                      {isRtl ? 'تزامن فوري ثنائي الاتجاه' : 'Instant Bidirectional Synchronization'}
+                    </div>
+                    <div className="text-xs text-slate-500 mt-0.5">
+                      {isRtl ? 'كل تعيين عميل، وسجل معاينة، وتغيير سعر يتزامن في أقل من 10 مللي ثانية.' : 'Every lead assignment, viewing log, and price change syncs in < 10ms.'}
+                    </div>
                   </div>
                 </div>
 
@@ -2299,8 +2381,12 @@ export default function App() {
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-xs sm:text-sm font-bold text-slate-900">Zero Data Leakage &amp; Full Audit Trail</div>
-                    <div className="text-xs text-slate-500 mt-0.5">Server-enforced RBAC and instant token offboarding protect agency records.</div>
+                    <div className="text-xs sm:text-sm font-bold text-slate-900">
+                      {isRtl ? 'انعدام تسرب البيانات وسجل تدقيق كامل' : 'Zero Data Leakage & Full Audit Trail'}
+                    </div>
+                    <div className="text-xs text-slate-500 mt-0.5">
+                      {isRtl ? 'صلاحيات وصول مفروضة من الخادم وإلغاء فوري للجلسات لحماية سجلات الوكالة.' : 'Server-enforced RBAC and instant token offboarding protect agency records.'}
+                    </div>
                   </div>
                 </div>
 
@@ -2309,8 +2395,12 @@ export default function App() {
                     <Smartphone className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-xs sm:text-sm font-bold text-slate-900">Seamless Field-to-Desk Workflow</div>
-                    <div className="text-xs text-slate-500 mt-0.5">Agents log basement viewings offline; directors approve commissions anywhere.</div>
+                    <div className="text-xs sm:text-sm font-bold text-slate-900">
+                      {isRtl ? 'سير عمل سلس من الميدان إلى الإدارة' : 'Seamless Field-to-Desk Workflow'}
+                    </div>
+                    <div className="text-xs text-slate-500 mt-0.5">
+                      {isRtl ? 'يسجل الوكلاء المعاينات في القبو والمواقف دون إنترنت، ويعتمد المديرون العمولات من أي مكان.' : 'Agents log basement viewings offline; directors approve commissions anywhere.'}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2345,12 +2435,12 @@ export default function App() {
                   <div className="flex items-center gap-2.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
                     <span className="text-xs font-mono font-bold text-slate-800 uppercase tracking-wider">
-                      AGENCY TOPOLOGY • ALL 4 NODES LIVE
+                      {isRtl ? 'طوبولوجيا الوكالة • جميع العقد الـ 4 نشطة' : 'AGENCY TOPOLOGY • ALL 4 NODES LIVE'}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] font-mono text-emerald-700 font-bold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                      LATENCY: 4ms
+                      {isRtl ? 'زمن الاستجابة: 4 مللي ث' : 'LATENCY: 4ms'}
                     </span>
                   </div>
                 </div>
@@ -2369,17 +2459,19 @@ export default function App() {
                           </div>
                           <div>
                             <div className="text-xs font-bold text-slate-900 group-hover:text-[#0858A8] transition-colors">
-                              Portal Ingestion
+                              {isRtl ? 'استيراد البوابات العقارية' : 'Portal Ingestion'}
                             </div>
                             <div className="text-[10px] font-mono text-slate-500">Property Finder &amp; Bayut</div>
                           </div>
                         </div>
                         <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                          &lt; 6s SYNC
+                          {isRtl ? 'تزامن < 6 ث' : '< 6s SYNC'}
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-600 leading-normal">
-                        Instant webhook capture with automated round-robin lead assignment.
+                        {isRtl 
+                          ? 'التقاط فوري عبر Webhook مع توزيع تلقائي دوري للعملاء.' 
+                          : 'Instant webhook capture with automated round-robin lead assignment.'}
                       </p>
                     </div>
 
@@ -2392,17 +2484,21 @@ export default function App() {
                           </div>
                           <div>
                             <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                              Meta WhatsApp AI
+                              {isRtl ? 'ذكاء اصطناعي واتساب من ميتا' : 'Meta WhatsApp AI'}
                             </div>
-                            <div className="text-[10px] font-mono text-slate-500">24/7 Buyer Qualification</div>
+                            <div className="text-[10px] font-mono text-slate-500">
+                              {isRtl ? 'تأهيل المشترين 24/7' : '24/7 Buyer Qualification'}
+                            </div>
                           </div>
                         </div>
                         <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                          VERIFIED
+                          {isRtl ? 'موثق' : 'VERIFIED'}
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-600 leading-normal">
-                        Conversational budget &amp; location qualification in Arabic &amp; English.
+                        {isRtl 
+                          ? 'تأهيل محادثاتي للميزانية والمنطقة بالعربية والإنجليزية.' 
+                          : 'Conversational budget & location qualification in Arabic & English.'}
                       </p>
                     </div>
                   </div>
@@ -2426,14 +2522,16 @@ export default function App() {
                             </span>
                           </div>
                           <div className="text-xs text-blue-200/80 font-normal mt-0.5">
-                            GCC Real Estate Real-Time Operating Infrastructure
+                            {isRtl 
+                              ? 'البنية التحتية التشغيلية العقارية اللحظية في الخليج' 
+                              : 'GCC Real Estate Real-Time Operating Infrastructure'}
                           </div>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-2 text-[10.5px] font-mono text-emerald-300 bg-[#001430]/90 px-3 py-1.5 rounded-xl border border-emerald-400/30 shrink-0 shadow-inner">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                        <span>SYNCHRONIZED BACKBONE</span>
+                        <span>{isRtl ? 'نواة متزامنة' : 'SYNCHRONIZED BACKBONE'}</span>
                       </div>
                     </div>
                   </div>
@@ -2449,9 +2547,11 @@ export default function App() {
                           </div>
                           <div>
                             <div className="text-xs font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
-                              Offline Mobile App
+                              {isRtl ? 'تطبيق ميداني دون إنترنت' : 'Offline Mobile App'}
                             </div>
-                            <div className="text-[10px] font-mono text-slate-500">Basement &amp; Field Viewings</div>
+                            <div className="text-[10px] font-mono text-slate-500">
+                              {isRtl ? 'معاينات المواقف والميدان' : 'Basement & Field Viewings'}
+                            </div>
                           </div>
                         </div>
                         <span className="text-[9.5px] font-mono font-bold text-violet-700 bg-violet-50 px-2 py-0.5 rounded-md border border-violet-200">
@@ -2459,7 +2559,9 @@ export default function App() {
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-600 leading-normal">
-                        Offline viewing log queue with instant replay once 5G connects.
+                        {isRtl 
+                          ? 'قائمة تسجيل معاينات دون اتصال مع إعادة تزامن فورية عند اتصال 5G.' 
+                          : 'Offline viewing log queue with instant replay once 5G connects.'}
                       </p>
                     </div>
 
@@ -2472,17 +2574,21 @@ export default function App() {
                           </div>
                           <div>
                             <div className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
-                              Financial Control
+                              {isRtl ? 'الرقابة المالية' : 'Financial Control'}
                             </div>
-                            <div className="text-[10px] font-mono text-slate-500">2-Step Deal Signoffs</div>
+                            <div className="text-[10px] font-mono text-slate-500">
+                              {isRtl ? 'اعتمادات صفقات بخطوتين' : '2-Step Deal Signoffs'}
+                            </div>
                           </div>
                         </div>
                         <span className="text-[9.5px] font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
-                          AUDIT LOCK
+                          {isRtl ? 'قفل تدقيق' : 'AUDIT LOCK'}
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-600 leading-normal">
-                        Sales Director to Accounting approval lock with zero URL leakage.
+                        {isRtl 
+                          ? 'قفل اعتماد من مدير المبيعات إلى المحاسبة مع منع تام لتسرب الروابط.' 
+                          : 'Sales Director to Accounting approval lock with zero URL leakage.'}
                       </p>
                     </div>
                   </div>
@@ -2493,9 +2599,11 @@ export default function App() {
                 <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
                   <span className="flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                    Encrypted GCC Network
+                    <span>{isRtl ? 'شبكة خليجية مشفرة' : 'Encrypted GCC Network'}</span>
                   </span>
-                  <span className="text-[#0858A8] font-semibold">100% Data Sovereignty</span>
+                  <span className="text-[#0858A8] font-semibold">
+                    {isRtl ? 'سيادة بيانات 100%' : '100% Data Sovereignty'}
+                  </span>
                 </div>
 
               </div>
@@ -2524,7 +2632,7 @@ export default function App() {
             {/* LEFT COLUMN: INTERACTIVE FINANCIAL SIMULATION CONSOLE               */}
             {/* ------------------------------------------------------------------ */}
             <motion.div 
-              className="lg:col-span-7 space-y-6"
+              className={`lg:col-span-7 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -2532,15 +2640,20 @@ export default function App() {
             >
               <div className="space-y-3">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider shadow-sm">
-                  <TrendingUp className="w-3.5 h-3.5 text-emerald-400 shrink-0" /> Calculated Revenue Recovery
+                  <TrendingUp className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>{isRtl ? 'حساب الإيرادات المستردة' : 'Calculated Revenue Recovery'}</span>
                 </span>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
-                  Calculate Your Agency's Recovered Revenue
+                  {isRtl 
+                    ? 'احسب الإيرادات المستردة لوكالتك العقارية' 
+                    : 'Calculate Your Agency\'s Recovered Revenue'}
                 </h2>
 
                 <p className="text-blue-100/80 text-base sm:text-lg leading-relaxed font-normal max-w-xl">
-                  Drag the sliders to estimate how much revenue your brokerage loses to unassigned leads and spreadsheet delays each year.
+                  {isRtl 
+                    ? 'حرك المؤشرات لتقدير حجم الإيرادات التي تفقدها وكالتك سنوياً بسبب بطء توزيع العملاء وتأخيرات جداول إكسل.' 
+                    : 'Drag the sliders to estimate how much revenue your brokerage loses to unassigned leads and spreadsheet delays each year.'}
                 </p>
               </div>
 
@@ -2550,9 +2663,11 @@ export default function App() {
                 {/* Slider 1: Active Agents */}
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-xs font-bold">
-                    <span className="text-blue-200 tracking-wide">Number of Active Agents</span>
+                    <span className="text-blue-200 tracking-wide">
+                      {isRtl ? 'عدد الوكلاء النشطين' : 'Number of Active Agents'}
+                    </span>
                     <span className="text-sky-300 font-mono text-sm bg-sky-950/80 px-3 py-1 rounded-lg border border-sky-800/60 shadow-inner">
-                      {agentCount} Agents
+                      {agentCount} {isRtl ? 'وكيل' : 'Agents'}
                     </span>
                   </div>
                   <div className="relative flex items-center">
@@ -2566,16 +2681,18 @@ export default function App() {
                     />
                   </div>
                   <div className="flex justify-between text-[10px] text-blue-300/60 font-mono">
-                    <span>3 Boutique</span>
-                    <span>50 Mid-Size</span>
-                    <span>100+ Enterprise</span>
+                    <span>{isRtl ? '3 بوتيك' : '3 Boutique'}</span>
+                    <span>{isRtl ? '50 متوسطة' : '50 Mid-Size'}</span>
+                    <span>{isRtl ? '100+ كبرى' : '100+ Enterprise'}</span>
                   </div>
                 </div>
 
                 {/* Slider 2: Average Deal Value */}
                 <div className="space-y-3 pt-2">
                   <div className="flex justify-between items-center text-xs font-bold">
-                    <span className="text-blue-200 tracking-wide">Average Property Transaction Value</span>
+                    <span className="text-blue-200 tracking-wide">
+                      {isRtl ? 'متوسط قيمة الصفقة العقارية' : 'Average Property Transaction Value'}
+                    </span>
                     <span className="text-emerald-400 font-mono text-sm bg-emerald-950/80 px-3 py-1 rounded-lg border border-emerald-500/40 shadow-inner">
                       {isRtl ? `${avgDealValue.toLocaleString()} ر.ق / د.إ` : `AED / QAR ${avgDealValue.toLocaleString()}`}
                     </span>
@@ -2592,9 +2709,9 @@ export default function App() {
                     />
                   </div>
                   <div className="flex justify-between text-[10px] text-blue-300/60 font-mono">
-                    <span>500K Mid-Market</span>
-                    <span>5M Luxury</span>
-                    <span>10M+ Prime</span>
+                    <span>{isRtl ? '500 ألف سوق متوسط' : '500K Mid-Market'}</span>
+                    <span>{isRtl ? '5 مليون فاخر' : '5M Luxury'}</span>
+                    <span>{isRtl ? '10 مليون+ استثنائي' : '10M+ Prime'}</span>
                   </div>
                 </div>
 
@@ -2605,12 +2722,14 @@ export default function App() {
                     <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none" />
                     <div className="text-xs text-emerald-300 font-medium flex items-center gap-1.5 mb-1">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      Est. Recovered Revenue
+                      <span>{isRtl ? 'الإيرادات التقديرية المستردة' : 'Est. Recovered Revenue'}</span>
                     </div>
                     <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1 font-mono">
-                      {isRtl ? `${annualSavedRevenue.toLocaleString()} ر.ق/د.إ` : `AED ${annualSavedRevenue.toLocaleString()}`}
+                      {isRtl ? `${annualSavedRevenue.toLocaleString()} ر.ق / د.إ` : `AED ${annualSavedRevenue.toLocaleString()}`}
                     </div>
-                    <div className="text-[11px] text-blue-200/70 mt-1 font-medium">per year saved</div>
+                    <div className="text-[11px] text-blue-200/70 mt-1 font-medium">
+                      {isRtl ? 'وفورات سنوية مستردة' : 'per year saved'}
+                    </div>
                   </div>
 
                   {/* Hours Saved Box */}
@@ -2618,12 +2737,14 @@ export default function App() {
                     <div className="absolute top-0 right-0 w-24 h-24 bg-sky-500/10 rounded-full blur-xl pointer-events-none" />
                     <div className="text-xs text-sky-300 font-medium flex items-center gap-1.5 mb-1">
                       <Clock className="w-3.5 h-3.5 text-sky-400" />
-                      Hours Saved / Month
+                      <span>{isRtl ? 'ساعات موفرة / شهرياً' : 'Hours Saved / Month'}</span>
                     </div>
                     <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1 font-mono">
-                      {monthlyHoursSaved} Hrs
+                      {monthlyHoursSaved} {isRtl ? 'ساعة' : 'Hrs'}
                     </div>
-                    <div className="text-[11px] text-blue-200/70 mt-1 font-medium">no manual spreadsheets</div>
+                    <div className="text-[11px] text-blue-200/70 mt-1 font-medium">
+                      {isRtl ? 'دون جداول إكسل يدوية' : 'no manual spreadsheets'}
+                    </div>
                   </div>
                 </div>
 
@@ -2650,9 +2771,13 @@ export default function App() {
                     <Zap className="w-5 h-5" />
                   </div>
                 </div>
-                <div className="text-base font-bold text-white">Sub-10s Response</div>
+                <div className="text-base font-bold text-white">
+                  {isRtl ? 'استجابة تحت 10 ثوانٍ' : 'Sub-10s Response'}
+                </div>
                 <p className="text-xs text-blue-100/75 leading-relaxed">
-                  Leads assigned to active agents before competitor calls.
+                  {isRtl 
+                    ? 'توزيع العملاء على الوكلاء النشطين قبل اتصال المنافسين.' 
+                    : 'Leads assigned to active agents before competitor calls.'}
                 </p>
               </div>
 
@@ -2666,9 +2791,13 @@ export default function App() {
                     <CheckCircle className="w-5 h-5" />
                   </div>
                 </div>
-                <div className="text-base font-bold text-white">Faster Approvals</div>
+                <div className="text-base font-bold text-white">
+                  {isRtl ? 'اعتمادات أسرع 4.2 أضعاف' : 'Faster Approvals'}
+                </div>
                 <p className="text-xs text-blue-100/75 leading-relaxed">
-                  Enforced 2-step director to accounting deal signoffs.
+                  {isRtl 
+                    ? 'اعتماد إلزامي بخطوتين من المدير إلى المحاسبة.' 
+                    : 'Enforced 2-step director to accounting deal signoffs.'}
                 </p>
               </div>
             </motion.div>
