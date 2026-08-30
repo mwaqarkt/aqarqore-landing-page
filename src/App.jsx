@@ -95,60 +95,78 @@ const MARKET_PROPERTIES = {
     {
       id: 'doha-1',
       title: 'Beachfront Standalone Villa',
+      titleAr: 'فيلا مستقلة على شاطئ البحر',
       location: 'West Bay Lagoon • Doha, Qatar',
+      locationAr: 'لاغون الخليج الغربي • الدوحة، قطر',
       price: 'QAR 8,500,000',
+      priceAr: '8,500,000 ر.ق',
       image: PROPERTY_IMAGES.waterfrontVilla,
       badge: 'Auto-Assigned in 3s',
+      badgeAr: 'توزيع تلقائي خلال 3 ثوانٍ',
       badgeIcon: Zap,
       badgeColor: 'emerald',
       specs: [
-        { label: '5 Beds', icon: BedDouble },
-        { label: '6 Baths', icon: Bath },
-        { label: '750 sqm', icon: Maximize2 }
+        { label: '5 Beds', labelAr: '5 غرف', icon: BedDouble },
+        { label: '6 Baths', labelAr: '6 حمامات', icon: Bath },
+        { label: '750 sqm', labelAr: '750 م²', icon: Maximize2 }
       ],
       featureLeftIcon: MessageSquare,
       featureLeftLabel: 'WhatsApp Lead Qualification',
+      featureLeftLabelAr: 'تأهيل عملاء واتساب الذكي',
       featureRightLabel: 'Buyer Verified',
+      featureRightLabelAr: 'مشترٍ موثق',
       featureRightType: 'check',
       theme: 'blue'
     },
     {
       id: 'doha-2',
       title: 'The Pearl Marina Sky Penthouse',
+      titleAr: 'بنتهاوس سماوي مارينا اللؤلؤة',
       location: 'Porto Arabia • The Pearl, Qatar',
+      locationAr: 'بورتو أرابيا • اللؤلؤة، قطر',
       price: 'QAR 6,200,000',
+      priceAr: '6,200,000 ر.ق',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
       badge: 'AI Bot Active 24/7',
+      badgeAr: 'روبوت الذكاء يعمل 24/7',
       badgeIcon: Bot,
       badgeColor: 'emerald',
       specs: [
-        { label: '4 Beds', icon: BedDouble },
-        { label: '5 Baths', icon: Bath },
-        { label: '520 sqm', icon: Maximize2 }
+        { label: '4 Beds', labelAr: '4 غرف', icon: BedDouble },
+        { label: '5 Baths', labelAr: '5 حمامات', icon: Bath },
+        { label: '520 sqm', labelAr: '520 م²', icon: Maximize2 }
       ],
       featureLeftIcon: RefreshCw,
       featureLeftLabel: 'Portal Auto-Sync',
+      featureLeftLabelAr: 'تزامن فوري مع البوابات',
       featureRightLabel: 'Property Finder Qatar Live',
+      featureRightLabelAr: 'بروبرتي فايندر قطر مباشر',
       featureRightType: 'check',
       theme: 'teal'
     },
     {
       id: 'doha-3',
       title: 'Lusail Waterfront Commercial Tower',
+      titleAr: 'برج تجاري على واجهة لوسيل البحرية',
       location: 'Marina Promenade • Lusail, Qatar',
+      locationAr: 'ممشى المارينا • لوسيل، قطر',
       price: 'QAR 18,500,000',
+      priceAr: '18,500,000 ر.ق',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
       badge: 'Duplicate Protection',
+      badgeAr: 'حماية من ازدواجية العملاء',
       badgeIcon: ShieldCheck,
       badgeColor: 'gold',
       specs: [
-        { label: 'Grade A', icon: Building },
-        { label: '12 Floors', icon: Building2 },
-        { label: '2,800 sqm', icon: Maximize2 }
+        { label: 'Grade A', labelAr: 'فئة أولى A', icon: Building },
+        { label: '12 Floors', labelAr: '12 طابقاً', icon: Building2 },
+        { label: '2,800 sqm', labelAr: '2,800 م²', icon: Maximize2 }
       ],
       featureLeftIcon: DollarSign,
       featureLeftLabel: 'Commission Signoff',
+      featureLeftLabelAr: 'اعتماد العمولات بخطوتين',
       featureRightLabel: '2-Step Director Lock',
+      featureRightLabelAr: 'إقفال مدير تنفيذي',
       featureRightType: 'lock',
       theme: 'gold'
     }
@@ -157,60 +175,78 @@ const MARKET_PROPERTIES = {
     {
       id: 'dubai-1',
       title: 'Palm Jumeirah Signature Sky Villa',
+      titleAr: 'فيلا سماوية فاخرة بنخلة جميرا',
       location: 'Palm Jumeirah • Dubai, UAE',
+      locationAr: 'نخلة جميرا • دبي، الإمارات',
       price: 'AED 14,900,000',
+      priceAr: '14,900,000 د.إ',
       image: PROPERTY_IMAGES.heroPenthouse,
       badge: 'Auto-Assigned in 2s',
+      badgeAr: 'توزيع تلقائي خلال ثانيتين',
       badgeIcon: Zap,
       badgeColor: 'emerald',
       specs: [
-        { label: '4 Beds', icon: BedDouble },
-        { label: '5 Baths', icon: Bath },
-        { label: '580 sqm', icon: Maximize2 }
+        { label: '4 Beds', labelAr: '4 غرف', icon: BedDouble },
+        { label: '5 Baths', labelAr: '5 حمامات', icon: Bath },
+        { label: '580 sqm', labelAr: '580 م²', icon: Maximize2 }
       ],
       featureLeftIcon: MessageSquare,
       featureLeftLabel: 'WhatsApp Lead Qualification',
+      featureLeftLabelAr: 'تأهيل عملاء واتساب الذكي',
       featureRightLabel: 'HNW Verified',
+      featureRightLabelAr: 'مستثمر موثق',
       featureRightType: 'check',
       theme: 'blue'
     },
     {
       id: 'dubai-2',
       title: 'Downtown Burj View Luxury Suite',
+      titleAr: 'جناح فندقي فاخر بإطلالة برج خليفة',
       location: 'Opera District • Downtown Dubai, UAE',
+      locationAr: 'منطقة الأوبرا • وسط دبي، الإمارات',
       price: 'AED 8,750,000',
+      priceAr: '8,750,000 د.إ',
       image: PROPERTY_IMAGES.luxuryInterior,
       badge: 'Bayut & PF Direct Sync',
+      badgeAr: 'تزامن مباشر مع بيوت وبروبرتي فايندر',
       badgeIcon: RefreshCw,
       badgeColor: 'cyan',
       specs: [
-        { label: '3 Beds', icon: BedDouble },
-        { label: '4 Baths', icon: Bath },
-        { label: '340 sqm', icon: Maximize2 }
+        { label: '3 Beds', labelAr: '3 غرف', icon: BedDouble },
+        { label: '4 Baths', labelAr: '4 حمامات', icon: Bath },
+        { label: '340 sqm', labelAr: '340 م²', icon: Maximize2 }
       ],
       featureLeftIcon: RefreshCw,
       featureLeftLabel: 'Portal Auto-Sync',
+      featureLeftLabelAr: 'تزامن فوري مع البوابات',
       featureRightLabel: 'Bayut Live UAE',
+      featureRightLabelAr: 'بيوت الإمارات مباشر',
       featureRightType: 'check',
       theme: 'teal'
     },
     {
       id: 'dubai-3',
       title: 'Saadiyat Beachfront Signature Villa',
+      titleAr: 'فيلا شاطئية مميزة بجزيرة السعديات',
       location: 'Saadiyat Island • Abu Dhabi, UAE',
+      locationAr: 'جزيرة السعديات • أبوظبي، الإمارات',
       price: 'AED 21,000,000',
+      priceAr: '21,000,000 د.إ',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
       badge: 'Duplicate Protection',
+      badgeAr: 'حماية من ازدواجية العملاء',
       badgeIcon: ShieldCheck,
       badgeColor: 'gold',
       specs: [
-        { label: '6 Beds', icon: BedDouble },
-        { label: '7 Baths', icon: Bath },
-        { label: '920 sqm', icon: Maximize2 }
+        { label: '6 Beds', labelAr: '6 غرف', icon: BedDouble },
+        { label: '7 Baths', labelAr: '7 حمامات', icon: Bath },
+        { label: '920 sqm', labelAr: '920 م²', icon: Maximize2 }
       ],
       featureLeftIcon: DollarSign,
       featureLeftLabel: 'Commission Signoff',
+      featureLeftLabelAr: 'اعتماد العمولات بخطوتين',
       featureRightLabel: '2-Step Director Lock',
+      featureRightLabelAr: 'إقفال مدير تنفيذي',
       featureRightType: 'lock',
       theme: 'gold'
     }
@@ -219,60 +255,78 @@ const MARKET_PROPERTIES = {
     {
       id: 'riyadh-1',
       title: 'Commercial Corporate Headquarters',
+      titleAr: 'مقر شركات ومكاتب تجارية كبرى',
       location: 'KAFD Financial District • Riyadh, KSA',
+      locationAr: 'مركز الملك عبد الله المالي (كافد) • الرياض، السعودية',
       price: 'SAR 24,000,000',
+      priceAr: '24,000,000 ر.س',
       image: PROPERTY_IMAGES.riyadhTower,
       badge: 'Duplicate Protection',
+      badgeAr: 'حماية من ازدواجية العملاء',
       badgeIcon: ShieldCheck,
       badgeColor: 'gold',
       specs: [
-        { label: 'Grade A', icon: Building },
-        { label: '8 Floors', icon: Building2 },
-        { label: '1,400 sqm', icon: Maximize2 }
+        { label: 'Grade A', labelAr: 'فئة أولى A', icon: Building },
+        { label: '8 Floors', labelAr: '8 طوابق', icon: Building2 },
+        { label: '1,400 sqm', labelAr: '1,400 م²', icon: Maximize2 }
       ],
       featureLeftIcon: DollarSign,
       featureLeftLabel: 'Deal Audit Trail',
+      featureLeftLabelAr: 'سجل تدقيق الصفقات',
       featureRightLabel: 'PDPL & CITC Compliant',
+      featureRightLabelAr: 'متوافق مع هيئة البيانات والاتصالات',
       featureRightType: 'lock',
       theme: 'gold'
     },
     {
       id: 'riyadh-2',
       title: 'Al-Hizam Luxury Private Estate',
+      titleAr: 'قصر سكني خاص وفاخر بحي الحزام',
       location: 'Al-Hizam Al-Dhahabi • Riyadh, KSA',
+      locationAr: 'الحزام الذهبي • الرياض، السعودية',
       price: 'SAR 16,800,000',
+      priceAr: '16,800,000 ر.س',
       image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80',
       badge: 'AI Bot Active 24/7',
+      badgeAr: 'روبوت الذكاء يعمل 24/7',
       badgeIcon: Bot,
       badgeColor: 'emerald',
       specs: [
-        { label: '6 Beds', icon: BedDouble },
-        { label: '8 Baths', icon: Bath },
-        { label: '1,100 sqm', icon: Maximize2 }
+        { label: '6 Beds', labelAr: '6 غرف', icon: BedDouble },
+        { label: '8 Baths', labelAr: '8 حمامات', icon: Bath },
+        { label: '1,100 sqm', labelAr: '1,100 م²', icon: Maximize2 }
       ],
       featureLeftIcon: MessageSquare,
       featureLeftLabel: 'WhatsApp Lead Qualification',
+      featureLeftLabelAr: 'تأهيل عملاء واتساب الذكي',
       featureRightLabel: 'VIP Arabic Flow',
+      featureRightLabelAr: 'مسار عملاء VIP بالعربية',
       featureRightType: 'check',
       theme: 'blue'
     },
     {
       id: 'riyadh-3',
       title: 'Jeddah Corniche Waterfront Residence',
+      titleAr: 'إقامة فاخرة على واجهة كورنيش جدة',
       location: 'North Corniche • Jeddah, KSA',
+      locationAr: 'الكورنيش الشمالي • جدة، السعودية',
       price: 'SAR 11,500,000',
+      priceAr: '11,500,000 ر.س',
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
       badge: 'Aqar.fm Portal Sync',
+      badgeAr: 'تزامن مباشر مع عقار.إف إم',
       badgeIcon: RefreshCw,
       badgeColor: 'cyan',
       specs: [
-        { label: '4 Beds', icon: BedDouble },
-        { label: '5 Baths', icon: Bath },
-        { label: '620 sqm', icon: Maximize2 }
+        { label: '4 Beds', labelAr: '4 غرف', icon: BedDouble },
+        { label: '5 Baths', labelAr: '5 حمامات', icon: Bath },
+        { label: '620 sqm', labelAr: '620 م²', icon: Maximize2 }
       ],
       featureLeftIcon: RefreshCw,
       featureLeftLabel: 'Portal Auto-Sync',
+      featureLeftLabelAr: 'تزامن فوري مع البوابات',
       featureRightLabel: 'Aqar.fm Direct Live',
+      featureRightLabelAr: 'عقار.إف إم مباشر',
       featureRightType: 'check',
       theme: 'teal'
     }
@@ -417,12 +471,24 @@ export default function App() {
 
             {/* Center: Existing Navigation Links */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-slate-700">
-              <a href="#problem" className="hover:text-[#0858A8] transition-colors py-1">Why AqarQore</a>
-              <a href="#showcase" className="hover:text-[#0858A8] transition-colors py-1">Live Property Hub</a>
-              <a href="#features" className="hover:text-[#0858A8] transition-colors py-1">Features</a>
-              <a href="#security" className="hover:text-[#0858A8] transition-colors py-1">Security</a>
-              <a href="#roi" className="hover:text-[#0858A8] transition-colors py-1">ROI Calculator</a>
-              <a href="#pricing" className="hover:text-[#0858A8] transition-colors py-1">Pricing</a>
+              <a href="#problem" className="hover:text-[#0858A8] transition-colors py-1">
+                {isRtl ? 'لماذا AqarQore' : 'Why AqarQore'}
+              </a>
+              <a href="#showcase" className="hover:text-[#0858A8] transition-colors py-1">
+                {isRtl ? 'بوابة العقارات' : 'Live Property Hub'}
+              </a>
+              <a href="#features" className="hover:text-[#0858A8] transition-colors py-1">
+                {isRtl ? 'المميزات' : 'Features'}
+              </a>
+              <a href="#security" className="hover:text-[#0858A8] transition-colors py-1">
+                {isRtl ? 'الأمان والحماية' : 'Security'}
+              </a>
+              <a href="#roi" className="hover:text-[#0858A8] transition-colors py-1">
+                {isRtl ? 'حاسبة العائد' : 'ROI Calculator'}
+              </a>
+              <a href="#pricing" className="hover:text-[#0858A8] transition-colors py-1">
+                {isRtl ? 'الأسعار' : 'Pricing'}
+              </a>
             </div>
 
             {/* Right: Existing Action Items & Primary CTA */}
@@ -471,42 +537,42 @@ export default function App() {
                     href="#problem"
                     className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
-                    Why AqarQore
+                    {isRtl ? 'لماذا AqarQore' : 'Why AqarQore'}
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#showcase"
                     className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
-                    Live Property Hub
+                    {isRtl ? 'بوابة العقارات' : 'Live Property Hub'}
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#features"
                     className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
-                    Features
+                    {isRtl ? 'المميزات' : 'Features'}
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#security"
                     className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
-                    Security
+                    {isRtl ? 'الأمان والحماية' : 'Security'}
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#roi"
                     className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
-                    ROI Calculator
+                    {isRtl ? 'حاسبة العائد' : 'ROI Calculator'}
                   </a>
                   <a
                     onClick={() => setIsMobileMenuOpen(false)}
                     href="#pricing"
                     className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
-                    Pricing
+                    {isRtl ? 'الأسعار' : 'Pricing'}
                   </a>
                 </div>
               </motion.div>
@@ -690,37 +756,37 @@ export default function App() {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest text-[#0858A8] bg-blue-50 border border-blue-200/60 shadow-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0858A8] animate-pulse" />
-              <span>• LIVE PROPERTY FEED •</span>
+              <span>{isRtl ? '• بث حي ومباشر للعقارات •' : '• LIVE PROPERTY FEED •'}</span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#0858A8] animate-pulse" />
             </div>
 
             {/* H2 Title */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-              Premium Properties. Live from GCC.
+              {isRtl ? 'عقارات مميزة. مباشرة من أسواق الخليج.' : 'Premium Properties. Live from GCC.'}
             </h2>
 
             {/* Subtitle */}
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-              Verified. Qualified. Connected to your agency in real time.
+              {isRtl ? 'موثقة ومؤهلة بالذكاء الاصطناعي، متصلة بوكالتك في الوقت الفعلي.' : 'Verified. Qualified. Connected to your agency in real time.'}
             </p>
 
             {/* 4 Feature Badges Strip */}
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-3">
               <div className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs text-slate-700 font-medium flex items-center gap-2 shadow-xs">
                 <Building className="w-3.5 h-3.5 text-[#1078C0]" />
-                <span>Live from Property Portals</span>
+                <span>{isRtl ? 'مباشر من البوابات العقارية' : 'Live from Property Portals'}</span>
               </div>
               <div className="px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-xs text-emerald-800 font-medium flex items-center gap-2 shadow-xs">
                 <Target className="w-3.5 h-3.5 text-emerald-600" />
-                <span>AI Verified Leads</span>
+                <span>{isRtl ? 'عملاء مؤهلون بالذكاء الاصطناعي' : 'AI Verified Leads'}</span>
               </div>
               <div className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs text-slate-700 font-medium flex items-center gap-2 shadow-xs">
                 <Bot className="w-3.5 h-3.5 text-[#1078C0]" />
-                <span>Agent Auto-Assignment</span>
+                <span>{isRtl ? 'توزيع تلقائي للوكلاء' : 'Agent Auto-Assignment'}</span>
               </div>
               <div className="px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-300 text-xs text-amber-800 font-medium flex items-center gap-2 shadow-xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-600" />
-                <span>2-Step Commission Signoff</span>
+                <span>{isRtl ? 'اعتماد العمولات على خطوتين' : '2-Step Commission Signoff'}</span>
               </div>
             </div>
 
@@ -728,9 +794,9 @@ export default function App() {
             <div className="flex justify-center pt-2">
               <div className="inline-flex p-1 bg-slate-200/80 rounded-2xl border border-slate-300/70 shadow-inner">
                 {[
-                  { id: 'doha', label: 'Doha & Pearl Qatar' },
-                  { id: 'dubai', label: 'Dubai & Abu Dhabi' },
-                  { id: 'riyadh', label: 'Riyadh & Jeddah' }
+                  { id: 'doha', label: isRtl ? 'الدوحة واللؤلؤة قطر' : 'Doha & Pearl Qatar' },
+                  { id: 'dubai', label: isRtl ? 'دبي وأبوظبي' : 'Dubai & Abu Dhabi' },
+                  { id: 'riyadh', label: isRtl ? 'الرياض وجدة' : 'Riyadh & Jeddah' }
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -786,14 +852,14 @@ export default function App() {
                   <div className="relative h-[250px] overflow-hidden bg-slate-900">
                     <img 
                       src={property.image} 
-                      alt={property.title} 
+                      alt={isRtl ? (property.titleAr || property.title) : property.title} 
                       className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700 ease-out" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#001738] via-transparent to-black/40 pointer-events-none" />
 
                     {/* Top-Left Floating Price Tag */}
                     <div className="absolute top-3.5 left-3.5 px-4 py-1.5 rounded-full bg-[#00142E]/90 backdrop-blur-md text-white font-extrabold text-xs sm:text-sm border border-white/20 shadow-lg tracking-tight">
-                      {property.price}
+                      {isRtl ? (property.priceAr || property.price) : property.price}
                     </div>
 
                     {/* Top-Right Floating Bookmark Button */}
@@ -807,7 +873,7 @@ export default function App() {
                     {/* Bottom-Right Floating Badge Over Image */}
                     <div className={`absolute bottom-3 right-3.5 px-3 py-1 rounded-full border text-xs font-semibold flex items-center gap-1.5 backdrop-blur-md ${badgePillStyle}`}>
                       <BadgeIcon className="w-3.5 h-3.5 shrink-0" />
-                      <span>{property.badge}</span>
+                      <span>{isRtl ? (property.badgeAr || property.badge) : property.badge}</span>
                     </div>
                   </div>
 
@@ -817,12 +883,12 @@ export default function App() {
                       {/* Location with Pin */}
                       <div className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
                         <MapPin className="w-3.5 h-3.5 text-[#39BFF5] shrink-0" />
-                        <span className="truncate">{property.location}</span>
+                        <span className="truncate">{isRtl ? (property.locationAr || property.location) : property.location}</span>
                       </div>
 
                       {/* Title */}
                       <h3 className="text-xl font-bold text-white tracking-tight leading-snug group-hover:text-[#39BFF5] transition-colors">
-                        {property.title}
+                        {isRtl ? (property.titleAr || property.title) : property.title}
                       </h3>
 
                       {/* 3-Column Specifications Row */}
@@ -832,7 +898,7 @@ export default function App() {
                           return (
                             <div key={sIdx} className="flex items-center gap-2">
                               <IconComp className="w-4 h-4 text-slate-400" />
-                              <span className="font-semibold text-white">{spec.label}</span>
+                              <span className="font-semibold text-white">{isRtl ? (spec.labelAr || spec.label) : spec.label}</span>
                             </div>
                           );
                         })}
@@ -842,17 +908,19 @@ export default function App() {
                       <div className="p-3 rounded-2xl bg-[#00132C]/90 border border-blue-900/70 flex items-center justify-between text-xs">
                         <div className="flex items-center gap-2 text-slate-300">
                           <LeftIcon className="w-4 h-4 text-slate-400" />
-                          <span className="font-medium text-[11.5px]">{property.featureLeftLabel}</span>
+                          <span className="font-medium text-[11.5px]">
+                            {isRtl ? (property.featureLeftLabelAr || property.featureLeftLabel) : property.featureLeftLabel}
+                          </span>
                         </div>
 
                         {property.featureRightType === 'check' ? (
                           <div className={`flex items-center gap-1 font-semibold text-[11.5px] ${isEmerald ? 'text-[#00D6A3]' : 'text-[#39BFF5]'}`}>
-                            <span>{property.featureRightLabel}</span>
+                            <span>{isRtl ? (property.featureRightLabelAr || property.featureRightLabel) : property.featureRightLabel}</span>
                             <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                           </div>
                         ) : (
                           <div className="flex items-center gap-1 font-semibold text-[11.5px] text-[#F5B91E]">
-                            <span>{property.featureRightLabel}</span>
+                            <span>{isRtl ? (property.featureRightLabelAr || property.featureRightLabel) : property.featureRightLabel}</span>
                             <Lock className="w-3.5 h-3.5" />
                           </div>
                         )}
@@ -865,7 +933,7 @@ export default function App() {
                         href="#pricing"
                         className="text-xs font-semibold text-slate-400 group-hover:text-white transition-colors flex items-center gap-2"
                       >
-                        <span>View Details</span>
+                        <span>{isRtl ? 'عرض التفاصيل' : 'View Details'}</span>
                         <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-1 group-hover:text-[#39BFF5] transition-all" />
                       </a>
 
@@ -894,8 +962,10 @@ export default function App() {
                 <ShieldCheck className="w-5 h-5 text-[#0858A8]" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-slate-900">100% Verified Listings</div>
-                <div className="text-[11px] text-slate-500 leading-tight">Live & genuine properties from trusted portals</div>
+                <div className="text-xs font-bold text-slate-900">{isRtl ? 'قوائم موثقة 100%' : '100% Verified Listings'}</div>
+                <div className="text-[11px] text-slate-500 leading-tight">
+                  {isRtl ? 'عقارات حقيقية ومباشرة من بوابات موثوقة' : 'Live & genuine properties from trusted portals'}
+                </div>
               </div>
             </div>
 
@@ -905,8 +975,10 @@ export default function App() {
                 <Cpu className="w-5 h-5 text-emerald-600" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-slate-900">AI Powered Matching</div>
-                <div className="text-[11px] text-slate-500 leading-tight">Smart buyer qualification & auto agent assignment</div>
+                <div className="text-xs font-bold text-slate-900">{isRtl ? 'مطابقة بالذكاء الاصطناعي' : 'AI Powered Matching'}</div>
+                <div className="text-[11px] text-slate-500 leading-tight">
+                  {isRtl ? 'تأهيل المشترين وتوزيعهم تلقائياً للوكلاء' : 'Smart buyer qualification & auto agent assignment'}
+                </div>
               </div>
             </div>
 
@@ -916,8 +988,10 @@ export default function App() {
                 <Lock className="w-5 h-5 text-[#0858A8]" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-slate-900">Secure & Compliant</div>
-                <div className="text-[11px] text-slate-500 leading-tight">End-to-end encrypted GCC compliant system</div>
+                <div className="text-xs font-bold text-slate-900">{isRtl ? 'آمن ومتوافق' : 'Secure & Compliant'}</div>
+                <div className="text-[11px] text-slate-500 leading-tight">
+                  {isRtl ? 'نظام مشفر متوافق مع لوائح دول الخليج' : 'End-to-end encrypted GCC compliant system'}
+                </div>
               </div>
             </div>
 
@@ -927,8 +1001,10 @@ export default function App() {
                 <RefreshCw className="w-5 h-5 text-[#0858A8]" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-slate-900">Real-time Sync</div>
-                <div className="text-[11px] text-slate-500 leading-tight">Live updates from all major GCC property platforms</div>
+                <div className="text-xs font-bold text-slate-900">{isRtl ? 'تزامن فوري' : 'Real-time Sync'}</div>
+                <div className="text-[11px] text-slate-500 leading-tight">
+                  {isRtl ? 'تحديثات لحظية من منصات العقارات الخليجية' : 'Live updates from all major GCC property platforms'}
+                </div>
               </div>
             </div>
 
@@ -938,8 +1014,10 @@ export default function App() {
                 <Award className="w-5 h-5 text-amber-600" />
               </div>
               <div className="space-y-1">
-                <div className="text-xs font-bold text-slate-900">Higher Conversions</div>
-                <div className="text-[11px] text-slate-500 leading-tight">Faster response. Better leads. More closed deals.</div>
+                <div className="text-xs font-bold text-slate-900">{isRtl ? 'نسب تحويل أعلى' : 'Higher Conversions'}</div>
+                <div className="text-[11px] text-slate-500 leading-tight">
+                  {isRtl ? 'استجابة أسرع وعملاء أفضل وإغلاق صفقات أكثر' : 'Faster response. Better leads. More closed deals.'}
+                </div>
               </div>
             </div>
           </motion.div>
