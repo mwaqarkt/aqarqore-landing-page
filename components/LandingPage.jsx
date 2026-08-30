@@ -3553,7 +3553,10 @@ export default function LandingPage({ locale = 'en' }) {
                 <li><a href="#showcase" className="hover:text-white transition-colors">{isRtl ? 'وكالات دبي' : 'Dubai Brokerages'}</a></li>
                 <li><a href="#showcase" className="hover:text-white transition-colors">{isRtl ? 'واجهة الدوحة البحرية' : 'Doha Waterfront'}</a></li>
                 {!isRtl && (
-                  <li><Link href="/best-real-estate-crm-saudi-arabia/" className="hover:text-white transition-colors">Real Estate CRM Saudi Arabia</Link></li>
+                  <>
+                    <li><Link href="/best-real-estate-crm-saudi-arabia/" className="hover:text-white transition-colors">Real Estate CRM Saudi Arabia</Link></li>
+                    <li><Link href="/best-real-estate-crm-qatar/" className="hover:text-white transition-colors">Real Estate CRM Qatar</Link></li>
+                  </>
                 )}
                 <li><a href="#roi" className="hover:text-white transition-colors">{isRtl ? 'حاسبة الإيرادات' : 'Revenue Calculator'}</a></li>
                 <li><Link href={pricingHref} className="hover:text-white transition-colors">{isRtl ? 'خطط الوكالات' : 'Agency Plans'}</Link></li>
@@ -3569,7 +3572,7 @@ export default function LandingPage({ locale = 'en' }) {
                 <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'أمان على مستوى المؤسسات' : 'Institutional Security'}</a></li>
                 <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'سيادة بيانات الخليج' : 'GCC Data Sovereignty'}</a></li>
                 {!isRtl && (
-                  <li><Link href="/guides/ejari/" className="hover:text-white transition-colors">Ejari Guide (Dubai)</Link></li>
+                  <li><Link href="/guides/" className="hover:text-white transition-colors">Brokerage Guides</Link></li>
                 )}
                 <li><a href="#faq" className="hover:text-white transition-colors">{isRtl ? 'قاعدة المعرفة والأسئلة' : 'Knowledge Base & FAQ'}</a></li>
                 <li><a href={demoHref} className="hover:text-sky-300 font-semibold transition-colors">{isRtl ? 'احجز عرضاً مباشراً ←' : 'Book Live Demo →'}</a></li>
