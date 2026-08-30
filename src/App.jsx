@@ -1488,14 +1488,14 @@ export default function App() {
             {/* LEFT COLUMN: THE 74% VISUAL ANCHOR & EDITORIAL PROBLEM STATEMENT   */}
             {/* ------------------------------------------------------------------ */}
             <motion.div 
-              className="lg:col-span-5 space-y-6 lg:sticky lg:top-28"
+              className="lg:col-span-5 space-y-6 lg:sticky lg:top-28 text-left"
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7 }}
             >
               <span className="inline-block px-3.5 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 text-xs font-bold uppercase tracking-wider shadow-sm">
-                The GCC Brokerage Reality
+                {isRtl ? 'واقع وكالات العقار في الخليج' : 'The GCC Brokerage Reality'}
               </span>
 
               {/* Dominant 74% Visual Impact Anchor */}
@@ -1504,16 +1504,20 @@ export default function App() {
                   74%
                 </div>
                 <div className="text-xs uppercase tracking-widest font-bold text-rose-300/80 font-mono">
-                  Inquiries Lost to Competitors
+                  {isRtl ? 'استفسارات تُفقد لصالح المنافسين' : 'Inquiries Lost to Competitors'}
                 </div>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                Why 74% of GCC Real Estate Inquiries Never Turn Into Viewings
+                {isRtl 
+                  ? 'لماذا تفقد وكالات العقارات 74% من استفسارات المشترين قبل أن تتحول إلى معاينات؟' 
+                  : 'Why 74% of GCC Real Estate Inquiries Never Turn Into Viewings'}
               </h2>
 
               <p className="text-blue-100/80 text-base sm:text-lg leading-relaxed font-normal">
-                Running a high-performing brokerage on WhatsApp groups and manual Excel spreadsheets creates silent revenue leaks at every step of the funnel.
+                {isRtl 
+                  ? 'إدارة وكالة عقارية كبرى عبر مجموعات واتساب وجداول إكسل يدوية يتسبب في تسرب خفي للإيرادات في كل مرحلة من مراحل المبيعات.' 
+                  : 'Running a high-performing brokerage on WhatsApp groups and manual Excel spreadsheets creates silent revenue leaks at every step of the funnel.'}
               </p>
             </motion.div>
 
@@ -1528,17 +1532,17 @@ export default function App() {
               variants={staggerContainer}
             >
               {/* Luminous Vertical Tree Connection Line */}
-              <div className="hidden sm:block absolute top-8 bottom-8 left-6 w-[2px] bg-gradient-to-b from-rose-500/50 via-amber-500/40 to-blue-500/30 z-0 pointer-events-none" />
+              <div className={`hidden sm:block absolute top-8 bottom-8 ${isRtl ? 'right-6' : 'left-6'} w-[2px] bg-gradient-to-b from-rose-500/50 via-amber-500/40 to-blue-500/30 z-0 pointer-events-none`} />
 
               <div className="space-y-5 relative z-10">
                 
                 {/* Problem Node 01 */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="relative sm:pl-16 group"
+                  className={`relative ${isRtl ? 'sm:pr-16 text-right' : 'sm:pl-16 text-left'} group`}
                 >
                   {/* Connected Tree Dot */}
-                  <div className="hidden sm:flex absolute left-3.5 top-6 w-5 h-5 -translate-x-1/2 rounded-full bg-[#001738] border-2 border-rose-400 items-center justify-center shadow-[0_0_12px_rgba(244,63,94,0.6)] group-hover:scale-125 transition-transform z-10">
+                  <div className={`hidden sm:flex absolute ${isRtl ? 'right-3.5 translate-x-1/2' : 'left-3.5 -translate-x-1/2'} top-6 w-5 h-5 rounded-full bg-[#001738] border-2 border-rose-400 items-center justify-center shadow-[0_0_12px_rgba(244,63,94,0.6)] group-hover:scale-125 transition-transform z-10`}>
                     <div className="w-1.5 h-1.5 rounded-full bg-rose-400" />
                   </div>
 
@@ -1548,11 +1552,13 @@ export default function App() {
                         <Clock className="w-5 h-5" />
                       </div>
                       <h3 className="text-lg font-bold text-white group-hover:text-rose-200 transition-colors">
-                        Unassigned Weekend Leads
+                        {isRtl ? 'عملاء عطلة نهاية الأسبوع المهملون' : 'Unassigned Weekend Leads'}
                       </h3>
                     </div>
                     <p className="text-sm text-blue-100/75 leading-relaxed pl-0.5">
-                      Property Finder & Bayut leads arrive at 9 PM or Friday afternoon. By Monday morning, the buyer has already signed with a competitor.
+                      {isRtl 
+                        ? 'تصل استفسارات Property Finder و Bayut مساء الجمعة. وبحلول صباح الأحد، يكون المشتري قد تعاقد بالفعل مع وكالة منافسة.' 
+                        : 'Property Finder & Bayut leads arrive at 9 PM or Friday afternoon. By Monday morning, the buyer has already signed with a competitor.'}
                     </p>
                   </div>
                 </motion.div>
@@ -1560,10 +1566,10 @@ export default function App() {
                 {/* Problem Node 02 */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="relative sm:pl-16 group"
+                  className={`relative ${isRtl ? 'sm:pr-16 text-right' : 'sm:pl-16 text-left'} group`}
                 >
                   {/* Connected Tree Dot */}
-                  <div className="hidden sm:flex absolute left-3.5 top-6 w-5 h-5 -translate-x-1/2 rounded-full bg-[#001738] border-2 border-amber-400 items-center justify-center shadow-[0_0_12px_rgba(251,191,36,0.6)] group-hover:scale-125 transition-transform z-10">
+                  <div className={`hidden sm:flex absolute ${isRtl ? 'right-3.5 translate-x-1/2' : 'left-3.5 -translate-x-1/2'} top-6 w-5 h-5 rounded-full bg-[#001738] border-2 border-amber-400 items-center justify-center shadow-[0_0_12px_rgba(251,191,36,0.6)] group-hover:scale-125 transition-transform z-10`}>
                     <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
                   </div>
 
@@ -1573,11 +1579,13 @@ export default function App() {
                         <MessageSquare className="w-5 h-5" />
                       </div>
                       <h3 className="text-lg font-bold text-white group-hover:text-amber-200 transition-colors">
-                        WhatsApp Silos & Chaos
+                        {isRtl ? 'فوضى محادثات واتساب الفردية' : 'WhatsApp Silos & Chaos'}
                       </h3>
                     </div>
                     <p className="text-sm text-blue-100/75 leading-relaxed pl-0.5">
-                      Agents message prospects from personal phones. When an agent leaves, your client history, listing conversations, and lead data walk out the door with them.
+                      {isRtl 
+                        ? 'يراسل الوكلاء المشترين من هواتفهم الشخصية. وعند استقالة الوكيل، تخرج معه سجلات العملاء وتاريخ المحادثات وقاعدة البيانات بالكامل.' 
+                        : 'Agents message prospects from personal phones. When an agent leaves, your client history, listing conversations, and lead data walk out the door with them.'}
                     </p>
                   </div>
                 </motion.div>
@@ -1585,10 +1593,10 @@ export default function App() {
                 {/* Problem Node 03 */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="relative sm:pl-16 group"
+                  className={`relative ${isRtl ? 'sm:pr-16 text-right' : 'sm:pl-16 text-left'} group`}
                 >
                   {/* Connected Tree Dot */}
-                  <div className="hidden sm:flex absolute left-3.5 top-6 w-5 h-5 -translate-x-1/2 rounded-full bg-[#001738] border-2 border-purple-400 items-center justify-center shadow-[0_0_12px_rgba(192,132,252,0.6)] group-hover:scale-125 transition-transform z-10">
+                  <div className={`hidden sm:flex absolute ${isRtl ? 'right-3.5 translate-x-1/2' : 'left-3.5 -translate-x-1/2'} top-6 w-5 h-5 rounded-full bg-[#001738] border-2 border-purple-400 items-center justify-center shadow-[0_0_12px_rgba(192,132,252,0.6)] group-hover:scale-125 transition-transform z-10`}>
                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
                   </div>
 
@@ -1598,11 +1606,13 @@ export default function App() {
                         <DollarSign className="w-5 h-5" />
                       </div>
                       <h3 className="text-lg font-bold text-white group-hover:text-purple-200 transition-colors">
-                        Commission Disputes
+                        {isRtl ? 'نزاعات وازدواجية العمولات' : 'Commission Disputes'}
                       </h3>
                     </div>
                     <p className="text-sm text-blue-100/75 leading-relaxed pl-0.5">
-                      Without server-enforced approval steps, deal signoffs get skipped, double payouts happen, and top agents lose trust in accounting.
+                      {isRtl 
+                        ? 'بدون مسار تدقيق إلكتروني صارم، يتم تجاوز اعتمادات الصفقات وتحدث مدفوعات مكررة ويفقد كبار الوكلاء الثقة في الإدارة المالية.' 
+                        : 'Without server-enforced approval steps, deal signoffs get skipped, double payouts happen, and top agents lose trust in accounting.'}
                     </p>
                   </div>
                 </motion.div>
@@ -1610,10 +1620,10 @@ export default function App() {
                 {/* Problem Node 04 */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="relative sm:pl-16 group"
+                  className={`relative ${isRtl ? 'sm:pr-16 text-right' : 'sm:pl-16 text-left'} group`}
                 >
                   {/* Connected Tree Dot */}
-                  <div className="hidden sm:flex absolute left-3.5 top-6 w-5 h-5 -translate-x-1/2 rounded-full bg-[#001738] border-2 border-sky-400 items-center justify-center shadow-[0_0_12px_rgba(56,189,248,0.6)] group-hover:scale-125 transition-transform z-10">
+                  <div className={`hidden sm:flex absolute ${isRtl ? 'right-3.5 translate-x-1/2' : 'left-3.5 -translate-x-1/2'} top-6 w-5 h-5 rounded-full bg-[#001738] border-2 border-sky-400 items-center justify-center shadow-[0_0_12px_rgba(56,189,248,0.6)] group-hover:scale-125 transition-transform z-10`}>
                     <div className="w-1.5 h-1.5 rounded-full bg-sky-400" />
                   </div>
 
@@ -1623,11 +1633,13 @@ export default function App() {
                         <Layers className="w-5 h-5" />
                       </div>
                       <h3 className="text-lg font-bold text-white group-hover:text-sky-200 transition-colors">
-                        Duplicate Portal Listings
+                        {isRtl ? 'تكرار وازدواجية الإعلانات في البوابات' : 'Duplicate Portal Listings'}
                       </h3>
                     </div>
                     <p className="text-sm text-blue-100/75 leading-relaxed pl-0.5">
-                      Multiple agents post the exact same unit with different prices, embarrassing the agency brand and causing portal penalty demotions.
+                      {isRtl 
+                        ? 'ينشر عدة وكلاء نفس العقار بأسعار مختلفة، مما يضر بسمعة الوكالة ويتسبب في عقوبات خفض الترتيب من البوابات العقارية.' 
+                        : 'Multiple agents post the exact same unit with different prices, embarrassing the agency brand and causing portal penalty demotions.'}
                     </p>
                   </div>
                 </motion.div>
