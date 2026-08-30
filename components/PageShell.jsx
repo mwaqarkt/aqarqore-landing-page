@@ -100,7 +100,10 @@ export default function PageShell({ locale = 'en', hasTranslation = true, childr
               {isRtl ? 'المميزات' : 'Features'}
             </Link>
             {!isRtl && (
-              <Link href="/guides/" className="hover:text-white transition-colors">Guides</Link>
+              <>
+                <Link href="/integrations/" className="hover:text-white transition-colors">Integrations</Link>
+                <Link href="/guides/" className="hover:text-white transition-colors">Guides</Link>
+              </>
             )}
           </span>
         </div>

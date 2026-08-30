@@ -316,7 +316,7 @@ const MARKET_PROPERTIES = {
       price: 'SAR 11,500,000',
       priceAr: '11,500,000 ر.س',
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
-      badge: 'Aqar Portal Sync',
+      badge: 'Aqar.fm Portal Sync',
       badgeAr: 'تزامن مباشر مع عقار.إف إم',
       badgeIcon: RefreshCw,
       badgeColor: 'cyan',
@@ -328,7 +328,7 @@ const MARKET_PROPERTIES = {
       featureLeftIcon: RefreshCw,
       featureLeftLabel: 'Portal Auto-Sync',
       featureLeftLabelAr: 'تزامن فوري مع البوابات',
-      featureRightLabel: 'Aqar Direct Live',
+      featureRightLabel: 'Aqar.fm Direct Live',
       featureRightLabelAr: 'عقار.إف إم مباشر',
       featureRightType: 'check',
       theme: 'teal'
