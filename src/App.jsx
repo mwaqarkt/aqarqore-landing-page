@@ -533,13 +533,13 @@ export default function App() {
 
         {/* MAIN HERO CONTENT CONTAINER */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-10 items-center">
             
             {/* ---------------------------------------------------------------------- */}
-            {/* LEFT COLUMN: VALUE PROPOSITION & TYPOGRAPHIC ENGINE (~50%)             */}
+            {/* LEFT COLUMN: VALUE PROPOSITION & TYPOGRAPHIC ENGINE (~42%)             */}
             {/* ---------------------------------------------------------------------- */}
             <motion.div 
-              className="lg:col-span-6 xl:col-span-6 space-y-6 text-left"
+              className="lg:col-span-5 xl:col-span-5 space-y-6 text-left"
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
@@ -558,7 +558,7 @@ export default function App() {
               {/* Main Dominant Display Headline */}
               <motion.h1 
                 variants={fadeInUp}
-                className="text-4xl sm:text-5xl xl:text-[58px] font-extrabold tracking-tight text-white leading-[1.08] max-w-[620px]"
+                className="text-4xl sm:text-5xl xl:text-[54px] 2xl:text-[58px] font-extrabold tracking-tight text-white leading-[1.08] max-w-[560px]"
               >
                 {isRtl ? (
                   <>
@@ -586,7 +586,7 @@ export default function App() {
               {/* High-Readability Supporting Paragraph */}
               <motion.p 
                 variants={fadeInUp} 
-                className="text-base sm:text-lg lg:text-[18px] text-[#A9C9E8] font-normal leading-[1.65] max-w-[600px]"
+                className="text-base sm:text-lg lg:text-[17px] text-[#A9C9E8] font-normal leading-[1.65] max-w-[520px]"
               >
                 {isRtl ? (
                   'توزيع تلقائي لعملاء Property Finder و Bayut و WhatsApp في أقل من 10 ثوانٍ. تأهيل العملاء بالذكاء الاصطناعي، وتطبيق ميداني، وموافقة عمولات بخطوتين في نظام خليجي موحد'
@@ -635,32 +635,32 @@ export default function App() {
             </motion.div>
 
             {/* ---------------------------------------------------------------------- */}
-            {/* RIGHT COLUMN: FLOATING AQARQORE COMMAND CENTER UI GRAPHIC (~50%)       */}
+            {/* RIGHT COLUMN: EXPANDED FLOATING COMMAND CENTER UI GRAPHIC (~58%)       */}
             {/* ---------------------------------------------------------------------- */}
             <motion.div 
-              className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end"
+              className="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center lg:justify-end"
               initial={{ opacity: 0, scale: 0.94, y: 25 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Parallax Container with Subtle Floating Animation */}
+              {/* Parallax Container with Large Scale */}
               <motion.div
                 style={{
                   x: mouseOffset.x * 0.5,
                   y: mouseOffset.y * 0.5,
                   transition: 'transform 0.15s ease-out'
                 }}
-                className="relative w-full max-w-[620px] lg:max-w-none flex items-center justify-center"
+                className="relative w-full max-w-[780px] xl:max-w-[860px] 2xl:max-w-[940px] flex items-center justify-center lg:translate-x-4 xl:translate-x-8"
               >
                 <div className="relative group w-full">
                   {/* Subtle Outer Cyan Glow Aura */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/25 via-[#39BFF5]/30 to-[#0878D1]/25 rounded-3xl blur-3xl opacity-75 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   
-                  {/* High-Resolution GCC Command Center Dashboard & Glowing Node Base Graphic */}
+                  {/* High-Resolution GCC Command Center Dashboard Graphic */}
                   <img 
                     src="/hero-command-center-hud.png" 
                     alt="AqarQore GCC Command Center"
-                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105"
+                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.95)] filter saturate-105 scale-105 sm:scale-110 lg:scale-115 xl:scale-120 origin-center lg:origin-right"
                   />
                 </div>
               </motion.div>
