@@ -516,22 +516,16 @@ export default function App() {
       </header>
 
       {/* -------------------------------------------------------------------------- */}
-      {/* 1. HERO SECTION: GCC PROPERTY OPERATING SYSTEM WITH SKYLINE BG & UI MOCKUP */}
+      {/* 1. HERO SECTION: GCC PROPERTY OPERATING SYSTEM                             */}
       {/* -------------------------------------------------------------------------- */}
       <section 
         onMouseMove={handleHeroMouseMove}
-        className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001B3D] text-white overflow-hidden"
+        className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001128] text-white overflow-hidden"
       >
-        {/* Layer 1: Official GCC Skyline (Dubai • Doha • Riyadh) Connected Network Image */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-70 filter brightness-75 saturate-110"
-          style={{ backgroundImage: 'url(/gcc-hero-bg.jpg)' }}
-        />
-
-        {/* Layer 2: Deep Midnight Contrast Overlays for Maximum Text Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00142E]/98 via-[#001B3D]/85 to-[#001B3D]/70 z-0 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001B3D]/85 via-transparent to-[#001B3D]/95 z-0 pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-[#0878D1]/15 via-[#39BFF5]/10 to-transparent blur-[130px] pointer-events-none z-0" />
+        {/* Subtle Ambient Radial Lighting */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-[#0878D1]/10 blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/10 blur-[150px] pointer-events-none" />
 
         {/* MAIN HERO CONTENT CONTAINER (LEFT COPY + RIGHT VISUAL) */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
@@ -652,21 +646,18 @@ export default function App() {
                   y: mouseOffset.y * 0.5,
                   transition: 'transform 0.15s ease-out'
                 }}
-                className="relative w-full max-w-[620px] lg:max-w-none flex items-center justify-center"
+                className="relative w-full max-w-[680px] lg:max-w-none flex items-center justify-center"
               >
-                <div className="relative group">
+                <div className="relative group w-full">
                   {/* Subtle Outer Cyan Glow Aura */}
-                  <div className="absolute -inset-1.5 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-xl opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   
-                  {/* High-Resolution Transparent Command Center Image with Embedded Central Emblem */}
+                  {/* High-Resolution GCC Command Center Dashboard Graphic */}
                   <img 
-                    src="/aqarqore-command-center.png" 
-                    alt="AqarQore Intelligence Command Center"
-                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.85)] filter saturate-105 rounded-2xl"
+                    src="/hero-panoramic.png" 
+                    alt="AqarQore GCC Command Center"
+                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105 rounded-2xl"
                   />
-
-                  {/* Pulsating Center Core Ambient Glow */}
-                  <div className="absolute left-[49.4%] top-[51.7%] -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#39BFF5]/20 blur-md pointer-events-none z-20 animate-pulse" />
                 </div>
               </motion.div>
             </motion.div>
