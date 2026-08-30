@@ -1708,98 +1708,176 @@ export default function App() {
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.25 }}
             variants={fadeInUp}
           >
-            <div className={`lg:col-span-6 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-[#1078C0] border border-blue-200/60 text-xs font-bold uppercase tracking-wider">
-                <Zap className="w-3.5 h-3.5" />
+            <div className={`lg:col-span-5 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/70 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
+                <Zap className="w-3.5 h-3.5 text-[#0858A8] animate-pulse" />
                 <span>{isRtl ? 'الميزة 01 • سرعة الوصول للعميل' : 'Feature 01 • Speed to Lead'}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                {isRtl 
-                  ? 'لا تفقد عميلاً مهتماً أبداً بسبب بطء الاستجابة' 
-                  : 'Never Lose a Hot Lead to a Slow Response'}
+              
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight text-slate-900 tracking-tight">
+                {isRtl ? (
+                  <>
+                    <span>لا تفقد عميلاً مهتماً أبداً</span>{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      بسبب بطء الاستجابة.
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Never Lose a Hot Lead to a{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      Slow Response.
+                    </span>
+                  </>
+                )}
               </h3>
-              <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
+
+              <p className="text-slate-600 leading-relaxed text-base font-normal">
                 {isRtl 
-                  ? 'يتم توزيع كل عميل جديد تلقائياً في أقل من 10 ثوانٍ عبر مسار القواعد الذكية، مع تجاوز الوكلاء المشغولين أو خارج الدوام، وتوثيق سجل قرار التوزيع بالكامل. لا يظل أي عميل دون تعيين بينما ما زال اهتمامه في ذروته.' 
-                  : 'Every new lead is auto-assigned by a rule pipeline in under 10 seconds, skipping agents who are at capacity, off-hours, or unavailable, with a full decision trail stored for every assignment. No lead sits unassigned; every inquiry reaches an available agent while the prospect is still hot.'}
+                  ? 'يتم توزيع كل عميل جديد تلقائياً في أقل من 10 ثوانٍ عبر محرك القواعد الذكية، مع فحص السعة الاستيعابية وحالة دوام الوكلاء بدقة متناهية.' 
+                  : 'Every new lead is auto-assigned by an intelligent rule engine in under 10 seconds, matching agent specialty, active workload capacity, and office availability.'}
               </p>
+
+              {/* Feature Benefit Chips */}
               <div className="pt-2 space-y-3">
-                <div className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <Check className="w-4 h-4 stroke-[3]" />
                   </div>
-                  <span>
-                    {isRtl ? 'توزيع دوري وسعة استيعاب في أقل من 10 ثوانٍ' : 'Sub-10 second round-robin and capacity distribution'}
-                  </span>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'توزيع دوري ذكي في أقل من 10 ثوانٍ' : 'Sub-10s Round-Robin & Capacity Routing'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'تجاوز الوكلاء المشغولين أو خارج أوقات العمل تلقائياً' : 'Auto-skips off-duty agents and agents at max lead limits'}
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-blue-100 text-[#0858A8] flex items-center justify-center shrink-0 font-bold text-xs">
+                    <ShieldCheck className="w-4 h-4" />
                   </div>
-                  <span>
-                    {isRtl ? 'سجل تدقيق ملزم وموثق لكل قرار توزيع' : 'Enforced audit trail for every lead assignment decision'}
-                  </span>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'سجل تدقيق ملزم وموثق لكل قرار توزيع' : 'Enforced Audit Trail for Every Assignment'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'توثيق قرار التوزيع والتوقيت الزمني بالكامل' : 'Complete timeline stamp and rule logic stored permanently'}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Feature 1 Mockup: High-Tech Rule Pipeline Terminal with Luxury Villa Background */}
-            <div className="lg:col-span-6">
-              <div className="rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden bg-slate-100 min-h-[320px] flex items-center">
-                {/* Luxury Villa Background Photo (Clearly Visible & Balanced) */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-                  style={{ backgroundImage: "url('/feature-luxury-villa-bg.jpg')" }}
-                />
-                {/* Balanced Light Tone Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-white/20 pointer-events-none" />
+            {/* Feature 1 UI Console: Clean Light Theme SaaS Dispatch Engine */}
+            <div className="lg:col-span-7">
+              <div className="rounded-3xl bg-white p-6 sm:p-7 border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,30,80,0.08)] relative overflow-hidden">
+                {/* Subtle Technical Grid Backdrop */}
+                <div className="absolute inset-0 bg-[radial-gradient(#0858A8_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.03] pointer-events-none" />
 
-                <div className="relative z-10 w-full bg-white/92 backdrop-blur-md p-4 sm:p-5 rounded-xl border border-white/90 shadow-lg">
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-200/80">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-rose-400" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                      <span className="text-[11px] text-slate-700 font-mono font-bold ml-1.5">
-                        {isRtl ? 'سجل مسار التوزيع التلقائي' : 'AUTOMATED RULE PIPELINE LOG'}
+                <div className="relative z-10 space-y-5">
+                  {/* Console Header Bar */}
+                  <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+                    <div className="flex items-center gap-3">
+                      <div className="flex gap-1.5">
+                        <span className="w-3 h-3 rounded-full bg-rose-400" />
+                        <span className="w-3 h-3 rounded-full bg-amber-400" />
+                        <span className="w-3 h-3 rounded-full bg-emerald-400" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-slate-700">
+                        {isRtl ? 'محرك التوزيع الفوري للعملاء' : 'LIVE LEAD DISPATCH CONSOLE'}
                       </span>
                     </div>
-                    <span className="text-[10px] text-emerald-800 font-mono font-bold bg-emerald-100/90 px-2.5 py-0.5 rounded border border-emerald-300">
-                      {isRtl ? 'تنفيذ خلال 0.04 ث' : '00:00:04s Execution'}
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-[11px] font-bold">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                      {isRtl ? 'استجابة فائقة: 2.4 ث' : 'Avg SLA: 00:00:02.4s'}
                     </span>
                   </div>
 
-                  <div className="space-y-2.5 font-sans text-xs">
-                    <div className="p-3.5 rounded-xl bg-white/95 border border-blue-200 shadow-2xs">
-                      <div className="flex justify-between items-center font-bold text-slate-900 text-sm">
-                        <span>{isRtl ? 'استفسار: برج مارينا لوسيل - غرفتان' : 'Inquiry: Lusail Marina Tower 2BR'}</span>
-                        <span className="text-xs text-[#0858A8] font-mono font-bold bg-blue-50 px-2.5 py-0.5 rounded border border-blue-200 shadow-2xs">
-                          {isRtl ? '2.8 مليون ر.ق' : 'QAR 2.8M'}
+                  {/* Incoming Lead Card */}
+                  <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-50/80 via-sky-50/50 to-indigo-50/60 border border-blue-200/80 shadow-xs">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                      <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 rounded-md bg-[#0858A8] text-white text-[10px] font-mono font-bold uppercase">
+                          Property Finder
+                        </span>
+                        <span className="text-xs font-bold text-slate-900">
+                          {isRtl ? 'فيلا لاغون الخليج الغربي' : 'West Bay Lagoon Luxury Villa'}
                         </span>
                       </div>
-                      <div className="mt-3 space-y-1.5 text-slate-700 text-xs">
-                        <div className="flex items-center gap-2">
-                          <span className="text-amber-600 font-bold">✕</span>
-                          <span>{isRtl ? 'فحص الوكيل #104 (عطلة الجمعة) ← تم التجاوز' : 'Checking Agent #104 (Off-duty Friday) → Skipped'}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-amber-600 font-bold">✕</span>
-                          <span>{isRtl ? 'فحص الوكيل #109 (الحد الأقصى 25 عميل) ← تم التجاوز' : 'Checking Agent #109 (At Max 25 Active Leads) → Skipped'}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-emerald-950 font-bold pt-1.5 border-t border-slate-200 bg-emerald-50/90 p-2 rounded-lg border border-emerald-200">
-                          <span className="text-emerald-600 font-bold">✓</span>
-                          <span>{isRtl ? 'تم التعيين للوكيل #112 (راشد الدوسري) ← تم الإجراء' : 'Assigned to Agent #112 (Rashid Al-Dosari) → Actioned'}</span>
-                        </div>
-                      </div>
+                      <span className="text-xs font-mono font-extrabold text-[#0858A8] bg-white px-2.5 py-0.5 rounded-lg border border-blue-200 shadow-2xs">
+                        {isRtl ? '8,500,000 ر.ق' : 'QAR 8,500,000'}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between text-[11px] text-slate-600 font-mono pt-1">
+                      <span>{isRtl ? 'المشتري: د. حمد الهاجري • مستثمر موثق' : 'Buyer: Dr. Hamad Al-Hajri • Verified VIP'}</span>
+                      <span className="text-emerald-700 font-bold">{isRtl ? 'جاري الفحص والتوزيع...' : 'Matching Rules...'}</span>
                     </div>
                   </div>
 
-                  <div className="mt-3 pt-2.5 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-600 font-mono">
-                    <span>{isRtl ? 'القاعدة: المطابقة الجغرافية + السعة' : 'Rule: Geo-Match + Capacity'}</span>
-                    <span className="text-emerald-700 font-bold">{isRtl ? 'تم التحقق والتوثيق' : 'Verified & Logged'}</span>
+                  {/* 3-Agent Live Evaluation Matrix */}
+                  <div className="space-y-2.5">
+                    {/* Agent 1: Off-duty */}
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50/80 border border-slate-200/70 text-xs">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600 text-xs">
+                          TM
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-700">{isRtl ? 'طارق منصور' : 'Tariq Mansour'}</div>
+                          <div className="text-[10px] text-slate-400">{isRtl ? 'وكيل عقارات أول • الدوحة' : 'Senior Agent • West Bay'}</div>
+                        </div>
+                      </div>
+                      <span className="px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 border border-rose-200 font-mono text-[10px] font-bold">
+                        {isRtl ? 'عطلة الجمعة ← تم التجاوز' : '✕ Off-Duty (Skipped)'}
+                      </span>
+                    </div>
+
+                    {/* Agent 2: At capacity */}
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50/80 border border-slate-200/70 text-xs">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600 text-xs">
+                          SN
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-700">{isRtl ? 'سارة النعيمي' : 'Sarah Al-Nuaimi'}</div>
+                          <div className="text-[10px] text-slate-400">{isRtl ? 'وكيل عقارات فاخرة' : 'Luxury Specialist'}</div>
+                        </div>
+                      </div>
+                      <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 border border-amber-200 font-mono text-[10px] font-bold">
+                        {isRtl ? 'الحد الأقصى (25/25) ← تم التجاوز' : '✕ Max Capacity 25/25'}
+                      </span>
+                    </div>
+
+                    {/* Agent 3: Actioned / Best Match */}
+                    <div className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-50/90 border border-emerald-300 text-xs shadow-xs">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                          RA
+                        </div>
+                        <div>
+                          <div className="font-bold text-emerald-950 text-sm">{isRtl ? 'راشد الدوسري' : 'Rashid Al-Dosari'}</div>
+                          <div className="text-[11px] text-emerald-700 font-medium">{isRtl ? 'متطابق جغرافياً • متفرغ الآن' : 'Geo-Match: West Bay • Available'}</div>
+                        </div>
+                      </div>
+                      <span className="px-3 py-1 rounded-lg bg-emerald-600 text-white font-mono text-[11px] font-bold shadow-xs">
+                        {isRtl ? '✓ تم التعيين خلال 2.4 ث' : '✓ ASSIGNED IN 2.4s'}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Console Footer Verification */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <span>{isRtl ? 'رقم الإشعار: #DISPATCH-9942-OK' : 'Trace ID: #DISPATCH-9942-OK'}</span>
+                    </span>
+                    <span className="text-[#0858A8] font-bold">{isRtl ? 'نسبة الاستجابة 100%' : '100% SLA Maintained'}</span>
                   </div>
                 </div>
               </div>
@@ -1808,73 +1886,138 @@ export default function App() {
 
           <hr className="border-slate-100" />
 
-          {/* FEATURE 2: AI WhatsApp Bot */}
+          {/* FEATURE 2: Conversational AI WhatsApp Bot */}
           <motion.div 
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.25 }}
             variants={fadeInUp}
           >
-            <div className={`lg:col-span-6 lg:order-2 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/60 text-xs font-bold uppercase tracking-wider">
+            <div className={`lg:col-span-5 lg:order-2 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/70 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
                 <Bot className="w-3.5 h-3.5 text-emerald-600" />
                 <span>{isRtl ? 'الميزة 02 • الذكاء الاصطناعي للمحادثات' : 'Feature 02 • Conversational AI'}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                {isRtl 
-                  ? 'تأهيل ميزانية المشتري ومنطقته المفضلة تلقائياً على مدار الساعة' 
-                  : 'Qualify Buyer Budget & Area Automatically 24/7'}
+              
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight text-slate-900 tracking-tight">
+                {isRtl ? (
+                  <>
+                    <span>تأهيل ميزانية المشتري ومنطقته المفضلة</span>{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008765] via-[#0858A8] to-[#001D42]">
+                      تلقائياً على مدار الساعة.
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Qualify Buyer Budget & Area{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008765] via-[#0858A8] to-[#001D42]">
+                      Automatically 24/7.
+                    </span>
+                  </>
+                )}
               </h3>
-              <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
+
+              <p className="text-slate-600 leading-relaxed text-base font-normal">
                 {isRtl 
-                  ? 'يرحب الروبوت بالمشتري ويؤهل ميزانيته والمنطقة ونوع العقار بمحادثة ذكية، ويعرض العقارات المطابقة كبطاقات، ثم يحيل المحادثة للوكيل البشري بكامل السياق داخل نافذة الـ 24 ساعة المعتمدة من ميتا. يفتح الوكلاء كل محادثة وهم يعلمون بالضبط طلب العميل.' 
-                  : 'The bot greets, qualifies budget/area/property type conversationally, presents matching listings as cards, then hands off to a human agent with full captured context inside Meta\'s 24-hour messaging window. Agents open every WhatsApp chat already knowing what the customer wants — no repeated questions, faster response, higher close rate.'}
+                  ? 'يرحب المساعد الذكي بالمشتري فوراً، يؤهل الميزانية ونوع العقار، ويعرض بطاقات العقارات المطابقة، ثم يسلم المحادثة للوكيل البشري بكامل السياق والتفاصيل.' 
+                  : 'The conversational AI greets incoming buyers instantly, qualifies their budget, area, and property requirements, presents matching listings, and hands off to your top agent with complete context.'}
               </p>
+
+              {/* Feature Benefit Chips */}
+              <div className="pt-2 space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <MessageSquare className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'واجهة برمجة واتساب السحابية الرسمية من ميتا' : 'Official WhatsApp Cloud API Verified'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'تفاعل فوري موثوق داخل نافذة الـ 24 ساعة المعتمدة' : 'Compliant high-delivery messaging within Meta 24-hr policy'}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <Zap className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'تسليم فوري للمحادثة بكامل ملف العميل' : 'Zero-Context-Loss Human Handoff'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'يبدأ الوكيل المحادثة وهو يعرف ميزانية وطلب العميل بالضبط' : 'Agents receive qualified buyer budget, preference, and timing'}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Feature 2 Mockup: Meta WhatsApp Bot Experience (Luxury Infinity Villa Background) */}
-            <div className="lg:col-span-6 lg:order-1">
-              <div className="rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden bg-slate-100 min-h-[320px] flex items-center justify-center">
-                {/* Ultra-Luxury Infinity Villa Background Photo */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-                  style={{ backgroundImage: "url('/luxury-villa-showcase.jpg')" }}
-                />
-                {/* Balanced Light Tone Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-white/20 pointer-events-none" />
-
-                <div className="relative z-10 w-full max-w-md bg-white/92 backdrop-blur-md rounded-2xl overflow-hidden border border-white/90 shadow-lg">
-                  {/* WhatsApp Chrome Bar */}
-                  <div className="bg-[#075E54] px-4 py-3 flex items-center justify-between text-white text-xs">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center font-bold text-xs">AQ</div>
+            {/* Feature 2 UI Console: Clean Light Theme WhatsApp Suite */}
+            <div className="lg:col-span-7 lg:order-1">
+              <div className="rounded-3xl bg-white p-6 sm:p-7 border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,30,80,0.08)] relative overflow-hidden">
+                <div className="max-w-md mx-auto rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white">
+                  {/* WhatsApp Header Bar */}
+                  <div className="bg-[#075E54] px-4 py-3 flex items-center justify-between text-white">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-full bg-emerald-400 text-slate-900 font-black text-xs flex items-center justify-center">
+                        AQ
+                      </div>
                       <div>
-                        <div className="font-bold text-sm">{isRtl ? 'مساعد AqarQore الذكي' : 'AqarQore AI Assistant'}</div>
-                        <div className="text-[10px] text-emerald-200 flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          <span>{isRtl ? 'موثق رسمياً من ميتا' : 'Official Meta API Verified'}</span>
+                        <div className="font-bold text-sm leading-tight flex items-center gap-1.5">
+                          <span>{isRtl ? 'مساعد AqarQore الذكي' : 'AqarQore Property AI'}</span>
+                          <span className="w-3.5 h-3.5 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center text-[8px] font-black">✓</span>
+                        </div>
+                        <div className="text-[10px] text-emerald-200 font-mono">
+                          {isRtl ? 'حساب تجاري موثق • متصل الآن' : 'Official Business Account • Online'}
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Chat Bubbles */}
-                  <div className="p-4 space-y-3 text-xs bg-[#0B141A]">
-                    <div className="bg-[#202C33] text-slate-100 p-3 rounded-2xl rounded-tl-sm max-w-[85%] border border-slate-700/50 shadow-sm leading-relaxed text-left">
-                      {isRtl ? 'مرحباً! هل تبحث عن فيلا 3 غرف في لاغون الخليج الغربي بسعر أقل من 4 مليون ر.ق؟' : 'Hello! Looking for a 3BR villa in West Bay Lagoon under QAR 4M?'}
+                  {/* Authentic WhatsApp Message Feed */}
+                  <div className="p-4 space-y-3 bg-[#EFEAE2] text-xs font-sans">
+                    {/* Bot Greeting */}
+                    <div className="bg-white text-slate-900 p-3 rounded-2xl rounded-tl-xs max-w-[88%] border border-slate-200/80 shadow-2xs leading-relaxed text-left">
+                      <p className="font-medium">
+                        {isRtl 
+                          ? 'مرحباً د. حمد! هل تبحث عن فيلا مستقلة بإطلالة بحرية في لاغون الخليج الغربي بميزانية 8 إلى 10 مليون ر.ق؟' 
+                          : 'Hello Dr. Hamad! Looking for a standalone beachfront villa in West Bay Lagoon around QAR 8M–10M?'}
+                      </p>
+                      <span className="text-[9px] text-slate-400 text-right block mt-1 font-mono">14:31</span>
                     </div>
-                    <div className="bg-[#005C4B] text-white p-3 rounded-2xl rounded-tr-sm max-w-[80%] ml-auto text-right shadow-sm leading-relaxed">
-                      {isRtl ? 'نعم، الميزانية تصل إلى 4.2 مليون ر.ق، وجاهز للمعاينة هذا السبت.' : 'Yes, budget up to 4.2M QAR. Ready to view this Saturday.'}
+
+                    {/* Buyer Response */}
+                    <div className="bg-[#D9FDD3] text-slate-900 p-3 rounded-2xl rounded-tr-xs max-w-[85%] ml-auto text-right border border-emerald-200 shadow-2xs leading-relaxed">
+                      <p className="font-medium">
+                        {isRtl 
+                          ? 'نعم بالضبط، 5 غرف نوم مع بركة سباحة خاصة، وجاهز لتوقيع العقد هذا الأسبوع.' 
+                          : 'Yes exactly, 5 bedrooms with private pool. Ready to sign this week.'}
+                      </p>
+                      <span className="text-[9px] text-emerald-700 text-right block mt-1 font-mono">14:32 ✓✓</span>
                     </div>
-                    <div className="bg-[#182229] text-slate-200 p-3.5 rounded-xl border border-emerald-500/40 shadow-md">
-                      <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mb-1.5">
-                        {isRtl ? '⚡ تحويل فوري للوكيل العقاري' : '⚡ Instant Handoff to Human Agent'}
-                      </span>
-                      <div className="text-xs text-blue-100 space-y-1 font-medium">
-                        <div>• {isRtl ? 'ملف المشتري:' : 'Buyer Profile:'} <span className="text-white font-bold">{isRtl ? 'مشتري موثق' : 'Verified Buyer'}</span></div>
-                        <div>• {isRtl ? 'الميزانية:' : 'Budget:'} <span className="text-emerald-400 font-bold">{isRtl ? '4.2 مليون ر.ق' : 'QAR 4.2M'}</span> • {isRtl ? 'المفضلة: الخليج الغربي' : 'Preferred: West Bay'}</div>
-                        <div>• {isRtl ? 'الوكيل المعين:' : 'Assigned Agent:'} <span className="text-sky-300 font-bold">{isRtl ? 'مريم الكواري' : 'Mariam Al-Kuwari'}</span></div>
+
+                    {/* AI Qualified Lead Handoff Card */}
+                    <div className="bg-white p-3.5 rounded-xl border-2 border-emerald-500/80 shadow-sm space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px] uppercase font-mono">
+                          {isRtl ? '⚡ تم التأهيل والتحويل الفوري' : '⚡ QUALIFIED VIP INVESTOR'}
+                        </span>
+                        <span className="text-[10px] text-emerald-700 font-mono font-bold">100% Match</span>
+                      </div>
+
+                      <div className="text-xs text-slate-800 space-y-1 pt-1 font-medium">
+                        <div className="flex justify-between">
+                          <span className="text-slate-500">{isRtl ? 'الميزانية المعتمدة:' : 'Budget:'}</span>
+                          <span className="font-bold text-emerald-700">{isRtl ? '8.5 - 10 مليون ر.ق' : 'QAR 8.5M - 10.0M'}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-500">{isRtl ? 'الوكيل المستلم:' : 'Assigned Agent:'}</span>
+                          <span className="font-bold text-[#0858A8]">{isRtl ? 'مريم الكواري (مدير تنفيذي)' : 'Mariam Al-Kuwari (Director)'}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1890,88 +2033,147 @@ export default function App() {
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.25 }}
             variants={fadeInUp}
           >
-            <div className={`lg:col-span-6 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200/60 text-xs font-bold uppercase tracking-wider">
+            <div className={`lg:col-span-5 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200/70 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
                 <DollarSign className="w-3.5 h-3.5 text-amber-600" />
                 <span>{isRtl ? 'الميزة 03 • الرقابة المالية' : 'Feature 03 • Financial Control'}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                {isRtl 
-                  ? 'اعتمادات عمولات دقيقة ومحمية من النزاعات' 
-                  : 'Dispute-Proof Commission Signoffs & Approvals'}
+              
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight text-slate-900 tracking-tight">
+                {isRtl ? (
+                  <>
+                    <span>اعتمادات عمولات دقيقة</span>{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      ومحمية من النزاعات.
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Dispute-Proof Commission{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      Signoffs & Approvals.
+                    </span>
+                  </>
+                )}
               </h3>
-              <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
+
+              <p className="text-slate-600 leading-relaxed text-base font-normal">
                 {isRtl 
-                  ? 'تمر كل صفقة مغلقة عبر مسار اعتماد إلزامي من مدير المبيعات إلى الإدارة المالية (لا يمكن لأي طرف تجاوز الآخر)، مع حساب العمولات تلقائياً وحماية دفعات الصرف من التكرار.' 
-                  : 'Every closed deal moves through an enforced Sales Director → Accounting approval chain (neither can skip or bypass the other), with commissions auto-calculated on approval and idempotency-protected payout batches. Agents trust their payout numbers, and leadership gets clean, dispute-proof financial control.'}
+                  ? 'تمر كل صفقة مغلقة عبر مسار اعتماد إلزامي من مدير المبيعات إلى الإدارة المالية، مع حساب العمولات تلقائياً وحماية دفعات الصرف من أي خطأ أو تكرار.' 
+                  : 'Every closed deal moves through an enforced 2-step verification chain: Sales Director signoff followed by Accounting payout batch validation, with full audit trail security.'}
               </p>
+
+              {/* Feature Benefit Chips */}
+              <div className="pt-2 space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <CheckCircle className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'اعتماد إلكتروني ملزم بخطوتين' : 'Strict 2-Step Approval Chain'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'لا يمكن تجاوز توقيع مدير المبيعات أو صرف الدفعات دون مطابقة' : 'No bypasses allowed between Sales Leadership and Accounting'}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <Lock className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'قفل منع الصرف المكرر وحماية النزاعات' : 'Idempotency Payout Protection'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'مطابقة بنكية دقيقة وسجل مالي غير قابل للتعديل' : 'Zero duplicate payouts, clean reconciled agency ledger'}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Feature 3 Mockup: Financial Control Ledger (Modern Architecture Building Background) */}
-            <div className="lg:col-span-6">
-              <div className="rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden bg-slate-100 min-h-[320px] flex items-center">
-                {/* Modern Architecture High-Rise Building Background Photo */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-                  style={{ backgroundImage: "url('/faq-modern-building.jpg')" }}
-                />
-                {/* Balanced Light Tone Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-white/20 pointer-events-none" />
-
-                <div className="relative z-10 w-full bg-white/92 backdrop-blur-md p-4 sm:p-5 rounded-xl border border-white/90 shadow-lg">
-                  <div className="text-xs font-bold text-slate-800 pb-3 mb-3 border-b border-slate-200/80 flex items-center justify-between">
-                    <span>{isRtl ? 'مسار الاعتماد الإلزامي' : 'ENFORCED APPROVAL WORKFLOW'}</span>
-                    <span className="text-emerald-800 font-mono font-bold text-[11px] bg-emerald-100/90 px-2.5 py-0.5 rounded-full border border-emerald-300">
-                      {isRtl ? 'اعتماد صارم بخطوتين' : 'STRICT SERVER 2-STEP'}
+            {/* Feature 3 UI Console: Clean Light Theme Financial Control Ledger */}
+            <div className="lg:col-span-7">
+              <div className="rounded-3xl bg-white p-6 sm:p-7 border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,30,80,0.08)] relative overflow-hidden">
+                <div className="space-y-5">
+                  {/* Console Header Bar */}
+                  <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+                    <div className="flex items-center gap-2.5">
+                      <span className="p-2 rounded-lg bg-amber-50 text-amber-700 border border-amber-200">
+                        <DollarSign className="w-4 h-4" />
+                      </span>
+                      <div>
+                        <div className="text-xs font-bold text-slate-900">
+                          {isRtl ? 'سجل تسوية العمولات والصفقات' : 'DEAL SETTLEMENT & COMMISSION LEDGER'}
+                        </div>
+                        <div className="text-[10px] font-mono text-slate-400">
+                          {isRtl ? 'صفقة بنتهاوس مارينا لوسيل #4402' : 'Deal #DL-8821 • Lusail Marina Sky Penthouse'}
+                        </div>
+                      </div>
+                    </div>
+                    <span className="text-xs font-mono font-extrabold text-slate-900 bg-slate-100 px-3 py-1 rounded-lg border border-slate-200">
+                      {isRtl ? 'قيمة الصفقة: 14.5M ر.ق' : 'QAR 14,500,000'}
                     </span>
                   </div>
-                  
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between p-3.5 rounded-xl bg-white/95 border border-emerald-200 text-xs shadow-2xs">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                          <CheckCircle className="w-5 h-5" />
+
+                  {/* 2-Step Approval Workflow Matrix */}
+                  <div className="space-y-3">
+                    {/* Step 1: Sales Director Signoff */}
+                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/90 shadow-2xs">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center">
+                            1
+                          </span>
+                          <span className="text-xs font-bold text-slate-900">
+                            {isRtl ? 'الخطوة 1: توقيع مدير المبيعات التنفيذي' : 'Step 1: Sales Director Signoff'}
+                          </span>
                         </div>
-                        <div>
-                          <div className="font-bold text-slate-900 text-sm">
-                            {isRtl ? 'الخطوة 1: توقيع مدير المبيعات' : 'Step 1: Sales Director Signoff'}
-                          </div>
-                          <div className="text-[11px] text-emerald-700 font-medium">
-                            {isRtl ? 'تم التوقيع بواسطة ناصر آل ثاني' : 'Signed by Nasser Al-Thani'}
-                          </div>
-                        </div>
+                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-bold font-mono">
+                          {isRtl ? '✓ معتمد وموثق' : '✓ APPROVED'}
+                        </span>
                       </div>
-                      <span className="text-emerald-800 font-bold px-2.5 py-1 rounded bg-emerald-100 border border-emerald-300 text-[10px]">
-                        {isRtl ? 'معتمد' : 'APPROVED'}
-                      </span>
+                      <div className="text-[11px] text-emerald-900 flex justify-between font-medium pl-8">
+                        <span>{isRtl ? 'الموقّع: ناصر آل ثاني • عمولة معتمدة 2% (290,000 ر.ق)' : 'Signed by Nasser Al-Thani • 2% Split Verified (QAR 290,000)'}</span>
+                        <span className="font-mono text-emerald-700">14:32:09</span>
+                      </div>
                     </div>
 
-                    <div className="flex items-center justify-between p-3.5 rounded-xl bg-white/95 border border-amber-200 text-xs shadow-2xs">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
-                          <Clock className="w-5 h-5" />
+                    {/* Step 2: Accounting Payout Batch */}
+                    <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/90 shadow-2xs">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-6 h-6 rounded-full bg-[#0858A8] text-white font-bold text-xs flex items-center justify-center">
+                            2
+                          </span>
+                          <span className="text-xs font-bold text-slate-900">
+                            {isRtl ? 'الخطوة 2: صرف دفعة المحاسبة المعتمدة' : 'Step 2: Accounting Payout Batch #902'}
+                          </span>
                         </div>
-                        <div>
-                          <div className="font-bold text-slate-900 text-sm">
-                            {isRtl ? 'الخطوة 2: دفعة المحاسبة #902' : 'Step 2: Accounting Payout Batch #902'}
-                          </div>
-                          <div className="text-[11px] text-amber-700 font-medium">
-                            {isRtl ? 'قفل الحماية من النزاعات نشط' : 'Dispute-Proof Lock Active'}
-                          </div>
-                        </div>
+                        <span className="px-2.5 py-0.5 rounded-full bg-blue-100 text-[#0858A8] border border-blue-200 text-[10px] font-bold font-mono">
+                          {isRtl ? '🔒 قفل الصرف نشط' : '🔒 RECONCILED'}
+                        </span>
                       </div>
-                      <span className="text-amber-800 font-bold px-2.5 py-1 rounded bg-amber-100 border border-amber-300 text-[10px]">
-                        {isRtl ? 'في الانتظار' : 'QUEUED'}
-                      </span>
+                      <div className="text-[11px] text-blue-900 flex justify-between font-medium pl-8">
+                        <span>{isRtl ? 'تمت المطابقة البنكية التلقائية • لا توجد فروقات' : 'Bank batch reconciled • Idempotency lock active'}</span>
+                        <span className="font-mono text-[#0858A8]">Batch #902-A</span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="mt-3 pt-2.5 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-600 font-mono">
-                    <span>{isRtl ? 'سجل التدقيق: قيد غير قابل للتعديل' : 'Audit Stamp: Immutable Ledger'}</span>
-                    <span className="text-[#0858A8] font-bold">{isRtl ? 'دقة صرف 100%' : '100% Payout Accuracy'}</span>
+                  {/* Ledger Footer Audit Hash */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span className="flex items-center gap-1.5">
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>{isRtl ? 'قيد غير قابل للتعديل: 0x7f9a...882c' : 'Audit Hash: 0x7f9a...882c'}</span>
+                    </span>
+                    <span className="text-emerald-700 font-bold">{isRtl ? 'دقة مالية 100%' : '100% Settlement Accuracy'}</span>
                   </div>
                 </div>
               </div>
