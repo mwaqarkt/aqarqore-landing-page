@@ -3541,6 +3541,7 @@ export default function LandingPage({ locale = 'en' }) {
                     <li><Link href="/ar/features/whatsapp-ai-qualification/" className="hover:text-white transition-colors">ربط واتساب الذكي</Link></li>
                     <li><a href="#features" className="hover:text-white transition-colors">تطبيق الميدان دون إنترنت</a></li>
                     <li><Link href="/ar/features/commission-approvals/" className="hover:text-white transition-colors">اعتماد العمولات</Link></li>
+                    <li><Link href="/ar/best-real-estate-crm-saudi-arabia/" className="hover:text-white transition-colors">نظام عقاري للسعودية</Link></li>
                   </>
                 ) : (
                   <>
@@ -3566,6 +3567,7 @@ export default function LandingPage({ locale = 'en' }) {
                   <>
                     <li><Link href="/best-real-estate-crm-saudi-arabia/" className="hover:text-white transition-colors">Real Estate CRM Saudi Arabia</Link></li>
                     <li><Link href="/best-real-estate-crm-qatar/" className="hover:text-white transition-colors">Real Estate CRM Qatar</Link></li>
+                    <li><Link href="/solutions/off-plan/" className="hover:text-white transition-colors">Off-Plan Sales</Link></li>
                   </>
                 )}
                 <li><a href="#roi" className="hover:text-white transition-colors">{isRtl ? 'حاسبة الإيرادات' : 'Revenue Calculator'}</a></li>
