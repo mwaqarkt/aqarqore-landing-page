@@ -715,15 +715,12 @@ export default function App() {
                 }}
                 className="relative w-full max-w-[620px] lg:max-w-none flex items-center justify-center"
               >
-                <div className="relative group w-full">
-                  {/* Subtle Outer Cyan Glow Aura */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                  
-                  {/* High-Resolution GCC Command Center Dashboard & Glowing Node Base Graphic */}
+                <div className="relative w-full">
+                  {/* High-Resolution GCC Command Center Dashboard (Sharp & Crisp, No Shadow/Blur) */}
                   <img 
                     src="/hero-command-center-hud.png" 
                     alt="AqarQore GCC Command Center"
-                    className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105"
+                    className="relative z-10 w-full h-auto object-contain"
                   />
                 </div>
               </motion.div>
