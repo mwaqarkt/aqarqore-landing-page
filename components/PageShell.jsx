@@ -5,7 +5,13 @@ import { UI } from '@/lib/copy';
  * Minimal header/footer chrome for the routed sub-pages.
  * The landing page carries its own full header and footer.
  */
-export default function PageShell({ locale = 'en', children }) {
+/**
+ * @param hasTranslation - true when this route genuinely exists in both
+ *   locales. Only then does the switcher claim to be a translation link.
+ *   English-only content pages pass false so we never advertise an Arabic
+ *   equivalent that does not exist.
+ */
+export default function PageShell({ locale = 'en', hasTranslation = true, children }) {
   const isRtl = locale === 'ar';
   const t = UI[locale];
   const home = isRtl ? '/ar/' : '/';
@@ -52,7 +58,7 @@ export default function PageShell({ locale = 'en', children }) {
             </Link>
             <Link
               href={other}
-              hrefLang={isRtl ? 'en' : 'ar'}
+              {...(hasTranslation ? { hrefLang: isRtl ? 'en' : 'ar' } : {})}
               lang={isRtl ? 'en' : 'ar'}
               aria-label={isRtl ? 'Switch to English' : 'التبديل إلى العربية'}
               className="px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-xs font-bold transition-colors"
@@ -90,6 +96,14 @@ export default function PageShell({ locale = 'en', children }) {
             <Link href={isRtl ? '/ar/contact/' : '/contact/'} className="hover:text-white transition-colors">
               {isRtl ? 'تواصل معنا' : 'Contact'}
             </Link>
+            {!isRtl && (
+              <>
+                <Link href="/best-real-estate-crm-saudi-arabia/" className="hover:text-white transition-colors">
+                  CRM Saudi Arabia
+                </Link>
+                <Link href="/guides/ejari/" className="hover:text-white transition-colors">Ejari Guide</Link>
+              </>
+            )}
           </span>
         </div>
       </footer>
