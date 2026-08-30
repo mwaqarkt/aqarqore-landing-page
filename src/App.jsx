@@ -2247,85 +2247,8 @@ export default function App() {
             </p>
           </motion.div>
 
-          {/* MAIN SECURITY ARCHITECTURE: CENTRAL CORE & 3 FLOATING SECURITY MODULES */}
-          <div className="space-y-12 lg:space-y-14">
-            
-            {/* 1. HERO VISUAL: CENTRAL AGARQORE SECURITY CORE */}
-            <motion.div 
-              className="relative max-w-xl mx-auto flex flex-col items-center justify-center text-center p-8 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_-15px_rgba(0,30,80,0.08)] group overflow-hidden"
-              initial={{ opacity: 0, scale: 0.92 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7 }}
-            >
-              {/* Subtle light glow behind rings */}
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-transparent to-emerald-50/40 pointer-events-none" />
-
-              {/* Animated Triple Concentric Security Orbital Rings */}
-              <div className="relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center mb-6 z-10">
-                {/* Outer Ring: SESSION */}
-                <motion.div 
-                  className="absolute inset-0 rounded-full border border-dashed border-[#0858A8]/30"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
-                />
-                <span className="absolute top-1 text-[8px] font-mono font-bold text-[#0858A8] tracking-widest uppercase bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200 shadow-2xs">
-                  {isRtl ? 'طبقة الجلسة' : 'SESSION LAYER'}
-                </span>
-
-                {/* Middle Ring: ACCESS */}
-                <motion.div 
-                  className="absolute inset-4 rounded-full border border-emerald-500/35"
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-                />
-                <span className="absolute bottom-1 text-[8px] font-mono font-bold text-emerald-700 tracking-widest uppercase bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 shadow-2xs">
-                  {isRtl ? 'حدود الوصول' : 'ACCESS BOUNDARY'}
-                </span>
-
-                {/* Inner Ring: IDENTITY with Scanning Laser Sweep */}
-                <div className="absolute inset-8 rounded-full border border-blue-300 bg-gradient-to-b from-slate-50 to-blue-50/40 shadow-inner flex items-center justify-center overflow-hidden">
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-                  />
-                  
-                  {/* Central Shield Hero Core */}
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-[#0858A8] via-[#008765] to-[#0858A8] p-0.5 shadow-md shadow-blue-500/20">
-                      <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
-                        <ShieldCheck className="w-7 h-7 text-[#0858A8] group-hover:scale-110 transition-transform" />
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-mono font-black text-slate-900 tracking-wider mt-2">
-                      {isRtl ? 'نواة الأمان' : 'SECURITY CORE'}
-                    </span>
-                    <span className="text-[8px] font-mono text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full mt-0.5 border border-emerald-200">
-                      {isRtl ? '✓ محمي 24/7' : '✓ PROTECTED 24/7'}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Core Security Telemetry Strip */}
-              <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3.5 text-[10.5px] font-mono pt-2">
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 shadow-2xs font-bold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                  <span>{isRtl ? 'الهوية: موثقة' : 'IDENTITY: VERIFIED'}</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 shadow-2xs font-bold">
-                  <span className="w-2 h-2 rounded-full bg-[#0858A8]" />
-                  <span>{isRtl ? 'الوصول: 403 إلزامي' : 'ACCESS: 403 ENFORCED'}</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 shadow-2xs font-bold">
-                  <span className="w-2 h-2 rounded-full bg-indigo-500" />
-                  <span>{isRtl ? 'إلغاء الصلاحية: < 60 ث' : 'REVOCATION: < 60s'}</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* 2. THE 3 CONNECTED SECURITY CONTROL MODULES */}
+          {/* 3 CONNECTED ENTERPRISE SECURITY CONTROL MODULES */}
+          <div className="space-y-10 lg:space-y-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
               
               {/* ============================================================ */}
