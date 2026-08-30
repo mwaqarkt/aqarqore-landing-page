@@ -1833,16 +1833,18 @@ export default function App() {
               </p>
             </div>
 
-            {/* Feature 2 Mockup: Meta WhatsApp Bot Experience (White Card + Line Pattern) */}
+            {/* Feature 2 Mockup: Meta WhatsApp Bot Experience (Luxury Infinity Villa Background) */}
             <div className="lg:col-span-6 lg:order-1">
-              <div className="rounded-2xl bg-white p-5 sm:p-6 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden">
-                {/* Architectural Line Pattern Background Texture */}
+              <div className="rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden bg-slate-100 min-h-[320px] flex items-center justify-center">
+                {/* Ultra-Luxury Infinity Villa Background Photo */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08] pointer-events-none"
-                  style={{ backgroundImage: "url('/real-estate-line-pattern.png')" }}
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+                  style={{ backgroundImage: "url('/luxury-villa-showcase.jpg')" }}
                 />
+                {/* Balanced Light Tone Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-white/20 pointer-events-none" />
 
-                <div className="relative z-10 max-w-md mx-auto bg-slate-900 rounded-2xl overflow-hidden border border-slate-300 shadow-lg">
+                <div className="relative z-10 w-full max-w-md bg-white/92 backdrop-blur-md rounded-2xl overflow-hidden border border-white/90 shadow-lg">
                   {/* WhatsApp Chrome Bar */}
                   <div className="bg-[#075E54] px-4 py-3 flex items-center justify-between text-white text-xs">
                     <div className="flex items-center gap-2.5">
@@ -1908,25 +1910,27 @@ export default function App() {
               </p>
             </div>
 
-            {/* Feature 3 Mockup: Financial Control Ledger (White Card + Line Pattern) */}
+            {/* Feature 3 Mockup: Financial Control Ledger (Modern Architecture Building Background) */}
             <div className="lg:col-span-6">
-              <div className="rounded-2xl bg-white p-5 sm:p-6 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden">
-                {/* Architectural Line Pattern Background Texture */}
+              <div className="rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden bg-slate-100 min-h-[320px] flex items-center">
+                {/* Modern Architecture High-Rise Building Background Photo */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08] pointer-events-none"
-                  style={{ backgroundImage: "url('/real-estate-line-pattern.png')" }}
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+                  style={{ backgroundImage: "url('/faq-modern-building.jpg')" }}
                 />
+                {/* Balanced Light Tone Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-white/20 pointer-events-none" />
 
-                <div className="relative z-10">
-                  <div className="text-xs font-bold text-slate-800 pb-3 mb-4 border-b border-slate-100 flex items-center justify-between">
+                <div className="relative z-10 w-full bg-white/92 backdrop-blur-md p-4 sm:p-5 rounded-xl border border-white/90 shadow-lg">
+                  <div className="text-xs font-bold text-slate-800 pb-3 mb-3 border-b border-slate-200/80 flex items-center justify-between">
                     <span>{isRtl ? 'مسار الاعتماد الإلزامي' : 'ENFORCED APPROVAL WORKFLOW'}</span>
-                    <span className="text-emerald-700 font-mono font-bold text-[11px] bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                    <span className="text-emerald-800 font-mono font-bold text-[11px] bg-emerald-100/90 px-2.5 py-0.5 rounded-full border border-emerald-300">
                       {isRtl ? 'اعتماد صارم بخطوتين' : 'STRICT SERVER 2-STEP'}
                     </span>
                   </div>
                   
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-4 rounded-xl bg-emerald-50/80 border border-emerald-200 text-xs shadow-2xs">
+                  <div className="space-y-2.5">
+                    <div className="flex items-center justify-between p-3.5 rounded-xl bg-white/95 border border-emerald-200 text-xs shadow-2xs">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
                           <CheckCircle className="w-5 h-5" />
@@ -1945,10 +1949,10 @@ export default function App() {
                       </span>
                     </div>
 
-                    <div className="flex items-center justify-between p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-xs shadow-2xs">
+                    <div className="flex items-center justify-between p-3.5 rounded-xl bg-white/95 border border-amber-200 text-xs shadow-2xs">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
-                          <Clock className="w-5 h-5 animate-spin" />
+                          <Clock className="w-5 h-5" />
                         </div>
                         <div>
                           <div className="font-bold text-slate-900 text-sm">
@@ -1965,7 +1969,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                  <div className="mt-3 pt-2.5 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-600 font-mono">
                     <span>{isRtl ? 'سجل التدقيق: قيد غير قابل للتعديل' : 'Audit Stamp: Immutable Ledger'}</span>
                     <span className="text-[#0858A8] font-bold">{isRtl ? 'دقة صرف 100%' : '100% Payout Accuracy'}</span>
                   </div>
