@@ -1045,24 +1045,41 @@ export default function App() {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/70 text-xs font-mono font-bold uppercase tracking-widest text-[#0858A8] shadow-xs">
               <Zap className="w-3.5 h-3.5 text-[#0858A8] animate-pulse" />
-              <span>AGARQORE ENGINE</span>
+              <span>{isRtl ? 'محرك AGARQORE الذكي' : 'AGARQORE ENGINE'}</span>
             </div>
 
             {/* Headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
-              Built for{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                Speed.
-              </span>{' '}
-              Built for{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008765] via-[#0858A8] to-[#001D42]">
-                Scale.
-              </span>
+              {isRtl ? (
+                <>
+                  <span>صُمم للـ</span>{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                    سرعة.
+                  </span>{' '}
+                  <span>صُمم للتـ</span>{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008765] via-[#0858A8] to-[#001D42]">
+                    وسع.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Built for{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                    Speed.
+                  </span>{' '}
+                  Built for{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008765] via-[#0858A8] to-[#001D42]">
+                    Scale.
+                  </span>
+                </>
+              )}
             </h2>
 
             {/* Subtitle */}
             <p className="text-slate-600 text-sm sm:text-base sm:leading-relaxed max-w-2xl mx-auto font-normal">
-              Everything your agency needs to run smarter, faster and with complete confidence.
+              {isRtl 
+                ? 'كل ما تحتاجه وكالتك العقارية لتعمل بذكاء وسرعة وثقة تشغيلية مطلقة.' 
+                : 'Everything your agency needs to run smarter, faster and with complete confidence.'}
             </p>
           </motion.div>
 
@@ -1112,8 +1129,12 @@ export default function App() {
                   {/* Module Header Strip */}
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#39BFF5] tracking-wider">METRIC 01</span>
-                      <span className="text-[9px] font-mono text-slate-400">• SPEED</span>
+                      <span className="text-[11px] font-mono font-bold text-[#39BFF5] tracking-wider">
+                        {isRtl ? 'المعيار 01' : 'METRIC 01'}
+                      </span>
+                      <span className="text-[9px] font-mono text-slate-400">
+                        {isRtl ? '• السرعة' : '• SPEED'}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#39BFF5] animate-ping" />
@@ -1135,7 +1156,9 @@ export default function App() {
                       {/* Central Speedometer Core */}
                       <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-sky-400/50 flex flex-col items-center justify-center text-center shadow-inner">
                         <Clock className="w-6 h-6 text-[#39BFF5] group-hover:scale-110 transition-transform" />
-                        <span className="text-[10px] font-mono font-extrabold text-sky-200 mt-1">&lt; 10s</span>
+                        <span className="text-[10px] font-mono font-extrabold text-sky-200 mt-1">
+                          {isRtl ? '< 10 ث' : '< 10s'}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -1143,13 +1166,13 @@ export default function App() {
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
                     <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#39BFF5] transition-colors">
-                      10 Seconds
+                      {isRtl ? '10 ثوانٍ' : '10 Seconds'}
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
-                      Max lead assignment window
+                      {isRtl ? 'نافذة التوزيع التلقائي للعملاء' : 'Max lead assignment window'}
                     </div>
                     <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
-                      “Lightning-fast automation that keeps you ahead.”
+                      {isRtl ? '«أتمتة فائقة السرعة تُبقيك دائماً في المقدمة.»' : '“Lightning-fast automation that keeps you ahead.”'}
                     </p>
                   </div>
                 </div>
@@ -1158,10 +1181,10 @@ export default function App() {
                 <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold text-[#39BFF5] flex items-center gap-1.5">
                     <Zap className="w-3 h-3 text-[#39BFF5]" />
-                    SUB-10S ROUTING
+                    {isRtl ? 'توزيع تحت 10 ثوانٍ' : 'SUB-10S ROUTING'}
                   </span>
                   <span className="text-[9.5px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
-                    ACTIVE
+                    {isRtl ? 'نشط' : 'ACTIVE'}
                   </span>
                 </div>
               </motion.div>
@@ -1183,8 +1206,12 @@ export default function App() {
                   {/* Module Header Strip */}
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#00D6A3] tracking-wider">METRIC 02</span>
-                      <span className="text-[9px] font-mono text-slate-400">• INTEGRITY</span>
+                      <span className="text-[11px] font-mono font-bold text-[#00D6A3] tracking-wider">
+                        {isRtl ? 'المعيار 02' : 'METRIC 02'}
+                      </span>
+                      <span className="text-[9px] font-mono text-slate-400">
+                        {isRtl ? '• النزاهة' : '• INTEGRITY'}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
@@ -1202,7 +1229,9 @@ export default function App() {
                       {/* Shield Core */}
                       <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-emerald-500/50 flex flex-col items-center justify-center text-center shadow-inner overflow-hidden">
                         <ShieldCheck className="w-7 h-7 text-[#00D6A3] group-hover:scale-110 transition-transform" />
-                        <span className="text-[9px] font-mono font-extrabold text-emerald-300 mt-1">VERIFIED</span>
+                        <span className="text-[9px] font-mono font-extrabold text-emerald-300 mt-1">
+                          {isRtl ? 'موثق' : 'VERIFIED'}
+                        </span>
                         
                         {/* Laser Scan Sweep */}
                         <motion.div 
@@ -1217,13 +1246,13 @@ export default function App() {
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
                     <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#00D6A3] transition-colors">
-                      100% Audit
+                      {isRtl ? 'تدقيق 100%' : '100% Audit'}
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
-                      Reconciled commission signoffs
+                      {isRtl ? 'مطابقة واعتماد العمولات بخطوتين' : 'Reconciled commission signoffs'}
                     </div>
                     <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
-                      “Complete transparency. Every deal accounted for.”
+                      {isRtl ? '«شفافية كاملة ومحاسبة دقيقة لكل صفقة.»' : '“Complete transparency. Every deal accounted for.”'}
                     </p>
                   </div>
                 </div>
@@ -1232,10 +1261,10 @@ export default function App() {
                 <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold text-[#00D6A3] flex items-center gap-1.5">
                     <Lock className="w-3 h-3 text-[#00D6A3]" />
-                    AUDIT VERIFIED
+                    {isRtl ? 'تدقيق موثق' : 'AUDIT VERIFIED'}
                   </span>
                   <span className="text-[9.5px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
-                    2-STEP LOCK
+                    {isRtl ? 'قفل بخطوتين' : '2-STEP LOCK'}
                   </span>
                 </div>
               </motion.div>
@@ -1257,8 +1286,12 @@ export default function App() {
                   {/* Module Header Strip */}
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#F5B91E] tracking-wider">METRIC 03</span>
-                      <span className="text-[9px] font-mono text-slate-400">• COMMS</span>
+                      <span className="text-[11px] font-mono font-bold text-[#F5B91E] tracking-wider">
+                        {isRtl ? 'المعيار 03' : 'METRIC 03'}
+                      </span>
+                      <span className="text-[9px] font-mono text-slate-400">
+                        {isRtl ? '• التواصل' : '• COMMS'}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#F5B91E] animate-ping" />
@@ -1277,7 +1310,9 @@ export default function App() {
                       {/* Hub Core */}
                       <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-amber-500/50 flex flex-col items-center justify-center text-center shadow-inner">
                         <MessageSquare className="w-7 h-7 text-[#F5B91E] group-hover:scale-110 transition-transform" />
-                        <span className="text-[9px] font-mono font-extrabold text-amber-300 mt-1">META CLOUD</span>
+                        <span className="text-[9px] font-mono font-extrabold text-amber-300 mt-1">
+                          {isRtl ? 'سحابة ميتا' : 'META CLOUD'}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -1285,13 +1320,13 @@ export default function App() {
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
                     <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#F5B91E] transition-colors">
-                      Meta Verified
+                      {isRtl ? 'توثيق رسمي من ميتا' : 'Meta Verified'}
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
-                      Official WhatsApp Cloud API
+                      {isRtl ? 'واجهة واتساب السحابية الرسمية' : 'Official WhatsApp Cloud API'}
                     </div>
                     <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
-                      “Trusted. Secure. Official. Direct from Meta.”
+                      {isRtl ? '«موثوق، آمن، ورسمي مباشرة من شركة ميتا.»' : '“Trusted. Secure. Official. Direct from Meta.”'}
                     </p>
                   </div>
                 </div>
@@ -1300,10 +1335,10 @@ export default function App() {
                 <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold text-[#F5B91E] flex items-center gap-1.5">
                     <CheckCircle className="w-3 h-3 text-[#F5B91E]" />
-                    OFFICIAL API
+                    {isRtl ? 'واجهة برمجة رسمية' : 'OFFICIAL API'}
                   </span>
                   <span className="text-[9.5px] font-mono text-amber-300 font-bold px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30">
-                    META CLOUD
+                    {isRtl ? 'سحابة ميتا' : 'META CLOUD'}
                   </span>
                 </div>
               </motion.div>
@@ -1325,8 +1360,12 @@ export default function App() {
                   {/* Module Header Strip */}
                   <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#A78BFA] tracking-wider">METRIC 04</span>
-                      <span className="text-[9px] font-mono text-slate-400">• EDGE SYNC</span>
+                      <span className="text-[11px] font-mono font-bold text-[#A78BFA] tracking-wider">
+                        {isRtl ? 'المعيار 04' : 'METRIC 04'}
+                      </span>
+                      <span className="text-[9px] font-mono text-slate-400">
+                        {isRtl ? '• التزامن الطرفي' : '• EDGE SYNC'}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-ping" />
@@ -1350,7 +1389,7 @@ export default function App() {
                           <div className="w-full h-1 bg-[#39BFF5] rounded-full" />
                           <div className="w-3/4 h-0.5 bg-sky-200/50 rounded-full" />
                           <div className="flex items-center justify-between text-[6px] font-mono text-[#00D6A3] pt-0.5">
-                            <span>SYNCED</span>
+                            <span>{isRtl ? 'متزامن' : 'SYNCED'}</span>
                             <span>✓</span>
                           </div>
                         </div>
@@ -1364,13 +1403,13 @@ export default function App() {
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
                     <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#A78BFA] transition-colors">
-                      Offline App
+                      {isRtl ? 'تطبيق دون إنترنت' : 'Offline App'}
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
-                      Basement viewing sync
+                      {isRtl ? 'تزامن معاينات القبو والمواقف' : 'Basement viewing sync'}
                     </div>
                     <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
-                      “Work anywhere. Sync when you're back.”
+                      {isRtl ? '«اعمل في أي مكان وتزامن فور عودة الاتصال.»' : '“Work anywhere. Sync when you\'re back.”'}
                     </p>
                   </div>
                 </div>
@@ -1379,10 +1418,10 @@ export default function App() {
                 <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold text-[#A78BFA] flex items-center gap-1.5">
                     <Smartphone className="w-3 h-3 text-[#A78BFA]" />
-                    OFFLINE MODE
+                    {isRtl ? 'وضع دون اتصال' : 'OFFLINE MODE'}
                   </span>
                   <span className="text-[9.5px] font-mono text-purple-300 font-bold px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/30">
-                    5G SYNC
+                    {isRtl ? 'تزامن 5G' : '5G SYNC'}
                   </span>
                 </div>
               </motion.div>
@@ -1400,28 +1439,30 @@ export default function App() {
           >
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
-              <span className="text-xs font-mono font-bold tracking-wider text-slate-900">AGARQORE ENGINE STATUS</span>
+              <span className="text-xs font-mono font-bold tracking-wider text-slate-900">
+                {isRtl ? 'حالة محرك AGARQORE' : 'AGARQORE ENGINE STATUS'}
+              </span>
               <span className="text-[11px] font-mono font-bold text-emerald-800 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-300">
-                ALL SYSTEMS OPERATIONAL
+                {isRtl ? 'جميع الأنظمة تعمل بكفاءة' : 'ALL SYSTEMS OPERATIONAL'}
               </span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-xs font-mono">
               <div className="flex items-center gap-1.5 text-slate-700">
-                <span className="text-[#0858A8]">Lead Automation:</span>
-                <span className="text-emerald-600 font-bold">✓ ACTIVE</span>
+                <span className="text-[#0858A8]">{isRtl ? 'أتمتة العملاء:' : 'Lead Automation:'}</span>
+                <span className="text-emerald-600 font-bold">{isRtl ? '✓ نشط' : '✓ ACTIVE'}</span>
               </div>
               <div className="flex items-center gap-1.5 text-slate-700">
-                <span className="text-emerald-700">Commission Audit:</span>
-                <span className="text-emerald-600 font-bold">✓ ACTIVE</span>
+                <span className="text-emerald-700">{isRtl ? 'تدقيق العمولات:' : 'Commission Audit:'}</span>
+                <span className="text-emerald-600 font-bold">{isRtl ? '✓ نشط' : '✓ ACTIVE'}</span>
               </div>
               <div className="flex items-center gap-1.5 text-slate-700">
-                <span className="text-amber-700">WhatsApp API:</span>
-                <span className="text-emerald-600 font-bold">✓ VERIFIED</span>
+                <span className="text-amber-700">{isRtl ? 'واجهة واتساب:' : 'WhatsApp API:'}</span>
+                <span className="text-emerald-600 font-bold">{isRtl ? '✓ موثق' : '✓ VERIFIED'}</span>
               </div>
               <div className="flex items-center gap-1.5 text-slate-700">
-                <span className="text-violet-700">Offline Sync:</span>
-                <span className="text-emerald-600 font-bold">✓ READY</span>
+                <span className="text-violet-700">{isRtl ? 'تزامن دون إنترنت:' : 'Offline Sync:'}</span>
+                <span className="text-emerald-600 font-bold">{isRtl ? '✓ جاهز' : '✓ READY'}</span>
               </div>
             </div>
           </motion.div>
