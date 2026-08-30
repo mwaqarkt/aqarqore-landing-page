@@ -460,10 +460,10 @@ export default function App() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-none">
-                    AqarQore
+                    {isRtl ? 'عقار كور' : 'AqarQore'}
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-[#0858A8] font-bold font-mono mt-1">
-                    GCC Agency OS
+                    {isRtl ? 'نظام تشغيل وكالات العقار بالخليج' : 'GCC Agency OS'}
                   </span>
                 </div>
               </a>
@@ -3478,7 +3478,9 @@ export default function App() {
                   <img src="/aqarqore-emblem.png" alt="AqarQore Emblem" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <span className="text-2xl font-extrabold tracking-tight text-white block leading-none">AqarQore</span>
+                  <span className="text-2xl font-extrabold tracking-tight text-white block leading-none">
+                    {isRtl ? 'عقار كور' : 'AqarQore'}
+                  </span>
                   <span className="text-[10px] uppercase font-mono tracking-widest text-sky-400 font-semibold block mt-1">
                     {isRtl ? 'نظام تشغيل وكالات العقار بالخليج' : 'GCC Agency OS'}
                   </span>
