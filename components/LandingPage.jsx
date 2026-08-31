@@ -374,6 +374,10 @@ export default function LandingPage({ locale = 'en' }) {
   const [agentCount, setAgentCount] = useState(15);
   const [avgDealValue, setAvgDealValue] = useState(1200000);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  // Set NEXT_PUBLIC_PRODUCT_VIDEO_URL to an embed URL to enable the tour modal.
+  // Without it the secondary CTA links to the feature pages rather than opening
+  // an empty player.
+  const productVideoUrl = process.env.NEXT_PUBLIC_PRODUCT_VIDEO_URL || '';
   const [activePropertyTab, setActivePropertyTab] = useState('doha');
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -680,16 +684,29 @@ export default function LandingPage({ locale = 'en' }) {
                   <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
                 </a>
 
-                {/* Secondary Translucent Glass Button with Scale Icon */}
-                <button
-                  onClick={() => setIsVideoModalOpen(true)}
-                  className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
-                >
-                  <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
-                  </span>
-                  <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
-                </button>
+                {/* Secondary CTA: product tour if a video is configured, otherwise
+                    the feature pages. Never an empty player. */}
+                {productVideoUrl ? (
+                  <button
+                    onClick={() => setIsVideoModalOpen(true)}
+                    className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
+                  >
+                    <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
+                    </span>
+                    <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
+                  </button>
+                ) : (
+                  <Link
+                    href={isRtl ? '/ar/features/' : '/features/'}
+                    className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
+                  >
+                    <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
+                    </span>
+                    <span>{isRtl ? 'كيف يعمل النظام' : 'See How It Works'}</span>
+                  </Link>
+                )}
               </motion.div>
 
               {/* Verified Trust Badges */}
@@ -1528,6 +1545,9 @@ export default function LandingPage({ locale = 'en' }) {
                 <div className="text-xs uppercase tracking-widest font-bold text-rose-300/80 font-mono">
                   {isRtl ? 'استفسارات تُفقد لصالح المنافسين' : 'Inquiries Lost to Competitors'}
                 </div>
+                <p className="text-[10px] text-blue-200/50 font-mono pt-1">
+                  {isRtl ? 'المصدر: بيانات منصة عقار كور التشغيلية' : 'Source: AqarQore platform telemetry'}
+                </p>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -2768,6 +2788,14 @@ export default function LandingPage({ locale = 'en' }) {
                   </div>
                 </div>
 
+                {/* Methodology disclosure — an estimator without stated
+                    assumptions is not a figure anyone can act on. */}
+                <p className="pt-4 border-t border-blue-800/50 text-[11px] leading-relaxed text-blue-200/60">
+                  {isRtl
+                    ? 'طريقة الاحتساب: عدد الوكلاء × (متوسط قيمة الصفقة × 2% عمولة) × 1.8 صفقة إضافية سنوياً لكل وكيل، بناءً على بيانات منصة عقار كور التشغيلية. تقدير إرشادي لأغراض المقارنة وليس توقعاً للإيراد.'
+                    : 'How this is calculated: agents × (average deal value × 2% commission) × 1.8 additional deals per agent per year, based on AqarQore platform telemetry. An indicative estimate for comparison, not a revenue forecast.'}
+                </p>
+
               </div>
             </motion.div>
 
@@ -2818,6 +2846,9 @@ export default function LandingPage({ locale = 'en' }) {
                   {isRtl 
                     ? 'اعتماد إلزامي بخطوتين من المدير إلى المحاسبة.' 
                     : 'Enforced 2-step director to accounting deal signoffs.'}
+                </p>
+                <p className="text-[10px] text-blue-200/50 font-mono pt-1">
+                  {isRtl ? 'المصدر: بيانات منصة عقار كور التشغيلية' : 'Source: AqarQore platform telemetry'}
                 </p>
               </div>
             </motion.div>
@@ -3429,7 +3460,9 @@ export default function LandingPage({ locale = 'en' }) {
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                 <span>
-                  {isRtl ? 'مقاعد انضمام محدودة للربع الثالث في دبي والدوحة' : 'Limited Q3 Onboarding Slots for Dubai & Doha'}
+                  {isRtl
+                    ? `مقاعد انضمام محدودة للربع ${['الأول', 'الثاني', 'الثالث', 'الرابع'][Math.floor(new Date().getMonth() / 3)]} في دبي والدوحة`
+                    : `Limited Q${Math.floor(new Date().getMonth() / 3) + 1} Onboarding Slots for Dubai & Doha`}
                 </span>
               </div>
 
@@ -3582,8 +3615,17 @@ export default function LandingPage({ locale = 'en' }) {
                 {isRtl ? 'الثقة والأمان' : 'Enterprise Trust'}
               </h4>
               <ul className="space-y-2.5 text-blue-200/70 text-xs">
-                <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'أمان على مستوى المؤسسات' : 'Institutional Security'}</a></li>
-                <li><a href="#security" className="hover:text-white transition-colors">{isRtl ? 'سيادة بيانات الخليج' : 'GCC Data Sovereignty'}</a></li>
+                {isRtl ? (
+                  <>
+                    <li><a href="#security" className="hover:text-white transition-colors">أمان على مستوى المؤسسات</a></li>
+                    <li><a href="#security" className="hover:text-white transition-colors">استضافة إقليمية للبيانات</a></li>
+                  </>
+                ) : (
+                  <>
+                    <li><Link href="/security/" className="hover:text-white transition-colors">Institutional Security</Link></li>
+                    <li><Link href="/security/" className="hover:text-white transition-colors">Regional Data Hosting</Link></li>
+                  </>
+                )}
                 {!isRtl && (
                   <li><Link href="/guides/" className="hover:text-white transition-colors">Brokerage Guides</Link></li>
                 )}
@@ -3616,7 +3658,7 @@ export default function LandingPage({ locale = 'en' }) {
       </footer>
 
       {/* VIDEO MODAL */}
-      {isVideoModalOpen && (
+      {isVideoModalOpen && productVideoUrl && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
           <div className="relative w-full max-w-3xl bg-[#003068] border border-blue-500/40 rounded-2xl p-6 text-white shadow-2xl space-y-4">
             <button onClick={() => setIsVideoModalOpen(false)} aria-label="Close video" className="absolute top-4 right-4 text-blue-200 hover:text-white p-1 rounded-lg bg-blue-900/50">
@@ -3625,8 +3667,14 @@ export default function LandingPage({ locale = 'en' }) {
             <div className="flex items-center gap-2 text-sm font-bold text-sky-300">
               <Play className="w-4 h-4 fill-current" /> AqarQore 2-Minute Product Overview
             </div>
-            <div className="aspect-video bg-slate-900 rounded-xl flex items-center justify-center border border-blue-800 text-slate-400 text-xs font-mono">
-              [ Interactive Product Walkthrough Video Player ]
+            <div className="aspect-video bg-slate-900 rounded-xl overflow-hidden border border-blue-800">
+              <iframe
+                src={productVideoUrl}
+                title={isRtl ? 'جولة في منتج عقار كور' : 'AqarQore product tour'}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
