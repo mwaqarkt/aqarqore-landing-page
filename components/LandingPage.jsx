@@ -3587,6 +3587,9 @@ export default function LandingPage({ locale = 'en' }) {
                   <li><Link href="/guides/" className="hover:text-white transition-colors">Brokerage Guides</Link></li>
                 )}
                 <li><a href="#faq" className="hover:text-white transition-colors">{isRtl ? 'قاعدة المعرفة والأسئلة' : 'Knowledge Base & FAQ'}</a></li>
+                {!isRtl && (
+                  <li><Link href="/alternatives/" className="hover:text-white transition-colors">Compare Alternatives</Link></li>
+                )}
                 <li><a href={demoHref} className="hover:text-sky-300 font-semibold transition-colors">{isRtl ? 'احجز عرضاً مباشراً ←' : 'Book Live Demo →'}</a></li>
               </ul>
             </div>

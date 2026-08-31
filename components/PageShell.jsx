@@ -102,6 +102,7 @@ export default function PageShell({ locale = 'en', hasTranslation = true, childr
             {!isRtl && (
               <>
                 <Link href="/integrations/" className="hover:text-white transition-colors">Integrations</Link>
+                <Link href="/alternatives/" className="hover:text-white transition-colors">Compare</Link>
                 <Link href="/guides/" className="hover:text-white transition-colors">Guides</Link>
               </>
             )}

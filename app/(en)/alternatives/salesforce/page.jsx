@@ -19,7 +19,8 @@ export const metadata = {
 
 const TRAIL = [
   { name: 'Home', path: '/' },
-  { name: 'Alternatives', path: '/alternatives/salesforce/' },
+  { name: 'Alternatives', path: '/alternatives/' },
+  { name: 'Salesforce', path: PATH },
 ];
 
 const FAQS = [
