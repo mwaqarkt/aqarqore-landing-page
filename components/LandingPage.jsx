@@ -3542,6 +3542,7 @@ export default function LandingPage({ locale = 'en' }) {
                     <li><a href="#features" className="hover:text-white transition-colors">تطبيق الميدان دون إنترنت</a></li>
                     <li><Link href="/ar/features/commission-approvals/" className="hover:text-white transition-colors">اعتماد العمولات</Link></li>
                     <li><Link href="/ar/best-real-estate-crm-saudi-arabia/" className="hover:text-white transition-colors">نظام عقاري للسعودية</Link></li>
+                    <li><Link href="/ar/guides/" className="hover:text-white transition-colors">أدلة عقارية</Link></li>
                   </>
                 ) : (
                   <>
