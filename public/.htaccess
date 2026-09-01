@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# AqarQore — Apache config for the Next.js static export (output: 'export')
+# Deployed to /home/<user>/domains/aqarqore.com/public_html
+# ---------------------------------------------------------------------------
+
+Options -Indexes
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# --- Canonical host: force HTTPS and strip www -----------------------------
+# Every canonical tag on the site is https://aqarqore.com (no www), so the
+# server must agree or the www host becomes a duplicate of the whole site.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# --- Branded 404 -----------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# --- Caching ---------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Next.js emits content-hashed filenames under /_next/static, so these can be
+  # cached indefinitely. A new build produces new filenames.
+  <FilesMatch "\.(js|mjs|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images are not content-hashed; one month with revalidation.
+  <FilesMatch "\.(avif|webp|png|jpe?g|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # HTML must revalidate so content edits go live on the next request.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  <FilesMatch "\.(xml|txt|webmanifest)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+
+  # Baseline security headers.
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# --- Compression -----------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml \
+    application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# --- Correct MIME types for next-gen formats -------------------------------
+<IfModule mod_mime.c>
+  AddType image/avif .avif
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+</IfModule>
