@@ -1,36 +1,136 @@
-import { alternatesFor, abs, routeFor } from '@/lib/site';
-import { META } from '@/lib/copy';
+import { alternatesFor, abs, routeFor, CONTACT } from '@/lib/site';
 import { pageSchema } from '@/lib/schema';
 import PageShell from '@/components/PageShell';
-import SimplePage from '@/components/SimplePage';
-import { UI } from '@/lib/copy';
+import { LegalShell, Sec, List } from '@/components/LegalPage';
+
+const PATH = routeFor('privacy', 'ar');
 
 export const metadata = {
-  title: META.ar.privacy.title,
-  description: META.ar.privacy.description,
+  title: 'سياسة الخصوصية — عقار كور',
+  description:
+    'ما البيانات الشخصية التي يجمعها موقع عقار كور، ولماذا، ومن يطّلع عليها، ومدة الاحتفاظ بها، وحقوقك تجاهها.',
   alternates: alternatesFor('privacy', 'ar'),
-  openGraph: {
-    title: META.ar.privacy.title,
-    description: META.ar.privacy.description,
-    url: abs(routeFor('privacy', 'ar')),
-  },
 };
 
-const TRAIL = [{ name: 'الرئيسية', path: '/ar/' }, { name: 'سياسة الخصوصية', path: routeFor('privacy', 'ar') }];
+const TRAIL = [
+  { name: 'الرئيسية', path: '/ar/' },
+  { name: 'سياسة الخصوصية', path: PATH },
+];
 
-export default function PrivacyARPage() {
+export default function PrivacyAR() {
   return (
     <PageShell locale="ar">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema('ar', abs(routeFor('privacy', 'ar')), TRAIL)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema('ar', abs(PATH), TRAIL)) }}
       />
-      <SimplePage
+      <LegalShell
         locale="ar"
-        title={META.ar.privacy.title.split(' — ')[0]}
-        lede={META.ar.privacy.description}
-        notice={UI.ar.draftNotice}
-      />
+        title="سياسة الخصوصية"
+        updated="31 أغسطس 2026"
+        intro="توضح هذه السياسة البيانات الشخصية التي يجمعها هذا الموقع، وسبب جمعها، ومن تصل إليه، وما يمكنك أن تطلب منا فعله بها. وهي تخص موقع aqarqore.com فقط — أما إذا كنت عميلاً يستخدم منصة عقار كور، فتطبَّق شروط معالجة البيانات في اتفاقية الخدمة الخاصة بوكالتك."
+      >
+        <Sec id="who" heading="من نحن">
+          <p>
+            عقار كور توفّر نظام إدارة علاقات عملاء للقطاع العقاري في الخليج. لأي استفسار عن هذه السياسة أو
+            عن بيانات شخصية لدينا، تواصل معنا على <strong>{CONTACT.email}</strong> أو عبر واتساب{' '}
+            <strong dir="ltr">{CONTACT.whatsappDisplay}</strong>.
+          </p>
+        </Sec>
+
+        <Sec id="collect" heading="ما الذي نجمعه">
+          <p>نجمع بيانات شخصية في حالة واحدة فقط: عند إرسال نموذج طلب العرض التوضيحي.</p>
+          <List items={[
+            'الاسم',
+            'اسم الوكالة أو الشركة',
+            'البريد الإلكتروني للعمل',
+            'رقم الهاتف',
+            'السوق الرئيسي (مثل دبي أو الدوحة أو الرياض)',
+            'حجم فريق الوكلاء، كنطاق تقريبي',
+            'النظام المستخدم حالياً، إن اخترت ذكره',
+          ]} />
+          <p>
+            لا نستخدم أدوات تحليلات على هذا الموقع. لا توجد ملفات تعريف ارتباط إعلانية أو تتبعية، ولا بكسل
+            تتبع، ولا تسجيل للجلسات. ولا يكتب الموقع في الكوكيز أو التخزين المحلي.
+          </p>
+        </Sec>
+
+        <Sec id="why" heading="لماذا نجمعها">
+          <p>
+            للرد على طلبك فقط، ولإجراء محادثة تجارية حول مدى ملاءمة عقار كور لوكالتك. لا نستخدمها في اتخاذ
+            قرارات آلية أو تصنيف، ولا نبيعها.
+          </p>
+          <p>الأساس النظامي هو موافقتك عند إرسال النموذج، ومصلحتنا المشروعة في الرد على استفسار بدأته أنت.</p>
+        </Sec>
+
+        <Sec id="how" heading="كيف يصلنا طلبك">
+          <p>
+            عند الإرسال، يفتح متصفحك محادثة واتساب برسالة تتضمن البيانات التي أدخلتها.{' '}
+            <strong>أنت من يرسل تلك الرسالة</strong> — ولا يُنقل شيء قبل ذلك. وإن فضّلت، تتيح الصفحة نفسها
+            خيار البريد الإلكتروني بدلاً من ذلك.
+          </p>
+          <p>
+            هذا يعني أن محتوى استفسارك يمر عبر واتساب المُشغَّل من ميتا ويخضع لشروط الخصوصية الخاصة بها. وإن
+            كنت تفضّل عدم استخدام واتساب، راسلنا مباشرةً على <strong>{CONTACT.email}</strong>.
+          </p>
+        </Sec>
+
+        <Sec id="sharing" heading="من يطّلع عليها">
+          <p>
+            لا نبيع البيانات الشخصية ولا نؤجرها ولا نتاجر بها. يطّلع عليها موظفو عقار كور المعنيون بطلبك،
+            ومزوّد خدمة المراسلة أو البريد الذي ينقلها.
+          </p>
+          <p>
+            يشارك طرف ثالث واحد في عرض هذا الموقع: بعض صور العقارات في الصفحة الرئيسية مستضافة لدى Unsplash،
+            لذا يطلبها متصفحك من خوادمهم مباشرةً ويكون عنوان IP الخاص بك ظاهراً لهم، كما هو الحال مع أي صورة
+            مستضافة خارجياً.
+          </p>
+        </Sec>
+
+        <Sec id="retention" heading="مدة الاحتفاظ">
+          <p>
+            نحتفظ بالاستفسارات طوال فترة المحادثة النشطة ولمدة تصل إلى 24 شهراً بعدها، حتى نتمكن من متابعة
+            الحديث إن عدت إلينا. بعد ذلك تُحذف. ويمكنك طلب حذفها قبل ذلك في أي وقت.
+          </p>
+        </Sec>
+
+        <Sec id="rights" heading="حقوقك">
+          <p>
+            بحسب مكان إقامتك — بما في ذلك بموجب نظام حماية البيانات الشخصية في المملكة العربية السعودية
+            وإطار حماية البيانات في الإمارات — قد يكون لك الحق في:
+          </p>
+          <List items={[
+            'معرفة البيانات الشخصية التي نحتفظ بها عنك',
+            'طلب تصحيح أي معلومة غير دقيقة',
+            'طلب حذفها',
+            'سحب الموافقة، ما يوقف تواصلنا معك',
+            'الاعتراض على طريقة استخدامنا لها',
+          ]} />
+          <p>
+            لممارسة أي من ذلك، راسلنا على <strong>{CONTACT.email}</strong>. سنرد خلال 30 يوماً، دون أي رسوم.
+          </p>
+        </Sec>
+
+        <Sec id="security" heading="الأمان">
+          <p>
+            يُقدَّم هذا الموقع عبر HTTPS. وتُحفظ بيانات الاستفسارات في أنظمتنا مع تقييد الوصول للموظفين
+            المعنيين. ولا يوجد نقل عبر الإنترنت آمن بشكل مطلق، ولا يمكننا ضمان أمان تام.
+          </p>
+        </Sec>
+
+        <Sec id="children" heading="الأطفال">
+          <p>
+            هذا موقع موجّه للأعمال وليس للأطفال. ولا نجمع عن قصد بيانات شخصية لمن هم دون 18 عاماً.
+          </p>
+        </Sec>
+
+        <Sec id="changes" heading="تحديث هذه السياسة">
+          <p>
+            عند تغيير هذه السياسة سنحدّث التاريخ أعلى الصفحة. وأي تغيير جوهري في طريقة تعاملنا مع البيانات
+            الشخصية سيُوضَّح هنا لا أن يُجرى بصمت.
+          </p>
+        </Sec>
+      </LegalShell>
     </PageShell>
   );
 }

@@ -1,36 +1,110 @@
-import { alternatesFor, abs, routeFor } from '@/lib/site';
-import { META } from '@/lib/copy';
+import { alternatesFor, abs, routeFor, CONTACT } from '@/lib/site';
 import { pageSchema } from '@/lib/schema';
 import PageShell from '@/components/PageShell';
-import SimplePage from '@/components/SimplePage';
-import { UI } from '@/lib/copy';
+import { LegalShell, Sec } from '@/components/LegalPage';
+
+const PATH = routeFor('terms', 'ar');
 
 export const metadata = {
-  title: META.ar.terms.title,
-  description: META.ar.terms.description,
+  title: 'شروط الخدمة — عقار كور',
+  description:
+    'الشروط التي تحكم استخدام موقع عقار كور، بما في ذلك الاستخدام المقبول والملكية الفكرية وطبيعة المعلومات المنشورة وحدود المسؤولية.',
   alternates: alternatesFor('terms', 'ar'),
-  openGraph: {
-    title: META.ar.terms.title,
-    description: META.ar.terms.description,
-    url: abs(routeFor('terms', 'ar')),
-  },
 };
 
-const TRAIL = [{ name: 'الرئيسية', path: '/ar/' }, { name: 'شروط الخدمة', path: routeFor('terms', 'ar') }];
+const TRAIL = [
+  { name: 'الرئيسية', path: '/ar/' },
+  { name: 'شروط الخدمة', path: PATH },
+];
 
-export default function TermsARPage() {
+export default function TermsAR() {
   return (
     <PageShell locale="ar">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema('ar', abs(routeFor('terms', 'ar')), TRAIL)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema('ar', abs(PATH), TRAIL)) }}
       />
-      <SimplePage
+      <LegalShell
         locale="ar"
-        title={META.ar.terms.title.split(' — ')[0]}
-        lede={META.ar.terms.description}
-        notice={UI.ar.draftNotice}
-      />
+        title="شروط الخدمة"
+        updated="31 أغسطس 2026"
+        intro="تحكم هذه الشروط استخدامك لموقع aqarqore.com. وهي لا تحكم استخدام منصة عقار كور نفسها، إذ تخضع تلك لاتفاقية الخدمة الموقّعة مع كل عميل. إن لم تقبل هذه الشروط، فيرجى عدم استخدام الموقع."
+      >
+        <Sec id="use" heading="استخدام الموقع">
+          <p>
+            يمكنك قراءة محتوى هذا الموقع ومشاركته والإشارة إليه لأغراض تجارية مشروعة. ولا يجوز محاولة الوصول
+            غير المصرّح به إليه، أو التشويش على تشغيله، أو استخراج بياناته بحجم يضر بالخدمة للآخرين، أو
+            استخدامه لنشر مواد غير قانونية أو ضارة.
+          </p>
+        </Sec>
+
+        <Sec id="information" heading="المعلومات المنشورة هنا">
+          <p>
+            الأدلة المنشورة على هذا الموقع — بما فيها ما يتعلق بإيجاري وتراخيص وريرا ودائرة الأراضي والأملاك
+            والأطر التنظيمية السعودية — هي{' '}
+            <strong>معلومات عامة للمهنيين في القطاع العقاري، وليست استشارة قانونية أو ضريبية أو تنظيمية أو
+            مالية.</strong>
+          </p>
+          <p>
+            تحدد الجهات المختصة الاشتراطات والرسوم والإجراءات وهي تتغير. تحقق من التزاماتك الحالية عبر
+            القنوات الرسمية ومع مستشار مؤهل قبل التصرف. ونحن نحرص على الدقة لكننا لا نضمن أن كل ما هنا محدَّث
+            أو كامل.
+          </p>
+        </Sec>
+
+        <Sec id="comparisons" heading="المقارنات وأسماء الأطراف الثالثة">
+          <p>
+            تقارن بعض الصفحات عقار كور بمنتجات أخرى. وتعكس تلك المقارنات فهمنا وقت الكتابة، وهي بطبيعتها
+            صادرة عن جهة ذات مصلحة، وهو ما نوضّحه في كل صفحة. وأسماء المنتجات والشركات الأخرى علامات تجارية
+            تخص أصحابها وتُستخدم للتعريف فقط، ولا تعني الإشارة إليها وجود ارتباط أو تأييد بأي اتجاه.
+          </p>
+        </Sec>
+
+        <Sec id="claims" heading="الأرقام ومؤشرات الأداء">
+          <p>
+            مؤشرات الأداء المعروضة على هذا الموقع مستمدة من بيانات منصة عقار كور التشغيلية، وهي إرشادية لا
+            مضمونة. وحاسبة الإيرادات تقدير مبني على افتراضات موضّحة بجانبها، وليست توقعاً للنتائج التي ستحققها
+            وكالتك.
+          </p>
+        </Sec>
+
+        <Sec id="ip" heading="الملكية الفكرية">
+          <p>
+            محتوى هذا الموقع وتصميمه وشيفرته مملوكة لعقار كور أو للمرخِّصين لها. يمكنك الاقتباس منه والربط
+            إليه مع الإسناد، ولا يجوز إعادة نشر أجزاء جوهرية منه ونسبتها إليك.
+          </p>
+        </Sec>
+
+        <Sec id="enquiries" heading="طلبات العرض التوضيحي">
+          <p>
+            إرسال طلب عرض توضيحي استفسار لا عقد، ولا ينشئ التزاماً على أي من الطرفين. ونسعى للرد خلال يوم عمل
+            واحد دون ضمان مدة محددة. وما نفعله بالبيانات التي تزوّدنا بها موضّح في سياسة الخصوصية.
+          </p>
+        </Sec>
+
+        <Sec id="availability" heading="التوافر">
+          <p>
+            نسعى لإبقاء الموقع متاحاً دون ضمان استمرارية الوصول. ويجوز لنا تغيير أي جزء منه أو تعليقه أو
+            سحبه، بما في ذلك الصفحات والأدلة المنشورة، دون إشعار مسبق.
+          </p>
+        </Sec>
+
+        <Sec id="liability" heading="حدود المسؤولية">
+          <p>
+            إلى أقصى حد يسمح به النظام، لا تتحمل عقار كور مسؤولية الأضرار غير المباشرة أو التبعية الناشئة عن
+            استخدام هذا الموقع أو الاعتماد على ما ينشر فيه. ولا تستثني هذه الشروط أي مسؤولية لا يجوز
+            استثناؤها نظاماً.
+          </p>
+        </Sec>
+
+        <Sec id="changes" heading="تحديث الشروط">
+          <p>
+            قد نحدّث هذه الشروط، ويوضّح التاريخ أعلى الصفحة آخر تغيير. واستمرارك في استخدام الموقع بعد التغيير
+            يعني قبولك النسخة المحدّثة.
+          </p>
+          <p>للاستفسار عن هذه الشروط: <strong>{CONTACT.email}</strong>.</p>
+        </Sec>
+      </LegalShell>
     </PageShell>
   );
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { UI } from '@/lib/copy';
+import { CONTACT, waLink, mailto } from '@/lib/site';
 
 /**
  * Minimal header/footer chrome for the routed sub-pages.
@@ -85,7 +86,11 @@ export default function PageShell({ locale = 'en', hasTranslation = true, childr
             © {new Date().getFullYear()}{' '}
             {isRtl ? 'شركة AqarQore للتقنية. جميع الحقوق محفوظة.' : 'AqarQore Technologies Inc. All rights reserved.'}
           </span>
-          <span className="flex items-center gap-5">
+          <span className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:text-white transition-colors font-mono">
+              {CONTACT.whatsappDisplay}
+            </a>
+            <a href={mailto()} className="hover:text-white transition-colors font-mono">{CONTACT.email}</a>
             <Link href={home} className="hover:text-white transition-colors">{t.homeLink}</Link>
             <Link href={isRtl ? '/ar/privacy/' : '/privacy/'} className="hover:text-white transition-colors">
               {isRtl ? 'سياسة الخصوصية' : 'Privacy'}

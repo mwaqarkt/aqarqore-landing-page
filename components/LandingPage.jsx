@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { CONTACT, waLink, mailto } from '@/lib/site';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import {
   Menu,
@@ -3690,11 +3691,15 @@ export default function LandingPage({ locale = 'en' }) {
                   : 'The autonomous real estate operating system engineered specifically for high-volume GCC brokerages across Qatar, the UAE, and Saudi Arabia.'}
               </p>
 
-              <div className="pt-2 flex items-center gap-2 text-[11px] text-sky-300 font-mono">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>
-                  {isRtl ? 'المراكز الإقليمية: دبي (DIFC) • الدوحة • الرياض' : 'Regional Hubs: Dubai (DIFC) • Doha • Riyadh'}
-                </span>
+              <div className="pt-2 space-y-2 text-[12px]">
+                <a href={waLink()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sky-300 hover:text-white transition-colors w-fit">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                  <span dir="ltr" className="font-mono">{CONTACT.whatsappDisplay}</span>
+                  <span className="text-blue-200/70">{isRtl ? '(واتساب)' : '(WhatsApp)'}</span>
+                </a>
+                <a href={mailto()} className="block text-blue-200/80 hover:text-white transition-colors font-mono w-fit">
+                  {CONTACT.email}
+                </a>
               </div>
             </div>
 
