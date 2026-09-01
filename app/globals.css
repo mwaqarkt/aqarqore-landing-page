@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy-deep: #003068;
+    --brand-navy-blue: #0858A8;
+    --brand-primary: #1078C0;
+    --brand-bg: #F7F9FB;
+  }
+}
+
+html,
+body {
+  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #F7F9FB;
+}
+
+/* Arabic / RTL typography — driven by the server-rendered <html dir>, not JS */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  font-family: var(--font-tajawal), var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, div {
+  font-family: inherit;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(0, 48, 104, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 120, 192, 0.25);
+}
+
+.glow-blue { box-shadow: 0 0 35px -5px rgba(16, 120, 192, 0.35); }
+.glow-subtle { box-shadow: 0 20px 40px -15px rgba(0, 48, 104, 0.12); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #003068; }
+::-webkit-scrollbar-thumb { background: #1078C0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #0858A8; }
+
+/* Respect reduced-motion for the animation-heavy landing page */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Section background images.
+   The plain url() line is the fallback; browsers that understand image-set()
+   override it with AVIF. Declared as classes rather than inline styles so the
+   progressive enhancement actually works — an inline style cannot express it.
+   --------------------------------------------------------------------------- */
+.bg-art-hero-gcc-waterfront-bg {
+  background-image: url('/hero-gcc-waterfront-bg.webp');
+  background-image: image-set(
+    url('/hero-gcc-waterfront-bg.avif') type('image/avif'),
+    url('/hero-gcc-waterfront-bg.webp') type('image/webp')
+  );
+}
+.bg-art-real-estate-blueprint-sketch {
+  background-image: url('/real-estate-blueprint-sketch.webp');
+  background-image: image-set(
+    url('/real-estate-blueprint-sketch.avif') type('image/avif'),
+    url('/real-estate-blueprint-sketch.webp') type('image/webp')
+  );
+}
+.bg-art-real-estate-line-pattern {
+  background-image: url('/real-estate-line-pattern.webp');
+  background-image: image-set(
+    url('/real-estate-line-pattern.avif') type('image/avif'),
+    url('/real-estate-line-pattern.webp') type('image/webp')
+  );
+}
+.bg-art-gcc-telemetry-bg {
+  background-image: url('/gcc-telemetry-bg.webp');
+  background-image: image-set(
+    url('/gcc-telemetry-bg.avif') type('image/avif'),
+    url('/gcc-telemetry-bg.webp') type('image/webp')
+  );
+}
+.bg-art-security-blueprint-skyline {
+  background-image: url('/security-blueprint-skyline.webp');
+  background-image: image-set(
+    url('/security-blueprint-skyline.avif') type('image/avif'),
+    url('/security-blueprint-skyline.webp') type('image/webp')
+  );
+}
+.bg-art-roi-calculator-bg {
+  background-image: url('/roi-calculator-bg.webp');
+  background-image: image-set(
+    url('/roi-calculator-bg.avif') type('image/avif'),
+    url('/roi-calculator-bg.webp') type('image/webp')
+  );
+}
+.bg-art-pricing-center-card-bg {
+  background-image: url('/pricing-center-card-bg.webp');
+  background-image: image-set(
+    url('/pricing-center-card-bg.avif') type('image/avif'),
+    url('/pricing-center-card-bg.webp') type('image/webp')
+  );
+}
+.bg-art-cta-banner-bg {
+  background-image: url('/cta-banner-bg.webp');
+  background-image: image-set(
+    url('/cta-banner-bg.avif') type('image/avif'),
+    url('/cta-banner-bg.webp') type('image/webp')
+  );
+}
+.bg-art-gcc-hero-skyline-bg {
+  background-image: url('/gcc-hero-skyline-bg.webp');
+  background-image: image-set(
+    url('/gcc-hero-skyline-bg.avif') type('image/avif'),
+    url('/gcc-hero-skyline-bg.webp') type('image/webp')
+  );
+}
