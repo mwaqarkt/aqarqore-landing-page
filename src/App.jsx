@@ -3573,10 +3573,9 @@ export default function App() {
             <div className={`flex flex-col items-center ${isRtl ? 'lg:items-start' : 'lg:items-end'} gap-3 shrink-0`}>
               <a
                 href={DEMO_CTA_URL}
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#002859] hover:bg-sky-50 font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 border border-white cursor-pointer"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-[#002859] hover:bg-sky-50 font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 border border-white cursor-pointer text-center"
               >
                 <span>{isRtl ? 'احجز العرض التوضيحي الآن' : 'Book Your 20-Min Demo Now'}</span>
-                <ArrowRight className={`w-4 h-4 sm:w-5 sm:h-5 text-[#002859] ${isRtl ? 'rotate-180' : ''}`} />
               </a>
 
               <div className="flex items-center gap-4 text-[11px] font-medium text-blue-100/80">
