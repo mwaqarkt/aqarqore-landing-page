@@ -925,10 +925,9 @@ export default function App() {
                     <div className="pt-2 flex items-center justify-between">
                       <a 
                         href="#pricing"
-                        className="text-xs font-semibold text-slate-400 group-hover:text-white transition-colors flex items-center gap-2"
+                        className="text-xs font-semibold text-slate-400 group-hover:text-white transition-colors flex items-center"
                       >
                         <span>{isRtl ? 'عرض التفاصيل' : 'View Details'}</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-1 group-hover:text-[#39BFF5] transition-all" />
                       </a>
 
                       <div className={`w-10 h-10 rounded-full border flex items-center justify-center text-white ${buttonStyle} group-hover:scale-108 transition-transform`}>
