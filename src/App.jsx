@@ -3514,10 +3514,9 @@ export default function App() {
 
                 <a
                   href={DEMO_CTA_URL}
-                  className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer shrink-0"
+                  className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 flex items-center justify-center cursor-pointer shrink-0"
                 >
                   <span>{isRtl ? 'تواصل مع الدعم' : 'Contact Support'}</span>
-                  <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
                 </a>
               </div>
 
