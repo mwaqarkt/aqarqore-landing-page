@@ -85,7 +85,7 @@ PROPERTY ASSETS INCLUDED:
 // Curated Property Images (High Resolution Architecture & Real Estate)
 const PROPERTY_IMAGES = {
   heroPenthouse: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
-  waterfrontVilla: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+  waterfrontVilla: "/luxury-villa-showcase.jpg",
   riyadhTower: "https://images.unsplash.com/photo-1546412414-8035e1776c9a?auto=format&fit=crop&w=1200&q=80",
   luxuryInterior: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
   keyHandover: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
@@ -370,14 +370,13 @@ export default function LandingPage({ locale = 'en' }) {
   const otherLocaleHref = isRtl ? '/' : '/ar/';
   const demoHref = isRtl ? '/ar/book-a-demo/' : '/book-a-demo/';
   const pricingHref = isRtl ? '/ar/pricing/' : '/pricing/';
+  // Set NEXT_PUBLIC_PRODUCT_VIDEO_URL to enable the tour modal; without it the
+  // secondary CTA links to the feature pages rather than an empty player.
+  const productVideoUrl = process.env.NEXT_PUBLIC_PRODUCT_VIDEO_URL || '';
   const [activeFaq, setActiveFaq] = useState(null);
   const [agentCount, setAgentCount] = useState(15);
   const [avgDealValue, setAvgDealValue] = useState(1200000);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  // Set NEXT_PUBLIC_PRODUCT_VIDEO_URL to an embed URL to enable the tour modal.
-  // Without it the secondary CTA links to the feature pages rather than opening
-  // an empty player.
-  const productVideoUrl = process.env.NEXT_PUBLIC_PRODUCT_VIDEO_URL || '';
   const [activePropertyTab, setActivePropertyTab] = useState('doha');
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -507,9 +506,9 @@ export default function LandingPage({ locale = 'en' }) {
             <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
               <Link
                 href={otherLocaleHref}
-                hrefLang={isRtl ? 'en' : 'ar'}
-                lang={isRtl ? 'en' : 'ar'}
-                aria-label={isRtl ? 'Switch to English' : 'التبديل إلى العربية'}
+                hrefLang={isRtl ? "en" : "ar"}
+                lang={isRtl ? "en" : "ar"}
+                aria-label={isRtl ? "Switch to English" : "التبديل إلى العربية"}
                 className="px-3.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 text-xs font-bold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
               >
                 <span>{isRtl ? 'English' : 'العربية'}</span>
@@ -605,10 +604,10 @@ export default function LandingPage({ locale = 'en' }) {
         onMouseMove={handleHeroMouseMove}
         className="relative min-h-[92vh] lg:min-h-[850px] flex items-center pt-28 pb-20 lg:pt-32 lg:pb-24 bg-[#001128] text-white overflow-hidden"
       >
-        {/* Subtle Ambient Radial Lighting Effects */}
-        <div className="absolute top-1/4 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/10 blur-[160px] pointer-events-none" />
-        <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[#1078C0]/10 blur-[150px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+        {/* Full Hero Luxury GCC Waterfront Skyline Background Image (Pure Image) */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none bg-art-hero-gcc-waterfront-bg"
+        />
 
         {/* MAIN HERO CONTENT CONTAINER */}
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
@@ -684,28 +683,27 @@ export default function LandingPage({ locale = 'en' }) {
                   <span>{isRtl ? 'شاهد نظامك على عقاراتك في 20 دقيقة' : 'See AqarQore on Your Listings in 20 Mins'}</span>
                 </a>
 
-                {/* Secondary CTA: product tour if a video is configured, otherwise
-                    the feature pages. Never an empty player. */}
+                {/* Secondary Translucent Glass Button with Scale Icon */}
                 {productVideoUrl ? (
                   <button
                     onClick={() => setIsVideoModalOpen(true)}
                     className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
                   >
-                    <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
-                    </span>
-                    <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
-                  </button>
+                  <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
+                  </span>
+                  <span>{isRtl ? 'شاهد جولة النظام' : 'Watch 2 Min Product Tour'}</span>
+                </button>
                 ) : (
                   <Link
-                    href={isRtl ? '/ar/features/' : '/features/'}
+                    href={isRtl ? "/ar/features/" : "/features/"}
                     className="inline-flex items-center justify-center whitespace-nowrap gap-2.5 px-6 py-4 rounded-xl bg-[#001B3D]/80 hover:bg-[#062D5C]/90 text-blue-100 font-semibold text-sm sm:text-base border border-blue-400/25 transition-all hover:border-[#39BFF5]/60 backdrop-blur-md cursor-pointer group text-center shadow-md"
                   >
-                    <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
-                    </span>
-                    <span>{isRtl ? 'كيف يعمل النظام' : 'See How It Works'}</span>
-                  </Link>
+                  <span className="w-7 h-7 rounded-full bg-[#0878D1]/40 border border-[#39BFF5]/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-3.5 h-3.5 fill-current text-[#39BFF5] ml-0.5" />
+                  </span>
+                  <span>{isRtl ? 'كيف يعمل النظام' : 'See How It Works'}</span>
+                </Link>
                 )}
               </motion.div>
 
@@ -744,23 +742,20 @@ export default function LandingPage({ locale = 'en' }) {
                 }}
                 className="relative w-full max-w-[620px] lg:max-w-none flex items-center justify-center"
               >
-                <div className="relative group w-full">
-                  {/* Subtle Outer Cyan Glow Aura */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-[#39BFF5]/25 to-[#0878D1]/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                  
-                  {/* High-Resolution GCC Command Center Dashboard & Glowing Node Base Graphic */}
+                <div className="relative w-full">
+                  {/* High-Resolution GCC Command Center Dashboard (Sharp & Crisp, No Shadow/Blur) */}
                   <picture>
                     <source srcSet="/hero-command-center-hud.avif" type="image/avif" />
                     <source srcSet="/hero-command-center-hud.webp" type="image/webp" />
                     <img
                       src="/hero-command-center-hud.png"
-                      alt="AqarQore dashboard showing live lead assignment across Dubai, Doha and Riyadh"
+                      alt="AqarQore dashboard showing the lead pipeline and 24/7 AI agent coverage across Dubai, Doha and Riyadh"
                       width="1024"
-                      height="682"
+                      height="670"
                       loading="eager"
                       fetchPriority="high"
                       decoding="async"
-                      className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter saturate-105"
+                      className="relative z-10 w-full h-auto object-contain"
                     />
                   </picture>
                 </div>
@@ -971,10 +966,9 @@ export default function LandingPage({ locale = 'en' }) {
                     <div className="pt-2 flex items-center justify-between">
                       <a 
                         href="#pricing"
-                        className="text-xs font-semibold text-slate-400 group-hover:text-white transition-colors flex items-center gap-2"
+                        className="text-xs font-semibold text-slate-400 group-hover:text-white transition-colors flex items-center"
                       >
                         <span>{isRtl ? 'عرض التفاصيل' : 'View Details'}</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-1 group-hover:text-[#39BFF5] transition-all" />
                       </a>
 
                       <div className={`w-10 h-10 rounded-full border flex items-center justify-center text-white ${buttonStyle} group-hover:scale-108 transition-transform`}>
@@ -1069,6 +1063,10 @@ export default function LandingPage({ locale = 'en' }) {
       {/* 3. AqarQore ENGINE: THE CONNECTED INTELLIGENT OPERATING SYSTEM (WHITE BG)   */}
       {/* -------------------------------------------------------------------------- */}
       <section id="engine" className="py-24 sm:py-32 bg-[#F8FAFC] text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+        {/* Architectural Blueprint Section Backdrop */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-[0.08] bg-art-real-estate-blueprint-sketch"
+        />
         {/* Subtle Technical Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,48,104,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,48,104,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
@@ -1160,16 +1158,20 @@ export default function LandingPage({ locale = 'en' }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.05 }}
-                className="rounded-[28px] bg-gradient-to-b from-[#001F47] to-[#00142E] p-6 sm:p-7 border border-sky-500/35 hover:border-[#39BFF5] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(8,120,209,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+                className="rounded-[28px] bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#0858A8]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
               >
+                {/* Architectural Blueprint Background Texture on White Canvas */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none bg-art-real-estate-line-pattern"
+                />
                 {/* Top Corner Technical Accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#39BFF5]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-blue-500/10 to-transparent pointer-events-none rounded-bl-3xl" />
 
-                <div className="space-y-6">
+                <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#39BFF5] tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-[#0858A8] tracking-wider">
                         {isRtl ? 'المعيار 01' : 'METRIC 01'}
                       </span>
                       <span className="text-[9px] font-mono text-slate-400">
@@ -1177,8 +1179,8 @@ export default function LandingPage({ locale = 'en' }) {
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#39BFF5] animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#39BFF5]" />
+                      <span className="w-2 h-2 rounded-full bg-[#0858A8] animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0858A8]" />
                     </div>
                   </div>
 
@@ -1187,16 +1189,16 @@ export default function LandingPage({ locale = 'en' }) {
                     <div className="relative w-28 h-28 flex items-center justify-center">
                       {/* Rotating Outer Radar Ring */}
                       <motion.div 
-                        className="absolute inset-0 rounded-full border border-dashed border-[#39BFF5]/40"
+                        className="absolute inset-0 rounded-full border border-dashed border-blue-300/60"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 16, repeat: Infinity, ease: 'linear' }}
                       />
                       {/* Pulsing Aura */}
-                      <div className="absolute inset-2 rounded-full bg-[#0878D1]/20 blur-md group-hover:bg-[#39BFF5]/30 transition-colors" />
+                      <div className="absolute inset-2 rounded-full bg-blue-50 blur-md group-hover:bg-blue-100 transition-colors" />
                       {/* Central Speedometer Core */}
-                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-sky-400/50 flex flex-col items-center justify-center text-center shadow-inner">
-                        <Clock className="w-6 h-6 text-[#39BFF5] group-hover:scale-110 transition-transform" />
-                        <span className="text-[10px] font-mono font-extrabold text-sky-200 mt-1">
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-blue-50/80 border border-blue-200/80 flex flex-col items-center justify-center text-center shadow-xs">
+                        <Clock className="w-6 h-6 text-[#0858A8] group-hover:scale-110 transition-transform" />
+                        <span className="text-[10px] font-mono font-extrabold text-[#0858A8] mt-1">
                           {isRtl ? '< 10 ث' : '< 10s'}
                         </span>
                       </div>
@@ -1205,25 +1207,25 @@ export default function LandingPage({ locale = 'en' }) {
 
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#39BFF5] transition-colors">
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-[#0858A8] transition-colors">
                       {isRtl ? '10 ثوانٍ' : '10 Seconds'}
                     </div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                    <div className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                       {isRtl ? 'نافذة التوزيع التلقائي للعملاء' : 'Max lead assignment window'}
                     </div>
-                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                    <p className="text-[11.5px] text-slate-500 leading-relaxed pt-1">
                       {isRtl ? '«أتمتة فائقة السرعة تُبقيك دائماً في المقدمة.»' : '“Lightning-fast automation that keeps you ahead.”'}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-[#39BFF5] flex items-center gap-1.5">
-                    <Zap className="w-3 h-3 text-[#39BFF5]" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <span className="text-[10px] font-mono font-bold text-[#0858A8] flex items-center gap-1.5">
+                    <Zap className="w-3 h-3 text-[#0858A8]" />
                     {isRtl ? 'توزيع تحت 10 ثوانٍ' : 'SUB-10S ROUTING'}
                   </span>
-                  <span className="text-[9.5px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                  <span className="text-[9.5px] font-mono text-emerald-700 font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
                     {isRtl ? 'نشط' : 'ACTIVE'}
                   </span>
                 </div>
@@ -1237,16 +1239,20 @@ export default function LandingPage({ locale = 'en' }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="rounded-[28px] bg-gradient-to-b from-[#00223D] to-[#00142E] p-6 sm:p-7 border border-emerald-500/35 hover:border-[#00D6A3] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(0,214,163,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
+                className="rounded-[28px] bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
               >
+                {/* Architectural Blueprint Background Texture on White Canvas */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none bg-art-real-estate-line-pattern"
+                />
                 {/* Top Corner Technical Accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#00D6A3]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-emerald-500/10 to-transparent pointer-events-none rounded-bl-3xl" />
 
-                <div className="space-y-6">
+                <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#00D6A3] tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-emerald-700 tracking-wider">
                         {isRtl ? 'المعيار 02' : 'METRIC 02'}
                       </span>
                       <span className="text-[9px] font-mono text-slate-400">
@@ -1254,8 +1260,8 @@ export default function LandingPage({ locale = 'en' }) {
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#00D6A3] animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D6A3]" />
+                      <span className="w-2 h-2 rounded-full bg-emerald-600 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                     </div>
                   </div>
 
@@ -1263,19 +1269,19 @@ export default function LandingPage({ locale = 'en' }) {
                   <div className="relative py-2 flex items-center justify-center">
                     <div className="relative w-28 h-28 flex items-center justify-center">
                       {/* Scanning Ring */}
-                      <div className="absolute inset-0 rounded-full border border-emerald-500/30" />
-                      <div className="absolute inset-2 rounded-full bg-emerald-500/15 blur-md group-hover:bg-emerald-500/25 transition-colors" />
+                      <div className="absolute inset-0 rounded-full border border-emerald-300/60" />
+                      <div className="absolute inset-2 rounded-full bg-emerald-50 blur-md group-hover:bg-emerald-100 transition-colors" />
                       
                       {/* Shield Core */}
-                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-emerald-500/50 flex flex-col items-center justify-center text-center shadow-inner overflow-hidden">
-                        <ShieldCheck className="w-7 h-7 text-[#00D6A3] group-hover:scale-110 transition-transform" />
-                        <span className="text-[9px] font-mono font-extrabold text-emerald-300 mt-1">
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-emerald-50/80 border border-emerald-200/80 flex flex-col items-center justify-center text-center shadow-xs overflow-hidden">
+                        <ShieldCheck className="w-7 h-7 text-emerald-600 group-hover:scale-110 transition-transform" />
+                        <span className="text-[9px] font-mono font-extrabold text-emerald-700 mt-1">
                           {isRtl ? 'موثق' : 'VERIFIED'}
                         </span>
                         
                         {/* Laser Scan Sweep */}
                         <motion.div 
-                          className="absolute left-0 right-0 h-[2px] bg-[#00D6A3] shadow-[0_0_8px_#00D6A3]"
+                          className="absolute left-0 right-0 h-[2px] bg-emerald-500 shadow-[0_0_8px_#059669]"
                           animate={{ top: ['0%', '100%', '0%'] }}
                           transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
                         />
@@ -1285,25 +1291,25 @@ export default function LandingPage({ locale = 'en' }) {
 
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#00D6A3] transition-colors">
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-emerald-700 transition-colors">
                       {isRtl ? 'تدقيق 100%' : '100% Audit'}
                     </div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                    <div className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                       {isRtl ? 'مطابقة واعتماد العمولات بخطوتين' : 'Reconciled commission signoffs'}
                     </div>
-                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                    <p className="text-[11.5px] text-slate-500 leading-relaxed pt-1">
                       {isRtl ? '«شفافية كاملة ومحاسبة دقيقة لكل صفقة.»' : '“Complete transparency. Every deal accounted for.”'}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-[#00D6A3] flex items-center gap-1.5">
-                    <Lock className="w-3 h-3 text-[#00D6A3]" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <span className="text-[10px] font-mono font-bold text-emerald-700 flex items-center gap-1.5">
+                    <Lock className="w-3 h-3 text-emerald-600" />
                     {isRtl ? 'تدقيق موثق' : 'AUDIT VERIFIED'}
                   </span>
-                  <span className="text-[9.5px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                  <span className="text-[9.5px] font-mono text-emerald-700 font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
                     {isRtl ? 'قفل بخطوتين' : '2-STEP LOCK'}
                   </span>
                 </div>
@@ -1317,16 +1323,20 @@ export default function LandingPage({ locale = 'en' }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.25 }}
-                className="rounded-[28px] bg-gradient-to-b from-[#001D40] to-[#00142E] p-6 sm:p-7 border border-amber-500/35 hover:border-[#F5B91E] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(245,185,30,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+                className="rounded-[28px] bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-amber-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
               >
+                {/* Architectural Blueprint Background Texture on White Canvas */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none bg-art-real-estate-line-pattern"
+                />
                 {/* Top Corner Technical Accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#F5B91E]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-amber-500/10 to-transparent pointer-events-none rounded-bl-3xl" />
 
-                <div className="space-y-6">
+                <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#F5B91E] tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-amber-700 tracking-wider">
                         {isRtl ? 'المعيار 03' : 'METRIC 03'}
                       </span>
                       <span className="text-[9px] font-mono text-slate-400">
@@ -1334,23 +1344,23 @@ export default function LandingPage({ locale = 'en' }) {
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#F5B91E] animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5B91E]" />
+                      <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                     </div>
                   </div>
 
-                  {/* Large Visual: Meta Cloud API Communication Hub */}
+                  {/* Large Visual: Meta Verified Communication Hub */}
                   <div className="relative py-2 flex items-center justify-center">
                     <div className="relative w-28 h-28 flex items-center justify-center">
                       {/* Concentric Communication Signal Waves */}
-                      <div className="absolute inset-0 rounded-full border border-amber-500/30 animate-ping opacity-30" />
-                      <div className="absolute inset-1 rounded-full border border-amber-500/40" />
-                      <div className="absolute inset-3 rounded-full bg-amber-500/15 blur-md group-hover:bg-amber-500/25 transition-colors" />
+                      <div className="absolute inset-0 rounded-full border border-amber-300/60 animate-ping opacity-30" />
+                      <div className="absolute inset-1 rounded-full border border-amber-300/50" />
+                      <div className="absolute inset-3 rounded-full bg-amber-50 blur-md group-hover:bg-amber-100 transition-colors" />
 
                       {/* Hub Core */}
-                      <div className="relative z-10 w-20 h-20 rounded-full bg-[#001738] border border-amber-500/50 flex flex-col items-center justify-center text-center shadow-inner">
-                        <MessageSquare className="w-7 h-7 text-[#F5B91E] group-hover:scale-110 transition-transform" />
-                        <span className="text-[9px] font-mono font-extrabold text-amber-300 mt-1">
+                      <div className="relative z-10 w-20 h-20 rounded-full bg-amber-50/80 border border-amber-200/80 flex flex-col items-center justify-center text-center shadow-xs">
+                        <MessageSquare className="w-7 h-7 text-amber-600 group-hover:scale-110 transition-transform" />
+                        <span className="text-[9px] font-mono font-extrabold text-amber-700 mt-1">
                           {isRtl ? 'سحابة ميتا' : 'META CLOUD'}
                         </span>
                       </div>
@@ -1359,25 +1369,25 @@ export default function LandingPage({ locale = 'en' }) {
 
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#F5B91E] transition-colors">
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-amber-700 transition-colors">
                       {isRtl ? 'واجهة ميتا السحابية' : 'Meta Cloud API'}
                     </div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                    <div className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                       {isRtl ? 'واجهة واتساب السحابية الرسمية' : 'Official WhatsApp Cloud API'}
                     </div>
-                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                    <p className="text-[11.5px] text-slate-500 leading-relaxed pt-1">
                       {isRtl ? '«موثوق، آمن، ورسمي مباشرة من شركة ميتا.»' : '“Trusted. Secure. Official. Direct from Meta.”'}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-[#F5B91E] flex items-center gap-1.5">
-                    <CheckCircle className="w-3 h-3 text-[#F5B91E]" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <span className="text-[10px] font-mono font-bold text-amber-700 flex items-center gap-1.5">
+                    <CheckCircle className="w-3 h-3 text-amber-600" />
                     {isRtl ? 'واجهة برمجة رسمية' : 'OFFICIAL API'}
                   </span>
-                  <span className="text-[9.5px] font-mono text-amber-300 font-bold px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30">
+                  <span className="text-[9.5px] font-mono text-amber-800 font-bold px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200">
                     {isRtl ? 'سحابة ميتا' : 'META CLOUD'}
                   </span>
                 </div>
@@ -1391,16 +1401,20 @@ export default function LandingPage({ locale = 'en' }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
-                className="rounded-[28px] bg-gradient-to-b from-[#0B1A42] to-[#00142E] p-6 sm:p-7 border border-violet-500/35 hover:border-[#A78BFA] shadow-[0_20px_45px_-10px_rgba(0,27,61,0.3)] hover:shadow-[0_25px_55px_-10px_rgba(167,139,250,0.45)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
+                className="rounded-[28px] bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-violet-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden lg:translate-y-5"
               >
+                {/* Architectural Blueprint Background Texture on White Canvas */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none bg-art-real-estate-line-pattern"
+                />
                 {/* Top Corner Technical Accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#A78BFA]/15 to-transparent pointer-events-none rounded-bl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-violet-500/10 to-transparent pointer-events-none rounded-bl-3xl" />
 
-                <div className="space-y-6">
+                <div className="space-y-6 relative z-10">
                   {/* Module Header Strip */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-[#A78BFA] tracking-wider">
+                      <span className="text-[11px] font-mono font-bold text-violet-700 tracking-wider">
                         {isRtl ? 'المعيار 04' : 'METRIC 04'}
                       </span>
                       <span className="text-[9px] font-mono text-slate-400">
@@ -1408,59 +1422,59 @@ export default function LandingPage({ locale = 'en' }) {
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-ping" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#A78BFA]" />
+                      <span className="w-2 h-2 rounded-full bg-violet-600 animate-ping" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-violet-600" />
                     </div>
                   </div>
 
                   {/* Large Visual: Modern Smartphone Mockup with Simulated Mini Lead Card */}
                   <div className="relative py-2 flex items-center justify-center">
                     <div className="relative w-28 h-28 flex items-center justify-center">
-                      <div className="absolute inset-0 rounded-full border border-violet-500/30" />
-                      <div className="absolute inset-2 rounded-full bg-violet-500/15 blur-md group-hover:bg-violet-500/25 transition-colors" />
+                      <div className="absolute inset-0 rounded-full border border-violet-300/60" />
+                      <div className="absolute inset-2 rounded-full bg-violet-50 blur-md group-hover:bg-violet-100 transition-colors" />
 
                       {/* Phone Outline */}
-                      <div className="relative z-10 w-16 h-24 rounded-2xl bg-[#001026] border-2 border-violet-400/60 p-1.5 flex flex-col justify-between shadow-xl group-hover:scale-105 transition-transform">
+                      <div className="relative z-10 w-16 h-24 rounded-2xl bg-white border-2 border-violet-300 p-1.5 flex flex-col justify-between shadow-md group-hover:scale-105 transition-transform">
                         {/* Mini Phone Speaker notch */}
-                        <div className="w-4 h-1 rounded-full bg-violet-400/40 mx-auto" />
+                        <div className="w-4 h-1 rounded-full bg-violet-300 mx-auto" />
                         
                         {/* Mini Lead Card simulation */}
-                        <div className="p-1 rounded-md bg-[#032653] border border-sky-400/40 space-y-1">
-                          <div className="w-full h-1 bg-[#39BFF5] rounded-full" />
-                          <div className="w-3/4 h-0.5 bg-sky-200/50 rounded-full" />
-                          <div className="flex items-center justify-between text-[6px] font-mono text-[#00D6A3] pt-0.5">
+                        <div className="p-1 rounded-md bg-violet-50 border border-violet-200/80 space-y-1">
+                          <div className="w-full h-1 bg-violet-600 rounded-full" />
+                          <div className="w-3/4 h-0.5 bg-violet-400/50 rounded-full" />
+                          <div className="flex items-center justify-between text-[6px] font-mono text-emerald-700 pt-0.5 font-bold">
                             <span>{isRtl ? 'متزامن' : 'SYNCED'}</span>
                             <span>✓</span>
                           </div>
                         </div>
 
                         {/* Mini Home Indicator */}
-                        <div className="w-6 h-0.5 rounded-full bg-violet-400/40 mx-auto" />
+                        <div className="w-6 h-0.5 rounded-full bg-violet-300 mx-auto" />
                       </div>
                     </div>
                   </div>
 
                   {/* Primary Metric & Description */}
                   <div className="space-y-2">
-                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#A78BFA] transition-colors">
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-violet-700 transition-colors">
                       {isRtl ? 'تطبيق دون إنترنت' : 'Offline App'}
                     </div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">
+                    <div className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                       {isRtl ? 'تزامن معاينات القبو والمواقف' : 'Basement viewing sync'}
                     </div>
-                    <p className="text-[11.5px] text-blue-200/60 leading-relaxed pt-1">
+                    <p className="text-[11.5px] text-slate-500 leading-relaxed pt-1">
                       {isRtl ? '«اعمل في أي مكان وتزامن فور عودة الاتصال.»' : '“Work anywhere. Sync when you\'re back.”'}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Status Chip */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-[#A78BFA] flex items-center gap-1.5">
-                    <Smartphone className="w-3 h-3 text-[#A78BFA]" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <span className="text-[10px] font-mono font-bold text-violet-700 flex items-center gap-1.5">
+                    <Smartphone className="w-3 h-3 text-violet-600" />
                     {isRtl ? 'وضع دون اتصال' : 'OFFLINE MODE'}
                   </span>
-                  <span className="text-[9.5px] font-mono text-purple-300 font-bold px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/30">
+                  <span className="text-[9.5px] font-mono text-violet-700 font-bold px-2.5 py-0.5 rounded-full bg-violet-50 border border-violet-200">
                     {isRtl ? 'تزامن 5G' : '5G SYNC'}
                   </span>
                 </div>
@@ -1516,7 +1530,7 @@ export default function LandingPage({ locale = 'en' }) {
       <section id="problem" className="py-24 sm:py-32 bg-[#001738] text-white relative border-b border-blue-950/80 overflow-hidden">
         {/* Layer 1: GCC Telemetry & Holographic Regional Map Artwork (Full Clarity, Zero Gradient Overlays) */}
         <div 
-          className="absolute inset-0 z-0 bg-art bg-art-telemetry pointer-events-none opacity-100"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-100 bg-art-gcc-telemetry-bg"
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1731,89 +1745,177 @@ export default function LandingPage({ locale = 'en' }) {
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.25 }}
             variants={fadeInUp}
           >
-            <div className={`lg:col-span-6 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-[#1078C0] border border-blue-200/60 text-xs font-bold uppercase tracking-wider">
-                <Zap className="w-3.5 h-3.5" />
+            <div className={`lg:col-span-5 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0858A8] border border-blue-200/70 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
+                <Zap className="w-3.5 h-3.5 text-[#0858A8] animate-pulse" />
                 <span>{isRtl ? 'الميزة 01 • سرعة الوصول للعميل' : 'Feature 01 • Speed to Lead'}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                {isRtl 
-                  ? 'لا تفقد عميلاً مهتماً أبداً بسبب بطء الاستجابة' 
-                  : 'Never Lose a Hot Lead to a Slow Response'}
+              
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight text-slate-900 tracking-tight">
+                {isRtl ? (
+                  <>
+                    <span>لا تفقد عميلاً مهتماً أبداً</span>{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      بسبب بطء الاستجابة.
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Never Lose a Hot Lead to a{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      Slow Response.
+                    </span>
+                  </>
+                )}
               </h3>
-              <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
+
+              <p className="text-slate-600 leading-relaxed text-base font-normal">
                 {isRtl 
-                  ? 'يتم توزيع كل عميل جديد تلقائياً في أقل من 10 ثوانٍ عبر مسار القواعد الذكية، مع تجاوز الوكلاء المشغولين أو خارج الدوام، وتوثيق سجل قرار التوزيع بالكامل. لا يظل أي عميل دون تعيين بينما ما زال اهتمامه في ذروته.' 
-                  : 'Every new lead is auto-assigned by a rule pipeline in under 10 seconds, skipping agents who are at capacity, off-hours, or unavailable, with a full decision trail stored for every assignment. No lead sits unassigned; every inquiry reaches an available agent while the prospect is still hot.'}
+                  ? 'يتم توزيع كل عميل جديد تلقائياً في أقل من 10 ثوانٍ عبر محرك القواعد الذكية، مع فحص السعة الاستيعابية وحالة دوام الوكلاء بدقة متناهية.' 
+                  : 'Every new lead is auto-assigned by an intelligent rule engine in under 10 seconds, matching agent specialty, active workload capacity, and office availability.'}
               </p>
+
+              {/* Feature Benefit Chips */}
               <div className="pt-2 space-y-3">
-                <div className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <Check className="w-4 h-4 stroke-[3]" />
                   </div>
-                  <span>
-                    {isRtl ? 'توزيع دوري وسعة استيعاب في أقل من 10 ثوانٍ' : 'Sub-10 second round-robin and capacity distribution'}
-                  </span>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'توزيع دوري ذكي في أقل من 10 ثوانٍ' : 'Sub-10s Round-Robin & Capacity Routing'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'تجاوز الوكلاء المشغولين أو خارج أوقات العمل تلقائياً' : 'Auto-skips off-duty agents and agents at max lead limits'}
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-blue-100 text-[#0858A8] flex items-center justify-center shrink-0 font-bold text-xs">
+                    <ShieldCheck className="w-4 h-4" />
                   </div>
-                  <span>
-                    {isRtl ? 'سجل تدقيق ملزم وموثق لكل قرار توزيع' : 'Enforced audit trail for every lead assignment decision'}
-                  </span>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'سجل تدقيق ملزم وموثق لكل قرار توزيع' : 'Enforced Audit Trail for Every Assignment'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'توثيق قرار التوزيع والتوقيت الزمني بالكامل' : 'Complete timeline stamp and rule logic stored permanently'}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Feature 1 Mockup: High-Tech Rule Pipeline Terminal */}
-            <div className="lg:col-span-6">
-              <div className="rounded-2xl bg-gradient-to-b from-[#002B5E] to-[#001738] p-5 sm:p-6 border border-blue-800/80 shadow-[0_20px_50px_-15px_rgba(0,48,104,0.3)] text-white">
-                <div className="flex items-center justify-between pb-4 mb-4 border-b border-blue-800/60">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                    <span className="text-[11px] text-blue-300 font-mono ml-2">
-                      {isRtl ? 'سجل مسار التوزيع التلقائي' : 'AUTOMATED RULE PIPELINE LOG'}
-                    </span>
-                  </div>
-                  <span className="text-[10px] text-emerald-400 font-mono bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/30">
-                    {isRtl ? 'تنفيذ خلال 0.04 ث' : '00:00:04s Execution'}
-                  </span>
-                </div>
+            {/* Feature 1 UI Console: Clean Light Theme SaaS Dispatch Engine */}
+            <div className="lg:col-span-7">
+              <div className="rounded-3xl bg-white p-6 sm:p-7 border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,30,80,0.08)] relative overflow-hidden">
+                {/* Subtle Technical Grid Backdrop */}
+                <div className="absolute inset-0 bg-[radial-gradient(#0858A8_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.03] pointer-events-none" />
 
-                <div className="space-y-3 font-sans text-xs">
-                  <div className="p-4 rounded-xl bg-[#0858A8]/30 border border-blue-500/30">
-                    <div className="flex justify-between items-center font-bold text-white text-sm">
-                      <span>{isRtl ? 'استفسار: برج مارينا لوسيل - غرفتان' : 'Inquiry: Lusail Marina Tower 2BR'}</span>
-                      <span className="text-xs text-sky-300 font-mono bg-sky-950 px-2 py-0.5 rounded border border-sky-800">
-                        {isRtl ? '2.8 مليون ر.ق' : 'QAR 2.8M'}
+                <div className="relative z-10 space-y-5">
+                  {/* Console Header Bar */}
+                  <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+                    <div className="flex items-center gap-3">
+                      <div className="flex gap-1.5">
+                        <span className="w-3 h-3 rounded-full bg-rose-400" />
+                        <span className="w-3 h-3 rounded-full bg-amber-400" />
+                        <span className="w-3 h-3 rounded-full bg-emerald-400" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-slate-700">
+                        {isRtl ? 'محرك التوزيع الفوري للعملاء' : 'LIVE LEAD DISPATCH CONSOLE'}
                       </span>
                     </div>
-                    <div className="mt-3.5 space-y-2 text-blue-100 text-xs">
-                      <div className="flex items-center gap-2 text-slate-400">
-                        <span className="text-amber-400">✕</span>
-                        <span>{isRtl ? 'فحص الوكيل #104 (عطلة الجمعة) ← تم التجاوز' : 'Checking Agent #104 (Off-duty Friday) → Skipped'}</span>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-[11px] font-bold">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                      {isRtl ? 'استجابة فائقة: 2.4 ث' : 'Avg SLA: 00:00:02.4s'}
+                    </span>
+                  </div>
+
+                  {/* Incoming Lead Card */}
+                  <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-50/80 via-sky-50/50 to-indigo-50/60 border border-blue-200/80 shadow-xs">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                      <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 rounded-md bg-[#0858A8] text-white text-[10px] font-mono font-bold uppercase">
+                          Property Finder
+                        </span>
+                        <span className="text-xs font-bold text-slate-900">
+                          {isRtl ? 'فيلا لاغون الخليج الغربي' : 'West Bay Lagoon Luxury Villa'}
+                        </span>
                       </div>
-                      <div className="flex items-center gap-2 text-slate-400">
-                        <span className="text-amber-400">✕</span>
-                        <span>{isRtl ? 'فحص الوكيل #109 (الحد الأقصى 25 عميل) ← تم التجاوز' : 'Checking Agent #109 (At Max 25 Active Leads) → Skipped'}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-emerald-300 font-semibold pt-1 border-t border-blue-700/40">
-                        <span className="text-emerald-400">✓</span>
-                        <span>{isRtl ? 'تم التعيين للوكيل #112 (راشد الدوسري) ← تم الإجراء' : 'Assigned to Agent #112 (Rashid Al-Dosari) → Actioned'}</span>
-                      </div>
+                      <span className="text-xs font-mono font-extrabold text-[#0858A8] bg-white px-2.5 py-0.5 rounded-lg border border-blue-200 shadow-2xs">
+                        {isRtl ? '8,500,000 ر.ق' : 'QAR 8,500,000'}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between text-[11px] text-slate-600 font-mono pt-1">
+                      <span>{isRtl ? 'المشتري: د. حمد الهاجري • مستثمر موثق' : 'Buyer: Dr. Hamad Al-Hajri • Verified VIP'}</span>
+                      <span className="text-emerald-700 font-bold">{isRtl ? 'جاري الفحص والتوزيع...' : 'Matching Rules...'}</span>
                     </div>
                   </div>
-                </div>
 
-                <div className="mt-4 pt-3 border-t border-blue-800/40 flex items-center justify-between text-[11px] text-blue-300 font-mono">
-                  <span>{isRtl ? 'القاعدة: المطابقة الجغرافية + السعة' : 'Rule: Geo-Match + Capacity'}</span>
-                  <span className="text-emerald-400">{isRtl ? 'تم التحقق والتوثيق' : 'Verified & Logged'}</span>
+                  {/* 3-Agent Live Evaluation Matrix */}
+                  <div className="space-y-2.5">
+                    {/* Agent 1: Off-duty */}
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50/80 border border-slate-200/70 text-xs">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600 text-xs">
+                          TM
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-700">{isRtl ? 'طارق منصور' : 'Tariq Mansour'}</div>
+                          <div className="text-[10px] text-slate-400">{isRtl ? 'وكيل عقارات أول • الدوحة' : 'Senior Agent • West Bay'}</div>
+                        </div>
+                      </div>
+                      <span className="px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 border border-rose-200 font-mono text-[10px] font-bold">
+                        {isRtl ? 'عطلة الجمعة ← تم التجاوز' : '✕ Off-Duty (Skipped)'}
+                      </span>
+                    </div>
+
+                    {/* Agent 2: At capacity */}
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50/80 border border-slate-200/70 text-xs">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600 text-xs">
+                          SN
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-700">{isRtl ? 'سارة النعيمي' : 'Sarah Al-Nuaimi'}</div>
+                          <div className="text-[10px] text-slate-400">{isRtl ? 'وكيل عقارات فاخرة' : 'Luxury Specialist'}</div>
+                        </div>
+                      </div>
+                      <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 border border-amber-200 font-mono text-[10px] font-bold">
+                        {isRtl ? 'الحد الأقصى (25/25) ← تم التجاوز' : '✕ Max Capacity 25/25'}
+                      </span>
+                    </div>
+
+                    {/* Agent 3: Actioned / Best Match */}
+                    <div className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-50/90 border border-emerald-300 text-xs shadow-xs">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                          RA
+                        </div>
+                        <div>
+                          <div className="font-bold text-emerald-950 text-sm">{isRtl ? 'راشد الدوسري' : 'Rashid Al-Dosari'}</div>
+                          <div className="text-[11px] text-emerald-700 font-medium">{isRtl ? 'متطابق جغرافياً • متفرغ الآن' : 'Geo-Match: West Bay • Available'}</div>
+                        </div>
+                      </div>
+                      <span className="px-3 py-1 rounded-lg bg-emerald-600 text-white font-mono text-[11px] font-bold shadow-xs">
+                        {isRtl ? '✓ تم التعيين خلال 2.4 ث' : '✓ ASSIGNED IN 2.4s'}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Console Footer Verification */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <span>{isRtl ? 'رقم الإشعار: #DISPATCH-9942-OK' : 'Trace ID: #DISPATCH-9942-OK'}</span>
+                    </span>
+                    <span className="text-[#0858A8] font-bold">{isRtl ? 'نسبة الاستجابة 100%' : '100% SLA Maintained'}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1821,68 +1923,154 @@ export default function LandingPage({ locale = 'en' }) {
 
           <hr className="border-slate-100" />
 
-          {/* FEATURE 2: AI WhatsApp Bot */}
+          {/* FEATURE 2: Conversational AI WhatsApp Bot */}
           <motion.div 
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.25 }}
             variants={fadeInUp}
           >
-            <div className={`lg:col-span-6 lg:order-2 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/60 text-xs font-bold uppercase tracking-wider">
+            <div className={`lg:col-span-5 lg:order-2 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/70 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
                 <Bot className="w-3.5 h-3.5 text-emerald-600" />
                 <span>{isRtl ? 'الميزة 02 • الذكاء الاصطناعي للمحادثات' : 'Feature 02 • Conversational AI'}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                {isRtl 
-                  ? 'تأهيل ميزانية المشتري ومنطقته المفضلة تلقائياً على مدار الساعة' 
-                  : 'Qualify Buyer Budget & Area Automatically 24/7'}
+              
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight text-slate-900 tracking-tight">
+                {isRtl ? (
+                  <>
+                    <span>تأهيل ميزانية المشتري ومنطقته المفضلة</span>{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008765] via-[#0858A8] to-[#001D42]">
+                      تلقائياً على مدار الساعة.
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Qualify Buyer Budget & Area{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008765] via-[#0858A8] to-[#001D42]">
+                      Automatically 24/7.
+                    </span>
+                  </>
+                )}
               </h3>
-              <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
+
+              <p className="text-slate-600 leading-relaxed text-base font-normal">
                 {isRtl 
-                  ? 'يرحب الروبوت بالمشتري ويؤهل ميزانيته والمنطقة ونوع العقار بمحادثة ذكية، ويعرض العقارات المطابقة كبطاقات، ثم يحيل المحادثة للوكيل البشري بكامل السياق داخل نافذة الـ 24 ساعة المعتمدة من ميتا. يفتح الوكلاء كل محادثة وهم يعلمون بالضبط طلب العميل.' 
-                  : 'The bot greets, qualifies budget/area/property type conversationally, presents matching listings as cards, then hands off to a human agent with full captured context inside Meta\'s 24-hour messaging window. Agents open every WhatsApp chat already knowing what the customer wants — no repeated questions, faster response, higher close rate.'}
+                  ? 'يرحب المساعد الذكي بالمشتري فوراً، يؤهل الميزانية ونوع العقار، ويعرض بطاقات العقارات المطابقة، ثم يسلم المحادثة للوكيل البشري بكامل السياق والتفاصيل.' 
+                  : 'The conversational AI greets incoming buyers instantly, qualifies their budget, area, and property requirements, presents matching listings, and hands off to your top agent with complete context.'}
               </p>
+
+              {/* Feature Benefit Chips */}
+              <div className="pt-2 space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <MessageSquare className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'واجهة برمجة واتساب السحابية الرسمية من ميتا' : 'Official WhatsApp Cloud API Verified'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'تفاعل فوري موثوق داخل نافذة الـ 24 ساعة المعتمدة' : 'Compliant high-delivery messaging within Meta 24-hr policy'}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <Zap className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'تسليم فوري للمحادثة بكامل ملف العميل' : 'Zero-Context-Loss Human Handoff'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'يبدأ الوكيل المحادثة وهو يعرف ميزانية وطلب العميل بالضبط' : 'Agents receive qualified buyer budget, preference, and timing'}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Feature 2 Mockup: Meta WhatsApp Bot Experience */}
-            <div className="lg:col-span-6 lg:order-1">
-              <div className="rounded-2xl bg-gradient-to-b from-[#00244D] to-[#001433] p-5 sm:p-6 border border-blue-800/80 shadow-[0_20px_50px_-15px_rgba(0,48,104,0.3)] text-white">
-                <div className="max-w-md mx-auto bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
-                  {/* WhatsApp Chrome Bar */}
-                  <div className="bg-[#075E54] px-4 py-3 flex items-center justify-between text-white text-xs">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center font-bold text-xs">AQ</div>
-                      <div>
-                        <div className="font-bold text-sm">{isRtl ? 'مساعد AqarQore الذكي' : 'AqarQore AI Assistant'}</div>
-                        <div className="text-[10px] text-emerald-200 flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          <span>{isRtl ? 'موثق رسمياً من ميتا' : 'Official Meta API Verified'}</span>
-                        </div>
+            {/* Feature 2 UI Console: Clean Seamless WhatsApp AI Studio */}
+            <div className="lg:col-span-7 lg:order-1">
+              <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,30,80,0.08)] bg-white">
+                {/* Console Top Bar */}
+                <div className="bg-[#075E54] px-5 py-3.5 flex items-center justify-between text-white border-b border-[#054c44]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-400 text-slate-900 font-black text-xs flex items-center justify-center shadow-xs">
+                      AQ
+                    </div>
+                    <div>
+                      <div className="font-bold text-sm leading-tight flex items-center gap-1.5">
+                        <span>{isRtl ? 'مساعد AqarQore الذكي' : 'AqarQore Property AI Assistant'}</span>
+                        <span className="w-3.5 h-3.5 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center text-[8px] font-black">✓</span>
+                      </div>
+                      <div className="text-[11px] text-emerald-200 font-mono flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <span>{isRtl ? 'حساب تجاري رسمي موثق • متصل 24/7' : 'Official WhatsApp Cloud API • Active 24/7'}</span>
                       </div>
                     </div>
+                  </div>
+                  <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/15 border border-white/20 text-[11px] font-mono font-bold text-white">
+                    {isRtl ? 'استجابة < 1.2 ث' : 'Speed < 1.2s'}
+                  </span>
+                </div>
+
+                {/* WhatsApp Chat Body */}
+                <div className="p-5 space-y-3.5 bg-[#EFEAE2] text-xs font-sans">
+                  {/* Bot Message */}
+                  <div className="bg-white text-slate-900 p-3.5 rounded-2xl rounded-tl-xs max-w-[88%] border border-slate-200/80 shadow-2xs leading-relaxed text-left">
+                    <p className="font-medium text-slate-800 text-xs">
+                      {isRtl 
+                        ? 'مرحباً د. حمد! هل تبحث عن فيلا مستقلة بإطلالة بحرية في لاغون الخليج الغربي بميزانية 8 إلى 10 مليون ر.ق؟' 
+                        : 'Hello Dr. Hamad! Looking for a standalone beachfront villa in West Bay Lagoon around QAR 8M–10M?'}
+                    </p>
+                    <span className="text-[9px] text-slate-400 text-right block mt-1 font-mono">14:31</span>
                   </div>
 
-                  {/* Chat Bubbles */}
-                  <div className="p-4 space-y-3 text-xs bg-[#0B141A]">
-                    <div className="bg-[#202C33] text-slate-100 p-3 rounded-2xl rounded-tl-sm max-w-[85%] border border-slate-700/50 shadow-sm leading-relaxed text-left">
-                      {isRtl ? 'مرحباً! هل تبحث عن فيلا 3 غرف في لاغون الخليج الغربي بسعر أقل من 4 مليون ر.ق؟' : 'Hello! Looking for a 3BR villa in West Bay Lagoon under QAR 4M?'}
-                    </div>
-                    <div className="bg-[#005C4B] text-white p-3 rounded-2xl rounded-tr-sm max-w-[80%] ml-auto text-right shadow-sm leading-relaxed">
-                      {isRtl ? 'نعم، الميزانية تصل إلى 4.2 مليون ر.ق، وجاهز للمعاينة هذا السبت.' : 'Yes, budget up to 4.2M QAR. Ready to view this Saturday.'}
-                    </div>
-                    <div className="bg-[#182229] text-slate-200 p-3.5 rounded-xl border border-emerald-500/40 shadow-md">
-                      <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mb-1.5">
-                        {isRtl ? '⚡ تحويل فوري للوكيل العقاري' : '⚡ Instant Handoff to Human Agent'}
+                  {/* Buyer Response */}
+                  <div className="bg-[#D9FDD3] text-slate-900 p-3.5 rounded-2xl rounded-tr-xs max-w-[85%] ml-auto text-right border border-emerald-200 shadow-2xs leading-relaxed">
+                    <p className="font-medium text-slate-900 text-xs">
+                      {isRtl 
+                        ? 'نعم بالضبط، 5 غرف نوم مع بركة سباحة خاصة، وجاهز لتوقيع العقد هذا الأسبوع.' 
+                        : 'Yes exactly, 5 bedrooms with private pool. Ready to sign this week.'}
+                    </p>
+                    <span className="text-[9px] text-emerald-700 text-right block mt-1 font-mono">14:32 ✓✓</span>
+                  </div>
+
+                  {/* Qualified VIP Lead Handoff Card */}
+                  <div className="bg-white p-4 rounded-xl border-2 border-emerald-500 shadow-xs space-y-2.5">
+                    <div className="flex items-center justify-between">
+                      <span className="px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-bold text-[10px] uppercase font-mono tracking-wider">
+                        {isRtl ? '⚡ تم التأهيل والتحويل الفوري للوكيل' : '⚡ QUALIFIED VIP INVESTOR HANDOFF'}
                       </span>
-                      <div className="text-xs text-blue-100 space-y-1 font-medium">
-                        <div>• {isRtl ? 'ملف المشتري:' : 'Buyer Profile:'} <span className="text-white font-bold">{isRtl ? 'مشتري موثق' : 'Verified Buyer'}</span></div>
-                        <div>• {isRtl ? 'الميزانية:' : 'Budget:'} <span className="text-emerald-400 font-bold">{isRtl ? '4.2 مليون ر.ق' : 'QAR 4.2M'}</span> • {isRtl ? 'المفضلة: الخليج الغربي' : 'Preferred: West Bay'}</div>
-                        <div>• {isRtl ? 'الوكيل المعين:' : 'Assigned Agent:'} <span className="text-sky-300 font-bold">{isRtl ? 'مريم الكواري' : 'Mariam Al-Kuwari'}</span></div>
+                      <span className="text-[11px] text-emerald-700 font-mono font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                        100% Match
+                      </span>
+                    </div>
+
+                    <div className="text-xs text-slate-800 space-y-1.5 pt-1 font-medium">
+                      <div className="flex justify-between items-center py-0.5 border-b border-slate-100">
+                        <span className="text-slate-500">{isRtl ? 'الميزانية المؤهلة:' : 'Qualified Budget:'}</span>
+                        <span className="font-bold text-emerald-700 font-mono text-xs">{isRtl ? '8.5 - 10 مليون ر.ق' : 'QAR 8.5M - 10.0M'}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-0.5">
+                        <span className="text-slate-500">{isRtl ? 'الوكيل التنفيذي المعين:' : 'Assigned Director:'}</span>
+                        <span className="font-bold text-[#0858A8]">{isRtl ? 'مريم الكواري (الخليج الغربي)' : 'Mariam Al-Kuwari (West Bay)'}</span>
                       </div>
                     </div>
                   </div>
+                </div>
+
+                {/* Console Footer */}
+                <div className="bg-white px-5 py-3 border-t border-slate-200 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <span>{isRtl ? 'توثيق رسمي من ميتا' : 'Meta Business Verified API'}</span>
+                  </span>
+                  <span className="text-[#0858A8] font-bold">{isRtl ? 'تسليم فوري دون فقدان سياق' : 'Zero Context Loss Handoff'}</span>
                 </div>
               </div>
             </div>
@@ -1895,79 +2083,148 @@ export default function LandingPage({ locale = 'en' }) {
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.25 }}
             variants={fadeInUp}
           >
-            <div className={`lg:col-span-6 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200/60 text-xs font-bold uppercase tracking-wider">
+            <div className={`lg:col-span-5 space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200/70 text-xs font-mono font-bold uppercase tracking-wider shadow-2xs">
                 <DollarSign className="w-3.5 h-3.5 text-amber-600" />
                 <span>{isRtl ? 'الميزة 03 • الرقابة المالية' : 'Feature 03 • Financial Control'}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
-                {isRtl 
-                  ? 'اعتمادات عمولات دقيقة ومحمية من النزاعات' 
-                  : 'Dispute-Proof Commission Signoffs & Approvals'}
+              
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight text-slate-900 tracking-tight">
+                {isRtl ? (
+                  <>
+                    <span>اعتمادات عمولات دقيقة</span>{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      ومحمية من النزاعات.
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Dispute-Proof Commission{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#1078C0]">
+                      Signoffs & Approvals.
+                    </span>
+                  </>
+                )}
               </h3>
-              <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
+
+              <p className="text-slate-600 leading-relaxed text-base font-normal">
                 {isRtl 
-                  ? 'تمر كل صفقة مغلقة عبر مسار اعتماد إلزامي من مدير المبيعات إلى الإدارة المالية (لا يمكن لأي طرف تجاوز الآخر)، مع حساب العمولات تلقائياً وحماية دفعات الصرف من التكرار.' 
-                  : 'Every closed deal moves through an enforced Sales Director → Accounting approval chain (neither can skip or bypass the other), with commissions auto-calculated on approval and idempotency-protected payout batches. Agents trust their payout numbers, and leadership gets clean, dispute-proof financial control.'}
+                  ? 'تمر كل صفقة مغلقة عبر مسار اعتماد إلزامي من مدير المبيعات إلى الإدارة المالية، مع حساب العمولات تلقائياً وحماية دفعات الصرف من أي خطأ أو تكرار.' 
+                  : 'Every closed deal moves through an enforced 2-step verification chain: Sales Director signoff followed by Accounting payout batch validation, with full audit trail security.'}
               </p>
+
+              {/* Feature Benefit Chips */}
+              <div className="pt-2 space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <CheckCircle className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'اعتماد إلكتروني ملزم بخطوتين' : 'Strict 2-Step Approval Chain'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'لا يمكن تجاوز توقيع مدير المبيعات أو صرف الدفعات دون مطابقة' : 'No bypasses allowed between Sales Leadership and Accounting'}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                    <Lock className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">
+                      {isRtl ? 'قفل منع الصرف المكرر وحماية النزاعات' : 'Idempotency Payout Protection'}
+                    </div>
+                    <div className="text-[11px] text-slate-500">
+                      {isRtl ? 'مطابقة بنكية دقيقة وسجل مالي غير قابل للتعديل' : 'Zero duplicate payouts, clean reconciled agency ledger'}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Feature 3 Mockup: Financial Control Ledger */}
-            <div className="lg:col-span-6">
-              <div className="rounded-2xl bg-gradient-to-b from-[#002B5E] to-[#001738] p-5 sm:p-6 border border-blue-800/80 shadow-[0_20px_50px_-15px_rgba(0,48,104,0.3)] text-white">
-                <div className="text-xs font-bold text-blue-200 pb-3 mb-4 border-b border-blue-800/60 flex items-center justify-between">
-                  <span>{isRtl ? 'مسار الاعتماد الإلزامي' : 'ENFORCED APPROVAL WORKFLOW'}</span>
-                  <span className="text-emerald-400 font-mono text-[11px] bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
-                    {isRtl ? 'اعتماد صارم بخطوتين' : 'STRICT SERVER 2-STEP'}
-                  </span>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-xs">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5" />
-                      </div>
+            {/* Feature 3 UI Console: Clean Light Theme Financial Control Ledger */}
+            <div className="lg:col-span-7">
+              <div className="rounded-3xl bg-white p-6 sm:p-7 border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,30,80,0.08)] relative overflow-hidden">
+                <div className="space-y-5">
+                  {/* Console Header Bar */}
+                  <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+                    <div className="flex items-center gap-2.5">
+                      <span className="p-2 rounded-lg bg-amber-50 text-amber-700 border border-amber-200">
+                        <DollarSign className="w-4 h-4" />
+                      </span>
                       <div>
-                        <div className="font-bold text-white text-sm">
-                          {isRtl ? 'الخطوة 1: توقيع مدير المبيعات' : 'Step 1: Sales Director Signoff'}
+                        <div className="text-xs font-bold text-slate-900">
+                          {isRtl ? 'سجل تسوية العمولات والصفقات' : 'DEAL SETTLEMENT & COMMISSION LEDGER'}
                         </div>
-                        <div className="text-[11px] text-emerald-300">
-                          {isRtl ? 'تم التوقيع بواسطة ناصر آل ثاني' : 'Signed by Nasser Al-Thani'}
+                        <div className="text-[10px] font-mono text-slate-400">
+                          {isRtl ? 'صفقة بنتهاوس مارينا لوسيل #4402' : 'Deal #DL-8821 • Lusail Marina Sky Penthouse'}
                         </div>
                       </div>
                     </div>
-                    <span className="text-emerald-300 font-bold px-2.5 py-1 rounded bg-emerald-500/20 border border-emerald-500/40 text-[10px]">
-                      {isRtl ? 'معتمد' : 'APPROVED'}
+                    <span className="text-xs font-mono font-extrabold text-slate-900 bg-slate-100 px-3 py-1 rounded-lg border border-slate-200">
+                      {isRtl ? 'قيمة الصفقة: 14.5M ر.ق' : 'QAR 14,500,000'}
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between p-4 rounded-xl bg-blue-950/70 border border-blue-700/50 text-xs">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center">
-                        <Clock className="w-5 h-5 animate-spin" />
+                  {/* 2-Step Approval Workflow Matrix */}
+                  <div className="space-y-3">
+                    {/* Step 1: Sales Director Signoff */}
+                    <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/90 shadow-2xs">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center">
+                            1
+                          </span>
+                          <span className="text-xs font-bold text-slate-900">
+                            {isRtl ? 'الخطوة 1: توقيع مدير المبيعات التنفيذي' : 'Step 1: Sales Director Signoff'}
+                          </span>
+                        </div>
+                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-bold font-mono">
+                          {isRtl ? '✓ معتمد وموثق' : '✓ APPROVED'}
+                        </span>
                       </div>
-                      <div>
-                        <div className="font-bold text-white text-sm">
-                          {isRtl ? 'الخطوة 2: دفعة المحاسبة #902' : 'Step 2: Accounting Payout Batch #902'}
-                        </div>
-                        <div className="text-[11px] text-amber-300">
-                          {isRtl ? 'قفل الحماية من النزاعات نشط' : 'Dispute-Proof Lock Active'}
-                        </div>
+                      <div className="text-[11px] text-emerald-900 flex justify-between font-medium pl-8">
+                        <span>{isRtl ? 'الموقّع: ناصر آل ثاني • عمولة معتمدة 2% (290,000 ر.ق)' : 'Signed by Nasser Al-Thani • 2% Split Verified (QAR 290,000)'}</span>
+                        <span className="font-mono text-emerald-700">14:32:09</span>
                       </div>
                     </div>
-                    <span className="text-amber-300 font-bold px-2.5 py-1 rounded bg-amber-500/20 border border-amber-500/40 text-[10px]">
-                      {isRtl ? 'في الانتظار' : 'QUEUED'}
-                    </span>
-                  </div>
-                </div>
 
-                <div className="mt-4 pt-3 border-t border-blue-800/40 flex items-center justify-between text-[11px] text-blue-300 font-mono">
-                  <span>{isRtl ? 'سجل التدقيق: قيد غير قابل للتعديل' : 'Audit Stamp: Immutable Ledger'}</span>
-                  <span className="text-sky-300">{isRtl ? 'دقة صرف 100%' : '100% Payout Accuracy'}</span>
+                    {/* Step 2: Accounting Payout Batch */}
+                    <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/90 shadow-2xs">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-6 h-6 rounded-full bg-[#0858A8] text-white font-bold text-xs flex items-center justify-center">
+                            2
+                          </span>
+                          <span className="text-xs font-bold text-slate-900">
+                            {isRtl ? 'الخطوة 2: صرف دفعة المحاسبة المعتمدة' : 'Step 2: Accounting Payout Batch #902'}
+                          </span>
+                        </div>
+                        <span className="px-2.5 py-0.5 rounded-full bg-blue-100 text-[#0858A8] border border-blue-200 text-[10px] font-bold font-mono">
+                          {isRtl ? '🔒 قفل الصرف نشط' : '🔒 RECONCILED'}
+                        </span>
+                      </div>
+                      <div className="text-[11px] text-blue-900 flex justify-between font-medium pl-8">
+                        <span>{isRtl ? 'تمت المطابقة البنكية التلقائية • لا توجد فروقات' : 'Bank batch reconciled • Idempotency lock active'}</span>
+                        <span className="font-mono text-[#0858A8]">Batch #902-A</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Ledger Footer Audit Hash */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span className="flex items-center gap-1.5">
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>{isRtl ? 'قيد غير قابل للتعديل: 0x7f9a...882c' : 'Audit Hash: 0x7f9a...882c'}</span>
+                    </span>
+                    <span className="text-emerald-700 font-bold">{isRtl ? 'دقة مالية 100%' : '100% Settlement Accuracy'}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1979,13 +2236,11 @@ export default function LandingPage({ locale = 'en' }) {
       {/* -------------------------------------------------------------------------- */}
       {/* 6. AqarQore SECURITY CONTROL SYSTEM: ENTERPRISE TRUST & ACCESS GOVERNANCE   */}
       {/* -------------------------------------------------------------------------- */}
-      <section id="security" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/80 overflow-hidden">
-        {/* User-Provided Futuristic Skyline & Radar Telemetry Mesh Background */}
+      <section id="security" className="py-24 sm:py-32 bg-white text-slate-900 relative border-b border-slate-200/80 overflow-hidden">
+        {/* Architectural Blueprint Towers Skyline Background (25% Watermark Balance) */}
         <div 
-          className="absolute inset-0 bg-art bg-art-security pointer-events-none"
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat pointer-events-none opacity-25 bg-art-security-blueprint-skyline"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/75 via-transparent to-[#001128]/85 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-sky-500/10 blur-[150px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -1998,24 +2253,24 @@ export default function LandingPage({ locale = 'en' }) {
             transition={{ duration: 0.6 }}
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest shadow-xs">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-mono font-bold uppercase tracking-widest shadow-2xs">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 animate-pulse" />
               <span>{isRtl ? 'أمان وحماية AqarQore' : 'AqarQore SECURITY'}</span>
             </div>
 
             {/* Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]">
               {isRtl ? (
                 <>
                   <span>الأمان مدمج في</span>{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39BFF5] via-[#168FE5] to-[#00D6A3]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#008765]">
                     كل طبقة.
                   </span>
                 </>
               ) : (
                 <>
                   Security Built Into{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39BFF5] via-[#168FE5] to-[#00D6A3]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001D42] via-[#0858A8] to-[#008765]">
                     Every Layer.
                   </span>
                 </>
@@ -2023,89 +2278,15 @@ export default function LandingPage({ locale = 'en' }) {
             </h2>
 
             {/* Subtitle */}
-            <p className="text-blue-100/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
               {isRtl 
                 ? 'حماية كل تسجيل دخول، وكل عميل، وكل إجراء في الوكالة بضوابط وصول صارمة على مستوى المؤسسات.' 
                 : 'Protect every login, every lead, and every agency action with enterprise-grade access controls.'}
             </p>
           </motion.div>
 
-          {/* MAIN SECURITY ARCHITECTURE: CENTRAL CORE & 3 FLOATING SECURITY MODULES */}
-          <div className="space-y-12 lg:space-y-14">
-            
-            {/* 1. HERO VISUAL: CENTRAL AqarQore SECURITY CORE */}
-            <motion.div 
-              className="relative max-w-xl mx-auto flex flex-col items-center justify-center text-center p-8 rounded-[36px] bg-gradient-to-b from-[#00224D]/90 via-[#001838]/95 to-[#001026] border border-sky-400/40 shadow-[0_0_50px_rgba(8,120,209,0.25)] group"
-              initial={{ opacity: 0, scale: 0.92 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7 }}
-            >
-              {/* Animated Triple Concentric Security Orbital Rings */}
-              <div className="relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center mb-6">
-                {/* Outer Ring: SESSION */}
-                <motion.div 
-                  className="absolute inset-0 rounded-full border border-dashed border-[#39BFF5]/30"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
-                />
-                <span className="absolute top-1 text-[8px] font-mono text-sky-400/70 tracking-widest uppercase bg-[#001433] px-2 py-0.5 rounded-full border border-sky-500/20">
-                  {isRtl ? 'طبقة الجلسة' : 'SESSION LAYER'}
-                </span>
-
-                {/* Middle Ring: ACCESS */}
-                <motion.div 
-                  className="absolute inset-4 rounded-full border border-emerald-500/30"
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-                />
-                <span className="absolute bottom-1 text-[8px] font-mono text-emerald-400/70 tracking-widest uppercase bg-[#001433] px-2 py-0.5 rounded-full border border-emerald-500/20">
-                  {isRtl ? 'حدود الوصول' : 'ACCESS BOUNDARY'}
-                </span>
-
-                {/* Inner Ring: IDENTITY with Scanning Laser Sweep */}
-                <div className="absolute inset-8 rounded-full border border-sky-400/50 bg-[#001B3D] shadow-inner flex items-center justify-center overflow-hidden">
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00D6A3]/30 to-transparent"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-                  />
-                  
-                  {/* Central Shield Hero Core */}
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0878D1] to-[#00D6A3] p-0.5 shadow-lg shadow-sky-500/30">
-                      <div className="w-full h-full bg-[#001738] rounded-[14px] flex items-center justify-center">
-                        <ShieldCheck className="w-7 h-7 text-[#00D6A3] group-hover:scale-110 transition-transform" />
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-mono font-black text-white tracking-wider mt-2">
-                      {isRtl ? 'نواة الأمان' : 'SECURITY CORE'}
-                    </span>
-                    <span className="text-[8px] font-mono text-[#00D6A3] font-bold">
-                      {isRtl ? '✓ محمي 24/7' : '✓ PROTECTED 24/7'}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Core Security Telemetry Strip */}
-              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[10.5px] font-mono pt-2">
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                  <span>{isRtl ? 'الهوية: موثقة' : 'IDENTITY: VERIFIED'}</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#39BFF5]" />
-                  <span>{isRtl ? 'الوصول: 403 إلزامي' : 'ACCESS: 403 ENFORCED'}</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00142E] border border-blue-800/60 text-slate-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-                  <span>{isRtl ? 'إلغاء الصلاحية: < 60 ث' : 'REVOCATION: < 60s'}</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* 2. THE 3 CONNECTED SECURITY CONTROL MODULES */}
+          {/* 3 CONNECTED ENTERPRISE SECURITY CONTROL MODULES */}
+          <div className="space-y-10 lg:space-y-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
               
               {/* ============================================================ */}
@@ -2116,25 +2297,25 @@ export default function LandingPage({ locale = 'en' }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="rounded-[30px] bg-gradient-to-b from-[#001F47]/95 via-[#001738]/95 to-[#001026] p-7 sm:p-8 border border-sky-500/35 hover:border-[#39BFF5] shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(57,191,245,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+                className="rounded-3xl bg-white p-7 sm:p-8 border border-slate-200 shadow-[0_15px_40px_-10px_rgba(0,30,80,0.06)] hover:border-sky-400 hover:shadow-[0_20px_50px_rgba(8,88,168,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div className="space-y-5">
                   {/* Tag & Icon Header */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-900/60 border border-sky-400/40 text-[#39BFF5] group-hover:text-emerald-300 group-hover:border-emerald-500/40 flex items-center justify-center transition-colors shadow-inner">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200/80 text-[#0858A8] group-hover:text-emerald-700 group-hover:bg-emerald-50 group-hover:border-emerald-200 flex items-center justify-center transition-colors shadow-2xs">
                       <Key className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-[#39BFF5] bg-[#001228] px-3 py-1 rounded-full border border-sky-500/30">
+                    <span className="text-[11px] font-mono font-bold text-[#0858A8] bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
                       {isRtl ? '01 • مصادقة TOTP' : '01 • TOTP AUTH'}
                     </span>
                   </div>
 
                   {/* Title & Description */}
                   <div className="space-y-2.5">
-                    <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#0858A8] transition-colors">
                       {isRtl ? 'المصادقة المتعددة العوامل' : 'Multi-Factor Authentication'}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">
                       {isRtl 
                         ? 'مصادقة MFA مبنية على تطبيق TOTP لكل موظف، مع تقييد محاولات التخمين وعدم كشف وجود المستخدم عند إدخال بيانات غير صحيحة. بياناتك لن تُخترق بكلمة مرور مسربة فقط.' 
                         : 'TOTP-based MFA on every staff login, with throttling after repeated failed attempts and no user-existence disclosure on invalid credentials. Agency data can\'t be breached by a leaked password alone.'}
@@ -2142,32 +2323,32 @@ export default function LandingPage({ locale = 'en' }) {
                   </div>
 
                   {/* Micro Verification Step-by-Step Flow */}
-                  <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
-                    <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                    <div className="text-[10px] font-mono uppercase text-slate-500 font-bold tracking-wider">
                       {isRtl ? 'مسار المصادقة' : 'AUTHENTICATION FLOW'}
                     </div>
                     <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] font-mono font-bold">
-                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/50 text-slate-300">
+                      <div className="p-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-2xs">
                         {isRtl ? '1. كلمة المرور' : '1. PASSWORD'}
                       </div>
-                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-sky-500/40 text-sky-300">
+                      <div className="p-1.5 rounded-lg bg-blue-50 border border-blue-200 text-[#0858A8]">
                         {isRtl ? '2. رمز TOTP' : '2. TOTP CODE'}
                       </div>
-                      <div className="p-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/60 text-[#00D6A3] flex items-center justify-center gap-1">
+                      <div className="p-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center justify-center gap-1">
                         <span>{isRtl ? '3. مصرح' : '3. PASS'}</span>
-                        <Check className="w-3 h-3" />
+                        <Check className="w-3 h-3 text-emerald-600" />
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Telemetry Status */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
-                  <div className="flex items-center gap-1.5 text-slate-300">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+                  <div className="flex items-center gap-1.5 text-slate-600">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                     <span>{isRtl ? 'حماية من محاولات التخمين' : 'Throttled Anti-Brute-Force'}</span>
                   </div>
-                  <span className="text-[10px] font-bold text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                  <span className="text-[10px] font-bold text-emerald-800 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
                     {isRtl ? 'نشط' : 'ACTIVE'}
                   </span>
                 </div>
@@ -2181,25 +2362,25 @@ export default function LandingPage({ locale = 'en' }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-[30px] bg-gradient-to-b from-[#00224D]/95 via-[#001738]/95 to-[#001026] p-7 sm:p-8 border border-emerald-500/35 hover:border-[#00D6A3] shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(0,214,163,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+                className="rounded-3xl bg-white p-7 sm:p-8 border border-slate-200 shadow-[0_15px_40px_-10px_rgba(0,30,80,0.06)] hover:border-emerald-400 hover:shadow-[0_20px_50px_rgba(0,135,101,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div className="space-y-5">
                   {/* Tag & Icon Header */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-[#00D6A3] group-hover:text-sky-300 flex items-center justify-center transition-colors shadow-inner">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200/80 text-emerald-700 group-hover:text-[#0858A8] group-hover:bg-blue-50 group-hover:border-blue-200 flex items-center justify-center transition-colors shadow-2xs">
                       <Lock className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-[#00D6A3] bg-[#001228] px-3 py-1 rounded-full border border-emerald-500/30">
+                    <span className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                       {isRtl ? '02 • حظر 403 وصلاحيات' : '02 • 403 RBAC'}
                     </span>
                   </div>
 
                   {/* Title & Description */}
                   <div className="space-y-2.5">
-                    <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#0858A8] transition-colors">
                       {isRtl ? 'حدود الصلاحيات حسب الأدوار' : 'Role-Based Access Boundaries'}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">
                       {isRtl 
                         ? 'يرى المديرون عملاء فريقهم فقط، ولا يمكن لأي وكيل فتح سجل وكيل آخر عبر رابط مباشر URL — محمي ومفروض بالكامل من الخادم بخطأ 403.' 
                         : 'Managers see only their own team\'s leads; agents can never open another agent\'s record by direct URL — enforced server-side with 403s.'}
@@ -2207,34 +2388,34 @@ export default function LandingPage({ locale = 'en' }) {
                   </div>
 
                   {/* Micro Access Boundary Visualization */}
-                  <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
-                    <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                    <div className="text-[10px] font-mono uppercase text-slate-500 font-bold tracking-wider">
                       {isRtl ? 'قواعد حدود الوصول' : 'ACCESS BOUNDARY RULES'}
                     </div>
                     <div className="space-y-1 text-[10px] font-mono">
-                      <div className="flex items-center justify-between p-1 px-2 rounded-md bg-blue-950/80 border border-blue-800/40">
-                        <span className="text-slate-300">{isRtl ? 'المدير:' : 'Manager:'}</span>
-                        <span className="text-[#39BFF5] font-bold">{isRtl ? 'عملاء الفريق فقط ✓' : 'Team Leads Only ✓'}</span>
+                      <div className="flex items-center justify-between p-1.5 px-2 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                        <span className="text-slate-600">{isRtl ? 'المدير:' : 'Manager:'}</span>
+                        <span className="text-[#0858A8] font-bold">{isRtl ? 'عملاء الفريق فقط ✓' : 'Team Leads Only ✓'}</span>
                       </div>
-                      <div className="flex items-center justify-between p-1 px-2 rounded-md bg-blue-950/80 border border-blue-800/40">
-                        <span className="text-slate-300">{isRtl ? 'الوكيل:' : 'Agent:'}</span>
-                        <span className="text-emerald-400 font-bold">{isRtl ? 'سجلاته الخاصة فقط ✓' : 'Own Records Only ✓'}</span>
+                      <div className="flex items-center justify-between p-1.5 px-2 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                        <span className="text-slate-600">{isRtl ? 'الوكيل:' : 'Agent:'}</span>
+                        <span className="text-emerald-700 font-bold">{isRtl ? 'سجلاته الخاصة فقط ✓' : 'Own Records Only ✓'}</span>
                       </div>
-                      <div className="flex items-center justify-between p-1 px-2 rounded-md bg-rose-950/50 border border-rose-500/30 text-rose-300">
+                      <div className="flex items-center justify-between p-1.5 px-2 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 font-bold">
                         <span>{isRtl ? 'تجاوز الرابط المباشر:' : 'Direct URL Bypass:'}</span>
-                        <span className="font-bold">{isRtl ? '403 محظور' : '403 FORBIDDEN'}</span>
+                        <span>{isRtl ? '403 محظور' : '403 FORBIDDEN'}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Telemetry Status */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
-                  <div className="flex items-center gap-1.5 text-slate-300">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+                  <div className="flex items-center gap-1.5 text-slate-600">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                     <span>{isRtl ? 'ضمان منع تسرب الروابط' : 'Zero URL Leak Guarantee'}</span>
                   </div>
-                  <span className="text-[10px] font-bold text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                  <span className="text-[10px] font-bold text-emerald-800 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
                     {isRtl ? 'إلزامي' : 'ENFORCED'}
                   </span>
                 </div>
@@ -2248,25 +2429,25 @@ export default function LandingPage({ locale = 'en' }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="rounded-[30px] bg-gradient-to-b from-[#001F47]/95 via-[#001738]/95 to-[#001026] p-7 sm:p-8 border border-amber-500/35 hover:border-[#F5B91E] shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,185,30,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+                className="rounded-3xl bg-white p-7 sm:p-8 border border-slate-200 shadow-[0_15px_40px_-10px_rgba(0,30,80,0.06)] hover:border-amber-400 hover:shadow-[0_20px_50px_rgba(217,119,6,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div className="space-y-5">
                   {/* Tag & Icon Header */}
-                  <div className="flex items-center justify-between border-b border-blue-900/60 pb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-amber-950/60 border border-amber-500/40 text-[#F5B91E] group-hover:text-emerald-300 flex items-center justify-center transition-colors shadow-inner">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200/80 text-amber-700 group-hover:text-emerald-700 group-hover:bg-emerald-50 group-hover:border-emerald-200 flex items-center justify-center transition-colors shadow-2xs">
                       <UserX className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-[#F5B91E] bg-[#001228] px-3 py-1 rounded-full border border-amber-500/30">
+                    <span className="text-[11px] font-mono font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
                       {isRtl ? '03 • إلغاء فوري للجلسات' : '03 • INSTANT REVOKE'}
                     </span>
                   </div>
 
                   {/* Title & Description */}
                   <div className="space-y-2.5">
-                    <h3 className="text-xl font-bold text-white group-hover:text-sky-100 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#0858A8] transition-colors">
                       {isRtl ? 'إنهاء الصلاحيات الفوري' : 'Instant Offboarding'}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-blue-100/75 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">
                       {isRtl 
                         ? 'يفقد الموظف المنتهية خدماته جميع الجلسات والرموز المميزة في أقل من دقيقة، مع إعادة توزيع عملائه أو حفظهم تلقائياً حسب السياسة.' 
                         : 'Terminated staff lose all session and token access in under a minute, with their leads automatically reassigned or parked per policy.'}
@@ -2274,34 +2455,34 @@ export default function LandingPage({ locale = 'en' }) {
                   </div>
 
                   {/* Micro Revocation Timeline */}
-                  <div className="p-3.5 rounded-2xl bg-[#001228] border border-blue-900/70 space-y-2">
-                    <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                    <div className="text-[10px] font-mono uppercase text-slate-500 font-bold tracking-wider">
                       {isRtl ? 'الجدول الزمني للإلغاء (< 60 ث)' : 'OFFBOARDING TIMELINE (< 60s)'}
                     </div>
                     <div className="grid grid-cols-2 gap-1.5 text-[9.5px] font-mono">
-                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
-                        <span className="text-amber-400">1.</span> {isRtl ? 'الحالة: منتهٍ' : 'Status: Terminated'}
+                      <div className="p-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-2xs flex items-center gap-1 font-medium">
+                        <span className="text-amber-600 font-bold">1.</span> {isRtl ? 'الحالة: منتهٍ' : 'Terminated'}
                       </div>
-                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
-                        <span className="text-amber-400">2.</span> {isRtl ? 'إنهاء الجلسة' : 'Session Killed'}
+                      <div className="p-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-2xs flex items-center gap-1 font-medium">
+                        <span className="text-amber-600 font-bold">2.</span> {isRtl ? 'إنهاء الجلسة' : 'Session Killed'}
                       </div>
-                      <div className="p-1.5 rounded-lg bg-blue-950/80 border border-blue-800/40 text-slate-300 flex items-center gap-1">
-                        <span className="text-amber-400">3.</span> {isRtl ? 'إبطال الرموز' : 'Tokens Revoked'}
+                      <div className="p-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-2xs flex items-center gap-1 font-medium">
+                        <span className="text-amber-600 font-bold">3.</span> {isRtl ? 'إبطال الرموز' : 'Tokens Revoked'}
                       </div>
-                      <div className="p-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 flex items-center gap-1">
-                        <span className="text-emerald-400">4.</span> {isRtl ? 'إعادة التعيين ✓' : 'Leads Reassigned ✓'}
+                      <div className="p-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center gap-1 font-bold">
+                        <span className="text-emerald-600">4.</span> {isRtl ? 'إعادة التعيين ✓' : 'Leads Reassigned ✓'}
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Telemetry Status */}
-                <div className="mt-6 pt-4 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono">
-                  <div className="flex items-center gap-1.5 text-slate-300">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+                  <div className="flex items-center gap-1.5 text-slate-600">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                     <span>{isRtl ? 'إنهاء جلسة في أقل من 60 ث' : 'Sub-60s Session Kill'}</span>
                   </div>
-                  <span className="text-[10px] font-bold text-amber-300 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30">
+                  <span className="text-[10px] font-bold text-amber-800 px-2 py-0.5 rounded-full bg-amber-50 border border-amber-200">
                     {isRtl ? 'حفظ تلقائي' : 'AUTO-PARK'}
                   </span>
                 </div>
@@ -2311,36 +2492,36 @@ export default function LandingPage({ locale = 'en' }) {
 
             {/* 3. MINIMAL TRUST / COMPLIANCE STRIP (BOTTOM OF SECTION) */}
             <motion.div 
-              className="p-5 sm:p-6 rounded-2xl bg-[#001838]/90 border border-blue-900/70 shadow-xl flex flex-wrap items-center justify-center lg:justify-between gap-4 sm:gap-6 text-xs font-mono"
+              className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-wrap items-center justify-center lg:justify-between gap-4 sm:gap-6 text-xs font-mono"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex items-center gap-2 text-slate-300">
-                <Lock className="w-4 h-4 text-[#39BFF5]" />
-                <span className="font-bold text-white">
+              <div className="flex items-center gap-2 text-slate-700">
+                <Lock className="w-4 h-4 text-[#0858A8]" />
+                <span className="font-bold text-slate-900">
                   {isRtl ? 'تشفير تام أثناء التخزين والنقل' : 'ENCRYPTED AT REST & IN TRANSIT'}
                 </span>
               </div>
-              <div className="hidden lg:block text-slate-600">•</div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <ShieldCheck className="w-4 h-4 text-[#00D6A3]" />
-                <span className="font-bold text-white">
+              <div className="hidden lg:block text-slate-300">•</div>
+              <div className="flex items-center gap-2 text-slate-700">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span className="font-bold text-slate-900">
                   {isRtl ? 'تحكم بالوصول من جانب الخادم' : 'SERVER-SIDE ACCESS CONTROL'}
                 </span>
               </div>
-              <div className="hidden lg:block text-slate-600">•</div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <UserCheck className="w-4 h-4 text-[#39BFF5]" />
-                <span className="font-bold text-white">
+              <div className="hidden lg:block text-slate-300">•</div>
+              <div className="flex items-center gap-2 text-slate-700">
+                <UserCheck className="w-4 h-4 text-[#0858A8]" />
+                <span className="font-bold text-slate-900">
                   {isRtl ? 'إلغاء فوري للجلسات' : 'INSTANT SESSION REVOCATION'}
                 </span>
               </div>
-              <div className="hidden lg:block text-slate-600">•</div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <Award className="w-4 h-4 text-[#F5B91E]" />
-                <span className="font-bold text-white">
+              <div className="hidden lg:block text-slate-300">•</div>
+              <div className="flex items-center gap-2 text-slate-700">
+                <Award className="w-4 h-4 text-amber-600" />
+                <span className="font-bold text-slate-900">
                   {isRtl ? 'أمان متوافق مع معايير الخليج' : 'AUDIT READY GCC SECURITY'}
                 </span>
               </div>
@@ -2450,10 +2631,9 @@ export default function LandingPage({ locale = 'en' }) {
               <div className="pt-2">
                 <a
                   href={demoHref}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   <span>{isRtl ? 'شاهد ربط النظام المباشر' : 'Explore Connected Platform Demo'}</span>
-                  <ArrowRight className={`w-4 h-4 text-blue-200 ${isRtl ? 'rotate-180' : ''}`} />
                 </a>
               </div>
             </motion.div>
@@ -2660,7 +2840,7 @@ export default function LandingPage({ locale = 'en' }) {
       <section id="roi" className="py-24 sm:py-32 bg-[#001128] text-white relative border-b border-blue-950/80 overflow-hidden">
         {/* User-Provided Futuristic GCC Skyline Background */}
         <div 
-          className="absolute inset-0 bg-art bg-art-roi pointer-events-none"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none bg-art-roi-calculator-bg"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/70 via-transparent to-[#001128]/85 pointer-events-none" />
         <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[150px] pointer-events-none" />
@@ -2788,6 +2968,7 @@ export default function LandingPage({ locale = 'en' }) {
                   </div>
                 </div>
 
+
                 {/* Methodology disclosure — an estimator without stated
                     assumptions is not a figure anyone can act on. */}
                 <p className="pt-4 border-t border-blue-800/50 text-[11px] leading-relaxed text-blue-200/60">
@@ -2795,7 +2976,6 @@ export default function LandingPage({ locale = 'en' }) {
                     ? 'طريقة الاحتساب: عدد الوكلاء × (متوسط قيمة الصفقة × 2% عمولة) × 1.8 صفقة إضافية سنوياً لكل وكيل، بناءً على بيانات منصة عقار كور التشغيلية. تقدير إرشادي لأغراض المقارنة وليس توقعاً للإيراد.'
                     : 'How this is calculated: agents × (average deal value × 2% commission) × 1.8 additional deals per agent per year, based on AqarQore platform telemetry. An indicative estimate for comparison, not a revenue forecast.'}
                 </p>
-
               </div>
             </motion.div>
 
@@ -2952,9 +3132,15 @@ export default function LandingPage({ locale = 'en' }) {
               </div>
             </div>
 
-            {/* 2. Growth Plan (Recommended / Hero) */}
-            <div className={`bg-[#001D42] p-8 sm:p-9 rounded-3xl border-2 border-sky-400/80 text-white shadow-xl flex flex-col justify-between relative transition-all duration-200 transform lg:-translate-y-2 ${isRtl ? 'text-right' : 'text-left'}`}>
-              <div className="space-y-6">
+            {/* 2. Growth Plan (Recommended / Hero with Futuristic Skyline Background) */}
+            <div className={`p-8 sm:p-9 rounded-3xl border-2 border-sky-400 text-white shadow-2xl flex flex-col justify-between relative overflow-hidden transition-all duration-200 transform lg:-translate-y-2 group ${isRtl ? 'text-right' : 'text-left'}`}>
+              {/* Futuristic Cyber Skyline Background Image (Full Visual Clarity) */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none group-hover:scale-105 transition-transform duration-700 bg-art-pricing-center-card-bg"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#001430]/75 via-[#001430]/40 to-[#001430]/85 pointer-events-none" />
+
+              <div className="relative z-10 space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-[11px] font-mono font-bold text-sky-300 uppercase tracking-widest">
@@ -2967,7 +3153,7 @@ export default function LandingPage({ locale = 'en' }) {
                       {isRtl ? 'للفرق القائمة من 6 إلى 25 وكيلاً' : 'For established teams 6–25 agents'}
                     </p>
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-emerald-300 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/40">
+                  <span className="text-[10px] font-mono font-bold text-emerald-300 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/40 shadow-xs">
                     {isRtl ? 'الأكثر طلباً' : 'POPULAR'}
                   </span>
                 </div>
@@ -3007,7 +3193,7 @@ export default function LandingPage({ locale = 'en' }) {
                 </div>
               </div>
 
-              <div className="pt-8">
+              <div className="relative z-10 pt-8">
                 <a 
                   href={demoHref} 
                   className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] text-white font-bold text-xs sm:text-sm text-center shadow-lg shadow-blue-600/30 transition-all block cursor-pointer"
@@ -3148,67 +3334,19 @@ export default function LandingPage({ locale = 'en' }) {
                 </p>
               </div>
 
-              {/* Technical System Radar Visual */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#001738] text-white border border-blue-900/60 shadow-xl relative overflow-hidden group">
-                <div className="relative w-full max-w-[280px] h-[260px] mx-auto flex items-center justify-center">
-                  
-                  {/* Concentric Orbital Rings */}
-                  <div className="absolute w-56 h-56 rounded-full border border-sky-500/20 border-dashed animate-spin" style={{ animationDuration: '40s' }} />
-                  <div className="absolute w-44 h-44 rounded-full border border-blue-500/30" />
-                  <div className="absolute w-32 h-32 rounded-full border border-sky-400/40 bg-sky-500/5 blur-[1px]" />
-                  
-                  {/* Rotating Laser Scan Sweep */}
-                  <motion.div 
-                    className="absolute w-52 h-52 rounded-full pointer-events-none"
-                    style={{
-                      background: 'conic-gradient(from 0deg at 50% 50%, rgba(56, 189, 248, 0.25) 0deg, transparent 60deg, transparent 360deg)'
-                    }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                  />
-
-                  {/* Central Node */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#001026] border-2 border-sky-400/80 flex flex-col items-center justify-center shadow-[0_0_25px_rgba(56,189,248,0.35)]">
-                    <span className="text-sky-300 font-extrabold text-lg font-mono">?</span>
-                    <span className="text-[8px] font-mono text-sky-400 tracking-tighter uppercase font-bold">
-                      {isRtl ? 'نواة الخليج' : 'GCC CORE'}
-                    </span>
-                  </div>
-
-                  {/* 4 Satellite System Nodes */}
-                  {/* Top Node: SECURE */}
-                  <div className="absolute top-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-emerald-500/40 text-emerald-300 text-[10px] font-mono font-bold shadow-md">
-                    <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                    <span>{isRtl ? 'أمان' : 'SECURE'}</span>
-                  </div>
-
-                  {/* Left Node: ANALYTICS */}
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-sky-500/40 text-sky-300 text-[10px] font-mono font-bold shadow-md">
-                    <BarChart3 className="w-3 h-3 text-sky-400" />
-                    <span>{isRtl ? 'تحليلات' : 'ANALYTICS'}</span>
-                  </div>
-
-                  {/* Right Node: AUTOMATE */}
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-amber-500/40 text-amber-300 text-[10px] font-mono font-bold shadow-md">
-                    <Zap className="w-3 h-3 text-amber-400" />
-                    <span>{isRtl ? 'أتمتة' : 'AUTOMATE'}</span>
-                  </div>
-
-                  {/* Bottom Node: CLOUD */}
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001228] border border-violet-500/40 text-violet-300 text-[10px] font-mono font-bold shadow-md">
-                    <Cloud className="w-3 h-3 text-violet-400" />
-                    <span>{isRtl ? 'سحابي' : 'CLOUD'}</span>
-                  </div>
-
-                </div>
-
-                <div className="mt-4 pt-3 border-t border-blue-900/60 flex items-center justify-between text-[11px] font-mono text-blue-200/70">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{isRtl ? 'بنية عقد مستقلة' : 'Autonomous Node Topology'}</span>
-                  </span>
-                  <span className="text-sky-300 font-semibold">{isRtl ? 'مراقبة 24/7' : '24/7 Monitored'}</span>
-                </div>
+              {/* Premium Architectural Showcase Visual */}
+              <div className="rounded-3xl overflow-hidden border border-slate-200/90 shadow-lg bg-white relative group">
+                <picture>
+                    <source srcSet="/faq-modern-building.avif" type="image/avif" />
+                    <source srcSet="/faq-modern-building.webp" type="image/webp" />
+                    <img
+                      src="/faq-modern-building.jpg"
+                      alt="GCC Luxury Architectural Development"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-[360px] sm:h-[380px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  </picture>
               </div>
             </motion.div>
 
@@ -3428,10 +3566,9 @@ export default function LandingPage({ locale = 'en' }) {
 
                 <a
                   href={demoHref}
-                  className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer shrink-0"
+                  className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 flex items-center justify-center cursor-pointer shrink-0"
                 >
                   <span>{isRtl ? 'تواصل مع الدعم' : 'Contact Support'}</span>
-                  <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
                 </a>
               </div>
 
@@ -3447,7 +3584,7 @@ export default function LandingPage({ locale = 'en' }) {
       <section className="py-16 sm:py-20 bg-[#001128] text-white relative border-y border-blue-400/35 overflow-hidden shadow-2xl">
         {/* User-Provided Analytics & Radar Mesh Background */}
         <div 
-          className="absolute inset-0 bg-art bg-art-cta pointer-events-none"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none bg-art-cta-banner-bg"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#001128]/80 via-[#001128]/50 to-[#001128]/80 pointer-events-none" />
         <div className="absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 bg-sky-400/15 blur-[120px] pointer-events-none" />
@@ -3489,10 +3626,9 @@ export default function LandingPage({ locale = 'en' }) {
             <div className={`flex flex-col items-center ${isRtl ? 'lg:items-start' : 'lg:items-end'} gap-3 shrink-0`}>
               <a
                 href={demoHref}
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#002859] hover:bg-sky-50 font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 border border-white cursor-pointer"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-[#002859] hover:bg-sky-50 font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 border border-white cursor-pointer text-center"
               >
                 <span>{isRtl ? 'احجز العرض التوضيحي الآن' : 'Book Your 20-Min Demo Now'}</span>
-                <ArrowRight className={`w-4 h-4 sm:w-5 sm:h-5 text-[#002859] ${isRtl ? 'rotate-180' : ''}`} />
               </a>
 
               <div className="flex items-center gap-4 text-[11px] font-medium text-blue-100/80">
@@ -3520,7 +3656,7 @@ export default function LandingPage({ locale = 'en' }) {
       <footer className={`bg-[#001128] text-blue-200/80 text-xs pt-20 pb-12 border-t border-blue-900/60 relative overflow-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
         {/* GCC Skyline Mesh Background Image */}
         <div 
-          className="absolute inset-0 z-0 bg-art bg-art-skyline pointer-events-none"
+          className="absolute inset-0 z-0 bg-cover bg-bottom bg-no-repeat pointer-events-none bg-art-gcc-hero-skyline-bg"
         />
         {/* Clean Contrast Gradients for Readability and Depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#001128]/75 via-[#001128]/65 to-[#001128]/90 z-0 pointer-events-none" />
@@ -3568,23 +3704,10 @@ export default function LandingPage({ locale = 'en' }) {
                 {isRtl ? 'المنصة' : 'Platform'}
               </h4>
               <ul className="space-y-2.5 text-blue-200/70 text-xs">
-                {isRtl ? (
-                  <>
-                    <li><Link href="/ar/features/lead-distribution/" className="hover:text-white transition-colors">التوزيع التلقائي للعملاء</Link></li>
-                    <li><Link href="/ar/features/whatsapp-ai-qualification/" className="hover:text-white transition-colors">ربط واتساب الذكي</Link></li>
-                    <li><a href="#features" className="hover:text-white transition-colors">تطبيق الميدان دون إنترنت</a></li>
-                    <li><Link href="/ar/features/commission-approvals/" className="hover:text-white transition-colors">اعتماد العمولات</Link></li>
-                    <li><Link href="/ar/best-real-estate-crm-saudi-arabia/" className="hover:text-white transition-colors">نظام عقاري للسعودية</Link></li>
-                    <li><Link href="/ar/guides/" className="hover:text-white transition-colors">أدلة عقارية</Link></li>
-                  </>
-                ) : (
-                  <>
-                    <li><Link href="/features/lead-distribution/" className="hover:text-white transition-colors">Speed to Lead</Link></li>
-                    <li><Link href="/features/whatsapp-ai-qualification/" className="hover:text-white transition-colors">WhatsApp AI Bot</Link></li>
-                    <li><a href="#features" className="hover:text-white transition-colors">Offline Mobile App</a></li>
-                    <li><Link href="/features/commission-approvals/" className="hover:text-white transition-colors">Commission Signoff</Link></li>
-                  </>
-                )}
+                <li><Link href={isRtl ? "/ar/features/lead-distribution/" : "/features/lead-distribution/"} className="hover:text-white transition-colors">{isRtl ? 'التوزيع التلقائي للعملاء' : 'Speed to Lead'}</Link></li>
+                <li><Link href={isRtl ? "/ar/features/whatsapp-ai-qualification/" : "/features/whatsapp-ai-qualification/"} className="hover:text-white transition-colors">{isRtl ? 'ربط واتساب الذكي' : 'WhatsApp AI Bot'}</Link></li>
+                <li><a href="#features" className="hover:text-white transition-colors">{isRtl ? 'تطبيق الميدان دون إنترنت' : 'Offline Mobile App'}</a></li>
+                <li><Link href={isRtl ? "/ar/features/commission-approvals/" : "/features/commission-approvals/"} className="hover:text-white transition-colors">{isRtl ? 'اعتماد العمولات' : 'Commission Signoff'}</Link></li>
                 <li><a href="#connected" className="hover:text-white transition-colors">{isRtl ? 'الشبكة المتصلة' : 'Connected Mesh'}</a></li>
               </ul>
             </div>
@@ -3597,13 +3720,11 @@ export default function LandingPage({ locale = 'en' }) {
               <ul className="space-y-2.5 text-blue-200/70 text-xs">
                 <li><a href="#showcase" className="hover:text-white transition-colors">{isRtl ? 'وكالات دبي' : 'Dubai Brokerages'}</a></li>
                 <li><a href="#showcase" className="hover:text-white transition-colors">{isRtl ? 'واجهة الدوحة البحرية' : 'Doha Waterfront'}</a></li>
+                <li><Link href={isRtl ? "/ar/best-real-estate-crm-saudi-arabia/" : "/best-real-estate-crm-saudi-arabia/"} className="hover:text-white transition-colors">{isRtl ? 'نظام عقاري للسعودية' : 'Real Estate CRM Saudi Arabia'}</Link></li>
                 {!isRtl && (
-                  <>
-                    <li><Link href="/best-real-estate-crm-saudi-arabia/" className="hover:text-white transition-colors">Real Estate CRM Saudi Arabia</Link></li>
-                    <li><Link href="/best-real-estate-crm-qatar/" className="hover:text-white transition-colors">Real Estate CRM Qatar</Link></li>
-                    <li><Link href="/solutions/off-plan/" className="hover:text-white transition-colors">Off-Plan Sales</Link></li>
-                  </>
+                  <li><Link href="/solutions/off-plan/" className="hover:text-white transition-colors">Off-Plan Sales</Link></li>
                 )}
+                <li><Link href={isRtl ? "/ar/guides/" : "/guides/"} className="hover:text-white transition-colors">{isRtl ? 'أدلة عقارية' : 'Brokerage Guides'}</Link></li>
                 <li><a href="#roi" className="hover:text-white transition-colors">{isRtl ? 'حاسبة الإيرادات' : 'Revenue Calculator'}</a></li>
                 <li><Link href={pricingHref} className="hover:text-white transition-colors">{isRtl ? 'خطط الوكالات' : 'Agency Plans'}</Link></li>
               </ul>
@@ -3619,20 +3740,17 @@ export default function LandingPage({ locale = 'en' }) {
                   <>
                     <li><a href="#security" className="hover:text-white transition-colors">أمان على مستوى المؤسسات</a></li>
                     <li><a href="#security" className="hover:text-white transition-colors">استضافة إقليمية للبيانات</a></li>
+                    <li><Link href="/ar/features/" className="hover:text-white transition-colors">المميزات</Link></li>
                   </>
                 ) : (
                   <>
                     <li><Link href="/security/" className="hover:text-white transition-colors">Institutional Security</Link></li>
                     <li><Link href="/security/" className="hover:text-white transition-colors">Regional Data Hosting</Link></li>
+                    <li><Link href="/integrations/" className="hover:text-white transition-colors">Portal Integrations</Link></li>
+                    <li><Link href="/alternatives/" className="hover:text-white transition-colors">Compare Alternatives</Link></li>
                   </>
                 )}
-                {!isRtl && (
-                  <li><Link href="/guides/" className="hover:text-white transition-colors">Brokerage Guides</Link></li>
-                )}
                 <li><a href="#faq" className="hover:text-white transition-colors">{isRtl ? 'قاعدة المعرفة والأسئلة' : 'Knowledge Base & FAQ'}</a></li>
-                {!isRtl && (
-                  <li><Link href="/alternatives/" className="hover:text-white transition-colors">Compare Alternatives</Link></li>
-                )}
                 <li><a href={demoHref} className="hover:text-sky-300 font-semibold transition-colors">{isRtl ? 'احجز عرضاً مباشراً ←' : 'Book Live Demo →'}</a></li>
               </ul>
             </div>

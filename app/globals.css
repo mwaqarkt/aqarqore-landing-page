@@ -62,49 +62,66 @@ button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, div {
 /* ---------------------------------------------------------------------------
    Section background images.
    The plain url() line is the fallback; browsers that understand image-set()
-   override it with AVIF, then WebP. Declared as classes rather than inline
-   styles so the progressive enhancement actually works.
+   override it with AVIF. Declared as classes rather than inline styles so the
+   progressive enhancement actually works — an inline style cannot express it.
    --------------------------------------------------------------------------- */
-.bg-art {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.bg-art-hero-gcc-waterfront-bg {
+  background-image: url('/hero-gcc-waterfront-bg.webp');
+  background-image: image-set(
+    url('/hero-gcc-waterfront-bg.avif') type('image/avif'),
+    url('/hero-gcc-waterfront-bg.webp') type('image/webp')
+  );
 }
-
-.bg-art-telemetry {
+.bg-art-real-estate-blueprint-sketch {
+  background-image: url('/real-estate-blueprint-sketch.webp');
+  background-image: image-set(
+    url('/real-estate-blueprint-sketch.avif') type('image/avif'),
+    url('/real-estate-blueprint-sketch.webp') type('image/webp')
+  );
+}
+.bg-art-real-estate-line-pattern {
+  background-image: url('/real-estate-line-pattern.webp');
+  background-image: image-set(
+    url('/real-estate-line-pattern.avif') type('image/avif'),
+    url('/real-estate-line-pattern.webp') type('image/webp')
+  );
+}
+.bg-art-gcc-telemetry-bg {
   background-image: url('/gcc-telemetry-bg.webp');
   background-image: image-set(
     url('/gcc-telemetry-bg.avif') type('image/avif'),
     url('/gcc-telemetry-bg.webp') type('image/webp')
   );
 }
-
-.bg-art-security {
-  background-image: url('/security-section-bg.webp');
+.bg-art-security-blueprint-skyline {
+  background-image: url('/security-blueprint-skyline.webp');
   background-image: image-set(
-    url('/security-section-bg.avif') type('image/avif'),
-    url('/security-section-bg.webp') type('image/webp')
+    url('/security-blueprint-skyline.avif') type('image/avif'),
+    url('/security-blueprint-skyline.webp') type('image/webp')
   );
 }
-
-.bg-art-roi {
+.bg-art-roi-calculator-bg {
   background-image: url('/roi-calculator-bg.webp');
   background-image: image-set(
     url('/roi-calculator-bg.avif') type('image/avif'),
     url('/roi-calculator-bg.webp') type('image/webp')
   );
 }
-
-.bg-art-cta {
+.bg-art-pricing-center-card-bg {
+  background-image: url('/pricing-center-card-bg.webp');
+  background-image: image-set(
+    url('/pricing-center-card-bg.avif') type('image/avif'),
+    url('/pricing-center-card-bg.webp') type('image/webp')
+  );
+}
+.bg-art-cta-banner-bg {
   background-image: url('/cta-banner-bg.webp');
   background-image: image-set(
     url('/cta-banner-bg.avif') type('image/avif'),
     url('/cta-banner-bg.webp') type('image/webp')
   );
 }
-
-.bg-art-skyline {
-  background-position: bottom;
+.bg-art-gcc-hero-skyline-bg {
   background-image: url('/gcc-hero-skyline-bg.webp');
   background-image: image-set(
     url('/gcc-hero-skyline-bg.avif') type('image/avif'),
