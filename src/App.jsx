@@ -2595,10 +2595,9 @@ export default function App() {
               <div className="pt-2">
                 <a
                   href={DEMO_CTA_URL}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   <span>{isRtl ? 'شاهد ربط النظام المباشر' : 'Explore Connected Platform Demo'}</span>
-                  <ArrowRight className={`w-4 h-4 text-blue-200 ${isRtl ? 'rotate-180' : ''}`} />
                 </a>
               </div>
             </motion.div>
