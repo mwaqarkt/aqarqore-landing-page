@@ -7,7 +7,7 @@ import Article, { AnswerBlock, H2, H3, P, UL, Table, FaqList, Cta } from '@/comp
 const PATH = routeFor('security', 'en');
 const TITLE = 'Security and Data Residency for GCC Brokerages';
 const DESCRIPTION =
-  'Access control, multi-factor authentication, session revocation and regional data hosting — and the questions worth asking any CRM vendor about where your client data lives.';
+  'Access control, multi-factor authentication, session revocation and regional data hosting, plus the questions to ask any CRM about your data.';
 
 export const metadata = {
   title: 'Security & Data Residency | AqarQore',

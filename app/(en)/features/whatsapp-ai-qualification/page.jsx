@@ -8,7 +8,7 @@ const PATH = routeFor('featWhatsapp', 'en');
 
 const TITLE = 'WhatsApp Lead Qualification for Real Estate Agencies';
 const DESCRIPTION =
-  'How a WhatsApp qualification bot on the official Meta Cloud API captures budget, area and property type before an agent picks up the conversation — and what to check before buying one.';
+  'How a WhatsApp bot on the official Meta Cloud API captures budget, area and property type before an agent picks up the conversation.';
 
 export const metadata = {
   title: 'WhatsApp Lead Qualification Bot for Real Estate',

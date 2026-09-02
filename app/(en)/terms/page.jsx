@@ -8,7 +8,7 @@ const PATH = routeFor('terms', 'en');
 export const metadata = {
   title: 'Terms of Service — AqarQore',
   description:
-    'The terms governing use of the aqarqore.com website, including acceptable use, intellectual property, the status of information published here, and limitation of liability.',
+    'The terms governing use of the aqarqore.com website: acceptable use, intellectual property, the status of published guidance, and liability.',
   alternates: alternatesFor('terms', 'en'),
 };
 

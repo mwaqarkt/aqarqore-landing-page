@@ -8,7 +8,7 @@ const UPDATED = '30 August 2026';
 
 const TITLE = 'Best Real Estate CRM in Saudi Arabia (2026 Guide)';
 const DESCRIPTION =
-  'How to choose a real estate CRM for a Saudi brokerage: Aqar and Wasalt lead capture, REGA and FAL licensing, Wafi off-plan, ZATCA invoicing and Arabic-first workflows.';
+  'Choosing brokerage software for the Kingdom: Aqar and Wasalt lead capture, Arabic-first workflows, commission control and in-Kingdom hosting.';
 
 export const metadata = {
   title: 'Best Real Estate CRM in Saudi Arabia (2026)',

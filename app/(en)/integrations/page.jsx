@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 const PATH = routeFor('integrations', 'en');
 const TITLE = 'Property Portal Integrations for GCC Brokerages';
 const DESCRIPTION =
-  'Connect Property Finder, Bayut, Dubizzle, Aqar and Wasalt to one deduplicated pipeline, with automatic assignment in seconds and a full audit trail on every lead.';
+  'Connect Property Finder, Bayut, Dubizzle, Aqar and Wasalt to one deduplicated pipeline with automatic assignment and a full audit trail.';
 
 export const metadata = {
   title: 'Property Portal Integrations | AqarQore',

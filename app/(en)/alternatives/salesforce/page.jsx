@@ -8,7 +8,7 @@ const PATH = routeFor('altSalesforce', 'en');
 
 const TITLE = 'Salesforce Alternatives for Real Estate Brokerages';
 const DESCRIPTION =
-  'When Salesforce is right for a brokerage and when it is overbuilt: total cost, implementation reality, and what a GCC real estate team needs that a horizontal CRM does not ship with.';
+  'When Salesforce fits a brokerage and when it is overbuilt: total cost, implementation reality, and what a GCC team needs that it does not ship.';
 
 export const metadata = {
   title: 'Salesforce Alternatives for Real Estate Brokerages',

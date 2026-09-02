@@ -6,7 +6,7 @@ import Article, { AnswerBlock, H2, H3, P, UL, Table, FaqList, Cta } from '@/comp
 
 const PATH = routeFor('altPropspace', 'en');
 const TITLE = 'PropSpace Alternatives for UAE Brokerages';
-const DESCRIPTION = 'PropSpace is the longest-running UAE real estate CRM, spun out of Property Finder in 2024. Where it fits, what to check about a portal-heritage CRM, and the alternatives.';
+const DESCRIPTION = 'PropSpace is the longest-running UAE real estate CRM, spun out of Property Finder in 2024. Where it fits, what to check, and the alternatives.';
 
 export const metadata = {
   title: 'PropSpace Alternatives for UAE Brokerages | AqarQore',

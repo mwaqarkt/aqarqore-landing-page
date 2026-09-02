@@ -127,6 +127,12 @@ export default function EjariGuide() {
           consistent core is below. Confirm the current list against the official DLD channels before
           submitting, as requirements are updated periodically.
         </P>
+        <P>
+          Two points catch people out. Digital title deeds issued through the Dubai REST app are accepted, so
+          a paper copy is not required. And since 2026 registrations are expected to{' '}
+          <strong>declare co-occupants</strong> — anyone residing in the property for a month or more — which
+          is a step that did not previously exist.
+        </P>
         <Table
           head={['Document', 'Applies to', 'Common problem']}
           rows={[
@@ -137,6 +143,7 @@ export default function EjariGuide() {
             ['Trade licence', 'Company tenants', 'Expired licence, or a different legal entity than the one on the contract'],
             ['DEWA premises number', 'Most', 'Missing entirely, which stalls the application'],
             ['Recent utility bill or connection detail', 'Varies', 'Belongs to a previous tenancy'],
+            ['Co-occupant declaration', 'All', 'Overlooked — occupants staying a month or more must be declared'],
           ]}
           caption="Verify the current requirement list with the Dubai Land Department before filing — this table is a working checklist, not a legal source."
         />

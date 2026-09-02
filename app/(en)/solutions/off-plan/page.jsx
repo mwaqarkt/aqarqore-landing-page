@@ -7,7 +7,7 @@ import Article, { AnswerBlock, H2, H3, P, UL, Table, FaqList, Cta } from '@/comp
 const PATH = routeFor('offPlan', 'en');
 const TITLE = 'Off-Plan Sales CRM for Dubai and GCC Brokerages';
 const DESCRIPTION =
-  'Why off-plan breaks a normal sales pipeline: unit-level allocation, escrow-linked payment milestones, Oqood registration and commission that vests in stages rather than on signature.';
+  'Why off-plan breaks a normal pipeline: unit-level allocation, escrow-linked payment milestones, Oqood registration and staged commission.';
 
 export const metadata = {
   title: 'Off-Plan Sales CRM for Dubai Brokerages',

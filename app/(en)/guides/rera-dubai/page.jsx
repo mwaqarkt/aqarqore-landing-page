@@ -7,7 +7,7 @@ import Article, { AnswerBlock, H2, H3, P, UL, Table, FaqList, Cta } from '@/comp
 const PATH = routeFor('reraDubai', 'en');
 const TITLE = 'RERA Dubai: Broker Registration, Cards and Renewal';
 const DESCRIPTION =
-  'What RERA is, how to get a Dubai broker card, the DREI training and exam, annual renewal requirements, and how brokerages track agent licence status across a team.';
+  'What RERA is, how the Dubai broker card works, the DREI training and exam, annual renewal, and tracking licence expiry across your team.';
 
 export const metadata = {
   title: 'RERA Dubai: Broker Card, Exam & Renewal Guide',

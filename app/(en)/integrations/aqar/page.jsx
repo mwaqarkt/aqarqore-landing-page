@@ -7,7 +7,7 @@ import { HowItWorks, OtherPortals } from '@/components/IntegrationPage';
 
 const PATH = routeFor('intAqar', 'en');
 const TITLE = 'Aqar (aqar.fm) CRM Integration for Saudi Brokerages';
-const DESCRIPTION = 'Connect Aqar (aqar.fm) leads to your CRM: automatic assignment in seconds, Arabic-first agent workflows, deduplication against Wasalt and Bayut.sa, and a full assignment trail.';
+const DESCRIPTION = 'Connect Aqar (aqar.fm) leads to your CRM: assignment in seconds, Arabic-first agent workflows and deduplication against Wasalt and Bayut.sa.';
 
 export const metadata = {
   title: 'Aqar CRM Integration for Saudi Brokerages | AqarQore',
