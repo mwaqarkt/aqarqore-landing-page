@@ -8,15 +8,19 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
-# --- Canonical host: force HTTPS and strip www -----------------------------
+# --- Canonical host: strip www and force HTTPS in a single hop --------------
 # Every canonical tag on the site is https://aqarqore.com (no www), so the
 # server must agree or the www host becomes a duplicate of the whole site.
+#
+# The www rule runs FIRST and jumps straight to https on the apex. Forcing
+# HTTPS first would preserve the www host and send http://www through two
+# redirects (http://www -> https://www -> https://apex), wasting crawl budget.
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 # --- Branded 404 -----------------------------------------------------------
 ErrorDocument 404 /404.html
@@ -42,6 +46,12 @@ ErrorDocument 404 /404.html
   <FilesMatch "\.(xml|txt|webmanifest)$">
     Header set Cache-Control "public, max-age=3600"
   </FilesMatch>
+
+  # HSTS. Deliberately WITHOUT includeSubDomains: autodiscover.aqarqore.com and
+  # autoconfig.aqarqore.com serve HTTP but fail on HTTPS, so forcing HTTPS on
+  # subdomains would break mail-client autodiscovery for Outlook and Thunderbird.
+  # Revisit only if those hostnames gain working certificates.
+  Header always set Strict-Transport-Security "max-age=31536000"
 
   # Baseline security headers.
   Header always set X-Content-Type-Options "nosniff"
