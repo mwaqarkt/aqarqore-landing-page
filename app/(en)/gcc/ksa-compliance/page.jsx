@@ -8,7 +8,7 @@ const PATH = routeFor('ksaCompliance', 'en');
 
 const TITLE = 'REGA, Wafi, Ejar and ZATCA: A Saudi Brokerage Compliance Guide';
 const DESCRIPTION =
-  'What REGA, FAL, Wafi, Ejar, ZATCA e-invoicing and the PDPL mean for a Saudi real estate brokerage day to day — and what your CRM needs to record so compliance is a report, not a reconstruction.';
+  'What REGA, FAL, Wafi, Ejar, ZATCA e-invoicing and the PDPL mean for a Saudi brokerage day to day, and the records your systems need to keep.';
 
 export const metadata = {
   title: 'Saudi Brokerage Compliance: REGA, Wafi, Ejar & ZATCA',

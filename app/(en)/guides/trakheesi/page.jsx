@@ -7,7 +7,7 @@ import Article, { AnswerBlock, H2, H3, P, UL, Table, FaqList, Cta } from '@/comp
 const PATH = routeFor('trakheesi', 'en');
 const TITLE = 'Trakheesi Permits: The Dubai Property Advertising Rule';
 const DESCRIPTION =
-  'Every Dubai property advert needs a valid Trakheesi permit. What the permit covers, what documents you need, how long it lasts, and how brokerages track permits at portfolio scale.';
+  'Every Dubai property advert needs a valid Trakheesi permit. What it covers, the documents required, and how to track expiry across a portfolio.';
 
 export const metadata = {
   title: 'Trakheesi Permit Guide for Dubai Brokers',
@@ -45,7 +45,7 @@ const FAQS = [
   ],
   [
     'What happens if you advertise without a valid permit?',
-    'Advertising without a permit, or with incorrect permit details, is treated as a regulatory violation and penalties are reported to be substantial. Portals also display the permit number publicly, so an invalid or missing permit is visible to anyone looking.',
+    'Advertising without a permit, or with incorrect permit details, is treated as a RERA violation. Industry sources report fines starting around AED 50,000 and rising for repeat offences, though you should confirm current penalties with the DLD rather than rely on secondary reporting. Portals also display the permit number publicly, so an invalid or missing permit is visible to anyone looking.',
   ],
 ];
 
@@ -90,6 +90,7 @@ export default function TrakheesiGuide() {
           { id: 'apply', label: 'How to apply' },
           { id: 'validity', label: 'Validity and expiry' },
           { id: 'display', label: 'Where the number must appear' },
+          { id: 'abudhabi', label: 'Abu Dhabi uses a different system' },
           { id: 'scale', label: 'Managing permits at portfolio scale' },
           { id: 'faq', label: 'Frequently asked questions' },
         ]}
@@ -162,8 +163,9 @@ export default function TrakheesiGuide() {
 
         <H2 id="validity">Validity and expiry</H2>
         <P>
-          A permit is generally tied to the duration of the listing contract rather than a fixed calendar
-          period. That sounds convenient and creates the central operational problem:{' '}
+          The Dubai Land Department does not publish a single headline validity period, and secondary sources
+          disagree, so treat any specific figure you read elsewhere with caution and confirm yours on the
+          permit itself. What is not in dispute is the operational consequence:{' '}
           <strong>permits expire on different dates, and nothing tells you when.</strong>
         </P>
         <P>
@@ -198,6 +200,19 @@ export default function TrakheesiGuide() {
             Bayut integration notes
           </Link>
           .
+        </P>
+
+        <H2 id="abudhabi">Abu Dhabi uses a different system</H2>
+        <P>
+          Trakheesi is <strong>Dubai only</strong>. Abu Dhabi runs its own permit regime through{' '}
+          <strong>Madhmoun</strong>, operated by ADREC on the DARI platform, which functions as a
+          government-regulated multiple listing service. Brokerages must be registered and licensed with
+          ADREC before applying, and property owners approve which brokers may advertise their unit — with up
+          to three approved brokers per listing.
+        </P>
+        <P>
+          If you operate across both emirates, these are separate registrations, separate permits and
+          separate compliance obligations. A valid Trakheesi permit does nothing for an Abu Dhabi listing.
         </P>
 
         <H2 id="scale">Managing permits at portfolio scale</H2>

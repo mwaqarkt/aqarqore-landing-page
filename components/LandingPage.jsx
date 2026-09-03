@@ -517,7 +517,7 @@ export default function LandingPage({ locale = 'en' }) {
 
               <a
                 href={demoHref}
-                className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-blue-600/20 hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-blue-400/30 flex items-center justify-center"
+                className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] hover:from-sky-500 hover:to-[#1078C0] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-blue-600/20 hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-blue-400/30 hidden sm:flex items-center justify-center"
               >
                 <span className="relative z-10">
                   {isRtl ? 'احجز عرضاً توضيحياً' : 'Book Live Demo'}
@@ -588,6 +588,16 @@ export default function LandingPage({ locale = 'en' }) {
                     className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#0858A8] transition-colors"
                   >
                     {isRtl ? 'الأسعار' : 'Pricing'}
+                  </a>
+
+                  {/* Primary CTA: the header button is hidden below sm, so the
+                      conversion path lives here on phones. */}
+                  <a
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    href={demoHref}
+                    className="mt-2 px-3 py-3 rounded-xl bg-gradient-to-r from-[#1078C0] to-[#0858A8] text-white font-bold text-center shadow-md"
+                  >
+                    {isRtl ? 'احجز عرضاً توضيحياً' : 'Book Live Demo'}
                   </a>
                 </div>
               </motion.div>

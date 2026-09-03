@@ -1,6 +1,9 @@
-node_modules
-dist
-.next
-out
-.DS_Store
 *.log
+*.zip
+.DS_Store
+.next
+aqarqore-deploy-ready.zip
+dist
+node_modules
+out
+out/

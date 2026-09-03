@@ -7,7 +7,7 @@ const PATH = routeFor('crmQatar', 'en');
 
 const TITLE = 'Best Real Estate CRM in Qatar (2026 Guide)';
 const DESCRIPTION =
-  'Choosing real estate software in Qatar: Property Finder Qatar lead capture, The Pearl and Lusail freehold workflows, WhatsApp qualification and commission control for Doha brokerages.';
+  'Choosing real estate software in Qatar: Property Finder Qatar lead capture, WhatsApp qualification and commission control for Doha brokerages.';
 
 export const metadata = {
   title: 'Best Real Estate CRM in Qatar (2026)',

@@ -7,7 +7,7 @@ import { HowItWorks, OtherPortals } from '@/components/IntegrationPage';
 
 const PATH = routeFor('intDubizzle', 'en');
 const TITLE = 'Dubizzle CRM Integration for UAE Brokerages';
-const DESCRIPTION = 'Connect Dubizzle property leads to your CRM: automatic assignment, deduplication against Bayut and Property Finder, and accurate source attribution for a distinct buyer profile.';
+const DESCRIPTION = 'Connect Dubizzle property leads to your CRM: automatic assignment, deduplication against Bayut and Property Finder, and accurate source attribution.';
 
 export const metadata = {
   title: 'Dubizzle CRM Integration | AqarQore',

@@ -6,7 +6,7 @@ import Article, { AnswerBlock, H2, H3, P, UL, Table, FaqList, Cta } from '@/comp
 
 const PATH = routeFor('altMasterkey', 'en');
 const TITLE = 'Masterkey CRM Alternatives for GCC Brokerages';
-const DESCRIPTION = 'Masterkey is a long-established, enterprise-oriented Middle East real estate platform owned by the dubizzle group. Where it fits, what to verify, and the alternatives.';
+const DESCRIPTION = 'Masterkey is an enterprise Middle East property platform owned by the dubizzle group. Where it fits, what to verify, and the alternatives.';
 
 export const metadata = {
   title: 'Masterkey CRM Alternatives | AqarQore',

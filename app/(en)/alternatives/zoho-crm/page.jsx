@@ -6,7 +6,7 @@ import Article, { AnswerBlock, H2, H3, P, UL, Table, FaqList, Cta } from '@/comp
 
 const PATH = routeFor('altZoho', 'en');
 const TITLE = 'Zoho CRM Alternatives for Real Estate Brokerages';
-const DESCRIPTION = 'Where Zoho CRM fits a GCC brokerage and where it costs more than it saves: configuration burden, portal and WhatsApp work, Arabic RTL testing, and total cost including admin time.';
+const DESCRIPTION = 'Where Zoho CRM fits a GCC brokerage and where it costs more than it saves: configuration burden, portal and WhatsApp work, and true total cost.';
 
 export const metadata = {
   title: 'Zoho CRM Alternatives for Real Estate | AqarQore',

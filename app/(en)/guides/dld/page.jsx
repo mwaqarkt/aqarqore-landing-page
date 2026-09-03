@@ -7,7 +7,7 @@ import Article, { AnswerBlock, H2, H3, P, UL, Table, FaqList, Cta } from '@/comp
 const PATH = routeFor('dld', 'en');
 const TITLE = 'Dubai Land Department: Systems Every Broker Uses';
 const DESCRIPTION =
-  'A working map of the DLD: RERA, Trakheesi, Ejari, Oqood, Mollak, Dubai REST and title deeds — what each system does, and which records a brokerage needs to keep against them.';
+  'A working map of the Dubai Land Department: RERA, Trakheesi, Ejari, Oqood, Mollak and Dubai REST, and which records a brokerage must keep.';
 
 export const metadata = {
   title: 'Dubai Land Department (DLD) Guide for Brokers',

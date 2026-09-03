@@ -8,7 +8,7 @@ const PATH = routeFor('featLeads', 'en');
 
 const TITLE = 'Automated Lead Distribution for Real Estate Brokerages';
 const DESCRIPTION =
-  'How automatic lead assignment routes Property Finder, Bayut, Dubizzle and Aqar enquiries to an available agent in seconds — with duplicate detection and a full assignment audit trail.';
+  'Route Property Finder, Bayut, Dubizzle and Aqar enquiries to an available agent in seconds, with duplicate detection and a full assignment trail.';
 
 export const metadata = {
   title: 'Automated Lead Distribution Software for Brokerages',

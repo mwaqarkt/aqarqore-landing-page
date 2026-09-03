@@ -7,7 +7,7 @@ import { HowItWorks, OtherPortals } from '@/components/IntegrationPage';
 
 const PATH = routeFor('intPropertyFinder', 'en');
 const TITLE = 'Property Finder CRM Integration for GCC Brokerages';
-const DESCRIPTION = 'Connect Property Finder UAE and Qatar leads to your CRM: automatic assignment in seconds, cross-portal duplicate detection, and Trakheesi permit tracking on every Dubai listing.';
+const DESCRIPTION = 'Connect Property Finder UAE and Qatar leads to your CRM: assignment in seconds, cross-portal duplicate detection and Trakheesi permit tracking.';
 
 export const metadata = {
   title: 'Property Finder CRM Integration | AqarQore',
